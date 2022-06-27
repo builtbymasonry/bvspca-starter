@@ -1,8 +1,12 @@
 <script setup>
 import { ref } from "vue";
 import Header from "./components/ExampleHeader.vue";
+import Hero from "./components/Hero.vue";
+import heroImg01 from "@/assets/img/logo01.png";
 
 let counter = ref(0);
+
+console.log(heroImg01);
 </script>
 
 <template>
@@ -18,6 +22,7 @@ let counter = ref(0);
         </h1>
       </div>
     </header>
+    <Hero :imgSrc="heroImg01" />
     <main>
       <router-view />
     </main>

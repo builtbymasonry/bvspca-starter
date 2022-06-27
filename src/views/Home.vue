@@ -1,7 +1,8 @@
-<script setup>
-import Stats from "@/components/ExampleStats.vue";
+<script>
+import Hero from "@/components/Hero.vue";
 </script>
 
 <template>
+  <Hero />
   <Stats />
 </template>
