@@ -1,5 +1,5 @@
 <template>
-  <Popover class="relative bg-white">
+  <Popover class="relative z-10 bg-white">
     <div class="px-4 mx-auto max-w-7xl sm:px-6">
       <div class="flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-start md:space-x-10">
         <div class="flex justify-start lg:w-0 lg:flex-1">
@@ -97,7 +97,7 @@
         </PopoverGroup>
         <div class="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
           <a href="#" class="text-base font-medium text-gray-500 whitespace-nowrap hover:text-gray-900"> Sign in </a>
-          <Button target="_blank" href="https://www.google.com" text="Sign up" />
+          <Button class="ml-5" target="_blank" href="https://www.google.com" variant="primary" text="Sign up" />
         </div>
       </div>
     </div>
@@ -170,6 +170,7 @@ import {
   XIcon,
 } from '@heroicons/vue/outline'
 import { ChevronDownIcon } from '@heroicons/vue/solid'
+import ButtonLink from '@/components/ButtonLink.vue';
 
 const solutions = [
   {
