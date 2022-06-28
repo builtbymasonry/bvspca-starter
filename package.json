@@ -7,8 +7,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "swiper": "^8.2.5",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.16"
+    "vue-router": "^4.0.16",
+    "vue3-marquee": "^3.0.7"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.6.4",
