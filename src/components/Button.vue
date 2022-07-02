@@ -40,14 +40,14 @@
     computed: {
       btnClass() {
         return {
-          "inline-flex items-center justify-center px-5 py-2 whitespace-nowrap border-2 rounded-full shadow text-sm lg:text-lg font-bold text-white transition-all": true
+          "inline-flex items-center justify-center px-6 md:px-8 py-2 whitespace-nowrap border-2 rounded-full shadow text-sm lg:text-lg  leading-none lg:leading-relaxed font-bold text-white transition-all": true
         }
       },
 
       btnVariants() {
         return {
           "bg-red border-transparent hover:bg-red-dark": this.variant === "primary",
-          "bg-orange border-transparent text-purple-200 hover:bg-orange-dark": this.variant === "secondary",
+          "bg-orange border-transparent text-purple hover:bg-orange-dark": this.variant === "secondary",
           "border-red text-red hover:border-red-dark hover:bg-red-dark hover:text-white": this.variant === "outline"
         }
       }

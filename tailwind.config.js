@@ -7,13 +7,27 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
+        sans: ['"century-gothic"', ...defaultTheme.fontFamily.sans],
       },
       screens: {
         '2xl': '1440px',
       },
+      maxWidth: {
+        '7xl': '74rem'
+      },
+      minHeight: {
+        '5': '5rem',
+        '6': '6rem',
+        '7': '7rem'
+      },
       fontSize: {
+        'xl': '1.4rem',
+        '2xl': '1.6rem',
+        '4xl': '2.5rem',
         '6xl': '4rem',
+      },
+      lineHeight: {
+        loose: '1.9'
       },
       colors: {
         orange: {
