@@ -1,15 +1,13 @@
 <template>
   <div class="relative overflow-hidden">
-    <img class="relative md:absolute top-0 left-0 object-cover w-full h-full" :src="imgSrc" :alt="imgDescr" />
+    <img class="relative md:absolute top-0 left-0 object-cover w-full md:h-full" :src="imgSrc" :alt="imgDescr" />
 
-    <div class="md:max-w-xl md:mx-10 md:my-12 xl:mx-20 xl:my-24 px-10 py-10 xl:px-20 xl:py-16 relative rounded-lg bg-gradient-radial from-white to-whiteTransparent-300">
-        <h1 class="text-4xl lg:text-6xl font-bold leading-tight mb-4">Putting the human back in humane</h1>
-        <p class="text-md lg:text-xl">We strive to end animal suffering and empower communities to find the heart in humanity</p>
-        <div class="mt-8 flex flex-wrap">
-          <Button class="mr-3 mb-3" variant="primary" text="Primary"/>
-          <Button class="mr-3 mb-3" variant="secondary" arrow="true" text="Secondary"/>
-          <Button class="mr-3 mb-3" variant="outline" text="Outline"/>
-          <ButtonLink class="mb-3" text="Button link"/>
+    <div class="md:max-w-lg xl:max-w-xl md:mx-10 md:my-12 xl:mx-20 xl:my-24 px-5 py-8 pb-14 md:px-12 md:py-12 xl:px-20 xl:py-16 relative md:rounded-lg md:bg-gradient-radial from-white to-whiteTransparent-300 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3">Putting the human back in humane</h1>
+        <p class="text-base lg:text-xl">We strive to end animal suffering and empower communities to find the heart in humanity</p>
+        <div class="mt-7 md:mx-0 xl:mt-12 flex flex-wrap justify-center md:justify-start">
+          <Button class="mr-4 md:mr-5 lg:mr-10" variant="primary" text="Save a life"/>
+          <Button class="ml-4 md:ml-0" variant="outline" text="Learn more"/>
         </div>
       </div>
 
@@ -18,7 +16,6 @@
 
 <script>
 import Button from './Button.vue';
-import ButtonLink from './ButtonLink.vue';
   export default {
     props: {
         imgSrc: {
@@ -30,6 +27,6 @@ import ButtonLink from './ButtonLink.vue';
           default: 'Image Description'
         }
     },
-    components: { Button, ButtonLink }
+    components: { Button }
 };
 </script>

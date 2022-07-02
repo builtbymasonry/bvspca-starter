@@ -3,3 +3,25 @@
 @tailwind utilities;
 
 /* https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
+
+@layer components {
+  .bg-skew {
+    position: relative;
+    z-index: 1;
+  }
+
+  .bg-skew:before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    content: '';
+    height: 20rem;
+    transform: skewY(-11deg);
+  }
+
+  /* .bg-skew.bg-purple:before {
+    @apply bg-purple-500;
+  } */
+}

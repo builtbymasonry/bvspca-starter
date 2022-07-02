@@ -1,8 +1,102 @@
 <template>
   <div>
     <Hero :imgSrc="heroImg" imgDescr="Hero Image" />
+
     <Stats />
-    <Cards />
+
+    <section class="py-12 md:py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5">
+        <h2
+          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-4xl"
+        >
+          You can make a difference by getting involved today
+        </h2>
+
+        <div
+          class="grid grid-cols-1 gap-10 px-8 sm:grid-cols-1 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-4"
+        >
+          <!-- Card -->
+          <Card
+            :imgSrc="CardImg01"
+            imgAlt="Adopt"
+            title="Adopt"
+            text="Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?"
+          />
+          <!-- /Card -->
+          <!-- Card -->
+          <Card
+            :imgSrc="CardImg02"
+            imgAlt="Volunteer"
+            title="Volunteer"
+            text="The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses."
+          />
+          <!-- /Card -->
+          <!-- Card -->
+          <Card
+            :imgSrc="CardImg03"
+            imgAlt="Foster"
+            title="Foster"
+            text="We’re saving more babies than ever, and one of the best ways for you to help is to become a foster."
+          />
+          <!-- /Card -->
+          <!-- Card -->
+          <Card
+            :imgSrc="CardImg04"
+            imgAlt="Get kids involved"
+            title="Get kids involved"
+            text="Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!"
+          />
+          <!-- /Card -->
+        </div>
+
+        <div class="mt-16 text-center">
+          <Button variant="primary" text="See all ways to get involved" />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-skew bg-purple py-12 text-white lg:py-20">
+      <div class="mx-auto max-w-7xl px-5">
+        <h2
+          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-4xl"
+        >
+          Featured pets
+        </h2>
+
+        <div
+          class="grid grid-cols-1 gap-10 px-0 sm:px-8 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-3"
+        >
+          <PostCard
+            :imgSrc="PostCardImg01"
+            imgAlt="Chewie fka Monkey"
+            title="Chewie fka Monkey"
+            text="Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well …"
+          />
+          <PostCard
+            :imgSrc="PostCardImg02"
+            imgAlt="Slim aka Spunk"
+            title="Slim aka Spunk"
+            text="Slim (aka Spunk) is a big fellow with an equally big heart! This wonderful guy is bonded with Magic, on whom he relies for comfort and love. As a bonded …"
+          />
+          <PostCard
+            :imgSrc="PostCardImg03"
+            imgAlt="Boo Boo"
+            title="Boo Boo"
+            text="Boo Boo loves tennis balls! He likes to play with them, walk with them, and swim in our doggie pools with them. If you have a stash of tennis balls, Boo Boo …"
+          />
+        </div>
+
+        <div class="mt-16 text-center">
+          <Button
+            class="mx-2 mb-8 md:mb-0"
+            variant="secondary"
+            text="All adoptable dogs"
+          />
+          <Button class="mx-2" variant="secondary" text="All adoptable cats" />
+        </div>
+      </div>
+    </section>
+
     <section class="py-10">
       <div class="mx-auto max-w-5xl px-5">
         <div class="flex flex-col-reverse md:flex-row">
@@ -54,11 +148,20 @@
 import Hero from "@/components/Hero.vue";
 import heroImg from "@/assets/img/hero-image-01.jpg";
 import Stats from "@/components/Stats.vue";
-import Cards from "@/components/Cards.vue";
+import Card from "@/components/Card.vue";
+import CardImg01 from "@/assets/img/icon-pet.svg";
+import CardImg02 from "@/assets/img/icon-volunteer.svg";
+import CardImg03 from "@/assets/img/icon-dog-house.svg";
+import CardImg04 from "@/assets/img/icon-father-and-son.svg";
+import PostCard from "@/components/PostCard.vue";
+import PostCardImg01 from "@/assets/img/img-pet-01.jpg";
+import PostCardImg02 from "@/assets/img/img-pet-02.jpg";
+import PostCardImg03 from "@/assets/img/img-pet-03.jpg";
 
-import MarqueeSlider from "../components/MarqueeSlider.vue";
-import Carousel from "../components/Carousel.vue";
-import ButtonLink from "../components/ButtonLink.vue";
+import MarqueeSlider from "@/components/MarqueeSlider.vue";
+import Carousel from "@/components/Carousel.vue";
+import Button from "@/components/Button.vue";
+import ButtonLink from "@/components/ButtonLink.vue";
 
 import slideImg01 from "@/assets/img/slide01.jpg";
 import slideImg02 from "@/assets/img/slide02.jpg";
@@ -103,16 +206,25 @@ export default {
     return {
       carouselSlides,
       marqueeSlides,
-      heroImg
+      heroImg,
+      CardImg01,
+      CardImg02,
+      CardImg03,
+      CardImg04,
+      PostCardImg01,
+      PostCardImg02,
+      PostCardImg03
     };
   },
   components: {
     MarqueeSlider,
     Carousel,
+    Button,
     ButtonLink,
     Hero,
     Stats,
-    Cards
+    Card,
+    PostCard
   }
 };
 </script>
