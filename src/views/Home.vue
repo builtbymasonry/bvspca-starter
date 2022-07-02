@@ -4,13 +4,13 @@
     <Stats />
     <Cards />
     <section class="py-10">
-      <div class="px-5 max-w-5xl mx-auto">
+      <div class="mx-auto max-w-5xl px-5">
         <div class="flex flex-col-reverse md:flex-row">
           <div class="w-auto md:w-1/2">
             <div
-              class="text-xs leading-loose text-center md:text-left md:pr-16"
+              class="text-center text-xs leading-loose md:pr-16 md:text-left"
             >
-              <h2 class="text-2xl md:text-4xl font-bold mb-4">
+              <h2 class="mb-4 text-2xl font-bold md:text-4xl">
                 A second chance at nine lives
               </h2>
               <p>
@@ -36,8 +36,8 @@
         </div>
       </div>
     </section>
-    <section class="py-10 bg-white hidden sm:block">
-      <h2 class="px-5 mb-5 text-center text-2xl lg:text-4xl font-bold">
+    <section class="hidden bg-white py-10 sm:block">
+      <h2 class="mb-5 px-5 text-center text-2xl font-bold lg:text-4xl">
         Thank you to our wonderful sponsors!
       </h2>
       <div class="mb-10">
