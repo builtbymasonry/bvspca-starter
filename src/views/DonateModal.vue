@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Modal>
+  <Modal>
+    <div class="mx-auto max-w-[1140px]">
       <!-- mobile version -->
       <div class="block md:hidden">
         <form class="mx-auto max-w-md">
@@ -129,7 +129,7 @@
                   v-slot="{ checked }"
                 >
                   <div
-                    class="mb-[30px] cursor-pointer rounded-2xl border-2 border-transparent p-[20px] text-black shadow outline-none focus:outline-none lg:px-[30px] lg:py-[25px]"
+                    class="mb-[30px] cursor-pointer rounded-2xl border-2 border-transparent p-[20px] text-black shadow outline-none focus:outline-none focus:ring-0 lg:px-[30px] lg:py-[25px]"
                     :class="[checked ? 'border-orange' : '']"
                   >
                     <div class="flex">
@@ -312,8 +312,8 @@
           </div>
         </form>
       </div>
-    </Modal>
-  </div>
+    </div>
+  </Modal>
 </template>
 <script setup>
 import { ref } from "vue";
@@ -321,6 +321,7 @@ import Modal from "@/components/Modal.vue";
 import Input from "@/components/Input.vue";
 import Checkbox from "@/components/Checkbox.vue";
 import Select from "@/components/Select.vue";
+import Button from "@/components/Button.vue";
 
 import img from "@/assets/img/donate-img01.jpg";
 import {
@@ -329,7 +330,6 @@ import {
   RadioGroupOption,
   RadioGroupDescription
 } from "@headlessui/vue";
-import Button from "@/components/Button.vue";
 
 const amounts = [
   {
