@@ -30,7 +30,7 @@
       },
       variant: {
         type: String,
-        default: "normal"
+        default: "primary"
       },
       arrow: {
         type: Boolean,
@@ -40,15 +40,15 @@
     computed: {
       btnClass() {
         return {
-          "inline-flex items-center justify-center px-6 md:px-8 py-2 whitespace-nowrap border-2 rounded-full shadow text-sm lg:text-lg  leading-none lg:leading-relaxed font-bold text-white transition-all": true
+          "inline-flex items-center justify-center px-6 md:px-8 py-2 whitespace-nowrap border-2 rounded-full shadow text-sm lg:text-lg leading-none lg:leading-relaxed font-bold  transition-all": true
         }
       },
 
       btnVariants() {
         return {
-          "bg-red border-transparent hover:bg-red-dark": this.variant === "primary",
-          "bg-orange border-transparent text-purple hover:bg-orange-dark": this.variant === "secondary",
-          "border-red text-red hover:border-red-dark hover:bg-red-dark hover:text-white": this.variant === "outline"
+          "bg-red border-transparent hover:bg-red-dark text-white": this.variant === "primary",
+          "bg-orange border-transparent hover:bg-orange-dark text-purple": this.variant === "secondary",
+          "border-red hover:border-red-dark hover:bg-red-dark text-red hover:text-white": this.variant === "outline"
         }
       }
     }
