@@ -6,10 +6,8 @@
     <h3 class="font-bold text-2xl mb-2">{{props.title}}</h3>
     <p class="mb-8 text-sm leading-loose">{{props.text}}</p>
     <div class="flex mb-9">
-        <span class="mr-4 text-xl font-bold">Share:</span>
-        <div class="flex">
-
-        </div>
+        <span class="mr-6 text-xl font-bold">Share:</span>
+        <Socials :socials="socialList" class="space-x-4 text-orange"/>
     </div>
     <ButtonLink variant="outline" text="Learn more"/>
   </div>
@@ -17,6 +15,7 @@
 
 <script setup>
 import ButtonLink from './ButtonLink.vue';
+import Socials from './Socials.vue';
 
 const props = defineProps({
   imgSrc: {
@@ -29,5 +28,20 @@ const props = defineProps({
   },
   title: String,
   text: String
-})
+});
+
+const socialList = [
+  {
+    url: "#",
+    icon: 'facebook'
+  },
+  {
+    url: "#",
+    icon: 'twitter'
+  },
+  {
+    url: "#",
+    icon: 'share'
+  },
+]
 </script>

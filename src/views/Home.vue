@@ -55,7 +55,7 @@
       </div>
     </section>
 
-    <section class="bg-skew bg-purple py-12 text-white lg:py-20">
+    <section class="pt-12 lg:pt-20 pb-5 bg-skew bg-purple text-white ">
       <div class="mx-auto max-w-7xl px-5">
         <h2
           class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-4xl"
@@ -86,13 +86,17 @@
           />
         </div>
 
-        <div class="mt-16 text-center">
+        <div class="mt-16 flex flex-col md:flex-row justify-center items-center">
           <Button
-            class="mx-2 mb-8 md:mb-0"
+            class="mx-7 mb-8 md:mb-0 w-64"
             variant="secondary"
             text="All adoptable dogs"
           />
-          <Button class="mx-2" variant="secondary" text="All adoptable cats" />
+          <Button
+            class="mx-7 mb-8 md:mb-0 w-64"
+            variant="secondary"
+            text="All adoptable cats"
+          />
         </div>
       </div>
     </section>
@@ -130,6 +134,7 @@
         </div>
       </div>
     </section>
+
     <section class="hidden bg-white py-10 sm:block">
       <h2 class="mb-5 px-5 text-center text-2xl font-bold lg:text-4xl">
         Thank you to our wonderful sponsors!
@@ -147,26 +152,29 @@
 <script>
 import Hero from "@/components/Hero.vue";
 import heroImg from "@/assets/img/hero-image-01.jpg";
+
+import Button from "@/components/Button.vue";
+import ButtonLink from "@/components/ButtonLink.vue";
+
 import Stats from "@/components/Stats.vue";
+
 import Card from "@/components/Card.vue";
 import CardImg01 from "@/assets/img/icon-pet.svg";
 import CardImg02 from "@/assets/img/icon-volunteer.svg";
 import CardImg03 from "@/assets/img/icon-dog-house.svg";
 import CardImg04 from "@/assets/img/icon-father-and-son.svg";
+
 import PostCard from "@/components/PostCard.vue";
 import PostCardImg01 from "@/assets/img/img-pet-01.jpg";
 import PostCardImg02 from "@/assets/img/img-pet-02.jpg";
 import PostCardImg03 from "@/assets/img/img-pet-03.jpg";
 
-import MarqueeSlider from "@/components/MarqueeSlider.vue";
 import Carousel from "@/components/Carousel.vue";
-import Button from "@/components/Button.vue";
-import ButtonLink from "@/components/ButtonLink.vue";
-
 import slideImg01 from "@/assets/img/slide01.jpg";
 import slideImg02 from "@/assets/img/slide02.jpg";
 const carouselSlides = [slideImg01, slideImg02, slideImg01, slideImg02];
 
+import MarqueeSlider from "@/components/MarqueeSlider.vue";
 import logo01 from "@/assets/img/sponsors/petco-love.png";
 import logo02 from "@/assets/img/sponsors/discover.png";
 import logo03 from "@/assets/img/sponsors/faegre-drinker.png";

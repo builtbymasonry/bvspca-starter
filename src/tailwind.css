@@ -7,21 +7,21 @@
 @layer components {
   .bg-skew {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 
   .bg-skew:before {
     position: absolute;
-    top: 100%;
+    top: calc(100% - 7rem);
     left: 0;
     right: 0;
     z-index: -1;
     content: '';
-    height: 20rem;
-    transform: skewY(-11deg);
+    height: 14rem;
+    transform: skewY(-5deg);
   }
 
-  /* .bg-skew.bg-purple:before {
-    @apply bg-purple-500;
-  } */
+  .bg-skew.bg-purple:before {
+    background-color: #511C6C;
+  }
 }

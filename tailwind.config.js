@@ -16,12 +16,13 @@ module.exports = {
         '7xl': '74rem'
       },
       minHeight: {
+        '3': '3rem',
+        '4': '4rem',
         '5': '5rem',
         '6': '6rem',
         '7': '7rem'
       },
       fontSize: {
-        'xl': '1.4rem',
         '2xl': '1.6rem',
         '4xl': '2.5rem',
         '6xl': '4rem',
