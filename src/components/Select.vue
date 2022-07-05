@@ -5,7 +5,7 @@
     }}</label>
     <Listbox v-model="selectedOption">
       <div class="relative mt-1 text-sm">
-        <ListboxButton v-slot="{ open }" class="w-full">
+        <ListboxButton v-slot="{ open }" class="w-full focus:outline-none">
           <div
             class="bg-gray relative mt-1 block w-full cursor-pointer border-none py-3 pl-4 pr-5 text-left text-sm leading-[1.215] focus:outline-none"
             :class="open ? ' rounded-t-[10px]' : ' rounded-[10px]'"
@@ -29,17 +29,21 @@
           leave-to-class="opacity-0"
         >
           <ListboxOptions
-            class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[10px]"
+            class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[10px] focus:outline-none"
           >
             <ListboxOption
-              v-slot="{ selected }"
+              v-slot="{ selected, disabled }"
               v-for="option in props.options"
               :key="option.label"
               :value="option.value"
+              :disabled="option.disabled"
               as="template"
             >
               <span
-                :class="[selected ? 'bg-gray-200' : '']"
+                :class="[
+                  selected ? 'bg-gray-200' : '',
+                  disabled ? 'hidden' : ''
+                ]"
                 class="bg-gray block cursor-pointer truncate py-3 px-4 font-bold transition-colors hover:bg-gray-200"
                 >{{ option.label }}</span
               >

@@ -36,7 +36,7 @@
             leave-to="opacity-0 scale-95"
           >
             <DialogPanel
-              class="relative w-full transform rounded-lg bg-white px-8 py-14 text-left align-middle shadow transition-all lg:px-20 lg:pt-20 lg:pb-16"
+              class="relative w-full transform rounded-lg bg-white px-8 py-14 text-left align-middle shadow transition-all xl:px-20 xl:pt-20 xl:pb-16"
             >
               <slot />
 
@@ -112,10 +112,13 @@ function closeModal() {
 }
 function openModal() {
   isOpen.value = true;
+  emit("modalShowed");
 }
 
 const props = defineProps({
   title: String,
   description: String
 });
+
+const emit = defineEmits(["modalShowed"]);
 </script>
