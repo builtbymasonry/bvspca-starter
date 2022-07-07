@@ -22,13 +22,22 @@ module.exports = {
         '6': '6rem',
         '7': '7rem'
       },
+      zIndex: {
+        1: '1',
+        2: '2',
+        3: '3',
+        4: '4',
+        5: '5',
+      },
       fontSize: {
-        '2xl': '1.6rem',
-        '4xl': '2.5rem',
-        '6xl': '4rem',
+        'xl': '1.38rem', /* 22px */
+        '2xl': '1.62rem', /* 26px */
+        '4xl': '2.2rem', /* 35px */
+        '5xl': '2.5rem', /* 40px */
+        '6xl': '4rem', /* 64px */
       },
       lineHeight: {
-        loose: '1.9'
+        lg: '1.9'
       },
       colors: {
         orange: {
@@ -55,17 +64,13 @@ module.exports = {
           light: '#262626',
           DEFAULT: '#1C1C20',
           dark: '#000000'
-        },
-        whiteTransparent: {
-          100: 'rgba(255,255,255,0.1)',
-          200: 'rgba(255,255,255,0.2)',
-          300: 'rgba(255,255,255,0.3)'
         }
       },
       borderRadius: {
         DEFAULT: '1rem',
-        'md': '2rem',
-        'lg': '2.2rem',
+        'sm': '1.75rem', /* 28px */
+        'md': '2rem', /* 32px */
+        'lg': '2.2rem', /* 35px */
       },
       boxShadow: {
         DEFAULT: '2px 2px 8px 0 rgb(0 0 0 / 0.3)',

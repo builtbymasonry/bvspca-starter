@@ -4,7 +4,7 @@
       <!-- desktop version -->
       <div class="hidden lg:block">
         <div class="mb-16">
-          <h2 class="mb-2 text-center text-4xl font-bold text-black">
+          <h2 class="mb-2 text-center text-5xl font-bold text-black">
             Volunteer Application
           </h2>
           <div class="mx-auto max-w-[404px]">
