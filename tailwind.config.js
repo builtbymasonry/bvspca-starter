@@ -10,6 +10,7 @@ module.exports = {
         sans: ['"century-gothic"', ...defaultTheme.fontFamily.sans],
       },
       screens: {
+        'xsm': '480px',
         '2xl': '1440px',
       },
       maxWidth: {

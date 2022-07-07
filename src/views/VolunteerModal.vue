@@ -1,5 +1,5 @@
 <template>
-  <Modal @modalShowed="delayedSetRightColHeight">
+  <Modal buttonText="Volunteer" @modalShowed="delayedSetRightColHeight">
     <div class="mx-auto max-w-[1140px]">
       <!-- desktop version -->
       <div class="hidden lg:block">
@@ -137,6 +137,7 @@
           </div>
         </div>
       </div>
+      <!-- mobile version -->
       <div class="block lg:hidden">
         <div v-if="formPage === 1">
           <h2 class="mb-5 text-center text-xl font-bold text-black">
@@ -340,7 +341,6 @@ const categories = [
     label: "Henry’s Cupboard"
   }
 ];
-
 const locations = [
   {
     value: 0,
@@ -381,7 +381,6 @@ const locations = [
     label: "Eastern Shore Pet Resort"
   }
 ];
-
 const sizes = [
   {
     value: 0,
@@ -416,7 +415,6 @@ const countries = [
   { value: 2, label: "United Kingdom", selected: false },
   { value: 3, label: "Ukraine", selected: false }
 ];
-
 const states = [
   { value: 0, label: "State", selected: true },
   {

@@ -1,5 +1,5 @@
 <template>
-  <Modal>
+  <Modal buttonText="Donate">
     <div class="mx-auto max-w-[1140px]">
       <!-- mobile version -->
       <div class="block md:hidden">
