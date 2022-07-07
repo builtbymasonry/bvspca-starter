@@ -16,8 +16,15 @@
       :placeholder="placeholder"
       :value="value"
       :name="name"
-      class="h-[90px] resize-none"
-      :class="defaultClasslist"
+      :class="[
+        defaultClasslist,
+        `resize-none`,
+        {
+          'h-[90px]': textAreaSize === 'sm',
+          'h-[104px]': textAreaSize === 'md',
+          'h-[190px]': textAreaSize === 'lg'
+        }
+      ]"
     />
   </label>
 </template>
@@ -28,6 +35,10 @@ const props = defineProps({
   name: String,
   placeholder: String,
   value: String,
+  textAreaSize: {
+    type: String,
+    default: "sm"
+  },
   type: {
     default: "text",
     type: String
@@ -35,5 +46,5 @@ const props = defineProps({
 });
 
 const defaultClasslist =
-  "placeholder:text-gray-light bg-gray focus:ring-orange mt-1 block w-full rounded-[10px] border-none px-4 py-3 text-sm leading-none focus:outline-none focus:ring-1";
+  "placeholder:text-gray-light bg-gray focus:ring-orange mt-2 block w-full rounded-[10px] border-none px-4 py-3 text-sm leading-none focus:outline-none focus:ring-1";
 </script>
