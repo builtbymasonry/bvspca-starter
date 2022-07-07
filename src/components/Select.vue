@@ -1,10 +1,10 @@
 <template>
   <div class="w-full">
-    <label v-if="inputLabel" class="select-none text-sm">{{
+    <label v-if="inputLabel" class="block select-none mb-1 text-sm">{{
       inputLabel
     }}</label>
     <Listbox v-model="selectedOption">
-      <div class="relative mt-1 text-sm">
+      <div class="relative text-sm">
         <ListboxButton v-slot="{ open }" class="w-full focus:outline-none">
           <div
             class="bg-gray relative mt-1 block w-full cursor-pointer border-none py-3 pl-4 pr-5 text-left text-sm leading-[1.215] focus:outline-none"

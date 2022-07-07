@@ -1,5 +1,5 @@
 <template>
-  <a class="px-5 md:px-6 pt-8 pb-11 xl:py-12 border-2 border-transparent rounded-md text-center shadow hover:border-orange" href="#0">
+  <a class="px-5 md:px-6 pt-8 pb-11 xl:py-12 border-2 border-transparent rounded-md text-center shadow hover:border-orange bg-white" href="#0">
     <div class="flex align-end pb-1 md:pb-4 min-h-5 md:min-h-7">
       <img class="mx-auto scale-75 md:scale-100" :src="imgSrc" :alt="imgAlt">
     </div>

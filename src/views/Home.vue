@@ -5,9 +5,9 @@
     <Stats />
 
     <section class="py-12 md:py-20 lg:py-28">
-      <div class="mx-auto max-w-7xl px-5">
+      <div class="mx-auto max-w-7xl px-4">
         <h2
-          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-4xl"
+          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
         >
           You can make a difference by getting involved today
         </h2>
@@ -55,10 +55,10 @@
       </div>
     </section>
 
-    <section class="pt-12 lg:pt-20 pb-5 bg-skew bg-purple text-white ">
-      <div class="mx-auto max-w-7xl px-5">
+    <section class="pt-12 lg:pt-20 pb-5 bg-skew bg-purple text-white">
+      <div class="mx-auto max-w-7xl px-4">
         <h2
-          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-4xl"
+          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
         >
           Featured pets
         </h2>
@@ -100,6 +100,97 @@
         </div>
       </div>
     </section>
+
+    <section class="pt-48 sm:pt-60 pb-28 md:pb-0 relative">
+      <div class="absolute top-0 left-0 w-full h-full">
+         <img class="absolute top-0 left-0 w-full h-full object-cover" src="../assets/img/bg-image-01.jpg" alt="image description" />
+      </div>
+
+      <div class="flex mx-auto max-w-5xl px-4 relative z-10">
+        <div class="flex flex-col lg:flex-row overflow-hidden mb-0 md:-mb-32 rounded-sm md:rounded-lg shadow bg-white">
+          <div class="lg:w-[46%] h-80 md:h-96 lg:h-auto relative overflow-hidden">
+            <img class="absolute top-0 left-0 object-cover w-full h-full" src="../assets/img/content-img-01.jpg" alt="image description" />
+          </div>
+          <div class="lg:w-[54%] px-9 sm:px-16 py-9 sm:py-12 pb-14 lg:py-20 text-center lg:text-left">
+            <h3 class="text-xl sm:text-4xl leading-normal font-bold mb-2">We place over 16,000 animals a year</h3>
+            <p class="text-xs leading-loose lg:mr-24">We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.</p>
+            <Button class="mt-10" variant="primary" text="Learn more about our impact"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-16 md:pt-56 pb-24 bg-gray-dark">
+      <div class="mx-auto max-w-5xl px-4">
+        <h2
+          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
+        >
+          For your pet
+        </h2>
+
+        <div
+          class="grid grid-cols-1 gap-10 px-8 sm:grid-cols-1 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-3"
+        >
+          <!-- Card -->
+          <Card
+            :imgSrc="CardImg05"
+            imgAlt="Wellness clinic"
+            title="Wellness clinic"
+            text="Low-cost, quality veterinary services available to the public"
+          />
+          <!-- /Card -->
+          <!-- Card -->
+          <Card
+            :imgSrc="CardImg06"
+            imgAlt="Spay & neuter"
+            title="Spay & neuter"
+            text="Low-cost spay and neutering services for your pet"
+          />
+          <!-- /Card -->
+          <!-- Card -->
+          <Card
+            :imgSrc="CardImg07"
+            imgAlt="Daycare & boarding"
+            title="Daycare & boarding"
+            text="Luxury boarding & daycare for pampered pets"
+          />
+          <!-- /Card -->
+        </div>
+
+        <div class="mt-16 text-center">
+          <Button variant="primary" text="See all pet services" />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 md:py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 flex">
+        <div class="lg:w-2/5 rounded-md overflow-hidden">
+          <img class="w-full" src="../assets/img/content-img-02.jpg" alt="image description" />
+        </div>
+        <div class="lg:w-3/5 px-10 py-10">
+          <h3 class="text-xl sm:text-4xl leading-normal font-bold mb-2">Need help?</h3>
+          <p class="text-xs leading-loose lg:mr-24">Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do</p>
+
+
+
+
+          <Button class="mt-10" variant="primary" text="See all ways to get help"/>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section class="py-10">
       <div class="mx-auto max-w-5xl px-5">
@@ -163,6 +254,9 @@ import CardImg01 from "@/assets/img/icon-pet.svg";
 import CardImg02 from "@/assets/img/icon-volunteer.svg";
 import CardImg03 from "@/assets/img/icon-dog-house.svg";
 import CardImg04 from "@/assets/img/icon-father-and-son.svg";
+import CardImg05 from "@/assets/img/icon-heart-rate.svg";
+import CardImg06 from "@/assets/img/icon-dog.svg";
+import CardImg07 from "@/assets/img/icon-pet-shop.svg";
 
 import PostCard from "@/components/PostCard.vue";
 import PostCardImg01 from "@/assets/img/img-pet-01.jpg";
@@ -219,6 +313,9 @@ export default {
       CardImg02,
       CardImg03,
       CardImg04,
+      CardImg05,
+      CardImg06,
+      CardImg07,
       PostCardImg01,
       PostCardImg02,
       PostCardImg03

@@ -2,8 +2,9 @@
   <a
     :target="target"
     :href="url"
-    :class="[btnClass, btnVariants]"
+    :class="[btnClass, btnSize, btnVariants]"
     :variant="variant"
+    :size="size"
     :arrow="arrow"
     >
     {{ text }}
@@ -32,6 +33,10 @@
         type: String,
         default: "primary"
       },
+      size: {
+        type: String,
+        default: "normal"
+      },
       arrow: {
         type: Boolean,
         default: false
@@ -40,7 +45,14 @@
     computed: {
       btnClass() {
         return {
-          "inline-flex items-center justify-center px-6 md:px-8 py-2 whitespace-nowrap border-2 rounded-full shadow text-sm lg:text-lg leading-none lg:leading-relaxed font-bold  transition-all": true
+          "inline-flex items-center justify-center whitespace-nowrap border-2 rounded-full shadow font-bold transition-all": true
+        }
+      },
+
+      btnSize() {
+        return {
+          "px-6 md:px-8 py-2 h-9 md:h-12 text-sm lg:text-lg leading-normal": this.size === "normal",
+          "px-6 py-2 h-9 text-sm leading-normal": this.size === "small",
         }
       },
 

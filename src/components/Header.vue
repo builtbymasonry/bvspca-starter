@@ -1,6 +1,6 @@
 <template>
   <Popover class="relative z-10 bg-white shadow">
-    <div class="px-3 md:px-6 sm:pl-9 bg-purple text-white hidden xl:block">
+    <div class="px-3 md:px-6 md:pl-9 bg-purple text-white hidden xl:block">
       <div class="flex items-center justify-between min-h-3 py-2 md:space-x-10">
         <!-- sub menu -->
         <PopoverGroup as="subnav" class="hidden md:flex space-x-12">
@@ -10,9 +10,11 @@
             <PopoverButton
               :class="[open ? 'text-orange' : 'text-white', 'group inline-flex items-center text-sm font-bold hover:text-orange focus:outline-none']">
               <span>Locations</span>
-              <ChevronDownIcon
-                :class="[open ? 'text-current' : 'text-orange', 'ml-2 h-5 w-5 group-hover:text-current']"
-                aria-hidden="true" />
+              <span :class="[open ? 'fill-current rotate-0' : 'fill-orange', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
+                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
+                </svg>
+              </span>
             </PopoverButton>
 
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
@@ -38,7 +40,7 @@
         </PopoverGroup>
         <!-- /sub menu -->
 
-        <Socials :socials="socialList" class="space-x-6 text-white" />
+        <Socials :socials="socialList" class="space-x-6" variant="orange" />
       </div>
     </div>
 
@@ -72,9 +74,11 @@
             <PopoverButton
               :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
               <span>For your pet</span>
-              <ChevronDownIcon
-                :class="[open ? 'text-current' : 'text-purple', 'ml-2 h-5 w-5 group-hover:text-current']"
-                aria-hidden="true" />
+              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
+                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
+                </svg>
+              </span>
             </PopoverButton>
 
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
@@ -98,9 +102,11 @@
             <PopoverButton
               :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
               <span>Need help?</span>
-              <ChevronDownIcon
-                :class="[open ? 'text-current' : 'text-purple', 'ml-2 h-5 w-5 group-hover:text-current']"
-                aria-hidden="true" />
+              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
+                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
+                </svg>
+              </span>
             </PopoverButton>
 
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
@@ -124,9 +130,11 @@
             <PopoverButton
               :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
               <span>Get involved</span>
-              <ChevronDownIcon
-                :class="[open ? 'text-current' : 'text-purple', 'ml-2 h-5 w-5 group-hover:text-current']"
-                aria-hidden="true" />
+              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
+                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
+                </svg>
+              </span>
             </PopoverButton>
 
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
@@ -150,9 +158,11 @@
             <PopoverButton
               :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
               <span>About Us</span>
-              <ChevronDownIcon
-                :class="[open ? 'text-current' : 'text-purple', 'ml-2 h-5 w-5 group-hover:text-current']"
-                aria-hidden="true" />
+              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
+                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
+                </svg>
+              </span>
             </PopoverButton>
 
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
@@ -225,6 +235,8 @@
       </div>
     </div>
 
+    <DonateBar/>
+
     <!-- mobile menu -->
     <transition enter-active-class="duration-200 ease-out" enter-from-class="opacity-0 scale-95"
       enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in"
@@ -266,7 +278,14 @@
             </svg>
           </a>
 
-          <Socials :socials="socialList" class="flex justify-center px-3 py-8 space-x-6 text-orange" />
+          <div class="pt-6 pb-14 text-center">
+            <h3 class="text-lg font-bold text-white mb-3">Search</h3>
+            <SearchBar />
+          </div>
+
+          <ButtonLink class="py-2 flex-row-reverse w-full text-white bg-purple-dark" :text="'Back to main menu'" />
+
+          <Socials :socials="socialList" class="flex justify-center px-3 py-8 space-x-6" />
         </div>
         <!-- /mobile menu nav -->
 
@@ -278,14 +297,15 @@
 
 <script setup>
   import SearchBar from "@/components/SearchBar.vue"
+  import DonateBar from "@/components/DonateBar.vue"
   import Button from "@/components/Button.vue"
+  import ButtonLink from "@/components/ButtonLink.vue"
   import Socials from "@/components/Socials.vue"
   import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/vue'
   import {
     MenuIcon,
     XIcon,
   } from '@heroicons/vue/outline'
-  import { ChevronDownIcon } from '@heroicons/vue/solid'
 
   const navForYourPet = [
     {

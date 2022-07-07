@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <a href="#">
         <img class="w-full mb-8 rounded-lg shadow" :src="imgSrc" :alt="imgAlt"/>
     </a>
@@ -7,7 +7,7 @@
     <p class="mb-8 text-sm leading-loose">{{props.text}}</p>
     <div class="flex mb-9">
         <span class="mr-6 text-xl font-bold">Share:</span>
-        <Socials :socials="socialList" class="space-x-4 text-orange"/>
+        <Socials :socials="socialList" class="space-x-4"/>
     </div>
     <ButtonLink variant="outline" text="Learn more"/>
   </div>
