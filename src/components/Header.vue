@@ -1,56 +1,102 @@
 <template>
   <Popover class="relative z-10 bg-white shadow">
-    <div class="px-3 md:px-6 md:pl-9 bg-purple text-white hidden xl:block">
-      <div class="flex items-center justify-between min-h-3 py-2 md:space-x-10">
-        <!-- sub menu -->
-        <PopoverGroup as="subnav" class="hidden md:flex space-x-12">
-          <a href="#" class="inline-flex items-center text-sm font-bold text-white hover:text-orange">Merch</a>
+    <div
+      class="bg-purple hidden items-center justify-between px-3 text-white md:px-6 md:pl-9 xl:flex"
+    >
+      <div class="min-h-3 flex items-center py-2 md:space-x-10">
+        <PopoverGroup as="div" class="hidden space-x-12 md:flex">
+          <div v-for="item in upperNav" :key="item.label">
+            <Popover
+              v-if="item.drop"
+              class="relative inline-flex"
+              v-slot="{ open }"
+            >
+              <PopoverButton
+                :class="[
+                  open ? 'text-orange' : 'text-white',
+                  'hover:text-orange group inline-flex items-center text-sm font-bold transition-colors focus:outline-none'
+                ]"
+              >
+                <span>{{ item.label }}</span>
+                <span
+                  :class="[
+                    open ? 'rotate-0 fill-current' : ' fill-orange rotate-180',
+                    'align-center ml-3 mt-0.5 inline-flex  justify-center group-hover:fill-current'
+                  ]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="7"
+                    viewBox="0 0 10 7"
+                    class="fill-current"
+                  >
+                    <path
+                      d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z"
+                    />
+                  </svg>
+                </span>
+              </PopoverButton>
 
-          <Popover class="inline-flex relative" v-slot="{ open }">
-            <PopoverButton
-              :class="[open ? 'text-orange' : 'text-white', 'group inline-flex items-center text-sm font-bold hover:text-orange focus:outline-none']">
-              <span>Locations</span>
-              <span :class="[open ? 'fill-current rotate-0' : 'fill-orange', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
-                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
-                </svg>
-              </span>
-            </PopoverButton>
-
-            <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
-              enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
-              leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
-              <PopoverPanel class="absolute z-10 lg:-left-9 top-full -ml-4 lg:ml-0 px-2 sm:px-0 max-w-md transform">
-                <div class="rounded-lg rounded-t-none overflow-hidden shadow">
-                  <div class="relative z-10 grid gap-6 px-9 py-9 bg-purple">
-                    <a v-for="item in subnavLocations" :key="item.name" :href="item.href"
-                      class="flex items-start hover:text-orange text-sm font-bold whitespace-nowrap">
-                      {{ item.name }}
-                    </a>
+              <transition
+                enter-active-class="transition ease-out duration-200"
+                enter-from-class="opacity-0 translate-y-1"
+                enter-to-class="opacity-100 translate-y-0"
+                leave-active-class="transition ease-in duration-150"
+                leave-from-class="opacity-100 translate-y-0"
+                leave-to-class="opacity-0 translate-y-1"
+              >
+                <PopoverPanel
+                  class="absolute top-full z-10 -ml-4 max-w-md transform px-2 sm:px-0 lg:-left-9 lg:ml-0"
+                >
+                  <div class="overflow-hidden rounded-lg rounded-t-none shadow">
+                    <div class="bg-purple relative z-10 grid gap-6 px-9 py-9">
+                      <a
+                        v-for="dropItem in item.drop"
+                        :key="dropItem.label"
+                        :href="dropItem.url"
+                        class="hover:text-orange flex items-start whitespace-nowrap text-sm font-bold"
+                      >
+                        {{ dropItem.label }}
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </PopoverPanel>
-            </transition>
-          </Popover>
-
-          <a href="#" class="inline-flex items-center text-sm font-bold text-white hover:text-orange">News & Events</a>
-          <a href="#" class="inline-flex items-center text-sm font-bold text-white hover:text-orange">Contact</a>
-
-          <SearchBar />
+                </PopoverPanel>
+              </transition>
+            </Popover>
+            <a
+              v-else
+              :href="item.url"
+              class="hover:text-orange inline-flex items-center text-sm font-bold text-white"
+              >{{ item.label }}</a
+            >
+          </div>
         </PopoverGroup>
-        <!-- /sub menu -->
-
-        <Socials :socials="socialList" class="space-x-6" variant="orange" />
+        <SearchBar />
       </div>
+      <Socials
+        :socials="socialList"
+        variant="white"
+        iconShadow
+        class="ml-auto space-x-6"
+      />
     </div>
 
     <div class="px-3 md:px-6">
-      <div class="flex items-center justify-between md:justify-end py-1 md:py-6 space-x-4 xl:space-x-12">
+      <div
+        class="flex items-center justify-between space-x-4 py-1 md:justify-end md:py-6 xl:space-x-12"
+      >
         <!-- header logo -->
-        <div class="-my-2 mr-auto max-w-[100px] md:max-w-[150px] lg:max-w-none flex-shrink-0">
+        <div
+          class="-my-2 mr-auto max-w-[100px] flex-shrink-0 md:max-w-[150px] lg:max-w-none"
+        >
           <a href="#">
             <span class="sr-only">Brandywine Valley SPCA</span>
-            <img class="w-auto" src="@/assets/img/logo.svg" alt="Brandywine Valley SPCA" />
+            <img
+              class="w-auto"
+              src="@/assets/img/logo.svg"
+              alt="Brandywine Valley SPCA"
+            />
           </a>
         </div>
         <!-- /header logo -->
@@ -61,7 +107,9 @@
 
         <!-- menu burger -->
         <div class="inline-flex xl:hidden">
-          <PopoverButton class="inline-flex items-center justify-center text-black">
+          <PopoverButton
+            class="inline-flex items-center justify-center text-black"
+          >
             <span class="sr-only">Open menu</span>
             <MenuIcon class="h-10 w-10" aria-hidden="true" />
           </PopoverButton>
@@ -69,138 +117,104 @@
         <!-- /menu burger -->
 
         <!-- main menu -->
-        <PopoverGroup as="nav" class="space-x-10 hidden xl:flex">
-          <Popover class="relative" v-slot="{ open }">
-            <PopoverButton
-              :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
-              <span>For your pet</span>
-              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
-                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
-                </svg>
-              </span>
-            </PopoverButton>
+        <PopoverGroup as="nav" class="hidden space-x-10 xl:flex">
+          <div v-for="item in lowerNav" :key="item.label">
+            <Popover class="relative" v-slot="{ open }">
+              <PopoverButton
+                :class="[
+                  open ? 'text-red' : 'text-dark',
+                  'hover:text-red group inline-flex items-center text-lg font-bold focus:outline-none'
+                ]"
+              >
+                <span>{{ item.label }}</span>
+                <span
+                  :class="[
+                    open ? 'fill-red rotate-0' : 'fill-purple  rotate-180',
+                    'align-center group-hover:fill-red ml-3 mt-0.5  inline-flex justify-center'
+                  ]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="7"
+                    viewBox="0 0 10 7"
+                  >
+                    <path
+                      d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z"
+                    />
+                  </svg>
+                </span>
+              </PopoverButton>
 
-            <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
-              enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
-              leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
-              <PopoverPanel
-                class="absolute z-10 -ml-4 mt-2 transform px-2 max-w-md sm:px-0 lg:ml-0 lg:-left-9 after:content-[''] after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[2.5rem] after:bg-white">
-                <div class="rounded-lg rounded-t-none overflow-hidden shadow">
-                  <div class="relative z-10 grid gap-6 px-9 pt-5 pb-9 bg-white">
-                    <a v-for="item in navForYourPet" :key="item.name" :href="item.href"
-                      class="flex items-start hover:text-red text-sm font-bold whitespace-nowrap">
-                      {{ item.name }}
-                    </a>
+              <transition
+                enter-active-class="transition ease-out duration-200"
+                enter-from-class="opacity-0 translate-y-1"
+                enter-to-class="opacity-100 translate-y-0"
+                leave-active-class="transition ease-in duration-150"
+                leave-from-class="opacity-100 translate-y-0"
+                leave-to-class="opacity-0 translate-y-1"
+              >
+                <PopoverPanel
+                  class="absolute z-10 -ml-4 mt-2 max-w-md transform px-2 after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[2.5rem] after:bg-white after:content-[''] sm:px-0 lg:-left-9 lg:ml-0"
+                >
+                  <div class="overflow-hidden rounded-lg rounded-t-none shadow">
+                    <div
+                      class="relative z-10 grid gap-6 bg-white px-9 pt-5 pb-9"
+                    >
+                      <a
+                        v-for="dropItem in item.drop"
+                        :key="dropItem.name"
+                        :href="dropItem.url"
+                        class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold"
+                      >
+                        {{ dropItem.label }}
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </PopoverPanel>
-            </transition>
-          </Popover>
-
-          <Popover class="relative" v-slot="{ open }">
-            <PopoverButton
-              :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
-              <span>Need help?</span>
-              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
-                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
-                </svg>
-              </span>
-            </PopoverButton>
-
-            <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
-              enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
-              leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
-              <PopoverPanel
-                class="absolute z-10 -ml-4 mt-2 transform px-2 max-w-md sm:px-0 lg:ml-0 lg:-left-9 after:content-[''] after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[2.5rem] after:bg-white">
-                <div class="rounded-lg rounded-t-none overflow-hidden shadow">
-                  <div class="relative z-10 grid gap-6 px-9 pt-5 pb-9 bg-white">
-                    <a v-for="item in navNeedHelp" :key="item.name" :href="item.href"
-                      class="flex items-start hover:text-red text-sm font-bold whitespace-nowrap">
-                      {{ item.name }}
-                    </a>
-                  </div>
-                </div>
-              </PopoverPanel>
-            </transition>
-          </Popover>
-
-          <Popover class="relative" v-slot="{ open }">
-            <PopoverButton
-              :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
-              <span>Get involved</span>
-              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
-                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
-                </svg>
-              </span>
-            </PopoverButton>
-
-            <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
-              enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
-              leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
-              <PopoverPanel
-                class="absolute z-10 -ml-4 mt-2 transform px-2 max-w-md sm:px-0 lg:ml-0 lg:-left-9 after:content-[''] after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[2.5rem] after:bg-white">
-                <div class="rounded-lg rounded-t-none overflow-hidden shadow">
-                  <div class="relative z-10 grid gap-6 px-9 pt-5 pb-9 bg-white">
-                    <a v-for="item in navGetInvolved" :key="item.name" :href="item.href"
-                      class="flex items-start hover:text-red text-sm font-bold whitespace-nowrap">
-                      {{ item.name }}
-                    </a>
-                  </div>
-                </div>
-              </PopoverPanel>
-            </transition>
-          </Popover>
-
-          <Popover class="relative" v-slot="{ open }">
-            <PopoverButton
-              :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
-              <span>About Us</span>
-              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
-                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
-                </svg>
-              </span>
-            </PopoverButton>
-
-            <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
-              enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
-              leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
-              <PopoverPanel
-                class="absolute z-10 -ml-4 mt-2 transform px-2 max-w-md sm:px-0 lg:ml-0 lg:-left-9 after:content-[''] after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[2.5rem] after:bg-white">
-                <div class="rounded-lg rounded-t-none overflow-hidden shadow">
-                  <div class="relative z-10 grid gap-6 px-9 pt-5 pb-9 bg-white">
-                    <a v-for="item in navAboutUs" :key="item.name" :href="item.href"
-                      class="flex items-start hover:text-red text-sm font-bold whitespace-nowrap">
-                      {{ item.name }}
-                    </a>
-                  </div>
-                </div>
-              </PopoverPanel>
-            </transition>
-          </Popover>
+                </PopoverPanel>
+              </transition>
+            </Popover>
+          </div>
         </PopoverGroup>
         <!-- /main menu -->
 
         <!-- header buttons -->
-        <PopoverGroup as="buttons-nav" class="items-center hidden xl:flex">
-          <Popover class="relative z-10" v-slot="{ open }">
+        <PopoverGroup as="buttons-nav" class="hidden items-center xl:flex">
+          <Popover
+            v-for="button in navAdopt"
+            :key="button.label"
+            class="relative z-10"
+            v-slot="{ open }"
+          >
             <PopoverButton class="focus:outline-none">
-              <Button class="mr-9" :class="[open ? 'bg-purple hover:bg-purple' : '']" variant="primary" text="Adopt" />
+              <Button
+                class="mr-9"
+                :class="[open ? 'bg-purple hover:bg-purple' : '']"
+                variant="primary"
+                :text="button.label"
+              />
             </PopoverButton>
 
-            <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
-              enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
-              leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
+            <transition
+              enter-active-class="transition ease-out duration-200"
+              enter-from-class="opacity-0 translate-y-1"
+              enter-to-class="opacity-100 translate-y-0"
+              leave-active-class="transition ease-in duration-150"
+              leave-from-class="opacity-100 translate-y-0"
+              leave-to-class="opacity-0 translate-y-1"
+            >
               <PopoverPanel
-                class="absolute z-10 -ml-4 mt-[1.1rem] transform px-2 max-w-md sm:px-0 lg:ml-0 lg:left-0 after:content-[''] after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white">
-                <div class="rounded-lg rounded-t-none overflow-hidden shadow">
-                  <div class="relative z-10 grid gap-6 px-9 pt-0 pb-9 bg-white">
-                    <a v-for="item in buttonsNavAdopt" :key="item.name" :href="item.href"
-                      class="flex items-start hover:text-red text-sm font-bold whitespace-nowrap">
-                      {{ item.name }}
+                class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:left-0 lg:ml-0"
+              >
+                <div class="overflow-hidden rounded-lg rounded-t-none shadow">
+                  <div class="relative z-10 grid gap-6 bg-white px-9 pt-0 pb-9">
+                    <a
+                      v-for="item in button.drop"
+                      :key="item.label"
+                      :href="item.url"
+                      class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold"
+                    >
+                      {{ item.label }}
                     </a>
                   </div>
                 </div>
@@ -208,22 +222,44 @@
             </transition>
           </Popover>
 
-          <Popover class="relative z-10" v-slot="{ open }">
+          <Popover
+            v-for="button in navDonate"
+            :key="button.label"
+            class="relative z-10"
+            v-slot="{ open }"
+          >
             <PopoverButton class="focus:outline-none">
-              <Button :class="[open ? 'bg-red hover:bg-red border-red hover:border-red !text-white' : '']"
-                variant="outline" text="Donate" />
+              <Button
+                :class="[
+                  open
+                    ? 'bg-red hover:bg-red border-red hover:border-red !text-white'
+                    : ''
+                ]"
+                variant="outline"
+                :text="button.label"
+              />
             </PopoverButton>
 
-            <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
-              enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
-              leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
+            <transition
+              enter-active-class="transition ease-out duration-200"
+              enter-from-class="opacity-0 translate-y-1"
+              enter-to-class="opacity-100 translate-y-0"
+              leave-active-class="transition ease-in duration-150"
+              leave-from-class="opacity-100 translate-y-0"
+              leave-to-class="opacity-0 translate-y-1"
+            >
               <PopoverPanel
-                class="absolute z-10 -ml-4 mt-[1.1rem] transform px-2 max-w-md sm:px-0 lg:ml-0 lg:right-0 after:content-[''] after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white">
-                <div class="rounded-lg rounded-t-none overflow-hidden shadow">
-                  <div class="relative z-10 grid gap-6 px-9 pt-0 pb-9 bg-white">
-                    <a v-for="item in buttonsNavDonate" :key="item.name" :href="item.href"
-                      class="flex items-start justify-end hover:text-red text-sm font-bold whitespace-nowrap">
-                      {{ item.name }}
+                class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:right-0 lg:ml-0"
+              >
+                <div class="overflow-hidden rounded-lg rounded-t-none shadow">
+                  <div class="relative z-10 grid gap-6 bg-white px-9 pt-0 pb-9">
+                    <a
+                      v-for="item in button.drop"
+                      :key="item.label"
+                      :href="item.url"
+                      class="hover:text-red flex items-start justify-end whitespace-nowrap text-sm font-bold"
+                    >
+                      {{ item.label }}
                     </a>
                   </div>
                 </div>
@@ -235,25 +271,42 @@
       </div>
     </div>
 
-    <DonateBar/>
+    <DonateBar />
 
     <!-- mobile menu -->
-    <transition enter-active-class="duration-200 ease-out" enter-from-class="opacity-0 scale-95"
-      enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in"
-      leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
-      <PopoverPanel focus class="absolute top-0 inset-x-0 transition transform origin-top-right xl:hidden">
-
+    <transition
+      enter-active-class="duration-200 ease-out"
+      enter-from-class="opacity-0 scale-95"
+      enter-to-class="opacity-100 scale-100"
+      leave-active-class="duration-100 ease-in"
+      leave-from-class="opacity-100 scale-100"
+      leave-to-class="opacity-0 scale-95"
+    >
+      <PopoverPanel
+        focus
+        class="absolute inset-x-0 top-0 origin-top-right transform transition xl:hidden"
+      >
         <!-- mobile menu header -->
-        <div class="px-3 md:px-6 py-1 md:py-6 bg-white">
-          <div class="flex items-center justify-between space-x-4 xl:space-x-12">
-            <div class="-my-2 mr-auto max-w-[100px] md:max-w-[150px] lg:max-w-none flex-shrink-0">
+        <div class="bg-white px-3 py-1 md:px-6 md:py-6">
+          <div
+            class="flex items-center justify-between space-x-4 xl:space-x-12"
+          >
+            <div
+              class="-my-2 mr-auto max-w-[100px] flex-shrink-0 md:max-w-[150px] lg:max-w-none"
+            >
               <a href="#">
                 <span class="sr-only">Brandywine Valley SPCA</span>
-                <img class="w-auto" src="@/assets/img/logo.svg" alt="Brandywine Valley SPCA" />
+                <img
+                  class="w-auto"
+                  src="@/assets/img/logo.svg"
+                  alt="Brandywine Valley SPCA"
+                />
               </a>
             </div>
             <Button class="xl:hidden" variant="primary" text="Donate" />
-            <PopoverButton class="inline-flex items-center justify-center text-black">
+            <PopoverButton
+              class="inline-flex items-center justify-center text-black"
+            >
               <span class="sr-only">Close menu</span>
               <XIcon class="h-10 w-10" aria-hidden="true" />
             </PopoverButton>
@@ -262,33 +315,129 @@
         <!-- /mobile menu header -->
 
         <!-- mobile menu nav -->
-        <div class="bg-purple divide-y divide-purple-dark">
-          <nav class="divide-y divide-purple-dark text-lg font-bold text-white">
-            <a v-for="item in mobileNav" :key="item.name" :href="item.href"
-              class="p-3 flex items-center hover:text-orange">
-              {{ item.name }}
+        <div class="bg-purple">
+          <nav class="text-lg font-bold text-white">
+            <div v-for="item in navMobile" :key="item.label">
+              <a
+                v-show="activeMobileDrop === null"
+                v-on="{ click: item.drop ? handleNavClick : null }"
+                :id="item.drop ? generateId(item.label) : null"
+                :href="item.url"
+                class="hover:text-orange border-purple-dark flex cursor-pointer select-none items-center border-b-[1px] p-3 transition-colors"
+              >
+                {{ item.label }}
+
+                <svg
+                  v-if="item.drop"
+                  class="fill-orange group-hover:fill-orange mt-0.5 ml-auto inline-flex transition-all"
+                  width="13"
+                  height="10"
+                  viewBox="0 0 13 10"
+                >
+                  <path
+                    d="M5.374.147C4.741-.18 4.457.06 4.37.65v1.79H1.157C.35 2.462 0 2.877 0 3.576v3.057c0 .633.393.982 1 1.026h3.392V9.23c0 .611.262.917.96.699C7.711 8.51 10 7.07 12.318 5.519c.35-.35.284-.633-.022-.917C10.07 3.052 7.754 1.589 5.374.147z"
+                  />
+                </svg>
+              </a>
+              <ul
+                v-show="activeMobileDrop === generateId(item.label)"
+                class="divide-purple-dark divide-y text-lg font-bold text-white"
+              >
+                <li v-for="subItem in item.drop" :key="subItem.label">
+                  <a
+                    :href="subItem.url"
+                    class="hover:text-orange flex items-center p-3"
+                    >{{ subItem.label }}</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- mobile search bar -->
+            <a
+              v-show="activeMobileDrop === null"
+              @click="handleNavClick"
+              :id="'SearchBar'"
+              class="hover:text-orange border-purple-dark flex cursor-pointer select-none items-center justify-between border-b-[1px] p-3 transition-colors"
+            >
+              <span>Search</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-orange ml-3 h-3 w-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="3"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
             </a>
+            <div
+              class="px-7 pt-5 pb-14"
+              v-show="activeMobileDrop === 'SearchBar'"
+            >
+              <h4 class="mb-4 text-center text-lg font-bold text-white">
+                Search
+              </h4>
+              <div
+                class="relative mx-auto flex w-full max-w-[450px] items-center justify-center rounded-full border-2 border-white"
+              >
+                <input
+                  class="placeholder:text-gray-light w-full border-none bg-transparent px-5 py-4 text-sm text-white focus:ring-transparent xl:px-3 xl:py-[0.35rem] xl:text-xs"
+                  type="text"
+                  autocomplete="off"
+                  spellcheck="false"
+                  aria-live="polite"
+                  placeholder="Hello, is it me you’re looking for?"
+                />
+                <button
+                  aria-label="search"
+                  class="text-orange mr-4 xl:mr-2 xl:text-white"
+                  type="submit"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 xl:h-3 xl:w-3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <!-- /mobile search bar -->
           </nav>
 
-          <a class="p-3 flex items-center justify-between text-white hover:text-orange" href="#">
-            <span class="text-lg font-bold">Search</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-3 mt-1" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="3">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </a>
-
-          <div class="pt-6 pb-14 text-center">
-            <h3 class="text-lg font-bold text-white mb-3">Search</h3>
-            <SearchBar />
+          <div
+            v-show="activeMobileDrop !== null"
+            class="bg-purple-dark py-2 text-center"
+          >
+            <ButtonLink
+              class="text-white"
+              reverse
+              text="Back to main menu"
+              @click="handleDropClose"
+            />
           </div>
 
-          <ButtonLink class="py-2 flex-row-reverse w-full text-white bg-purple-dark" :text="'Back to main menu'" />
-
-          <Socials :socials="socialList" class="flex justify-center px-3 py-8 space-x-6" />
+          <Socials
+            :socials="socialList"
+            iconShadow
+            class="flex justify-center space-x-6 px-3 py-8"
+          />
         </div>
         <!-- /mobile menu nav -->
-
       </PopoverPanel>
     </transition>
     <!-- /mobile menu -->
@@ -296,257 +445,293 @@
 </template>
 
 <script setup>
-  import SearchBar from "@/components/SearchBar.vue"
-  import DonateBar from "@/components/DonateBar.vue"
-  import Button from "@/components/Button.vue"
-  import ButtonLink from "@/components/ButtonLink.vue"
-  import Socials from "@/components/Socials.vue"
-  import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/vue'
-  import {
-    MenuIcon,
-    XIcon,
-  } from '@heroicons/vue/outline'
+import { ref } from "vue";
 
-  const navForYourPet = [
-    {
-      name: 'Wellness clinic',
-      href: '#',
-    },
-    {
-      name: 'Clinic staff',
-      href: '#',
-    },
-    {
-      name: 'Spay & neuter',
-      href: '#',
-    },
-    {
-      name: 'Community cats',
-      href: '#',
-    },
-    {
-      name: 'Daycare & boarding',
-      href: '#',
-    },
-    {
-      name: 'Pet insurance',
-      href: '#',
-    },
-    {
-      name: 'End of life',
-      href: '#',
-    },
-  ];
-  const navNeedHelp = [
-    {
-      name: 'Lost/Found pets',
-      href: '#',
-    },
-    {
-      name: 'Reporting cruelty',
-      href: '#',
-    },
-    {
-      name: 'Rehoming consultation',
-      href: '#',
-    },
-    {
-      name: 'Pet food assistance',
-      href: '#',
-    },
-    {
-      name: 'Domestic violence survivors',
-      href: '#',
-    },
-    {
-      name: 'Behavior resources',
-      href: '#',
-    },
-  ];
-  const navGetInvolved = [
-    {
-      name: 'Volunteer',
-      href: '#',
-    },
-    {
-      name: 'Foster',
-      href: '#',
-    },
-    {
-      name: 'For kids',
-      href: '#',
-    },
-    {
-      name: 'Community service',
-      href: '#',
-    },
-    {
-      name: 'Therapy pets',
-      href: '#',
-    },
-  ];
-  const navAboutUs = [
-    {
-      name: 'Our impact',
-      href: '#',
-    },
-    {
-      name: 'Second chance program',
-      href: '#',
-    },
-    {
-      name: 'Animal rescue center',
-      href: '#',
-    },
-    {
-      name: 'Cat retreat',
-      href: '#',
-    },
-    {
-      name: 'Statistics',
-      href: '#',
-    },
-  ];
-  const buttonsNavAdopt = [
-    {
-      name: 'Adopt a dog',
-      href: '#',
-    },
-    {
-      name: 'Adopt a cat',
-      href: '#',
-    },
-    {
-      name: 'Small animals',
-      href: '#',
-    },
-    {
-      name: 'Adoption info',
-      href: '#',
-    },
-  ];
-  const buttonsNavDonate = [
-    {
-      name: 'Monthly gift',
-      href: '#',
-    },
-    {
-      name: 'Honor a life',
-      href: '#',
-    },
-    {
-      name: 'Wish list',
-      href: '#',
-    },
-    {
-      name: 'Corporate sponsorship',
-      href: '#',
-    },
-    {
-      name: 'Planning giving',
-      href: '#',
-    },
-    {
-      name: 'All the ways to give',
-      href: '#',
-    },
-  ];
-  const subnavLocations = [
-    {
-      name: 'Dover',
-      href: '#',
-    },
-    {
-      name: 'New Castle',
-      href: '#',
-    },
-    {
-      name: 'Georgetown',
-      href: '#',
-    },
-    {
-      name: 'West Chester',
-      href: '#',
-    },
-    {
-      name: 'Malvern',
-      href: '#',
-    },
-    {
-      name: 'Plymouth Meeting',
-      href: '#',
-    },
-    {
-      name: 'Animal Rescue Center',
-      href: '#',
-    },
-    {
-      name: 'Eastern Shore Pet Resort',
-      href: '#',
-    },
-  ];
-  const mobileNav = [
-    {
-      name: 'Adopt',
-      href: '#',
-    },
-    {
-      name: 'Donate',
-      href: '#',
-    },
-    {
-      name: 'For your pet',
-      href: '#',
-    },
-    {
-      name: 'Need help?',
-      href: '#',
-    },
-    {
-      name: 'Get involved',
-      href: '#',
-    },
-    {
-      name: 'About us',
-      href: '#',
-    },
-    {
-      name: 'Merch',
-      href: '#',
-    },
-    {
-      name: 'Locations',
-      href: '#',
-    },
-    {
-      name: 'News & events',
-      href: '#',
-    },
-    {
-      name: 'Contact',
-      href: '#',
-    },
-  ];
-  const socialList = [
-    {
-      url: "#",
-      icon: 'facebook'
-    },
-    {
-      url: "#",
-      icon: 'instagram'
-    },
-    {
-      url: "#",
-      icon: 'twitter'
-    },
-    {
-      url: "#",
-      icon: 'tiktok'
-    },
-    {
-      url: "#",
-      icon: 'bitcoin'
-    },
-  ];
+import SearchBar from "@/components/SearchBar.vue";
+import DonateBar from "@/components/DonateBar.vue";
+import Button from "@/components/Button.vue";
+import ButtonLink from "@/components/ButtonLink.vue";
+import Socials from "@/components/Socials.vue";
+import {
+  Popover,
+  PopoverButton,
+  PopoverGroup,
+  PopoverPanel
+} from "@headlessui/vue";
+import { MenuIcon, XIcon } from "@heroicons/vue/outline";
+
+const activeMobileDrop = ref(null);
+
+const handleDropClose = (e) => {
+  e.preventDefault();
+  activeMobileDrop.value = null;
+  scrollToTop();
+};
+
+const handleNavClick = (e) => {
+  e.preventDefault();
+  activeMobileDrop.value = e.currentTarget.id;
+  scrollToTop();
+};
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" })
+};
+
+const generateId = (str) =>
+  str
+    .split(" ")
+    .map(
+      (word) => word.charAt(0).toUpperCase() + word.substring(1).toLowerCase()
+    )
+    .join()
+    .replace(/[^a-zA-Z]/g, "");
+
+const upperNav = [
+  {
+    label: "Merch",
+    url: "#!"
+  },
+  {
+    label: "Locations",
+    drop: [
+      {
+        label: "Dover",
+        url: "#!"
+      },
+      {
+        label: "New Castle",
+        url: "#!"
+      },
+      {
+        label: "Georgetown",
+        url: "#!"
+      },
+      {
+        label: "West Chester",
+        url: "#!"
+      },
+      {
+        label: "Malvern",
+        url: "#!"
+      },
+      {
+        label: "Plymouth Meeting",
+        url: "#!"
+      },
+      {
+        label: "Animal Rescue Center",
+        url: "#!"
+      },
+      {
+        label: "Eastern Shore Pet Resort",
+        url: "#!"
+      }
+    ]
+  },
+  {
+    label: "News & Events",
+    url: "#!"
+  },
+  {
+    label: "Contact",
+    url: "#!"
+  }
+];
+
+const lowerNav = [
+  {
+    label: "For your pet",
+    drop: [
+      {
+        label: "Wellness clinic",
+        url: "#!"
+      },
+      {
+        label: "Clinic staff",
+        url: "#!"
+      },
+      {
+        label: "Spay & neuter",
+        url: "#!"
+      },
+      {
+        label: "Community cats",
+        url: "#!"
+      },
+      {
+        label: "Daycare & boarding",
+        url: "#!"
+      },
+      {
+        label: "Pet insurance",
+        url: "#!"
+      },
+      {
+        label: "End of life",
+        url: "#!"
+      }
+    ]
+  },
+  {
+    label: "Need help?",
+    drop: [
+      {
+        label: "Lost/Found pets",
+        url: "#!"
+      },
+      {
+        label: "Reporting cruelty",
+        url: "#!"
+      },
+      {
+        label: "Rehoming consultation",
+        url: "#!"
+      },
+      {
+        label: "Pet food assistance",
+        url: "#!"
+      },
+      {
+        label: "Domestic violence survivors",
+        url: "#!"
+      },
+      {
+        label: "Behavior resources",
+        url: "#!"
+      }
+    ]
+  },
+  {
+    label: "Get involved",
+    drop: [
+      {
+        label: "Volunteer",
+        url: "#!"
+      },
+      {
+        label: "Foster",
+        url: "#!"
+      },
+      {
+        label: "For kids",
+        url: "#!"
+      },
+      {
+        label: "Community service",
+        url: "#!"
+      },
+      {
+        label: "Therapy pets",
+        url: "#!"
+      }
+    ]
+  },
+  {
+    label: "About us",
+    drop: [
+      {
+        label: "Our impact",
+        url: "#!"
+      },
+      {
+        label: "Second chance program",
+        url: "#!"
+      },
+      {
+        label: "Animal rescue center",
+        url: "#!"
+      },
+      {
+        label: "Cat retreat",
+        url: "#!"
+      },
+      {
+        label: "Statistics",
+        url: "#!"
+      }
+    ]
+  }
+];
+
+const navAdopt = [
+  {
+    label: "Adopt",
+    drop: [
+      {
+        label: "Adopt a dog",
+        url: "#!"
+      },
+      {
+        label: "Adopt a cat",
+        url: "#!"
+      },
+      {
+        label: "Small animals",
+        url: "#!"
+      },
+      {
+        label: "Adoption info",
+        url: "#!"
+      }
+    ]
+  }
+];
+
+const navDonate = [
+  {
+    label: "Donate",
+    drop: [
+      {
+        label: "Monthly gift",
+        url: "#!"
+      },
+      {
+        label: "Honor a life",
+        url: "#!"
+      },
+      {
+        label: "Wish list",
+        url: "#!"
+      },
+      {
+        label: "Corporate sponsorship",
+        url: "#!"
+      },
+      {
+        label: "Planning giving",
+        url: "#!"
+      },
+      {
+        label: "All the ways to give",
+        url: "#!"
+      }
+    ]
+  }
+];
+
+const navMobile = [...navAdopt, ...navDonate, ...lowerNav, ...upperNav];
+
+const socialList = [
+  {
+    url: "#",
+    icon: "facebook"
+  },
+  {
+    url: "#",
+    icon: "instagram"
+  },
+  {
+    url: "#",
+    icon: "twitter"
+  },
+  {
+    url: "#",
+    icon: "tiktok"
+  },
+  {
+    url: "#",
+    icon: "bitcoin"
+  }
+];
 </script>

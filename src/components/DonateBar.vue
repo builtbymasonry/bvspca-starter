@@ -1,15 +1,62 @@
 <template>
-    <div class="px-3 md:px-6 hidden lg:block bg-orange">
-        <div class="flex items-center py-4 md:space-x-10">
-            <h3 class="text-lg font-bold">Every contribution makes a difference</h3>
+  <div class="bg-orange hidden px-3 md:px-6 lg:block">
+    <div class="flex items-center py-4 md:space-x-10">
+      <h3 class="text-lg font-bold">Every contribution makes a difference</h3>
 
-            <form class="flex items-center space-x-5">
-                <Input type="number" value="25" />
-                <Select :options="monthly" />
-                <Button class="" text="Donate" size="small" variant="primary" />
-            </form>
+      <form class="flex space-x-5">
+        <div>
+          <Select
+            variant="outline"
+            size="sm"
+            :options="[
+              {
+                value: 25,
+                label: '$25',
+                selected: true
+              },
+              {
+                value: 50,
+                label: '$50'
+              },
+              {
+                value: 75,
+                label: '$75'
+              },
+              {
+                value: 100,
+                label: '$100'
+              },
+              {
+                value: 250,
+                label: '$250'
+              },
+              {
+                value: 500,
+                label: '$500'
+              }
+            ]"
+          />
         </div>
+        <div>
+          <Select
+            variant="outline"
+            :options="[
+              {
+                value: 1,
+                label: 'Monthly',
+                selected: true
+              },
+              {
+                value: 2,
+                label: 'Weekly'
+              }
+            ]"
+          />
+        </div>
+        <Button class="" text="Donate" size="small" variant="primary" />
+      </form>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -19,42 +66,13 @@ import Button from "@/components/Button.vue";
 
 const monthly = [
   {
-    value: 0,
-    label: "Select",
-    disabled: true,
+    value: 1,
+    label: "Monthly",
     selected: true
   },
   {
-    value: 1,
-    label: "Dover"
-  },
-  {
     value: 2,
-    label: "New Castle"
-  },
-  {
-    value: 3,
-    label: "Georgetown"
-  },
-  {
-    value: 4,
-    label: "West Chester"
-  },
-  {
-    value: 5,
-    label: "Malvern"
-  },
-  {
-    value: 6,
-    label: "Plymouth Meeting"
-  },
-  {
-    value: 7,
-    label: "Animal Rescue Center"
-  },
-  {
-    value: 8,
-    label: "Eastern Shore Pet Resort"
+    label: "Weekly"
   }
 ];
 </script>
