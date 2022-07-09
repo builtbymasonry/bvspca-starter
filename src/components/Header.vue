@@ -3,18 +3,14 @@
     <div class="px-3 md:px-6 md:pl-9 bg-purple text-white hidden xl:block">
       <div class="flex items-center justify-between min-h-3 py-2 md:space-x-10">
         <!-- sub menu -->
-        <PopoverGroup as="subnav" class="hidden md:flex space-x-12">
+        <PopoverGroup as="div" class="hidden md:flex space-x-12">
           <a href="#" class="inline-flex items-center text-sm font-bold text-white hover:text-orange">Merch</a>
 
           <Popover class="inline-flex relative" v-slot="{ open }">
             <PopoverButton
               :class="[open ? 'text-orange' : 'text-white', 'group inline-flex items-center text-sm font-bold hover:text-orange focus:outline-none']">
-              <span>Locations</span>
-              <span :class="[open ? 'fill-current rotate-0' : 'fill-orange', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
-                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
-                </svg>
-              </span>
+              Locations
+              <BaseIcon name="angleDown" :class="[open ? 'rotate-180' : '', 'w-[10px] h-[10px] ml-3 mt-1']" />
             </PopoverButton>
 
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
@@ -40,12 +36,12 @@
         </PopoverGroup>
         <!-- /sub menu -->
 
-        <Socials :socials="socialList" class="space-x-6" variant="orange" />
+        <Socials :socials="socialList" class="space-x-6"/>
       </div>
     </div>
 
     <div class="px-3 md:px-6">
-      <div class="flex items-center justify-between md:justify-end py-1 md:py-6 space-x-4 xl:space-x-12">
+      <div class="flex items-center justify-between md:justify-end py-1 md:py-6 space-x-4 xl:space-x-14">
         <!-- header logo -->
         <div class="-my-2 mr-auto max-w-[100px] md:max-w-[150px] lg:max-w-none flex-shrink-0">
           <a href="#">
@@ -74,11 +70,7 @@
             <PopoverButton
               :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
               <span>For your pet</span>
-              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
-                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
-                </svg>
-              </span>
+              <BaseIcon name="angleDown" :class="[open ? 'rotate-180 fill-red' : '', 'w-[10px] h-[10px] ml-3 mt-1 text-purple']" />
             </PopoverButton>
 
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
@@ -102,11 +94,7 @@
             <PopoverButton
               :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
               <span>Need help?</span>
-              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
-                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
-                </svg>
-              </span>
+              <BaseIcon name="angleDown" :class="[open ? 'rotate-180 fill-red' : '', 'w-[10px] h-[10px] ml-3 mt-1 text-purple']" />
             </PopoverButton>
 
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
@@ -130,11 +118,7 @@
             <PopoverButton
               :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
               <span>Get involved</span>
-              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
-                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
-                </svg>
-              </span>
+              <BaseIcon name="angleDown" :class="[open ? 'rotate-180 fill-red' : '', 'w-[10px] h-[10px] ml-3 mt-1 text-purple']" />
             </PopoverButton>
 
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
@@ -158,11 +142,7 @@
             <PopoverButton
               :class="[open ? 'text-red' : 'text-dark', 'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none']">
               <span>About Us</span>
-              <span :class="[open ? 'fill-purple rotate-0' : 'fill-red', 'inline-flex align-center justify-center ml-3 mt-1 rotate-180 group-hover:fill-current']">
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" class="fill-current">
-                  <path d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z" />
-                </svg>
-              </span>
+              <BaseIcon name="angleDown" :class="[open ? 'rotate-180 fill-red' : '', 'w-[10px] h-[10px] ml-3 mt-1 text-purple']" />
             </PopoverButton>
 
             <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1"
@@ -185,7 +165,7 @@
         <!-- /main menu -->
 
         <!-- header buttons -->
-        <PopoverGroup as="buttons-nav" class="items-center hidden xl:flex">
+        <PopoverGroup as="div" class="items-center hidden xl:flex">
           <Popover class="relative z-10" v-slot="{ open }">
             <PopoverButton class="focus:outline-none">
               <Button class="mr-9" :class="[open ? 'bg-purple hover:bg-purple' : '']" variant="primary" text="Adopt" />
@@ -283,7 +263,7 @@
             <SearchBar />
           </div>
 
-          <ButtonLink class="py-2 flex-row-reverse w-full text-white bg-purple-dark" :text="'Back to main menu'" />
+          <ButtonLink class="py-2 justify-center w-full text-white bg-purple-dark" :text="'Back to main menu'" />
 
           <Socials :socials="socialList" class="flex justify-center px-3 py-8 space-x-6" />
         </div>
@@ -300,6 +280,7 @@
   import DonateBar from "@/components/DonateBar.vue"
   import Button from "@/components/Button.vue"
   import ButtonLink from "@/components/ButtonLink.vue"
+  import BaseIcon from "@/components/BaseIcon.vue"
   import Socials from "@/components/Socials.vue"
   import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/vue'
   import {

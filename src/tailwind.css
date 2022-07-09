@@ -24,4 +24,21 @@
   .bg-skew.bg-purple:before {
     background-color: #511C6C;
   }
+
+  .bg-skew-reverse:before {
+    top: inherit;
+    bottom: calc(100% - 7rem);
+  }
+
+  @media screen and (max-width: 639px) {
+    .bg-skew:before {
+      top: calc(100% - 4rem);
+      height: 8rem;
+    }
+
+    .bg-skew-reverse:before {
+      top: inherit;
+      bottom: calc(100% - 4rem);
+    }
+  }
 }

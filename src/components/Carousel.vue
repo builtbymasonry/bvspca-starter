@@ -48,7 +48,7 @@ export default {
   }
 };
 </script>
-  
+
 <style>
 .spca-carousel {
   overflow: visible;
