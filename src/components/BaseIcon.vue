@@ -4,21 +4,19 @@
     fill="currentColor"
     viewBox="0 0 20 20"
     xmlns="http://www.w3.org/2000/svg"
-    v-html="path"
+    v-html="icons[props.name]"
+    aria-hidden="true"
   >
   </svg>
 </template>
 
-<script>
+<script setup>
   import icons from '../icons'
 
-  export default {
-    props: ['name'],
-
-    data() {
-      return {
-        path: icons[this.name]
-      }
+  const props = defineProps({
+    name: {
+      type: String,
+      required: true
     }
-  };
+  })
 </script>

@@ -5,7 +5,7 @@
       inputLabel
     }}</label>
     <Listbox v-model="selectedOption">
-      <div class="relative text-sm">
+      <div class="relative text-none">
         <ListboxButton v-slot="{ open }" class="w-full focus:outline-none">
           <div
             class="bg-gray relative block w-full cursor-pointer border-none py-3 pl-4 pr-5 text-left text-sm leading-[1.215] focus:outline-none"
@@ -36,7 +36,7 @@
           leave-to-class="opacity-0"
         >
           <ListboxOptions
-            class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[10px] focus:outline-none"
+            class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[10px] focus:outline-none text-sm"
           >
             <ListboxOption
               v-slot="{ selected, disabled }"
@@ -66,7 +66,7 @@
       inputLabel
     }}</label>
     <Listbox v-model="selectedOption">
-      <div class="relative text-sm">
+      <div class="relative text-none">
         <ListboxButton v-slot="{ open }" class="w-full focus:outline-none">
           <div
             class="relative block w-full cursor-pointer border-2 border-black bg-white py-1 pl-4 pr-6 text-left text-sm font-bold leading-[1.643] focus:outline-none"
@@ -114,7 +114,7 @@
           leave-to-class="opacity-0"
         >
           <ListboxOptions
-            class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[17px] border-2 border-t-0 border-black focus:outline-none"
+            class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[17px] border-2 border-t-0 border-black focus:outline-none text-sm"
           >
             <ListboxOption
               v-slot="{ selected, disabled }"

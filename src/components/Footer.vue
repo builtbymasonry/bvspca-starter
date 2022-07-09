@@ -41,7 +41,11 @@
       <!-- /footer nav -->
 
       <div class="w-72 flex-shrink-0">
-        <Socials :socials="socialList" class="justify-between space-x-6 mb-16 sm:mb-8" variant="orange" />
+        <Socials
+          :socials="socialList"
+          class="justify-between space-x-6 mb-16 sm:mb-7"
+          iconSize="w-7 h-7"
+        />
         <FormSignUp/>
       </div>
     </div>

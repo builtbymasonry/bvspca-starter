@@ -34,6 +34,7 @@ module.exports = {
         5: '5',
       },
       fontSize: {
+        'none': ['0', { lineHeight: '0' }], /* 0px/0px */
         'xxs': ['0.63rem', { lineHeight: '2' }], /* 12px/24px */
         'xs': ['0.75rem', { lineHeight: '2' }], /* 12px/24px */
         'sm': ['0.875rem', { lineHeight: '1.85' }], /* 14px/26px */

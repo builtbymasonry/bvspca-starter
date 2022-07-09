@@ -1,10 +1,8 @@
 <template>
   <Popover class="relative z-10 bg-white shadow">
-    <div
-      class="bg-purple hidden items-center justify-between px-3 text-white md:px-6 md:pl-9 xl:flex"
-    >
-      <div class="min-h-3 flex items-center py-2 md:space-x-10">
-        <PopoverGroup as="div" class="hidden space-x-12 md:flex">
+    <!-- upper header bar -->
+    <div class="min-h-3 px-3 md:px-6 md:pl-9 py-2 hidden xl:flex items-center bg-purple text-white">
+      <PopoverGroup as="div" class="hidden xl:flex mr-12 space-x-12">
           <div v-for="item in upperNav" :key="item.label">
             <Popover
               v-if="item.drop"
@@ -14,28 +12,11 @@
               <PopoverButton
                 :class="[
                   open ? 'text-orange' : 'text-white',
-                  'hover:text-orange group inline-flex items-center text-sm font-bold transition-colors focus:outline-none'
+                  'inline-flex items-center text-sm font-bold transition-colors focus:outline-none'
                 ]"
               >
                 <span>{{ item.label }}</span>
-                <span
-                  :class="[
-                    open ? 'rotate-0 fill-current' : ' fill-orange rotate-180',
-                    'align-center ml-3 mt-0.5 inline-flex  justify-center group-hover:fill-current'
-                  ]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="10"
-                    height="7"
-                    viewBox="0 0 10 7"
-                    class="fill-current"
-                  >
-                    <path
-                      d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z"
-                    />
-                  </svg>
-                </span>
+                <BaseIcon name="angleDown" :class="[open ? 'rotate-180' : '', 'w-[10px] h-[10px] ml-3 mt-1']" />
               </PopoverButton>
 
               <transition
@@ -46,11 +27,12 @@
                 leave-from-class="opacity-100 translate-y-0"
                 leave-to-class="opacity-0 translate-y-1"
               >
-                <PopoverPanel
+                <div>
+                  <PopoverPanel
                   class="absolute top-full z-10 -ml-4 max-w-md transform px-2 sm:px-0 lg:-left-9 lg:ml-0"
                 >
                   <div class="overflow-hidden rounded-lg rounded-t-none shadow">
-                    <div class="bg-purple relative z-10 grid gap-6 px-9 py-9">
+                    <div class="bg-purple relative z-10 grid gap-6 px-9 py-9 pt-6">
                       <a
                         v-for="dropItem in item.drop"
                         :key="dropItem.label"
@@ -62,6 +44,7 @@
                     </div>
                   </div>
                 </PopoverPanel>
+                </div>
               </transition>
             </Popover>
             <a
@@ -71,30 +54,24 @@
               >{{ item.label }}</a
             >
           </div>
-        </PopoverGroup>
-        <SearchBar />
-      </div>
+      </PopoverGroup>
+      <SearchBar/>
       <Socials
         :socials="socialList"
-        variant="white"
-        iconShadow
         class="ml-auto space-x-6"
+        variant="white"
       />
     </div>
+    <!-- /upper header bar -->
 
+    <!-- main header bar -->
     <div class="px-3 md:px-6">
-      <div class="flex items-center justify-between md:justify-end py-1 md:py-6 space-x-4 xl:space-x-14">
+      <div class="flex items-center justify-between md:justify-end py-1 md:py-5 space-x-4 xl:space-x-14">
         <!-- header logo -->
-        <div
-          class="-my-2 mr-auto max-w-[100px] flex-shrink-0 md:max-w-[150px] lg:max-w-none"
-        >
+        <div class="-my-2 mr-auto max-w-[100px] md:max-w-[150px] lg:max-w-none flex-shrink-0">
           <a href="#">
             <span class="sr-only">Brandywine Valley SPCA</span>
-            <img
-              class="w-auto"
-              src="@/assets/img/logo.svg"
-              alt="Brandywine Valley SPCA"
-            />
+            <img class="w-auto" src="@/assets/img/logo.svg" alt="Brandywine Valley SPCA" />
           </a>
         </div>
         <!-- /header logo -->
@@ -103,16 +80,14 @@
         <Button class="xl:hidden" variant="primary" text="Donate" />
         <!-- /header button mobile -->
 
-        <!-- menu burger -->
+        <!-- main menu burger -->
         <div class="inline-flex xl:hidden">
-          <PopoverButton
-            class="inline-flex items-center justify-center text-black"
-          >
+          <PopoverButton class="inline-flex items-center justify-center text-black">
             <span class="sr-only">Open menu</span>
             <MenuIcon class="h-10 w-10" aria-hidden="true" />
           </PopoverButton>
         </div>
-        <!-- /menu burger -->
+        <!-- /main menu burger -->
 
         <!-- main menu -->
         <PopoverGroup as="nav" class="hidden space-x-10 xl:flex">
@@ -121,27 +96,11 @@
               <PopoverButton
                 :class="[
                   open ? 'text-red' : 'text-dark',
-                  'hover:text-red group inline-flex items-center text-lg font-bold focus:outline-none'
+                  'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none'
                 ]"
               >
                 <span>{{ item.label }}</span>
-                <span
-                  :class="[
-                    open ? 'fill-red rotate-0' : 'fill-purple  rotate-180',
-                    'align-center group-hover:fill-red ml-3 mt-0.5  inline-flex justify-center'
-                  ]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="10"
-                    height="7"
-                    viewBox="0 0 10 7"
-                  >
-                    <path
-                      d="M4.714,1A1,1,0,0,1,6.286,1l3.7,4.7A.8.8,0,0,1,9.354,7H1.646a.8.8,0,0,1-.629-1.294Z"
-                    />
-                  </svg>
-                </span>
+                <BaseIcon name="angleDown" :class="[open ? 'rotate-180 fill-red' : '', 'w-[10px] h-[10px] ml-3 mt-1 text-purple']" />
               </PopoverButton>
 
               <transition
@@ -152,8 +111,9 @@
                 leave-from-class="opacity-100 translate-y-0"
                 leave-to-class="opacity-0 translate-y-1"
               >
-                <PopoverPanel
-                  class="absolute z-10 -ml-4 mt-2 max-w-md transform px-2 after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[2.5rem] after:bg-white after:content-[''] sm:px-0 lg:-left-9 lg:ml-0"
+                <div>
+                  <PopoverPanel
+                  class="absolute z-10 -ml-4 mt-2 max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[2.5rem] after:bg-white after:content-[''] sm:px-0 lg:-left-9 lg:ml-0"
                 >
                   <div class="overflow-hidden rounded-lg rounded-t-none shadow">
                     <div
@@ -170,6 +130,7 @@
                     </div>
                   </div>
                 </PopoverPanel>
+                </div>
               </transition>
             </Popover>
           </div>
@@ -177,7 +138,7 @@
         <!-- /main menu -->
 
         <!-- header buttons -->
-        <PopoverGroup as="buttons-nav" class="hidden items-center xl:flex">
+        <PopoverGroup as="div" class="hidden items-center xl:flex">
           <Popover
             v-for="button in navAdopt"
             :key="button.label"
@@ -201,8 +162,9 @@
               leave-from-class="opacity-100 translate-y-0"
               leave-to-class="opacity-0 translate-y-1"
             >
-              <PopoverPanel
-                class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:left-0 lg:ml-0"
+              <div>
+                <PopoverPanel
+                class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:left-0 lg:ml-0"
               >
                 <div class="overflow-hidden rounded-lg rounded-t-none shadow">
                   <div class="relative z-10 grid gap-6 bg-white px-9 pt-0 pb-9">
@@ -217,6 +179,7 @@
                   </div>
                 </div>
               </PopoverPanel>
+              </div>
             </transition>
           </Popover>
 
@@ -246,8 +209,9 @@
               leave-from-class="opacity-100 translate-y-0"
               leave-to-class="opacity-0 translate-y-1"
             >
-              <PopoverPanel
-                class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.5rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:right-0 lg:ml-0"
+              <div>
+                <PopoverPanel
+                class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:right-0 lg:ml-0"
               >
                 <div class="overflow-hidden rounded-lg rounded-t-none shadow">
                   <div class="relative z-10 grid gap-6 bg-white px-9 pt-0 pb-9">
@@ -262,49 +226,37 @@
                   </div>
                 </div>
               </PopoverPanel>
+              </div>
             </transition>
           </Popover>
         </PopoverGroup>
         <!-- /header buttons -->
       </div>
     </div>
+    <!-- /main header bar -->
 
     <DonateBar />
 
     <!-- mobile menu -->
     <transition
-      enter-active-class="duration-200 ease-out"
-      enter-from-class="opacity-0 scale-95"
-      enter-to-class="opacity-100 scale-100"
-      leave-active-class="duration-100 ease-in"
-      leave-from-class="opacity-100 scale-100"
-      leave-to-class="opacity-0 scale-95"
+      name="opacity"
     >
-      <PopoverPanel
+      <div>
+        <PopoverPanel
         focus
         class="absolute inset-x-0 top-0 origin-top-right transform transition xl:hidden"
       >
         <!-- mobile menu header -->
-        <div class="bg-white px-3 py-1 md:px-6 md:py-6">
-          <div
-            class="flex items-center justify-between space-x-4 xl:space-x-12"
-          >
-            <div
-              class="-my-2 mr-auto max-w-[100px] flex-shrink-0 md:max-w-[150px] lg:max-w-none"
-            >
+        <div class="px-3 md:px-6 py-1 md:py-6 bg-white">
+          <div class="flex items-center justify-between space-x-4 xl:space-x-12">
+            <div class="-my-2 mr-auto max-w-[100px] md:max-w-[150px] lg:max-w-none flex-shrink-0">
               <a href="#">
                 <span class="sr-only">Brandywine Valley SPCA</span>
-                <img
-                  class="w-auto"
-                  src="@/assets/img/logo.svg"
-                  alt="Brandywine Valley SPCA"
-                />
+                <img class="w-auto" src="@/assets/img/logo.svg" alt="Brandywine Valley SPCA" />
               </a>
             </div>
             <Button class="xl:hidden" variant="primary" text="Donate" />
-            <PopoverButton
-              class="inline-flex items-center justify-center text-black"
-            >
+            <PopoverButton class="inline-flex items-center justify-center text-black">
               <span class="sr-only">Close menu</span>
               <XIcon class="h-10 w-10" aria-hidden="true" />
             </PopoverButton>
@@ -324,18 +276,7 @@
                 class="hover:text-orange border-purple-dark flex cursor-pointer select-none items-center border-b-[1px] p-3 transition-colors"
               >
                 {{ item.label }}
-
-                <svg
-                  v-if="item.drop"
-                  class="fill-orange group-hover:fill-orange mt-0.5 ml-auto inline-flex transition-all"
-                  width="13"
-                  height="10"
-                  viewBox="0 0 13 10"
-                >
-                  <path
-                    d="M5.374.147C4.741-.18 4.457.06 4.37.65v1.79H1.157C.35 2.462 0 2.877 0 3.576v3.057c0 .633.393.982 1 1.026h3.392V9.23c0 .611.262.917.96.699C7.711 8.51 10 7.07 12.318 5.519c.35-.35.284-.633-.022-.917C10.07 3.052 7.754 1.589 5.374.147z"
-                  />
-                </svg>
+                <BaseIcon v-if="item.drop" name="arrowRight" class="inline-flex ml-auto mt-1 w-3 h-3 text-orange" />
               </a>
               <ul
                 v-show="activeMobileDrop === generateId(item.label)"
@@ -359,33 +300,18 @@
               class="hover:text-orange border-purple-dark flex cursor-pointer select-none items-center justify-between border-b-[1px] p-3 transition-colors"
             >
               <span>Search</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="text-orange ml-3 h-3 w-3"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="3"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
+              <BaseIcon name="search" class="w-3 h-3 text-orange" />
             </a>
             <div
               class="px-7 pt-5 pb-14"
               v-show="activeMobileDrop === 'SearchBar'"
             >
-              <h4 class="mb-4 text-center text-lg font-bold text-white">
+              <h4 class="text-lg font-bold text-white text-center mb-3">
                 Search
               </h4>
-              <div
-                class="relative mx-auto flex w-full max-w-[450px] items-center justify-center rounded-full border-2 border-white"
-              >
+              <div class="relative mx-auto flex w-full max-w-[450px] items-center justify-center rounded-full border-2 border-white">
                 <input
-                  class="placeholder:text-gray-light w-full border-none bg-transparent px-5 py-4 text-sm text-white focus:ring-transparent xl:px-3 xl:py-[0.35rem] xl:text-xs"
+                  class="placeholder:text-gray-light w-full border-none bg-transparent px-5 py-3 text-sm text-white focus:ring-transparent"
                   type="text"
                   autocomplete="off"
                   spellcheck="false"
@@ -394,23 +320,10 @@
                 />
                 <button
                   aria-label="search"
-                  class="text-orange mr-4 xl:mr-2 xl:text-white"
+                  class="mr-4 text-orange"
                   type="submit"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 xl:h-3 xl:w-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="3"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
+                  <BaseIcon name="search" class="w-5 h-5 text-orange" />
                 </button>
               </div>
             </div>
@@ -431,12 +344,13 @@
 
           <Socials
             :socials="socialList"
-            iconShadow
-            class="flex justify-center space-x-6 px-3 py-8"
+            class="flex justify-center space-x-8 px-3 py-8"
+            iconSize="w-[25px] h-[25px]"
           />
         </div>
         <!-- /mobile menu nav -->
       </PopoverPanel>
+      </div>
     </transition>
     <!-- /mobile menu -->
   </Popover>
@@ -449,6 +363,7 @@ import SearchBar from "@/components/SearchBar.vue";
 import DonateBar from "@/components/DonateBar.vue";
 import Button from "@/components/Button.vue";
 import ButtonLink from "@/components/ButtonLink.vue";
+import BaseIcon from "@/components/BaseIcon.vue"
 import Socials from "@/components/Socials.vue";
 import {
   Popover,

@@ -7,7 +7,10 @@
     <p class="mb-8 text-sm">{{text}}</p>
     <div v-if="share" class="flex mb-9">
       <span class="mr-6 text-xl font-bold">Share:</span>
-      <Socials :socials="socialList" class="space-x-4" />
+      <Socials
+        :socials="socialList"
+        class="space-x-4"
+      />
     </div>
     <ButtonLink v-if="buttonLink" :text="buttonLink.text" :url="link" />
     <Button v-if="button" class="mt-2" :variant="button.variant" :text="button.text" :url="link" />

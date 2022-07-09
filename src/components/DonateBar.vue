@@ -1,9 +1,9 @@
 <template>
   <div class="bg-orange hidden px-3 md:px-6 lg:block">
-    <div class="flex items-center py-4 md:space-x-10">
+    <div class="flex items-center py-6 md:space-x-8">
       <h3 class="text-lg font-bold">Every contribution makes a difference</h3>
 
-      <form class="flex space-x-5">
+      <form class="flex space-x-6">
         <div>
           <Select
             variant="outline"
