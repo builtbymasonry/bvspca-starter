@@ -11,6 +11,56 @@
               </h4>
               <p>Select donation amount and frequency</p>
             </div>
+            <div class="-mx-3 mb-7 flex">
+              <div class="w-2/5 px-3">
+                <Select
+                  variant="outline"
+                  :options="[
+                    {
+                      value: 25,
+                      label: '$25',
+                      selected: true
+                    },
+                    {
+                      value: 50,
+                      label: '$50'
+                    },
+                    {
+                      value: 75,
+                      label: '$75'
+                    },
+                    {
+                      value: 100,
+                      label: '$100'
+                    },
+                    {
+                      value: 250,
+                      label: '$250'
+                    },
+                    {
+                      value: 500,
+                      label: '$500'
+                    }
+                  ]"
+                />
+              </div>
+              <div class="w-3/5 px-3">
+                <Select
+                  variant="outline"
+                  :options="[
+                    {
+                      value: 1,
+                      label: 'Monthly',
+                      selected: true
+                    },
+                    {
+                      value: 2,
+                      label: 'Weekly'
+                    }
+                  ]"
+                />
+              </div>
+            </div>
             <h5 class="text-lg font-bold tracking-wide text-black">
               Contact Info
             </h5>

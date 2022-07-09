@@ -1,6 +1,6 @@
 <template>
-  <label :for="id" class="block">
-    <span v-if="label" class="select-none text-sm">{{ label }}</span>
+  <label v-if="variant === 'default'" :for="id" class="block">
+    <span v-if="label" class="mb-2 select-none text-sm">{{ label }}</span>
     <input
       v-if="type !== 'textarea'"
       :type="type"
@@ -35,6 +35,10 @@ const props = defineProps({
   name: String,
   placeholder: String,
   value: String,
+  variant: {
+    type: String,
+    default: "default"
+  },
   textAreaSize: {
     type: String,
     default: "sm"
@@ -46,5 +50,5 @@ const props = defineProps({
 });
 
 const defaultClasslist =
-  "placeholder:text-gray-light bg-gray focus:ring-orange mt-2 block w-full rounded-[10px] border-none px-4 py-3 text-sm leading-none focus:outline-none focus:ring-1";
+  "placeholder:text-gray-light bg-gray focus:ring-orange block w-full rounded-[10px] border-none px-4 py-3 text-sm leading-none focus:outline-none focus:ring-1";
 </script>
