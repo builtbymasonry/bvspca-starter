@@ -23,6 +23,9 @@ module.exports = {
         '6': '6rem',
         '7': '7rem'
       },
+      gridTemplateColumns: {
+        'footerNav': '12rem 7rem 6rem',
+      },
       zIndex: {
         1: '1',
         2: '2',
@@ -31,11 +34,18 @@ module.exports = {
         5: '5',
       },
       fontSize: {
-        'xl': '1.38rem', /* 22px */
-        '2xl': '1.62rem', /* 26px */
-        '4xl': '2.2rem', /* 35px */
-        '5xl': '2.5rem', /* 40px */
-        '6xl': '4rem', /* 64px */
+        'xxs': ['0.63rem', { lineHeight: '2' }], /* 12px/24px */
+        'xs': ['0.75rem', { lineHeight: '2' }], /* 12px/24px */
+        'sm': ['0.875rem', { lineHeight: '1.85' }], /* 14px/26px */
+        'base': ['1rem', { lineHeight: '1.875' }], /* 16px/30px */
+        '2lg': ['1.25rem', { lineHeight: '1.5' }], /* 20px/30px */
+        'xl': ['1.38rem', { lineHeight: '1.45' }], /* 22px/32px */
+        '2xl': ['1.62rem', { lineHeight: '1.38' }], /* 26px/36px */
+        '3xl': ['1.875rem', { lineHeight: '1.333' }], /* 30px/40px */
+        '4xl': ['2.2rem', { lineHeight: '1.43' }], /* 35px/50px */
+        '5xl': ['2.5rem', { lineHeight: '1.25' }], /* 40px/50px */
+        '6xl': ['3.125rem', { lineHeight: '1.2' }], /* 50px/60px */
+        '7xl': ['4.06rem', { lineHeight: '1.154' }], /* 65px/75px */
       },
       lineHeight: {
         lg: '1.9'

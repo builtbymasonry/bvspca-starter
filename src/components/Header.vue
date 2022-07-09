@@ -83,9 +83,7 @@
     </div>
 
     <div class="px-3 md:px-6">
-      <div
-        class="flex items-center justify-between space-x-4 py-1 md:justify-end md:py-6 xl:space-x-12"
-      >
+      <div class="flex items-center justify-between md:justify-end py-1 md:py-6 space-x-4 xl:space-x-14">
         <!-- header logo -->
         <div
           class="-my-2 mr-auto max-w-[100px] flex-shrink-0 md:max-w-[150px] lg:max-w-none"

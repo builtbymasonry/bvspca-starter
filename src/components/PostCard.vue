@@ -1,23 +1,29 @@
 <template>
   <div>
-    <a href="#">
-        <img class="w-full mb-8 rounded-lg shadow" :src="imgSrc" :alt="imgAlt"/>
+    <a :href="link">
+      <img class="w-full mb-8 rounded-lg shadow" :src="imgSrc" :alt="imgAlt" />
     </a>
-    <h3 class="font-bold text-2xl mb-2">{{props.title}}</h3>
-    <p class="mb-8 text-sm leading-loose">{{props.text}}</p>
-    <div class="flex mb-9">
-        <span class="mr-6 text-xl font-bold">Share:</span>
-        <Socials :socials="socialList" class="space-x-4"/>
+    <h3 class="mb-2 text-2xl font-bold">{{title}}</h3>
+    <p class="mb-8 text-sm">{{text}}</p>
+    <div v-if="share" class="flex mb-9">
+      <span class="mr-6 text-xl font-bold">Share:</span>
+      <Socials :socials="socialList" class="space-x-4" />
     </div>
-    <ButtonLink variant="outline" text="Learn more"/>
+    <ButtonLink v-if="buttonLink" :text="buttonLink.text" :url="link" />
+    <Button v-if="button" class="mt-2" :variant="button.variant" :text="button.text" :url="link" />
   </div>
 </template>
 
 <script setup>
 import ButtonLink from './ButtonLink.vue';
+import Button from './Button.vue';
 import Socials from './Socials.vue';
 
 const props = defineProps({
+  link: {
+    type: String,
+    default: "#"
+  },
   imgSrc: {
     type: String,
     default: "#"
@@ -27,7 +33,17 @@ const props = defineProps({
     default: 'Image Description'
   },
   title: String,
-  text: String
+  text: String,
+  share: {
+    type: Boolean,
+    default: false
+  },
+  button: {
+    type: Object
+  },
+  buttonLink: {
+    type: Object
+  }
 });
 
 const socialList = [

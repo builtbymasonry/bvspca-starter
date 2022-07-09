@@ -5,7 +5,7 @@
     </div>
     <div>
       <h3 class="font-bold text-xl mb-2">{{props.title}}</h3>
-      <p class="mb-6 md:mb-0 text-xs leading-loose">{{props.text}}</p>
+      <p class="mb-6 md:mb-0 text-xs leading-lg">{{props.text}}</p>
       <ButtonLink class="md:hidden" variant="outline" text="Learn more"/>
     </div>
   </a>

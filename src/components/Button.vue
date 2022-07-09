@@ -6,11 +6,12 @@
     :variant="variant"
     :size="size"
     :arrow="arrow"
+    :shadow="shadow"
   >
     {{ text }}
     <svg
       v-if="arrow"
-      class="ml-2 inline-flex fill-current transition-all"
+      class="mx-2 inline-flex fill-current transition-all"
       width="13"
       height="10"
       viewBox="0 0 13 10"
@@ -72,7 +73,9 @@ export default {
         "bg-orange border-transparent hover:bg-orange-dark text-purple":
           this.variant === "secondary",
         "border-red hover:border-red-dark hover:bg-red-dark text-red hover:text-white":
-          this.variant === "outline"
+          this.variant === "outline",
+        "border-orange hover:border-orange-dark hover:bg-orange-dark text-white hover:text-purple":
+        this.variant === "outlineSecondary"
       };
     }
   }
