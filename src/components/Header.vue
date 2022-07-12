@@ -1,7 +1,7 @@
 <template>
   <Popover class="relative z-10 bg-white shadow">
     <!-- upper header bar -->
-    <div class="min-h-3 px-3 md:px-6 md:pl-9 py-2 hidden xl:flex items-center bg-purple text-white">
+    <div class="min-h-3 px-3 md:px-6 py-2 hidden xl:flex items-center bg-purple text-white">
       <PopoverGroup as="div" class="hidden xl:flex mr-12 space-x-12">
           <div v-for="item in upperNav" :key="item.label">
             <Popover

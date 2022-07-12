@@ -283,13 +283,6 @@
     <section class="py-20 lg:py-28">
       <div class="mx-auto max-w-5xl px-4 lg:flex items-center">
         <div class="lg:w-[43%] max-w-md lg:max-w-full flex-shrink-0 mx-auto lg:mr-20 xl:mr-28 mb-12 lg:mb-0 grid grid-cols-2 gap-6 sm:gap-8">
-          <!-- <div
-            v-for="item in imageGrid"
-            :key="item.name"
-            class="overflow-hidden flex items-center justify-center rounded-sm sm:rounded-lg bg-white shadow"
-          >
-            <img :src="item.url" alt="Image Description" />
-          </div> -->
           <div class="overflow-hidden flex items-center justify-center rounded-sm sm:rounded-lg bg-white shadow">
             <img src="../assets/img/merch-img-01.jpg" alt="image description" />
           </div>

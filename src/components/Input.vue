@@ -1,6 +1,6 @@
 <template>
   <label v-if="variant === 'default'" :for="id" class="block">
-    <span v-if="label" class="mb-2 select-none text-sm">{{ label }}</span>
+    <span v-if="label" class="inline-flex mb-2 select-none text-sm leading-5">{{ label }}</span>
     <input
       v-if="type !== 'textarea'"
       :type="type"

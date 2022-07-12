@@ -6,26 +6,24 @@
     }}</label>
     <Listbox v-model="selectedOption">
       <div class="relative text-none">
-        <ListboxButton v-slot="{ open }" class="w-full focus:outline-none">
+        <ListboxButton v-slot="{ open }" class="w-full focus:outline-none focus-visible:ring-1 focus:ring-1 focus:ring-orange focus:rounded-[10px]">
           <div
-            class="bg-gray relative block w-full cursor-pointer border-none py-3 pl-4 pr-5 text-left text-sm leading-[1.215] focus:outline-none"
+            class="bg-gray relative block w-full min-w-0 cursor-pointer border-none py-3 pl-4 pr-5 text-left text-sm leading-[1.215]"
             :class="[
               open ? 'rounded-t-[10px]' : 'rounded-[10px]',
               {
                 'min-w-[120px]': props.size === 'md',
-                'min-w-[80px]': props.size === 'sm'
+                'min-w-[80px]': props.size === 'sm',
+                'min-w-0': props.size === 'xs'
               }
             ]"
           >
             <span class="block truncate">{{ label }}</span>
 
             <span
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4"
             >
-              <ChevronDownIcon
-                class="text-gray-light h-[15px]"
-                aria-hidden="true"
-              />
+              <BaseIcon name="chevronDown" class="w-[10px] h-[10px] text-gray-light" />
             </span>
           </div>
         </ListboxButton>
@@ -69,7 +67,7 @@
       <div class="relative text-none">
         <ListboxButton v-slot="{ open }" class="w-full focus:outline-none">
           <div
-            class="relative block w-full cursor-pointer border-2 border-black bg-white py-1 pl-4 pr-6 text-left text-sm font-bold leading-[1.643] focus:outline-none"
+            class="relative block w-full min-w-0 cursor-pointer border-2 border-black bg-white py-1 pl-4 pr-6 text-left text-sm font-bold leading-[1.643] focus:outline-none"
             :class="[
               open ? 'rounded-t-[17px] border-b-0' : 'rounded-[17px]',
               {
@@ -81,29 +79,9 @@
             <span class="block truncate">{{ label }}</span>
 
             <span
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+              class="pointer-events-none absolute inset-y-0 right-3 flex items-center"
             >
-              <div class="fill-purple h-[7px]" aria-hidden="true">
-                <svg width="11px" height="7px" viewBox="0 0 11 7">
-                  <g
-                    id="Pop-ups"
-                    stroke="none"
-                    stroke-width="1"
-                    fill-rule="evenodd"
-                  >
-                    <g
-                      id="Mobile_Donate_Popup"
-                      transform="translate(-121.000000, -214.000000)"
-                    >
-                      <path
-                        d="M127.286318,215.000769 L130.983084,219.705743 C131.256054,220.05316 131.195703,220.556084 130.848286,220.829055 C130.707338,220.9398 130.53328,221 130.354029,221 L122.645971,221 C122.204143,221 121.845971,220.641828 121.845971,220.2 C121.845971,220.020749 121.906171,219.846691 122.016916,219.705743 L125.713682,215.000769 C126.054895,214.566497 126.68355,214.491059 127.117822,214.832272 C127.180502,214.881521 127.237069,214.938088 127.286318,215.000769 Z"
-                        id="Triangle-Copy-2"
-                        transform="translate(126.500000, 217.500000) rotate(-180.000000) translate(-126.500000, -217.500000) "
-                      ></path>
-                    </g>
-                  </g>
-                </svg>
-              </div>
+              <BaseIcon name="angleDown" class="w-[10px] h-[10px]" />
             </span>
           </div>
         </ListboxButton>
@@ -149,7 +127,7 @@ import {
   ListboxOptions,
   ListboxOption
 } from "@headlessui/vue";
-import { ChevronDownIcon } from "@heroicons/vue/outline";
+import BaseIcon from "@/components/BaseIcon.vue";
 
 const props = defineProps({
   options: Array,
