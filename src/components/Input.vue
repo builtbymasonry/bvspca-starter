@@ -8,7 +8,7 @@
       :placeholder="placeholder"
       :value="value"
       :name="name"
-      :class="defaultClasslist"
+      :class="defaultClass"
     />
     <textarea
       v-if="type === 'textarea'"
@@ -17,7 +17,7 @@
       :value="value"
       :name="name"
       :class="[
-        defaultClasslist,
+        defaultClass,
         `resize-none`,
         {
           'h-[90px]': textAreaSize === 'sm',
@@ -49,6 +49,6 @@ const props = defineProps({
   }
 });
 
-const defaultClasslist =
+const defaultClass =
   "placeholder:text-gray-light bg-gray focus:ring-orange block w-full rounded-[10px] border-none px-4 py-3 text-sm leading-none focus:outline-none focus:ring-1";
 </script>

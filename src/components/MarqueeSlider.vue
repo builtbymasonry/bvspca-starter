@@ -1,7 +1,7 @@
 <template>
   <Vue3Marquee :duration="200" :pauseOnHover="true" :clone="true">
     <ul class="flex items-center">
-      <li v-for="item in slides" :key="item.url" class="max-w-xs px-10">
+      <li v-for="item in slides" :key="item.url" class="max-w-[240px] px-10">
         <a
           :href="item.url"
           target="_blank"

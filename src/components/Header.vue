@@ -1,38 +1,48 @@
 <template>
   <Popover class="relative z-10 bg-white shadow">
     <!-- upper header bar -->
-    <div class="min-h-3 px-3 md:px-6 md:pl-9 py-2 hidden xl:flex items-center bg-purple text-white">
-      <PopoverGroup as="div" class="hidden xl:flex mr-12 space-x-12">
-          <div v-for="item in upperNav" :key="item.label">
-            <Popover
-              v-if="item.drop"
-              class="relative inline-flex"
-              v-slot="{ open }"
+    <div
+      class="min-h-3 bg-purple hidden items-center px-3 py-2 text-white md:px-6 md:pl-9 xl:flex"
+    >
+      <PopoverGroup as="div" class="mr-12 hidden space-x-12 xl:flex">
+        <div v-for="item in upperNav" :key="item.label">
+          <Popover
+            v-if="item.drop"
+            class="relative inline-flex"
+            v-slot="{ open }"
+          >
+            <PopoverButton
+              :class="[
+                open ? 'text-orange' : 'text-white',
+                'inline-flex items-center text-sm font-bold transition-colors focus:outline-none'
+              ]"
             >
-              <PopoverButton
+              <span>{{ item.label }}</span>
+              <BaseIcon
+                name="angleDown"
                 :class="[
-                  open ? 'text-orange' : 'text-white',
-                  'inline-flex items-center text-sm font-bold transition-colors focus:outline-none'
+                  open ? 'rotate-180' : '',
+                  'ml-3 mt-1 h-[10px] w-[10px]'
                 ]"
-              >
-                <span>{{ item.label }}</span>
-                <BaseIcon name="angleDown" :class="[open ? 'rotate-180' : '', 'w-[10px] h-[10px] ml-3 mt-1']" />
-              </PopoverButton>
+              />
+            </PopoverButton>
 
-              <transition
-                enter-active-class="transition ease-out duration-200"
-                enter-from-class="opacity-0 translate-y-1"
-                enter-to-class="opacity-100 translate-y-0"
-                leave-active-class="transition ease-in duration-150"
-                leave-from-class="opacity-100 translate-y-0"
-                leave-to-class="opacity-0 translate-y-1"
-              >
-                <div>
-                  <PopoverPanel
+            <transition
+              enter-active-class="transition ease-out duration-200"
+              enter-from-class="opacity-0 translate-y-1"
+              enter-to-class="opacity-100 translate-y-0"
+              leave-active-class="transition ease-in duration-150"
+              leave-from-class="opacity-100 translate-y-0"
+              leave-to-class="opacity-0 translate-y-1"
+            >
+              <div>
+                <PopoverPanel
                   class="absolute top-full z-10 -ml-4 max-w-md transform px-2 sm:px-0 lg:-left-9 lg:ml-0"
                 >
                   <div class="overflow-hidden rounded-lg rounded-t-none shadow">
-                    <div class="bg-purple relative z-10 grid gap-6 px-9 py-9 pt-6">
+                    <div
+                      class="bg-purple relative z-10 grid gap-6 px-9 py-9 pt-6"
+                    >
                       <a
                         v-for="dropItem in item.drop"
                         :key="dropItem.label"
@@ -44,18 +54,18 @@
                     </div>
                   </div>
                 </PopoverPanel>
-                </div>
-              </transition>
-            </Popover>
-            <a
-              v-else
-              :href="item.url"
-              class="hover:text-orange inline-flex items-center text-sm font-bold text-white"
-              >{{ item.label }}</a
-            >
-          </div>
+              </div>
+            </transition>
+          </Popover>
+          <a
+            v-else
+            :href="item.url"
+            class="hover:text-orange inline-flex items-center text-sm font-bold text-white"
+            >{{ item.label }}</a
+          >
+        </div>
       </PopoverGroup>
-      <SearchBar/>
+      <SearchBar />
       <Socials
         :socials="socialList"
         class="ml-auto space-x-6"
@@ -66,12 +76,20 @@
 
     <!-- main header bar -->
     <div class="px-3 md:px-6">
-      <div class="flex items-center justify-between md:justify-end py-1 md:py-5 space-x-4 xl:space-x-14">
+      <div
+        class="flex items-center justify-between space-x-4 py-1 md:justify-end md:py-5 xl:space-x-14"
+      >
         <!-- header logo -->
-        <div class="-my-2 mr-auto max-w-[100px] md:max-w-[150px] lg:max-w-none flex-shrink-0">
+        <div
+          class="-my-2 mr-auto max-w-[100px] flex-shrink-0 md:max-w-[150px] lg:max-w-none"
+        >
           <a href="#">
             <span class="sr-only">Brandywine Valley SPCA</span>
-            <img class="w-auto" src="@/assets/img/logo.svg" alt="Brandywine Valley SPCA" />
+            <img
+              class="w-auto"
+              src="@/assets/img/logo.svg"
+              alt="Brandywine Valley SPCA"
+            />
           </a>
         </div>
         <!-- /header logo -->
@@ -82,7 +100,9 @@
 
         <!-- main menu burger -->
         <div class="inline-flex xl:hidden">
-          <PopoverButton class="inline-flex items-center justify-center text-black">
+          <PopoverButton
+            class="inline-flex items-center justify-center text-black"
+          >
             <span class="sr-only">Open menu</span>
             <MenuIcon class="h-10 w-10" aria-hidden="true" />
           </PopoverButton>
@@ -96,11 +116,17 @@
               <PopoverButton
                 :class="[
                   open ? 'text-red' : 'text-dark',
-                  'group inline-flex items-center text-lg font-bold hover:text-red focus:outline-none'
+                  'hover:text-red group inline-flex items-center text-lg font-bold focus:outline-none'
                 ]"
               >
                 <span>{{ item.label }}</span>
-                <BaseIcon name="angleDown" :class="[open ? 'rotate-180 fill-red' : '', 'w-[10px] h-[10px] ml-3 mt-1 text-purple']" />
+                <BaseIcon
+                  name="angleDown"
+                  :class="[
+                    open ? 'fill-red rotate-180' : '',
+                    'text-purple ml-3 mt-1 h-[10px] w-[10px]'
+                  ]"
+                />
               </PopoverButton>
 
               <transition
@@ -113,23 +139,25 @@
               >
                 <div>
                   <PopoverPanel
-                  class="absolute z-10 -ml-4 mt-2 max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[2.5rem] after:bg-white after:content-[''] sm:px-0 lg:-left-9 lg:ml-0"
-                >
-                  <div class="overflow-hidden rounded-lg rounded-t-none shadow">
+                    class="absolute z-10 -ml-4 mt-2 max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[2.5rem] after:bg-white after:content-[''] sm:px-0 lg:-left-9 lg:ml-0"
+                  >
                     <div
-                      class="relative z-10 grid gap-6 bg-white px-9 pt-5 pb-9"
+                      class="overflow-hidden rounded-lg rounded-t-none shadow"
                     >
-                      <a
-                        v-for="dropItem in item.drop"
-                        :key="dropItem.name"
-                        :href="dropItem.url"
-                        class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold"
+                      <div
+                        class="relative z-10 grid gap-6 bg-white px-9 pt-5 pb-9"
                       >
-                        {{ dropItem.label }}
-                      </a>
+                        <a
+                          v-for="dropItem in item.drop"
+                          :key="dropItem.name"
+                          :href="dropItem.url"
+                          class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold"
+                        >
+                          {{ dropItem.label }}
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </PopoverPanel>
+                  </PopoverPanel>
                 </div>
               </transition>
             </Popover>
@@ -164,21 +192,23 @@
             >
               <div>
                 <PopoverPanel
-                class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:left-0 lg:ml-0"
-              >
-                <div class="overflow-hidden rounded-lg rounded-t-none shadow">
-                  <div class="relative z-10 grid gap-6 bg-white px-9 pt-0 pb-9">
-                    <a
-                      v-for="item in button.drop"
-                      :key="item.label"
-                      :href="item.url"
-                      class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold"
+                  class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:left-0 lg:ml-0"
+                >
+                  <div class="overflow-hidden rounded-lg rounded-t-none shadow">
+                    <div
+                      class="relative z-10 grid gap-6 bg-white px-9 pt-0 pb-9"
                     >
-                      {{ item.label }}
-                    </a>
+                      <a
+                        v-for="item in button.drop"
+                        :key="item.label"
+                        :href="item.url"
+                        class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold"
+                      >
+                        {{ item.label }}
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </PopoverPanel>
+                </PopoverPanel>
               </div>
             </transition>
           </Popover>
@@ -211,21 +241,23 @@
             >
               <div>
                 <PopoverPanel
-                class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:right-0 lg:ml-0"
-              >
-                <div class="overflow-hidden rounded-lg rounded-t-none shadow">
-                  <div class="relative z-10 grid gap-6 bg-white px-9 pt-0 pb-9">
-                    <a
-                      v-for="item in button.drop"
-                      :key="item.label"
-                      :href="item.url"
-                      class="hover:text-red flex items-start justify-end whitespace-nowrap text-sm font-bold"
+                  class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:right-0 lg:ml-0"
+                >
+                  <div class="overflow-hidden rounded-lg rounded-t-none shadow">
+                    <div
+                      class="relative z-10 grid gap-6 bg-white px-9 pt-0 pb-9"
                     >
-                      {{ item.label }}
-                    </a>
+                      <a
+                        v-for="item in button.drop"
+                        :key="item.label"
+                        :href="item.url"
+                        class="hover:text-red flex items-start justify-end whitespace-nowrap text-sm font-bold"
+                      >
+                        {{ item.label }}
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </PopoverPanel>
+                </PopoverPanel>
               </div>
             </transition>
           </Popover>
@@ -238,118 +270,132 @@
     <DonateBar />
 
     <!-- mobile menu -->
-    <transition
-      name="opacity"
-    >
+    <transition name="opacity">
       <div>
         <PopoverPanel
-        focus
-        class="absolute inset-x-0 top-0 origin-top-right transform transition xl:hidden"
-      >
-        <!-- mobile menu header -->
-        <div class="px-3 md:px-6 py-1 md:py-6 bg-white">
-          <div class="flex items-center justify-between space-x-4 xl:space-x-12">
-            <div class="-my-2 mr-auto max-w-[100px] md:max-w-[150px] lg:max-w-none flex-shrink-0">
-              <a href="#">
-                <span class="sr-only">Brandywine Valley SPCA</span>
-                <img class="w-auto" src="@/assets/img/logo.svg" alt="Brandywine Valley SPCA" />
-              </a>
+          focus
+          class="absolute inset-x-0 top-0 origin-top-right transform transition xl:hidden"
+        >
+          <!-- mobile menu header -->
+          <div class="bg-white px-3 py-1 md:px-6 md:py-6">
+            <div
+              class="flex items-center justify-between space-x-4 xl:space-x-12"
+            >
+              <div
+                class="-my-2 mr-auto max-w-[100px] flex-shrink-0 md:max-w-[150px] lg:max-w-none"
+              >
+                <a href="#">
+                  <span class="sr-only">Brandywine Valley SPCA</span>
+                  <img
+                    class="w-auto"
+                    src="@/assets/img/logo.svg"
+                    alt="Brandywine Valley SPCA"
+                  />
+                </a>
+              </div>
+              <Button class="xl:hidden" variant="primary" text="Donate" />
+              <PopoverButton
+                class="inline-flex items-center justify-center text-black"
+              >
+                <span class="sr-only">Close menu</span>
+                <XIcon class="h-10 w-10" aria-hidden="true" />
+              </PopoverButton>
             </div>
-            <Button class="xl:hidden" variant="primary" text="Donate" />
-            <PopoverButton class="inline-flex items-center justify-center text-black">
-              <span class="sr-only">Close menu</span>
-              <XIcon class="h-10 w-10" aria-hidden="true" />
-            </PopoverButton>
           </div>
-        </div>
-        <!-- /mobile menu header -->
+          <!-- /mobile menu header -->
 
-        <!-- mobile menu nav -->
-        <div class="bg-purple">
-          <nav class="text-lg font-bold text-white">
-            <div v-for="item in navMobile" :key="item.label">
+          <!-- mobile menu nav -->
+          <div class="bg-purple">
+            <nav class="text-lg font-bold text-white">
+              <div v-for="item in navMobile" :key="item.label">
+                <a
+                  v-show="activeMobileDrop === null"
+                  v-on="{ click: item.drop ? handleNavClick : null }"
+                  :id="item.drop ? generateId(item.label) : null"
+                  :href="item.url"
+                  class="hover:text-orange border-purple-dark flex cursor-pointer select-none items-center border-b-[1px] p-3 transition-colors"
+                >
+                  {{ item.label }}
+                  <BaseIcon
+                    v-if="item.drop"
+                    name="arrowRight"
+                    class="text-orange ml-auto mt-1 inline-flex h-3 w-3"
+                  />
+                </a>
+                <ul
+                  v-show="activeMobileDrop === generateId(item.label)"
+                  class="divide-purple-dark divide-y text-lg font-bold text-white"
+                >
+                  <li v-for="subItem in item.drop" :key="subItem.label">
+                    <a
+                      :href="subItem.url"
+                      class="hover:text-orange flex items-center p-3"
+                      >{{ subItem.label }}</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- mobile search bar -->
               <a
                 v-show="activeMobileDrop === null"
-                v-on="{ click: item.drop ? handleNavClick : null }"
-                :id="item.drop ? generateId(item.label) : null"
-                :href="item.url"
-                class="hover:text-orange border-purple-dark flex cursor-pointer select-none items-center border-b-[1px] p-3 transition-colors"
+                @click="handleNavClick"
+                :id="'SearchBar'"
+                class="hover:text-orange border-purple-dark flex cursor-pointer select-none items-center justify-between border-b-[1px] p-3 transition-colors"
               >
-                {{ item.label }}
-                <BaseIcon v-if="item.drop" name="arrowRight" class="inline-flex ml-auto mt-1 w-3 h-3 text-orange" />
+                <span>Search</span>
+                <BaseIcon name="search" class="text-orange h-3 w-3" />
               </a>
-              <ul
-                v-show="activeMobileDrop === generateId(item.label)"
-                class="divide-purple-dark divide-y text-lg font-bold text-white"
+              <div
+                class="px-7 pt-5 pb-14"
+                v-show="activeMobileDrop === 'SearchBar'"
               >
-                <li v-for="subItem in item.drop" :key="subItem.label">
-                  <a
-                    :href="subItem.url"
-                    class="hover:text-orange flex items-center p-3"
-                    >{{ subItem.label }}</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- mobile search bar -->
-            <a
-              v-show="activeMobileDrop === null"
-              @click="handleNavClick"
-              :id="'SearchBar'"
-              class="hover:text-orange border-purple-dark flex cursor-pointer select-none items-center justify-between border-b-[1px] p-3 transition-colors"
-            >
-              <span>Search</span>
-              <BaseIcon name="search" class="w-3 h-3 text-orange" />
-            </a>
-            <div
-              class="px-7 pt-5 pb-14"
-              v-show="activeMobileDrop === 'SearchBar'"
-            >
-              <h4 class="text-lg font-bold text-white text-center mb-3">
-                Search
-              </h4>
-              <div class="relative mx-auto flex w-full max-w-[450px] items-center justify-center rounded-full border-2 border-white">
-                <input
-                  class="placeholder:text-gray-light w-full border-none bg-transparent px-5 py-3 text-sm text-white focus:ring-transparent"
-                  type="text"
-                  autocomplete="off"
-                  spellcheck="false"
-                  aria-live="polite"
-                  placeholder="Hello, is it me you’re looking for?"
-                />
-                <button
-                  aria-label="search"
-                  class="mr-4 text-orange"
-                  type="submit"
+                <h4 class="mb-3 text-center text-lg font-bold text-white">
+                  Search
+                </h4>
+                <div
+                  class="relative mx-auto flex w-full max-w-[450px] items-center justify-center rounded-full border-2 border-white"
                 >
-                  <BaseIcon name="search" class="w-5 h-5 text-orange" />
-                </button>
+                  <input
+                    class="placeholder:text-gray-light w-full border-none bg-transparent px-5 py-3 text-sm text-white focus:ring-transparent"
+                    type="text"
+                    autocomplete="off"
+                    spellcheck="false"
+                    aria-live="polite"
+                    placeholder="Hello, is it me you’re looking for?"
+                  />
+                  <button
+                    aria-label="search"
+                    class="text-orange mr-4"
+                    type="submit"
+                  >
+                    <BaseIcon name="search" class="text-orange h-5 w-5" />
+                  </button>
+                </div>
               </div>
-            </div>
-            <!-- /mobile search bar -->
-          </nav>
+              <!-- /mobile search bar -->
+            </nav>
 
-          <div
-            v-show="activeMobileDrop !== null"
-            class="bg-purple-dark py-2 text-center"
-          >
-            <ButtonLink
-              class="text-white"
-              reverse
-              text="Back to main menu"
-              @click="handleDropClose"
+            <div
+              v-show="activeMobileDrop !== null"
+              class="bg-purple-dark py-2 text-center"
+            >
+              <ButtonLink
+                class="text-white"
+                reverse
+                text="Back to main menu"
+                @click="handleDropClose"
+              />
+            </div>
+
+            <Socials
+              :socials="socialList"
+              class="flex justify-center space-x-8 px-3 py-8"
+              iconSize="w-[25px] h-[25px]"
             />
           </div>
-
-          <Socials
-            :socials="socialList"
-            class="flex justify-center space-x-8 px-3 py-8"
-            iconSize="w-[25px] h-[25px]"
-          />
-        </div>
-        <!-- /mobile menu nav -->
-      </PopoverPanel>
+          <!-- /mobile menu nav -->
+        </PopoverPanel>
       </div>
     </transition>
     <!-- /mobile menu -->
@@ -363,7 +409,7 @@ import SearchBar from "@/components/SearchBar.vue";
 import DonateBar from "@/components/DonateBar.vue";
 import Button from "@/components/Button.vue";
 import ButtonLink from "@/components/ButtonLink.vue";
-import BaseIcon from "@/components/BaseIcon.vue"
+import BaseIcon from "@/components/BaseIcon.vue";
 import Socials from "@/components/Socials.vue";
 import {
   Popover,
@@ -388,7 +434,7 @@ const handleNavClick = (e) => {
 };
 
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" })
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 const generateId = (str) =>

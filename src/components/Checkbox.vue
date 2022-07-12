@@ -10,7 +10,7 @@
           class="border-red -mt-1/2 absolute top-[1px] left-[6px] h-[13px] w-[8px] rotate-45 border-b-[3px] border-r-[3px]"
         />
       </Switch>
-      <SwitchLabel v-if="label" class="select-none text-sm">{{
+      <SwitchLabel v-if="label" class="select-none text-sm leading-tight">{{
         label
       }}</SwitchLabel>
     </div>
