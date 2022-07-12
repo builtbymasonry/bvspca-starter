@@ -4,7 +4,7 @@
       <!-- desktop version -->
       <div class="hidden lg:block">
         <div class="mb-16">
-          <h2 class="mb-2 text-center text-4xl font-bold text-black">
+          <h2 class="mb-2 text-center text-5xl font-bold text-black">
             Wellness clinic appointment
           </h2>
           <div class="mx-auto max-w-[404px]">
@@ -19,11 +19,11 @@
           <div class="-mx-5 flex">
             <div class="w-1/2 px-5">
               <div class="mx-auto max-w-[404px]">
-                <div class="mb-5 text-sm leading-relaxed text-black">
-                  <h3 class="text-2xl font-bold">Your info</h3>
+                <div class="mb-5 text-sm text-black">
+                  <h3 class="mb-1 text-1xl font-bold">Your info</h3>
                   <p>Required fields are indicated with a *</p>
                 </div>
-                <div class="mb-3">
+                <div class="mb-4">
                   <RadioGroup
                     label="Are you a new client? *"
                     :options="[
@@ -79,7 +79,7 @@
                     <Input label="Country*" />
                   </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-4">
                   <RadioGroup
                     label="Preferred Contact Method *"
                     :options="[
@@ -93,8 +93,8 @@
             </div>
             <div class="w-1/2 px-5">
               <div class="mx-auto max-w-[404px]">
-                <div class="mb-5 text-sm leading-relaxed text-black">
-                  <h3 class="text-2xl font-bold">Pet info</h3>
+                <div class="mb-5 text-sm text-black">
+                  <h3 class="mb-1 text-1xl font-bold">Pet info</h3>
                   <p>Required fields are indicated with a *</p>
                 </div>
                 <div class="mb-3">
@@ -223,7 +223,7 @@
           <div class="mx-auto max-w-[404px]">
             <div v-if="formPage === 2">
               <div class="mx-auto max-w-[404px]">
-                <div class="mb-5 text-sm leading-relaxed text-black">
+                <div class="mb-5 text-sm text-black">
                   <h3 class="text-xl font-bold">Your info</h3>
                   <p>Required fields are indicated with a *</p>
                 </div>
@@ -295,7 +295,7 @@
             </div>
             <div v-if="formPage === 3">
               <div class="mx-auto max-w-[404px]">
-                <div class="mb-5 text-sm leading-relaxed text-black">
+                <div class="mb-5 text-sm text-black">
                   <h3 class="text-xl font-bold">Pet info</h3>
                   <p>Required fields are indicated with a *</p>
                 </div>

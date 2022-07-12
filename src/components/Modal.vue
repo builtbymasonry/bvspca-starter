@@ -40,47 +40,7 @@
                 class="absolute -right-3 -top-5 flex h-[65px] w-[65px] items-center justify-center rounded-full bg-white fill-black shadow sm:-right-6 sm:-top-6"
                 @click="closeModal"
               >
-                <svg
-                  width="24px"
-                  height="24px"
-                  viewBox="0 0 24 24"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <g
-                    id="Pop-ups"
-                    stroke="none"
-                    stroke-width="1"
-                    fill-rule="evenodd"
-                  >
-                    <g
-                      id="Donate_Popup"
-                      transform="translate(-1362.000000, -259.000000)"
-                    >
-                      <g
-                        id="Group-29"
-                        transform="translate(1342.000000, 239.000000)"
-                      >
-                        <g
-                          id="Group-3"
-                          transform="translate(32.103553, 32.103553) rotate(-90.000000) translate(-32.103553, -32.103553) translate(20.789845, 20.643398)"
-                        >
-                          <polygon
-                            id="Rectangle-Copy-3"
-                            transform="translate(11.313708, 11.606602) rotate(-315.000000) translate(-11.313708, -11.606602) "
-                            points="-2.6862915 9.60660172 25.3137085 9.60660172 25.3137085 13.6066017 -2.6862915 13.6066017"
-                          ></polygon>
-                          <polygon
-                            id="Rectangle-Copy-4"
-                            transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) "
-                            points="-2.6862915 9.3137085 25.3137085 9.3137085 25.3137085 13.3137085 -2.6862915 13.3137085"
-                          ></polygon>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
+                <BaseIcon name="close" class="w-[22px] h-[22px]" />
               </button>
             </DialogPanel>
           </TransitionChild>
@@ -100,6 +60,7 @@ import {
   DialogTitle,
   DialogDescription
 } from "@headlessui/vue";
+import BaseIcon from "./BaseIcon.vue";
 import Button from "./Button.vue";
 
 const isOpen = ref(true);

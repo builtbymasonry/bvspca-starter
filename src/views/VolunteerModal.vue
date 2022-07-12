@@ -20,7 +20,7 @@
             class="flex-shrink flex-grow px-6 text-sm leading-loose text-black xl:px-11"
             ref="leftCol"
           >
-            <h3 class="mb-3 text-2xl font-bold leading-normal">
+            <h3 class="mb-2 text-1xl font-bold">
               Please complete this application form if you are interested in
               becoming a Brandywine Valley SPCA volunteer at our Georgetown
               Campus.
@@ -46,31 +46,31 @@
                 >VOLUNTEER WAIVER</a
               >
             </p>
-            <p class="mb-8">
+            <p class="mb-12">
               <a href="#!" class="text-red hover:text-red-light font-bold"
                 >NO GOSSIP POLICY</a
               >
             </p>
-            <h3 class="mb-3 text-2xl font-bold leading-normal">Confirmation</h3>
+            <h3 class="mb-2 text-1xl font-bold">Confirmation</h3>
             <p class="mb-8">
               In checking the following box, I agree to the above contracts and
               confirm that the information submitted above is true, accurate and
               does not contain any intentional misrepresentations in regard to
               my personal situation, professional situation, viewpoints, etc.
             </p>
-            <Checkbox label="I Agree*" />
+            <Checkbox class="items-center" label="I Agree*" />
           </div>
           <div
             class="w-[460px] flex-shrink-0 flex-grow-0 px-6 xl:w-[576px] xl:px-11"
             ref="rightCol"
           >
             <PerfectScrollbar watchOptions>
-              <div class="pl-1 pr-10 xl:pr-20">
+              <div class="pl-1 pr-10 xl:pr-20 pb-[1px]">
                 <form>
-                  <h3 class="mb-2 text-2xl font-bold leading-normal">
+                  <h3 class="mb-2 text-1xl font-bold">
                     Your info
                   </h3>
-                  <p class="mb-6 text-sm leading-normal text-black">
+                  <p class="mb-6 text-sm text-black">
                     Required fields are indicated with a *
                   </p>
                   <div class="-mx-3 mb-3 flex">
@@ -192,7 +192,7 @@
                 >NO GOSSIP POLICY</a
               >
             </p>
-            <Checkbox label="I Agree*" />
+            <Checkbox class="items-center" label="I Agree*" />
             <div class="mt-10 text-center">
               <Button text="Next" arrow variant="primary" @click="formPage++" />
             </div>
@@ -200,7 +200,7 @@
         </div>
         <div v-if="formPage === 3">
           <div class="mx-auto max-w-[404px]">
-            <h3 class="text-lg font-bold tracking-wider text-black">
+            <h3 class="mb-1 text-lg font-bold tracking-wider text-black">
               Your info
             </h3>
             <div class="mb-2">
@@ -233,11 +233,11 @@
               <Input label="Address*" id="ad-mob" />
             </div>
             <div class="-mx-2 mb-2 flex">
-              <div class="w-2/3 px-2">
-                <Select :options="countries" inputLabel="Country*" />
+              <div class="w-3/5 px-2">
+                <Select :options="countries" size="xs" inputLabel="Country*" />
               </div>
-              <div class="w-1/3 px-1">
-                <Select :options="states" inputLabel="State*" />
+              <div class="w-2/5 px-1">
+                <Select :options="states" size="xs" inputLabel="State*" />
               </div>
             </div>
             <div class="mb-2">
@@ -434,12 +434,19 @@ const states = [
 .ps__rail-x {
   display: none !important;
 }
-
+.ps__rail-y {
+  display: flex !important;
+  justify-content: center !important;
+  border: 1px solid #efefef !important;
+  border-width: 12px 0 !important;
+  border-radius: 5px !important;
+}
 .ps__thumb-y {
+  position: relative !important;
+  right: 0 !important;
   width: 10px !important;
-  border-radius: 10px !important;
+  border-radius: 5px !important;
   background-color: #511c6c !important;
-  right: 4px !important;
 }
 .ps__rail-y.ps--clicking .ps__thumb-y {
   width: 10px !important;

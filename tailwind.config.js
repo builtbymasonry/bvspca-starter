@@ -41,6 +41,7 @@ module.exports = {
         'base': ['1rem', { lineHeight: '1.875' }], /* 16px/30px */
         '2lg': ['1.25rem', { lineHeight: '1.5' }], /* 20px/30px */
         'xl': ['1.38rem', { lineHeight: '1.45' }], /* 22px/32px */
+        '1xl': ['1.5rem', { lineHeight: '1.58' }], /* 24px/38px */
         '2xl': ['1.62rem', { lineHeight: '1.38' }], /* 26px/36px */
         '3xl': ['1.875rem', { lineHeight: '1.333' }], /* 30px/40px */
         '4xl': ['2.2rem', { lineHeight: '1.43' }], /* 35px/50px */
