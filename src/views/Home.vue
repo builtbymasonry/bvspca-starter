@@ -185,22 +185,22 @@
           <div class="grid sm:grid-cols-2 gap-10 sm:gap-8">
             <div>
               <h4 class="mb-2 text-xl font-bold">Lost & found pets</h4>
-              <p class="mb-5 text-xs leading-loose">Losing your furry friend or finding another’s beloved animal can be a very harrowing and emotional process.</p>
+              <p class="mb-5 text-xs">Losing your furry friend or finding another’s beloved animal can be a very harrowing and emotional process.</p>
               <ButtonLink :text="'Learn more'" />
             </div>
             <div>
               <h4 class="mb-2 text-xl font-bold">Reporting animal cruelty</h4>
-              <p class="mb-5 text-xs leading-loose">Our Animal Protective Services Department works tirelessly to prevent abuse and protect companion animals.</p>
+              <p class="mb-5 text-xs">Our Animal Protective Services Department works tirelessly to prevent abuse and protect companion animals.</p>
               <ButtonLink :text="'Learn more'" />
             </div>
             <div>
               <h4 class="mb-2 text-xl font-bold">Pet food pantry</h4>
-              <p class="sm:mr-24 mb-5 text-xs leading-loose">Free food assistance for pet owners living below the poverty line.</p>
+              <p class="sm:mr-24 mb-5 text-xs">Free food assistance for pet owners living below the poverty line.</p>
               <ButtonLink :text="'Learn more'" />
             </div>
             <div>
               <h4 class="mb-2 text-xl font-bold">Behavior resources</h4>
-              <p class="mb-5 text-xs leading-loose">We offer phone, e-mail and on-site support for our adopters, foster families and pet owners seeking behavior assistance.</p>
+              <p class="mb-5 text-xs">We offer phone, e-mail and on-site support for our adopters, foster families and pet owners seeking behavior assistance.</p>
               <ButtonLink :text="'Learn more'" />
             </div>
           </div>

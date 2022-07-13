@@ -1,6 +1,11 @@
 <template>
   <div>
-    <HeroInner :imgSrc="heroImg" imgDescr="Hero Image" />
+    <HeroInner
+     :imgSrc="heroImg"
+     imgDescr="Hero Image"
+     title="For your pet"
+     text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."
+    />
 
     <section class="py-12 md:py-20 lg:py-28">
       <div class="mx-auto max-w-5xl px-4">
