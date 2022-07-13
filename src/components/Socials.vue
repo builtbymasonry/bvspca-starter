@@ -13,11 +13,9 @@
       >
         <BaseIcon
           :name="item.icon"
-          :class="[
-            iconSize,
-            iconShadow ? 'shadow': ''
-          ]"
+          :class="[iconSize, iconShadow ? 'shadow' : '']"
         />
+        <span class="sr-only">{{ item.icon }}</span>
       </a>
     </li>
   </ul>
@@ -38,7 +36,7 @@ const props = defineProps({
   },
   iconSize: {
     type: String,
-    default: 'w-5 h-5'
+    default: "w-5 h-5"
   },
   iconShadow: {
     type: Boolean,
