@@ -126,14 +126,16 @@
 
       <!-- desktop version -->
       <div class="hidden md:block">
-        <div class="-mx-4 mb-11 flex flex-col lg:flex-row lg:-mx-7">
-          <div class="lg:w-1/2 px-4 lg:px-7">
-            <div class="mb-5 lg:mb-0 mx-auto max-w-md lg:max-w-full overflow-hidden rounded-lg shadow">
+        <div class="-mx-4 mb-11 flex flex-col lg:-mx-7 lg:flex-row">
+          <div class="px-4 lg:w-1/2 lg:px-7">
+            <div
+              class="mx-auto mb-5 max-w-md overflow-hidden rounded-lg shadow lg:mb-0 lg:max-w-full"
+            >
               <img :src="img" alt="puppy" class="w-full" />
             </div>
           </div>
-          <div class="lg:w-1/2 px-4 lg:px-7">
-            <h4 class="mb-3 text-1xl font-bold text-black">
+          <div class="px-4 lg:w-1/2 lg:px-7">
+            <h4 class="text-1xl mb-3 font-bold text-black">
               Great or small, all donations are appreciated
             </h4>
             <div class="pr-5 text-sm">
@@ -155,7 +157,7 @@
         <form>
           <div class="-mx-4 flex lg:-mx-7">
             <div class="w-1/2 px-4 lg:px-7">
-              <h4 class="mb-2 text-1xl font-bold text-black">
+              <h4 class="text-1xl mb-2 font-bold text-black">
                 Step 1 - Select from these suggested amounts
               </h4>
               <p class="mb-8 text-sm">
@@ -163,18 +165,18 @@
               </p>
             </div>
             <div class="w-1/2 px-4 lg:px-7">
-              <h4 class="mb-2 text-1xl font-bold text-black">
+              <h4 class="text-1xl mb-2 font-bold text-black">
                 Step 2 - Enter your information
               </h4>
-              <p class="mb-5 text-sm">
-                Required fields are indicated with a *
-              </p>
+              <p class="mb-5 text-sm">Required fields are indicated with a *</p>
             </div>
           </div>
           <div class="-mx-4 flex lg:-mx-7">
             <div class="w-1/2 px-4 lg:px-7">
               <RadioGroup v-model="selectedAmount" name="selectedAmount">
-                <RadioGroupLabel class="sr-only">Amount</RadioGroupLabel>
+                <RadioGroupLabel class="sr-only"
+                  >Donation amount</RadioGroupLabel
+                >
                 <RadioGroupOption
                   v-for="amount in amounts"
                   :key="amount.description"
@@ -188,8 +190,16 @@
                   >
                     <div class="flex">
                       <div class="mr-[16px] w-[28px] flex-shrink-0">
-                        <BaseIcon v-show="checked" name="checkIconChecked" class="w-7 h-7" />
-                        <BaseIcon v-show="!checked" name="checkIcon" class="w-7 h-7" />
+                        <BaseIcon
+                          v-show="checked"
+                          name="checkIconChecked"
+                          class="h-7 w-7"
+                        />
+                        <BaseIcon
+                          v-show="!checked"
+                          name="checkIcon"
+                          class="h-7 w-7"
+                        />
                       </div>
                       <div>
                         <RadioGroupLabel
@@ -198,10 +208,7 @@
                         >
                           ${{ amount.value }}
                         </RadioGroupLabel>
-                        <RadioGroupDescription
-                          as="p"
-                          class="text-sm"
-                        >
+                        <RadioGroupDescription as="p" class="text-sm">
                           {{ amount.description }}
                         </RadioGroupDescription>
                       </div>
@@ -235,7 +242,9 @@
                   </div>
                 </div>
                 <div class="mb-7">
-                  <h5 class="mb-1 text-lg font-bold tracking-wider">Contact Info</h5>
+                  <h5 class="mb-1 text-lg font-bold tracking-wider">
+                    Contact Info
+                  </h5>
                   <div class="-mx-3 mb-2 flex">
                     <div class="w-1/2 px-3">
                       <div>
@@ -256,7 +265,9 @@
                   </div>
                 </div>
                 <div class="mb-7">
-                  <h5 class="mb-1 text-lg font-bold tracking-wider">Billing Info</h5>
+                  <h5 class="mb-1 text-lg font-bold tracking-wider">
+                    Billing Info
+                  </h5>
                   <div>
                     <Input label="Address*" id="address" />
                   </div>
@@ -285,7 +296,10 @@
                     <Input type="textarea" label="Comments" id="comments" />
                   </div>
                   <div class="mb-12">
-                    <Checkbox class="items-center" label="I’m not a robot (that I know of)" />
+                    <Checkbox
+                      class="items-center"
+                      label="I’m not a robot (that I know of)"
+                    />
                   </div>
                   <div>
                     <Button text="Submit" variant="primary" />

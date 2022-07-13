@@ -5,8 +5,11 @@
       inputLabel
     }}</label>
     <Listbox v-model="selectedOption">
-      <div class="relative text-none">
-        <ListboxButton v-slot="{ open }" class="w-full focus:outline-none focus-visible:ring-1 focus:ring-1 focus:ring-orange focus:rounded-[10px]">
+      <div class="text-none relative">
+        <ListboxButton
+          v-slot="{ open }"
+          class="focus:ring-orange w-full focus:rounded-[10px] focus:outline-none focus:ring-1 focus-visible:ring-1"
+        >
           <div
             class="bg-gray relative block w-full min-w-0 cursor-pointer border-none py-3 pl-4 pr-5 text-left text-sm leading-[1.215]"
             :class="[
@@ -23,7 +26,10 @@
             <span
               class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4"
             >
-              <BaseIcon name="chevronDown" class="w-[10px] h-[10px] text-gray-light" />
+              <BaseIcon
+                name="chevronDown"
+                class="text-gray-light h-[10px] w-[10px]"
+              />
             </span>
           </div>
         </ListboxButton>
@@ -34,10 +40,10 @@
           leave-to-class="opacity-0"
         >
           <ListboxOptions
-            class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[10px] focus:outline-none text-sm"
+            class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[10px] text-sm focus:outline-none"
           >
             <ListboxOption
-              v-slot="{ selected, disabled }"
+              v-slot="{ selected, disabled, active }"
               v-for="option in props.options"
               :key="option.label"
               :value="option.value"
@@ -47,7 +53,8 @@
               <span
                 :class="[
                   selected ? 'bg-gray-200' : '',
-                  disabled ? 'hidden' : ''
+                  disabled ? 'hidden' : '',
+                  active ? 'bg-gray-200' : ''
                 ]"
                 class="bg-gray block cursor-pointer truncate py-3 px-4 font-bold transition-colors hover:bg-gray-200"
                 >{{ option.label }}</span
@@ -64,7 +71,7 @@
       inputLabel
     }}</label>
     <Listbox v-model="selectedOption">
-      <div class="relative text-none">
+      <div class="text-none relative">
         <ListboxButton v-slot="{ open }" class="w-full focus:outline-none">
           <div
             class="relative block w-full min-w-0 cursor-pointer border-2 border-black bg-white py-1 pl-4 pr-6 text-left text-sm font-bold leading-[1.643] focus:outline-none"
@@ -81,7 +88,7 @@
             <span
               class="pointer-events-none absolute inset-y-0 right-3 flex items-center"
             >
-              <BaseIcon name="angleDown" class="w-[10px] h-[10px]" />
+              <BaseIcon name="angleDown" class="h-[10px] w-[10px]" />
             </span>
           </div>
         </ListboxButton>
@@ -92,10 +99,10 @@
           leave-to-class="opacity-0"
         >
           <ListboxOptions
-            class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[17px] border-2 border-t-0 border-black focus:outline-none text-sm"
+            class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[17px] border-2 border-t-0 border-black text-sm focus:outline-none"
           >
             <ListboxOption
-              v-slot="{ selected, disabled }"
+              v-slot="{ selected, disabled, active }"
               v-for="option in props.options"
               :key="option.label"
               :value="option.value"
@@ -105,7 +112,8 @@
               <span
                 :class="[
                   selected ? 'font-bold' : 'font-normal',
-                  disabled ? 'hidden' : ''
+                  disabled ? 'hidden' : '',
+                  active ? 'text-red' : ''
                 ]"
                 class="hover:text-red block cursor-pointer truncate bg-white py-1 px-4 transition-colors"
                 >{{ option.label }}</span

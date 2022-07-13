@@ -3,9 +3,6 @@
     :target="target"
     :href="url"
     :class="[classDefault, classSize(), classVariant()]"
-    :variant="variant"
-    :size="size"
-    :arrow="arrow"
   >
     {{ text }}
     <BaseIcon
