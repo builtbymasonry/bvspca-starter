@@ -6,47 +6,51 @@
 
     <section class="py-12 md:py-20 lg:py-28">
       <div class="mx-auto max-w-7xl px-4">
-        <h2
-          class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
-        >
+        <h2 class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl">
           You can make a difference by getting involved today
         </h2>
 
-        <div
-          class="grid grid-cols-1 gap-10 px-8 sm:grid-cols-1 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-4"
-        >
-          <!-- Card -->
-          <Card
-            :imgSrc="CardImg01"
-            imgAlt="Adopt"
-            title="Adopt"
-            text="Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?"
-          />
-          <!-- /Card -->
-          <!-- Card -->
-          <Card
-            :imgSrc="CardImg02"
-            imgAlt="Volunteer"
-            title="Volunteer"
-            text="The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses."
-          />
-          <!-- /Card -->
-          <!-- Card -->
-          <Card
-            :imgSrc="CardImg03"
-            imgAlt="Foster"
-            title="Foster"
-            text="We’re saving more babies than ever, and one of the best ways for you to help is to become a foster."
-          />
-          <!-- /Card -->
-          <!-- Card -->
-          <Card
-            :imgSrc="CardImg04"
-            imgAlt="Get kids involved"
-            title="Get kids involved"
-            text="Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!"
-          />
-          <!-- /Card -->
+        <div class="flex flex-wrap justify-center -mx-4 gap-y-10 md:gap-y-8">
+          <div class="md:w-1/2 lg:w-1/4 px-4">
+            <!-- Card -->
+            <Card
+              :imgSrc="CardImg01"
+              imgAlt="Adopt"
+              title="Adopt"
+              text="Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?"
+            />
+            <!-- /Card -->
+          </div>
+          <div class="md:w-1/2 lg:w-1/4 px-4">
+            <!-- Card -->
+            <Card
+              :imgSrc="CardImg02"
+              imgAlt="Volunteer"
+              title="Volunteer"
+              text="The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses."
+            />
+            <!-- /Card -->
+          </div>
+          <div class="md:w-1/2 lg:w-1/4 px-4">
+            <!-- Card -->
+            <Card
+              :imgSrc="CardImg03"
+              imgAlt="Foster"
+              title="Foster"
+              text="We’re saving more babies than ever, and one of the best ways for you to help is to become a foster."
+            />
+            <!-- /Card -->
+          </div>
+          <div class="md:w-1/2 lg:w-1/4 px-4">
+            <!-- Card -->
+            <Card
+              :imgSrc="CardImg04"
+              imgAlt="Get kids involved"
+              title="Get kids involved"
+              text="Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!"
+            />
+            <!-- /Card -->
+          </div>
         </div>
 
         <div class="mt-16 text-center">
