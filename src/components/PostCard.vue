@@ -1,7 +1,9 @@
 <template>
   <div>
-    <a :href="link">
-      <img class="w-full mb-8 rounded-lg shadow" :src="imgSrc" :alt="imgAlt" />
+    <a
+     :href="link"
+    >
+      <img class="w-full mb-8 rounded-lg shadow hover:scale-[102%] transition-all duration-500" :src="imgSrc" :alt="imgAlt" />
     </a>
     <h3 class="mb-2 text-2xl font-bold">{{title}}</h3>
     <p class="mb-8 text-sm">{{text}}</p>

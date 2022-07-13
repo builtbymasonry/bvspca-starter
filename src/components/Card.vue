@@ -1,6 +1,6 @@
 <template>
   <a
-    class="hover:border-orange rounded-md border-2 border-transparent bg-white px-5 pt-8 pb-11 text-center shadow md:px-6 xl:py-12"
+    class="block h-full hover:border-orange rounded-md border-2 border-transparent bg-white px-5 pt-8 pb-11 text-center shadow md:px-6 xl:py-12"
     href="#0"
   >
     <div class="align-end min-h-5 md:min-h-7 flex pb-1 md:pb-4">
