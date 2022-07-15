@@ -5,6 +5,8 @@ import WellnessClinic from './views/WellnessClinic.vue'
 import DonateModal from './views/DonateModal.vue'
 import VolunteerModal from './views/VolunteerModal.vue'
 import AppointmentModal from './views/AppointmentModal.vue'
+import Storybook from './views/Storybook.vue'
+
 
 import NotFound from './views/NotFound.vue'
 
@@ -17,5 +19,6 @@ export const routes = [
   { path: '/donate-modal', component: DonateModal, meta: { title: 'Donate modal' } },
   { path: '/volunteer-modal', component: VolunteerModal, meta: { title: 'Volunteer modal' } },
   { path: '/appointment-modal', component: AppointmentModal, meta: { title: 'Appointment modal' } },
+  { path: '/storybook', component: Storybook, meta: { title: 'Storybook' } },
   { path: '/:path(.*)', component: NotFound },
 ]
