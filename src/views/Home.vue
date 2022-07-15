@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Hero :imgSrc="heroImg" imgDescr="Hero Image" />
+    <Hero
+      :imgSrc="heroImg"
+      imgDescr="Hero Image"
+    />
 
     <Stats />
 
@@ -287,17 +290,13 @@
     <section class="py-20 lg:py-28">
       <div class="mx-auto max-w-5xl px-4 lg:flex items-center">
         <div class="lg:w-[43%] max-w-md lg:max-w-full flex-shrink-0 mx-auto lg:mr-20 xl:mr-28 mb-12 lg:mb-0 grid grid-cols-2 gap-6 sm:gap-8">
-          <div class="overflow-hidden flex items-center justify-center rounded-sm sm:rounded-lg bg-white shadow">
-            <img src="../assets/img/merch-img-01.jpg" alt="image description" />
-          </div>
-          <div class="overflow-hidden flex items-center justify-center rounded-sm sm:rounded-lg bg-white shadow">
-            <img src="../assets/img/merch-img-02.jpg" alt="image description" />
-          </div>
-          <div class="overflow-hidden flex items-center justify-center rounded-sm sm:rounded-lg bg-white shadow">
-            <img src="../assets/img/merch-img-03.jpg" alt="image description" />
-          </div>
-          <div class="overflow-hidden flex items-center justify-center rounded-sm sm:rounded-lg bg-white shadow">
-            <img src="../assets/img/merch-img-04.jpg" alt="image description" />
+          <div
+            class="overflow-hidden flex items-center justify-center rounded-sm sm:rounded-lg bg-white shadow"
+            v-for="item in imgGrid"
+            :key="item"
+          >
+            <h4 class="mb-2 text-xl font-bold">{{item.title}}</h4>
+            <img :src="item.imgSrc" :alt="item.imgAlt" />
           </div>
         </div>
         <div class="text-xs sm:text-sm text-center lg:text-left">
@@ -407,6 +406,11 @@ import logo04 from "@/assets/img/sponsors/idexx.png";
 import logo05 from "@/assets/img/sponsors/merck.png";
 import logo06 from "@/assets/img/sponsors/barnes-thornbur.png";
 
+import imgGrid01 from "@/assets/img/merch-img-01.jpg";
+import imgGrid02 from "@/assets/img/merch-img-02.jpg";
+import imgGrid03 from "@/assets/img/merch-img-03.jpg";
+import imgGrid04 from "@/assets/img/merch-img-04.jpg";
+
 const marqueeSlides = [
   {
     url: "#",
@@ -455,7 +459,8 @@ export default {
       PostCardImg06,
       PostCardImg07,
       PostCardImg08,
-      PostCardImg09
+      PostCardImg09,
+      imgGrid
     };
   },
   components: {
@@ -469,4 +474,23 @@ export default {
     PostCard
   }
 };
+
+const imgGrid = [
+  {
+    imgSrc: imgGrid01,
+    imgAlt: ""
+  },
+  {
+    imgSrc: imgGrid02,
+    imgAlt: ""
+  },
+  {
+    imgSrc: imgGrid03,
+    imgAlt: ""
+  },
+  {
+    imgSrc: imgGrid04,
+    imgAlt: ""
+  }
+]
 </script>
