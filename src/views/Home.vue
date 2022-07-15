@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Hero :imgSrc="heroImg" imgDescr="Hero Image" />
+    <Hero
+      :imgSrc="heroImg"
+      imgDescr="Hero Image"
+    />
 
     <Stats />
 
@@ -338,29 +341,15 @@
     </section>
 
     <section class="py-20 lg:py-28">
-      <div class="mx-auto max-w-5xl items-center px-4 lg:flex">
-        <div
-          class="mx-auto mb-12 grid max-w-md flex-shrink-0 grid-cols-2 gap-6 sm:gap-8 lg:mr-20 lg:mb-0 lg:w-[43%] lg:max-w-full xl:mr-28"
-        >
+      <div class="mx-auto max-w-5xl px-4 lg:flex items-center">
+        <div class="lg:w-[43%] max-w-md lg:max-w-full flex-shrink-0 mx-auto lg:mr-20 xl:mr-28 mb-12 lg:mb-0 grid grid-cols-2 gap-6 sm:gap-8">
           <div
-            class="flex items-center justify-center overflow-hidden rounded-sm bg-white shadow sm:rounded-lg"
+            class="overflow-hidden flex items-center justify-center rounded-sm sm:rounded-lg bg-white shadow"
+            v-for="item in imgGrid"
+            :key="item"
           >
-            <img src="../assets/img/merch-img-01.jpg" alt="image description" />
-          </div>
-          <div
-            class="flex items-center justify-center overflow-hidden rounded-sm bg-white shadow sm:rounded-lg"
-          >
-            <img src="../assets/img/merch-img-02.jpg" alt="image description" />
-          </div>
-          <div
-            class="flex items-center justify-center overflow-hidden rounded-sm bg-white shadow sm:rounded-lg"
-          >
-            <img src="../assets/img/merch-img-03.jpg" alt="image description" />
-          </div>
-          <div
-            class="flex items-center justify-center overflow-hidden rounded-sm bg-white shadow sm:rounded-lg"
-          >
-            <img src="../assets/img/merch-img-04.jpg" alt="image description" />
+            <h4 class="mb-2 text-xl font-bold">{{item.title}}</h4>
+            <img :src="item.imgSrc" :alt="item.imgAlt" />
           </div>
         </div>
         <div class="text-center text-xs sm:text-sm lg:text-left">
@@ -474,6 +463,11 @@ import Carousel from "@/components/Carousel.vue";
 import slideImg01 from "@/assets/img/slide01.jpg";
 import slideImg02 from "@/assets/img/slide02.jpg";
 
+import imgGrid01 from "@/assets/img/merch-img-01.jpg";
+import imgGrid02 from "@/assets/img/merch-img-02.jpg";
+import imgGrid03 from "@/assets/img/merch-img-03.jpg";
+import imgGrid04 from "@/assets/img/merch-img-04.jpg";
+
 const carouselSlides = [slideImg01, slideImg02, slideImg01, slideImg02];
 
 const marqueeSlides = [
@@ -502,4 +496,23 @@ const marqueeSlides = [
     logo: logo06
   }
 ];
+
+const imgGrid = [
+  {
+    imgSrc: imgGrid01,
+    imgAlt: ""
+  },
+  {
+    imgSrc: imgGrid02,
+    imgAlt: ""
+  },
+  {
+    imgSrc: imgGrid03,
+    imgAlt: ""
+  },
+  {
+    imgSrc: imgGrid04,
+    imgAlt: ""
+  }
+]
 </script>
