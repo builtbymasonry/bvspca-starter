@@ -1,5 +1,11 @@
 <template>
   <div>
+    <section class="py-8">
+      <div class="mx-auto max-w-3xl px-4">
+        <h2 class="mb-3 text-center text-xl font-bold">Accordion</h2>
+        <Accordion :items="faq" />
+      </div>
+    </section>
     <section class="bg-purple py-8">
       <div class="mx-auto max-w-6xl px-4">
         <h2 class="mb-3 text-center text-xl font-bold text-white">
@@ -26,6 +32,30 @@
 import MapRentals from "@/components/MapRentals.vue";
 import TableServices from "@/components/TableServices.vue";
 import TablePackages from "@/components/TablePackages.vue";
+import Accordion from "@/components/Accordion.vue";
+
+const faq = [
+  {
+    button: "Lorem ipsum dolor sit amet consectetur?",
+    panel:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in. Penatibus et magnis dis parturient. Dictum at tempor commodo ullamcorper a lacus."
+  },
+  {
+    button: "Lorem ipsum dolor sit amet?",
+    panel:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    button: "Lorem ipsum dolor sit amet consectetur?",
+    panel:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in. Penatibus et magnis dis parturient. Dictum at tempor commodo ullamcorper a lacus."
+  },
+  {
+    button: "Lorem ipsum dolor sit amet?",
+    panel:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  }
+];
 
 const dogPackages = {
   desktop: [
