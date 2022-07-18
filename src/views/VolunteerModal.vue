@@ -20,7 +20,7 @@
             class="flex-shrink flex-grow px-6 text-sm leading-loose text-black xl:px-11"
             ref="leftCol"
           >
-            <h3 class="mb-2 text-1xl font-bold">
+            <h3 class="text-1xl mb-2 font-bold">
               Please complete this application form if you are interested in
               becoming a Brandywine Valley SPCA volunteer at our Georgetown
               Campus.
@@ -51,7 +51,7 @@
                 >NO GOSSIP POLICY</a
               >
             </p>
-            <h3 class="mb-2 text-1xl font-bold">Confirmation</h3>
+            <h3 class="text-1xl mb-2 font-bold">Confirmation</h3>
             <p class="mb-8">
               In checking the following box, I agree to the above contracts and
               confirm that the information submitted above is true, accurate and
@@ -65,11 +65,9 @@
             ref="rightCol"
           >
             <PerfectScrollbar watchOptions>
-              <div class="pl-1 pr-10 xl:pr-20 pb-[1px]">
+              <div class="pl-1 pr-10 pb-[1px] xl:pr-20">
                 <form>
-                  <h3 class="mb-2 text-1xl font-bold">
-                    Your info
-                  </h3>
+                  <h3 class="text-1xl mb-2 font-bold">Your info</h3>
                   <p class="mb-6 text-sm text-black">
                     Required fields are indicated with a *
                   </p>
@@ -149,7 +147,12 @@
             </div>
             <Select inputLabel="Select Location" :options="locations" />
             <div class="mt-14 text-center">
-              <Button text="Next" arrow variant="primary" @click="formPage++" />
+              <Button
+                text="Next"
+                icon="arrowRight"
+                variant="primary"
+                @click="formPage++"
+              />
             </div>
           </div>
         </div>
@@ -194,7 +197,12 @@
             </p>
             <Checkbox class="items-center" label="I Agree*" />
             <div class="mt-10 text-center">
-              <Button text="Next" arrow variant="primary" @click="formPage++" />
+              <Button
+                text="Next"
+                icon="arrowRight"
+                variant="primary"
+                @click="formPage++"
+              />
             </div>
           </div>
         </div>
@@ -222,7 +230,12 @@
               <Select inputLabel="T-Shirt size*" :options="sizes" />
             </div>
             <div class="text-center">
-              <Button text="Next" variant="primary" arrow @click="formPage++" />
+              <Button
+                text="Next"
+                variant="primary"
+                icon="arrowRight"
+                @click="formPage++"
+              />
             </div>
           </div>
         </div>
