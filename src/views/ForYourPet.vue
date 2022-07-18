@@ -1,12 +1,6 @@
 <template>
   <div>
-    <HeroInner
-      class="bg-gray-dark"
-      :imgSrc="heroImg"
-      imgAlt="Welness clinic"
-      v-bind="heroInnerData"
-    />
-
+    <HeroInner v-bind="heroInnerData" class="bg-gray-dark" />
     <section class="py-12 md:py-20 lg:py-28">
       <div class="mx-auto max-w-5xl px-4">
         <h2
@@ -21,12 +15,7 @@
             v-for="card in cards"
             :key="card.title"
           >
-            <Card
-              :imgSrc="card.imgSrc"
-              :imgAlt="card.imgAlt"
-              :title="card.title"
-              :text="card.text"
-            />
+            <Card v-bind="card" />
           </div>
         </div>
       </div>
@@ -41,30 +30,14 @@
         />
       </div>
 
-      <InfoCard
-        :imgSrc="infoCardImg01"
-        imgAlt="We place over 16,000 animals a year"
-        v-bind="infoCardData"
-        :buttons="[
-          { variant: 'primary', text: 'Learn more about our impact' },
-        ]"
-      />
+      <InfoCard v-bind="infoCardData" />
     </section>
 
     <section
       class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32"
     >
       <div class="mx-auto max-w-4xl px-4">
-        <PostInline
-          :imgSrc="postInlineImg01"
-          imgAlt="Pay it forward, your free time has so much value"
-          v-bind="postInlineData"
-          :buttons="[
-            { variant: 'secondary', text: 'Donate' },
-            { variant: 'outlineSecondary', text: 'Sponsor' }
-          ]"
-          reverse
-        />
+        <PostInline v-bind="postInlineData" />
       </div>
     </section>
 
@@ -114,33 +87,35 @@
 
 <script setup>
 import Button from "@/components/Button.vue";
-
 import HeroInner from "@/components/HeroInner.vue";
+import Card from "@/components/Card.vue";
+import PostCard from "@/components/PostCard.vue";
+import PostInline from "@/components/PostInline.vue";
+import InfoCard from "@/components/InfoCard.vue";
+
 import heroImg from "@/assets/img/hero-image-02.jpg";
 
-import Card from "@/components/Card.vue";
 import cardImg01 from "@/assets/img/icon-heart-rate.svg";
 import cardImg02 from "@/assets/img/icon-dog.svg";
 import cardImg03 from "@/assets/img/icon-pet-shop.svg";
 import cardImg04 from "@/assets/img/icon-pet-insurance.svg";
 import cardImg05 from "@/assets/img/icon-cat.svg";
 
-import PostCard from "@/components/PostCard.vue";
 import PostCardImg07 from "@/assets/img/img-pet-07.jpg";
 import PostCardImg08 from "@/assets/img/img-pet-08.jpg";
 import PostCardImg09 from "@/assets/img/content-img-03.jpg";
 
-import PostInline from "@/components/PostInline.vue";
 import postInlineImg01 from "@/assets/img/content-img-04.jpg";
 
 import bgImg01 from "@/assets/img/bg-image-01.jpg";
 
-import InfoCard from "@/components/InfoCard.vue";
 import infoCardImg01 from "@/assets/img/content-img-01.jpg";
 
 const heroInnerData = {
   title: "For your pet",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
+  imgSrc: heroImg,
+  imgAlt: "Welness clinic"
 };
 
 const cards = [
@@ -148,51 +123,59 @@ const cards = [
     imgSrc: cardImg01,
     imgAlt: "Adopt",
     title: "Adopt",
-    text: "Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?",
+    text: "Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?"
   },
   {
     imgSrc: cardImg02,
     imgAlt: "Volunteer",
     title: "Volunteer",
-    text: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses.",
+    text: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses."
   },
   {
     imgSrc: cardImg03,
     imgAlt: "Foster",
     title: "Foster",
-    text: "We’re saving more babies than ever, and one of the best ways for you to help is to become a foster.",
+    text: "We’re saving more babies than ever, and one of the best ways for you to help is to become a foster."
   },
   {
     imgSrc: cardImg04,
     imgAlt: "Get kids involved",
     title: "Get kids involved",
-    text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!",
+    text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!"
   },
   {
     imgSrc: cardImg05,
     imgAlt: "Get kids involved",
     title: "Get kids involved",
-    text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!",
+    text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!"
   }
 ];
 
 const postInlineData = {
   title: "Give back to your community",
   text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families.",
+  imgSrc: postInlineImg01,
+  imgAlt: "Pay it forward, your free time has so much value",
+  reverse: true,
   buttons: [
     {
       variant: "secondary",
-      text: "Donate",
+      text: "Donate"
     },
     {
       variant: "outlineSecondary",
-      text: "Sponsor",
-    },
-  ],
+      text: "Sponsor"
+    }
+  ]
 };
 
 const infoCardData = {
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
+  imgSrc: infoCardImg01,
+  imgAlt: "We place over 16,000 animals a year",
+  buttons: [
+    { variant: "primary", text: "Learn more about our impact", url: "#!" }
+  ]
 };
 </script>
