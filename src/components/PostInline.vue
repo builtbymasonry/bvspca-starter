@@ -11,7 +11,7 @@
       <p>{{text}}</p>
       <div
         v-if="buttons"
-        class="mt-10 flex flex-wrap justify-center  lg:justify-start space-x-10"
+        class="mt-10 flex flex-wrap justify-center lg:justify-start space-x-10"
       >
         <Button
           v-for="button in buttons"

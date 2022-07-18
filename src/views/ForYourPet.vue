@@ -1,6 +1,7 @@
 <template>
   <div>
     <HeroInner
+      class="bg-gray-dark"
       :imgSrc="heroImg"
       imgAlt="Welness clinic"
       v-bind="heroInnerData"
@@ -15,55 +16,17 @@
         </h2>
 
         <div class="-mx-4 flex flex-wrap justify-center gap-y-10 md:gap-y-8">
-          <div class="px-4 md:w-1/2 lg:w-1/3">
-            <!-- Card -->
+          <div
+            class="px-4 md:w-1/2 lg:w-1/3"
+            v-for="card in cards"
+            :key="card.title"
+          >
             <Card
-              :imgSrc="CardImg01"
-              imgAlt="Wellness clinic"
-              title="Wellness clinic"
-              text="Our full-service, high-quality hospital offers medical care ranging from routine vaccinations and health checks, to sick visits and diagnostics, to spay/neuter and special surgeries."
+              :imgSrc="card.imgSrc"
+              :imgAlt="card.imgAlt"
+              :title="card.title"
+              :text="card.text"
             />
-            <!-- /Card -->
-          </div>
-          <div class="px-4 md:w-1/2 lg:w-1/3">
-            <!-- Card -->
-            <Card
-              :imgSrc="CardImg02"
-              imgAlt="Spay & neuter"
-              title="Spay & neuter"
-              text="Spayed/neutered pets live longer. Our accomplished veterinarians and medical staff operate in a professional, caring manner and will handle your pet kindly."
-            />
-            <!-- /Card -->
-          </div>
-          <div class="px-4 md:w-1/2 lg:w-1/3">
-            <!-- Card -->
-            <Card
-              :imgSrc="CardImg03"
-              imgAlt="Daycare & boarding"
-              title="Daycare & boarding"
-              text="Now your pet can have a luxury stay in daycare or boarding while helping animals in need. Eastern Shore Pet Resort helps fund ongoing operation of important work."
-            />
-            <!-- /Card -->
-          </div>
-          <div class="px-4 md:w-1/2 lg:w-1/3">
-            <!-- Card -->
-            <Card
-              :imgSrc="CardImg04"
-              imgAlt="Pet insurance"
-              title="Pet insurance"
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti."
-            />
-            <!-- /Card -->
-          </div>
-          <div class="px-4 md:w-1/2 lg:w-1/3">
-            <!-- Card -->
-            <Card
-              :imgSrc="CardImg05"
-              imgAlt="Community cats"
-              title="Community cats"
-              text="Our services increase the health and wellness of community cats while proactively reducing the number of animals being born without homes in our community."
-            />
-            <!-- /Card -->
           </div>
         </div>
       </div>
@@ -73,43 +36,19 @@
       <div class="absolute top-0 left-0 h-full w-full">
         <img
           class="absolute top-0 left-0 h-full w-full object-cover"
-          src="../assets/img/bg-image-01.jpg"
+          :src="bgImg01"
           alt="image description"
         />
       </div>
 
-      <div class="relative z-10 mx-auto flex max-w-5xl px-4">
-        <div
-          class="mb-0 flex flex-col overflow-hidden rounded-sm bg-white shadow md:-mb-32 md:rounded-lg lg:flex-row"
-        >
-          <div
-            class="relative h-80 overflow-hidden md:h-96 lg:h-auto lg:w-[46%]"
-          >
-            <img
-              class="absolute top-0 left-0 h-full w-full object-cover"
-              src="../assets/img/content-img-01.jpg"
-              alt="image description"
-            />
-          </div>
-          <div
-            class="px-9 py-9 pb-14 text-center sm:px-16 sm:py-12 lg:w-[54%] lg:py-20 lg:text-left"
-          >
-            <h3 class="mb-2 text-xl font-bold leading-normal sm:text-4xl">
-              We place over 16,000 animals a year
-            </h3>
-            <p class="text-xs leading-loose lg:mr-24">
-              We were the first open-admission no-kill shelter in Pennsylvania,
-              and we have led Delaware to becoming the first no-kill state in
-              the United States.
-            </p>
-            <Button
-              class="mt-10"
-              variant="primary"
-              text="Learn more about our impact"
-            />
-          </div>
-        </div>
-      </div>
+      <InfoCard
+        :imgSrc="infoCardImg01"
+        imgAlt="We place over 16,000 animals a year"
+        v-bind="infoCardData"
+        :buttons="[
+          { variant: 'primary', text: 'Learn more about our impact' },
+        ]"
+      />
     </section>
 
     <section
@@ -180,11 +119,11 @@ import HeroInner from "@/components/HeroInner.vue";
 import heroImg from "@/assets/img/hero-image-02.jpg";
 
 import Card from "@/components/Card.vue";
-import CardImg01 from "@/assets/img/icon-heart-rate.svg";
-import CardImg02 from "@/assets/img/icon-dog.svg";
-import CardImg03 from "@/assets/img/icon-pet-shop.svg";
-import CardImg04 from "@/assets/img/icon-pet-insurance.svg";
-import CardImg05 from "@/assets/img/icon-cat.svg";
+import cardImg01 from "@/assets/img/icon-heart-rate.svg";
+import cardImg02 from "@/assets/img/icon-dog.svg";
+import cardImg03 from "@/assets/img/icon-pet-shop.svg";
+import cardImg04 from "@/assets/img/icon-pet-insurance.svg";
+import cardImg05 from "@/assets/img/icon-cat.svg";
 
 import PostCard from "@/components/PostCard.vue";
 import PostCardImg07 from "@/assets/img/img-pet-07.jpg";
@@ -194,10 +133,48 @@ import PostCardImg09 from "@/assets/img/content-img-03.jpg";
 import PostInline from "@/components/PostInline.vue";
 import postInlineImg01 from "@/assets/img/content-img-04.jpg";
 
+import bgImg01 from "@/assets/img/bg-image-01.jpg";
+
+import InfoCard from "@/components/InfoCard.vue";
+import infoCardImg01 from "@/assets/img/content-img-01.jpg";
+
 const heroInnerData = {
   title: "For your pet",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
 };
+
+const cards = [
+  {
+    imgSrc: cardImg01,
+    imgAlt: "Adopt",
+    title: "Adopt",
+    text: "Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?",
+  },
+  {
+    imgSrc: cardImg02,
+    imgAlt: "Volunteer",
+    title: "Volunteer",
+    text: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses.",
+  },
+  {
+    imgSrc: cardImg03,
+    imgAlt: "Foster",
+    title: "Foster",
+    text: "We’re saving more babies than ever, and one of the best ways for you to help is to become a foster.",
+  },
+  {
+    imgSrc: cardImg04,
+    imgAlt: "Get kids involved",
+    title: "Get kids involved",
+    text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!",
+  },
+  {
+    imgSrc: cardImg05,
+    imgAlt: "Get kids involved",
+    title: "Get kids involved",
+    text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!",
+  }
+];
 
 const postInlineData = {
   title: "Give back to your community",
@@ -212,5 +189,10 @@ const postInlineData = {
       text: "Sponsor",
     },
   ],
+};
+
+const infoCardData = {
+  title: "We place over 16,000 animals a year",
+  text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
 };
 </script>
