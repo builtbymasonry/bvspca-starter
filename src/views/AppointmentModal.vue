@@ -20,7 +20,7 @@
             <div class="w-1/2 px-5">
               <div class="mx-auto max-w-[404px]">
                 <div class="mb-5 text-sm text-black">
-                  <h3 class="mb-1 text-1xl font-bold">Your info</h3>
+                  <h3 class="text-1xl mb-1 font-bold">Your info</h3>
                   <p>Required fields are indicated with a *</p>
                 </div>
                 <div class="mb-4">
@@ -94,7 +94,7 @@
             <div class="w-1/2 px-5">
               <div class="mx-auto max-w-[404px]">
                 <div class="mb-5 text-sm text-black">
-                  <h3 class="mb-1 text-1xl font-bold">Pet info</h3>
+                  <h3 class="text-1xl mb-1 font-bold">Pet info</h3>
                   <p>Required fields are indicated with a *</p>
                 </div>
                 <div class="mb-3">
@@ -215,7 +215,12 @@
             </div>
             <Select inputLabel="Select Location" :options="locations" />
             <div class="mt-10 text-center">
-              <Button text="Next" arrow variant="primary" @click="formPage++" />
+              <Button
+                text="Next"
+                icon="arrowRight"
+                variant="primary"
+                @click="formPage++"
+              />
             </div>
           </div>
         </div>
@@ -289,7 +294,7 @@
                   />
                 </div>
                 <div class="text-center">
-                  <Button text="Next" arrow @click="formPage++" />
+                  <Button text="Next" icon="arrowRight" @click="formPage++" />
                 </div>
               </div>
             </div>

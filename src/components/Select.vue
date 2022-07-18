@@ -1,44 +1,39 @@
 <template>
-  <!-- default style -->
-  <div v-if="variant === 'default'" class="w-full text-black">
-    <label v-if="inputLabel" class="mb-2 block select-none text-sm">{{
-      inputLabel
-    }}</label>
-    <Listbox v-model="selectedOption">
-      <div class="text-none relative">
-        <ListboxButton
-          v-slot="{ open }"
-          class="focus:ring-orange w-full focus:rounded-[10px] focus:outline-none focus:ring-1 focus-visible:ring-1"
-        >
-          <div
-            class="bg-gray relative block w-full min-w-0 cursor-pointer border-none py-3 pl-4 pr-5 text-left text-sm leading-[1.215]"
-            :class="[
-              open ? 'rounded-t-[10px]' : 'rounded-[10px]',
-              {
-                'min-w-[120px]': props.size === 'md',
-                'min-w-[80px]': props.size === 'sm',
-                'min-w-0': props.size === 'xs'
-              }
-            ]"
+  <div>
+    <div v-if="variant === 'default'" class="w-full text-black">
+      <!-- default style -->
+      <label v-if="inputLabel" class="mb-2 block select-none text-sm">{{
+        inputLabel
+      }}</label>
+      <Listbox v-model="selectedOption">
+        <div class="text-none relative">
+          <ListboxButton
+            v-slot="{ open }"
+            class="focus:ring-orange w-full focus:rounded-[10px] focus:outline-none focus:ring-1 focus-visible:ring-1"
           >
-            <span class="block truncate">{{ label }}</span>
-
-            <span
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4"
+            <div
+              class="bg-gray relative block w-full min-w-0 cursor-pointer border-none py-3 pl-4 pr-5 text-left text-sm leading-[1.215]"
+              :class="[
+                open ? 'rounded-t-[10px]' : 'rounded-[10px]',
+                {
+                  'min-w-[120px]': props.size === 'md',
+                  'min-w-[80px]': props.size === 'sm',
+                  'min-w-0': props.size === 'xs'
+                }
+              ]"
             >
-              <BaseIcon
-                name="chevronDown"
-                class="text-gray-light h-[10px] w-[10px]"
-              />
-            </span>
-          </div>
-        </ListboxButton>
+              <span class="block truncate">{{ label }}</span>
 
-        <transition
-          leave-active-class="transition duration-100 ease-in"
-          leave-from-class="opacity-100"
-          leave-to-class="opacity-0"
-        >
+              <span
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4"
+              >
+                <BaseIcon
+                  name="chevronDown"
+                  class="text-gray-light h-[10px] w-[10px]"
+                />
+              </span>
+            </div>
+          </ListboxButton>
           <ListboxOptions
             class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[10px] text-sm focus:outline-none"
           >
@@ -61,43 +56,38 @@
               >
             </ListboxOption>
           </ListboxOptions>
-        </transition>
-      </div>
-    </Listbox>
-  </div>
-  <!-- outline variant -->
-  <div v-if="variant === 'outline'" class="w-full text-black">
-    <label v-if="inputLabel" class="mb-2 block select-none text-sm">{{
-      inputLabel
-    }}</label>
-    <Listbox v-model="selectedOption">
-      <div class="text-none relative">
-        <ListboxButton v-slot="{ open }" class="w-full focus:outline-none">
-          <div
-            class="relative block w-full min-w-0 cursor-pointer border-2 border-black bg-white py-1 pl-4 pr-6 text-left text-sm font-bold leading-[1.643] focus:outline-none"
-            :class="[
-              open ? 'rounded-t-[17px] border-b-0' : 'rounded-[17px]',
-              {
-                'min-w-[120px]': props.size === 'md',
-                'min-w-[80px]': props.size === 'sm'
-              }
-            ]"
-          >
-            <span class="block truncate">{{ label }}</span>
-
-            <span
-              class="pointer-events-none absolute inset-y-0 right-3 flex items-center"
+        </div>
+      </Listbox>
+    </div>
+    <div v-if="variant === 'outline'" class="w-full text-black">
+      <!-- outline variant -->
+      <label v-if="inputLabel" class="mb-2 block select-none text-sm">{{
+        inputLabel
+      }}</label>
+      <Listbox v-model="selectedOption">
+        <div class="text-none relative">
+          <ListboxButton v-slot="{ open }" class="w-full focus:outline-none">
+            <div
+              class="relative block w-full min-w-0 cursor-pointer border-2 border-black bg-white py-1 pl-4 pr-6 text-left text-sm font-bold leading-[1.643] focus:outline-none"
+              :class="[
+                open
+                  ? 'rounded-t-[17px] border-b-transparent'
+                  : 'rounded-[17px]',
+                {
+                  'min-w-[120px]': props.size === 'md',
+                  'min-w-[80px]': props.size === 'sm'
+                }
+              ]"
             >
-              <BaseIcon name="angleDown" class="h-[10px] w-[10px]" />
-            </span>
-          </div>
-        </ListboxButton>
+              <span class="block truncate">{{ label }}</span>
 
-        <transition
-          leave-active-class="transition duration-100 ease-in"
-          leave-from-class="opacity-100"
-          leave-to-class="opacity-0"
-        >
+              <span
+                class="pointer-events-none absolute inset-y-0 right-3 flex items-center"
+              >
+                <BaseIcon name="angleDown" class="h-[10px] w-[10px]" />
+              </span>
+            </div>
+          </ListboxButton>
           <ListboxOptions
             class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[17px] border-2 border-t-0 border-black text-sm focus:outline-none"
           >
@@ -120,14 +110,14 @@
               >
             </ListboxOption>
           </ListboxOptions>
-        </transition>
-      </div>
-    </Listbox>
+        </div>
+      </Listbox>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, defineEmits } from "vue";
 import {
   Listbox,
   ListboxLabel,

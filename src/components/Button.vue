@@ -2,13 +2,18 @@
   <a
     :target="target"
     :href="url"
-    :class="[classDefault, classSize(), classVariant()]"
+    :class="[
+      classDefault,
+      classSize(),
+      classVariant(),
+      disabled ? 'pointer-events-none bg-[#B4B4B5]' : ''
+    ]"
   >
     {{ text }}
     <BaseIcon
-      v-if="arrow"
-      name="arrowRight"
-      class="ml-3 mt-1 inline-flex h-3 w-3"
+      v-if="icon"
+      :name="icon"
+      class="ml-3 mt-0.5 inline-flex h-3 w-3 md:mt-0"
     />
   </a>
 </template>
@@ -37,10 +42,11 @@ const props = defineProps({
     type: String,
     default: "normal"
   },
-  arrow: {
-    type: Boolean,
-    default: false
-  }
+  icon: {
+    type: String,
+    default: null
+  },
+  disabled: Boolean
 });
 
 const classDefault =
