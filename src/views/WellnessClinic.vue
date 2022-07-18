@@ -1,6 +1,7 @@
 <template>
   <div>
     <HeroInner
+      class="bg-gray-dark"
       :imgSrc="heroImg"
       imgAlt="Welness clinic"
       v-bind="heroInnerData"
@@ -14,20 +15,40 @@
         { variant: 'primary', text: 'Schedule an appointment' },
         { variant: 'outline', text: 'Learn more about our impact' }
       ]"
+      reverse
     />
 
+    <section class="py-14 lg:py-28 bg-purple">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="mb-8 md:mb-12 text-center text-2xl font-bold sm:text-3xl lg:text-5xl text-white">
+          Dog wellness packages
+        </h2>
+        <TablePackages :data="dogPackages" />
+      </div>
+    </section>
+
+    <section class="py-14 lg:py-28 bg-orange">
+      <div class="mx-auto max-w-5xl px-4">
+        <h2 class="mb-8 md:mb-12 text-center text-2xl font-bold sm:text-3xl lg:text-5xl">Cat wellness packages</h2>
+        <TablePackages :data="catPackages" />
+      </div>
+    </section>
+
     <TextBanner
+      class="bg-gray-dark"
       v-bind="textBannerData"
     />
 
     <section class="py-14 lg:py-28">
       <div class="mx-auto max-w-5xl px-4">
-        <h2 class="mb-16 text-center text-2xl font-bold sm:text-3xl lg:text-5xl">
+        <h2 class="mb-8 md:mb-12 text-center text-2xl font-bold sm:text-3xl lg:text-5xl">
           All Services
         </h2>
-        <TableServices class="mb-10" :data="tableExamsData" />
-        <TableServices class="mb-10" :data="tableVaccinesData" />
-        <TableServices :data="tablePreventionData" />
+        <div class="space-y-10">
+          <TableServices :data="tableExamsData" />
+          <TableServices :data="tableVaccinesData" />
+          <TableServices :data="tablePreventionData" />
+        </div>
         <div class="mt-16 flex justify-center">
           <Button variant="primary" text="Schedule an appointment" />
         </div>
@@ -124,6 +145,8 @@ import heroImg from "@/assets/img/hero-image-03.jpg";
 
 import PostSection from "@/components/PostSection.vue";
 import postSectionImg from "@/assets/img/content-img-05.jpg";
+
+import TablePackages from "@/components/TablePackages.vue";
 
 import TableServices from "@/components/TableServices.vue";
 import TextBox from "@/components/TextBox.vue";
@@ -242,7 +265,7 @@ const tableVaccinesData = {
 };
 
 const tablePreventionData = {
-  title: "Vaccines & Other Services",
+  title: "Flea, Tick & Heartworm Prevention",
   content: [
     {
       title: "Regular Exam",
@@ -311,5 +334,290 @@ const postInlineData2 = {
 const postInlineData3 = {
   title: "Pay it forward, your free time has so much value",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi.",
+};
+
+const dogPackages = {
+  desktop: [
+    [
+      { headTitle: "Services Included" },
+      {
+        headTitle: "Puppy Package",
+        currentPrice: 70,
+        normalPrice: 80,
+        priceDifference: 10
+      },
+      {
+        headTitle: "Canine Basic Package",
+        currentPrice: 85,
+        normalPrice: 100,
+        priceDifference: 15
+      },
+      {
+        headTitle: "Canine Adult Package",
+        currentPrice: 140,
+        normalPrice: 155,
+        priceDifference: 15
+      }
+    ],
+    [
+      {
+        title: "Physical Exam - $45"
+      },
+      {
+        included: true
+      },
+      {
+        included: true
+      },
+      {
+        included: true
+      }
+    ],
+    [
+      {
+        title: "DA2PPv - $20"
+      },
+      {
+        included: true
+      },
+      {
+        included: true
+      },
+      {
+        included: true
+      }
+    ],
+    [
+      {
+        title: "Dewormer - $15"
+      },
+      {
+        included: true
+      },
+      {
+        included: true
+      },
+      {
+        included: true
+      }
+    ],
+    [
+      {
+        title: "1 year Rabies Vaccine - $20",
+        description: "(3 year vaccine can be given for additional $7)"
+      },
+      {
+        included: false
+      },
+      {
+        included: true
+      },
+      {
+        included: true
+      }
+    ],
+    [
+      {
+        title: "Bordetella - $20"
+      },
+      {
+        included: false
+      },
+      {
+        included: false
+      },
+      {
+        included: true
+      }
+    ],
+    [
+      {
+        title: "Heartworm Test (4DX) – $35"
+      },
+      {
+        included: false
+      },
+      {
+        included: false
+      },
+      {
+        included: true
+      }
+    ],
+    [
+      {},
+      {},
+      {
+        description: [
+          "* Additional $5 for pets 1 year and over that are not spayed or neutered.",
+          "** $3 rabies surcharge required in the state of Delaware."
+        ]
+      },
+      {
+        description: [
+          "* Additional $5 for pets 1 year and over that are not spayed or neutered.",
+          "** $3 rabies surcharge required in the state of Delaware."
+        ]
+      }
+    ]
+  ],
+  mobile: [
+    {
+      head: {
+        title: "Puppy Package",
+        currentPrice: 70,
+        normalPrice: 80,
+        priceDifference: 10
+      },
+      body: [
+        { title: "Physical Exam - $45" },
+        { title: "DA2PPv - $20" },
+        { title: "Dewormer - $15" }
+      ]
+    },
+    {
+      head: {
+        title: "Canine Basic Package",
+        currentPrice: 85,
+        normalPrice: 100,
+        priceDifference: 15
+      },
+      body: [
+        { title: "Physical Exam - $45" },
+        { title: "DA2PPv - $20" },
+        { title: "Dewormer - $15" },
+        {
+          title: "1 year Rabies Vaccine - $20",
+          description: "(3 year vaccine can be given for additional $7)"
+        }
+      ]
+    },
+    {
+      head: {
+        title: "Canine Adult Package",
+        currentPrice: 140,
+        normalPrice: 155,
+        priceDifference: 15
+      },
+      body: [
+        { title: "Physical Exam - $45" },
+        { title: "DA2PPv - $20" },
+        { title: "Dewormer - $15" },
+        {
+          title: "1 year Rabies Vaccine - $20",
+          description: "(3 year vaccine can be given for additional $7)"
+        },
+        { title: "Bordetella - $20" },
+        { title: "Heartworm Test (4DX) – $35" }
+      ]
+    }
+  ]
+};
+
+const catPackages = {
+  desktop: [
+    [
+      { headTitle: "Services Included" },
+      {
+        headTitle: "Puppy Package",
+        currentPrice: 70,
+        normalPrice: 80,
+        priceDifference: 10
+      },
+      {
+        headTitle: "Canine Basic Package",
+        currentPrice: 85,
+        normalPrice: 100,
+        priceDifference: 15
+      }
+    ],
+    [
+      {
+        title: "Physical Exam - $45"
+      },
+      {
+        included: true
+      },
+      {
+        included: true
+      }
+    ],
+    [
+      {
+        title: "DA2PPv - $20"
+      },
+      {
+        included: true
+      },
+      {
+        included: true
+      }
+    ],
+    [
+      {
+        title: "Dewormer - $15"
+      },
+      {
+        included: true
+      },
+      {
+        included: true
+      }
+    ],
+    [
+      {
+        title: "1 year Rabies Vaccine - $20",
+        description: "(3 year vaccine can be given for additional $7)"
+      },
+      {
+        included: false
+      },
+      {
+        included: true
+      }
+    ],
+    [
+      {},
+      {},
+      {
+        description: [
+          "* Additional $5 for pets 1 year and over that are not spayed or neutered.",
+          "** $3 rabies surcharge required in the state of Delaware."
+        ]
+      }
+    ]
+  ],
+  mobile: [
+    {
+      head: {
+        title: "Puppy Package",
+        currentPrice: 70,
+        normalPrice: 80,
+        priceDifference: 10
+      },
+      body: [
+        { title: "Physical Exam - $45" },
+        { title: "DA2PPv - $20" },
+        { title: "Dewormer - $15" }
+      ]
+    },
+    {
+      head: {
+        title: "Canine Basic Package",
+        currentPrice: 85,
+        normalPrice: 100,
+        priceDifference: 15
+      },
+      body: [
+        { title: "Physical Exam - $45" },
+        { title: "DA2PPv - $20" },
+        { title: "Dewormer - $15" },
+        {
+          title: "1 year Rabies Vaccine - $20",
+          description: "(3 year vaccine can be given for additional $7)"
+        }
+      ]
+    }
+  ]
 };
 </script>

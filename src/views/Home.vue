@@ -16,45 +16,17 @@
         </h2>
 
         <div class="-mx-4 flex flex-wrap justify-center gap-y-10 md:gap-y-8">
-          <div class="px-4 md:w-1/2 lg:w-1/4">
-            <!-- Card -->
+          <div
+            class="px-4 md:w-1/2 lg:w-1/4"
+            v-for="card in cards"
+            :key="card.title"
+          >
             <Card
-              :imgSrc="CardImg01"
-              imgAlt="Adopt"
-              title="Adopt"
-              text="Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?"
+              :imgSrc="card.imgSrc"
+              :imgAlt="card.imgAlt"
+              :title="card.title"
+              :text="card.text"
             />
-            <!-- /Card -->
-          </div>
-          <div class="px-4 md:w-1/2 lg:w-1/4">
-            <!-- Card -->
-            <Card
-              :imgSrc="CardImg02"
-              imgAlt="Volunteer"
-              title="Volunteer"
-              text="The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses."
-            />
-            <!-- /Card -->
-          </div>
-          <div class="px-4 md:w-1/2 lg:w-1/4">
-            <!-- Card -->
-            <Card
-              :imgSrc="CardImg03"
-              imgAlt="Foster"
-              title="Foster"
-              text="We’re saving more babies than ever, and one of the best ways for you to help is to become a foster."
-            />
-            <!-- /Card -->
-          </div>
-          <div class="px-4 md:w-1/2 lg:w-1/4">
-            <!-- Card -->
-            <Card
-              :imgSrc="CardImg04"
-              imgAlt="Get kids involved"
-              title="Get kids involved"
-              text="Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!"
-            />
-            <!-- /Card -->
           </div>
         </div>
 
@@ -102,15 +74,13 @@
         </div>
 
         <div
-          class="mt-16 flex flex-col items-center justify-center md:flex-row"
+          class="mt-16 flex flex-col items-center justify-center md:flex-row space-y-10 md:space-y-0 md:space-x-10 lg:space-x-14"
         >
           <Button
-            class="mx-7 mb-8 w-64 md:mb-0"
             variant="secondary"
             text="All adoptable dogs"
           />
           <Button
-            class="mx-7 mb-8 w-64 md:mb-0"
             variant="secondary"
             text="All adoptable cats"
           />
@@ -122,80 +92,40 @@
       <div class="absolute top-0 left-0 h-full w-full">
         <img
           class="absolute top-0 left-0 h-full w-full object-cover"
-          src="../assets/img/bg-image-01.jpg"
+          :src="bgImg01"
           alt="image description"
         />
       </div>
 
-      <div class="relative z-10 mx-auto flex max-w-5xl px-4">
-        <div
-          class="mb-0 flex flex-col overflow-hidden rounded-sm bg-white shadow md:-mb-32 md:rounded-lg lg:flex-row"
-        >
-          <div
-            class="relative h-80 overflow-hidden md:h-96 lg:h-auto lg:w-[46%]"
-          >
-            <img
-              class="absolute top-0 left-0 h-full w-full object-cover"
-              src="../assets/img/content-img-01.jpg"
-              alt="image description"
-            />
-          </div>
-          <div
-            class="px-9 py-9 pb-14 text-center sm:px-16 sm:py-12 lg:w-[54%] lg:py-20 lg:text-left"
-          >
-            <h3 class="mb-2 text-xl font-bold leading-normal sm:text-4xl">
-              We place over 16,000 animals a year
-            </h3>
-            <p class="text-xs leading-loose lg:mr-24">
-              We were the first open-admission no-kill shelter in Pennsylvania,
-              and we have led Delaware to becoming the first no-kill state in
-              the United States.
-            </p>
-            <Button
-              class="mt-10"
-              variant="primary"
-              text="Learn more about our impact"
-            />
-          </div>
-        </div>
-      </div>
+      <InfoCard
+        :imgSrc="infoCardImg01"
+        imgAlt="We place over 16,000 animals a year"
+        v-bind="infoCardData"
+        :buttons="[
+          { variant: 'primary', text: 'Learn more about our impact' },
+        ]"
+      />
     </section>
 
     <section class="bg-gray-dark pt-16 pb-20 md:pt-56 md:pb-24">
       <div class="mx-auto max-w-[61rem] px-4">
-        <h2
-          class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
-        >
+        <h2 class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl">
           For your pet
         </h2>
 
-        <div
-          class="grid grid-cols-1 gap-10 px-8 sm:grid-cols-1 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-3"
-        >
-          <!-- Card -->
-          <Card
-            :imgSrc="CardImg05"
-            imgAlt="Wellness clinic"
-            title="Wellness clinic"
-            text="Low-cost, quality veterinary services available to the public"
-          />
-          <!-- /Card -->
-          <!-- Card -->
-          <Card
-            :imgSrc="CardImg06"
-            imgAlt="Spay & neuter"
-            title="Spay & neuter"
-            text="Low-cost spay and neutering services for your pet"
-          />
-          <!-- /Card -->
-          <!-- Card -->
-          <Card
-            :imgSrc="CardImg07"
-            imgAlt="Daycare & boarding"
-            title="Daycare & boarding"
-            text="Luxury boarding & daycare for pampered pets"
-          />
-          <!-- /Card -->
+        <div class="-mx-4 flex flex-wrap justify-center gap-y-10 md:gap-y-8">
+          <div
+            class="px-4 md:w-1/2 lg:w-1/3"
+            v-for="card in cardsForPet"
+            :key="card.title"
+          >
+            <Card
+              :imgSrc="card.imgSrc"
+              :imgAlt="card.imgAlt"
+              :title="card.title"
+              :text="card.text"
+            />
+          </div>
         </div>
 
         <div class="mt-16 text-center">
@@ -204,67 +134,15 @@
       </div>
     </section>
 
-    <section class="py-20 pb-10 lg:py-28">
-      <div class="mx-auto max-w-7xl items-start px-4 lg:flex">
-        <div
-          class="mx-auto mb-8 max-w-sm flex-shrink-0 overflow-hidden rounded-md shadow sm:mb-10 md:max-w-md lg:mr-14 lg:mb-0 lg:w-[42%] lg:max-w-full xl:mr-24"
-        >
-          <img
-            class="w-full"
-            src="../assets/img/content-img-02.jpg"
-            alt="image description"
-          />
-        </div>
-        <div class="text-sm sm:text-base">
-          <h3 class="mb-2 text-2xl font-bold sm:text-5xl">Need help?</h3>
-          <p class="mb-10 sm:mb-8">
-            Supporting our community by providing the resources needed to
-            improve the lives and well-being of animals is what we do
-          </p>
-
-          <div class="grid gap-10 sm:grid-cols-2 sm:gap-8">
-            <div>
-              <h4 class="mb-2 text-xl font-bold">Lost & found pets</h4>
-              <p class="mb-5 text-xs">
-                Losing your furry friend or finding another’s beloved animal can
-                be a very harrowing and emotional process.
-              </p>
-              <ButtonLink :text="'Learn more'" />
-            </div>
-            <div>
-              <h4 class="mb-2 text-xl font-bold">Reporting animal cruelty</h4>
-              <p class="mb-5 text-xs">
-                Our Animal Protective Services Department works tirelessly to
-                prevent abuse and protect companion animals.
-              </p>
-              <ButtonLink :text="'Learn more'" />
-            </div>
-            <div>
-              <h4 class="mb-2 text-xl font-bold">Pet food pantry</h4>
-              <p class="mb-5 text-xs sm:mr-24">
-                Free food assistance for pet owners living below the poverty
-                line.
-              </p>
-              <ButtonLink :text="'Learn more'" />
-            </div>
-            <div>
-              <h4 class="mb-2 text-xl font-bold">Behavior resources</h4>
-              <p class="mb-5 text-xs">
-                We offer phone, e-mail and on-site support for our adopters,
-                foster families and pet owners seeking behavior assistance.
-              </p>
-              <ButtonLink :text="'Learn more'" />
-            </div>
-          </div>
-
-          <Button
-            class="mt-16"
-            variant="primary"
-            text="See all ways to get help"
-          />
-        </div>
-      </div>
-    </section>
+    <PostSection
+      :imgSrc="postSectionImg"
+      imgAlt="Need help?"
+      v-bind="postSectionData"
+      buttonLink
+      :buttons="[
+        { variant: 'primary', text: 'See all ways to get help' },
+      ]"
+    />
 
     <section class="py-10 pb-36 md:pb-60">
       <div class="mx-auto max-w-5xl px-4">
@@ -416,7 +294,7 @@
         <MarqueeSlider :slides="marqueeSlides" />
       </div>
       <div class="px-5 text-center">
-        <ButtonLink :text="'Become a sponsor'" />
+        <ButtonLink text="Become a sponsor" />
       </div>
     </section>
   </div>
@@ -432,13 +310,13 @@ import ButtonLink from "@/components/ButtonLink.vue";
 import Stats from "@/components/Stats.vue";
 
 import Card from "@/components/Card.vue";
-import CardImg01 from "@/assets/img/icon-pet.svg";
-import CardImg02 from "@/assets/img/icon-volunteer.svg";
-import CardImg03 from "@/assets/img/icon-dog-house.svg";
-import CardImg04 from "@/assets/img/icon-father-and-son.svg";
-import CardImg05 from "@/assets/img/icon-heart-rate.svg";
-import CardImg06 from "@/assets/img/icon-dog.svg";
-import CardImg07 from "@/assets/img/icon-pet-shop.svg";
+import cardImg01 from "@/assets/img/icon-pet.svg";
+import cardImg02 from "@/assets/img/icon-volunteer.svg";
+import cardImg03 from "@/assets/img/icon-dog-house.svg";
+import cardImg04 from "@/assets/img/icon-father-and-son.svg";
+import cardImg05 from "@/assets/img/icon-heart-rate.svg";
+import cardImg06 from "@/assets/img/icon-dog.svg";
+import cardImg07 from "@/assets/img/icon-pet-shop.svg";
 
 import PostCard from "@/components/PostCard.vue";
 import PostCardImg01 from "@/assets/img/img-pet-01.jpg";
@@ -463,10 +341,18 @@ import Carousel from "@/components/Carousel.vue";
 import slideImg01 from "@/assets/img/slide01.jpg";
 import slideImg02 from "@/assets/img/slide02.jpg";
 
+import bgImg01 from "@/assets/img/bg-image-01.jpg";
+
 import imgGrid01 from "@/assets/img/merch-img-01.jpg";
 import imgGrid02 from "@/assets/img/merch-img-02.jpg";
 import imgGrid03 from "@/assets/img/merch-img-03.jpg";
 import imgGrid04 from "@/assets/img/merch-img-04.jpg";
+
+import PostSection from "@/components/PostSection.vue";
+import postSectionImg from "@/assets/img/content-img-02.jpg";
+
+import InfoCard from "@/components/InfoCard.vue";
+import infoCardImg01 from "@/assets/img/content-img-01.jpg";
 
 const carouselSlides = [slideImg01, slideImg02, slideImg01, slideImg02];
 
@@ -514,5 +400,81 @@ const imgGrid = [
     imgSrc: imgGrid04,
     imgAlt: ""
   }
-]
+];
+
+const cards = [
+  {
+    imgSrc: cardImg01,
+    imgAlt: "Adopt",
+    title: "Adopt",
+    text: "Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?",
+  },
+  {
+    imgSrc: cardImg02,
+    imgAlt: "Volunteer",
+    title: "Volunteer",
+    text: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses.",
+  },
+  {
+    imgSrc: cardImg03,
+    imgAlt: "Foster",
+    title: "Foster",
+    text: "We’re saving more babies than ever, and one of the best ways for you to help is to become a foster.",
+  },
+  {
+    imgSrc: cardImg04,
+    imgAlt: "Get kids involved",
+    title: "Get kids involved",
+    text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!",
+  }
+];
+
+const cardsForPet = [
+  {
+    imgSrc: cardImg05,
+    imgAlt: "Wellness clinic",
+    title: "Wellness clinic",
+    text: "Low-cost, quality veterinary services available to the public",
+  },
+  {
+    imgSrc: cardImg06,
+    imgAlt: "Spay & neuter",
+    title: "Spay & neuter",
+    text: "Low-cost spay and neutering services for your pet",
+  },
+  {
+    imgSrc: cardImg07,
+    imgAlt: "Daycare & boarding",
+    title: "Daycare & boarding",
+    text: "Luxury boarding & daycare for pampered pets",
+  }
+];
+
+const postSectionData = {
+  title: "Need help?",
+  text: "Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do",
+  textGrid: [
+    {
+      title: "Lost & found pets",
+      text: "Losing your furry friend or finding another’s beloved animal can be a very harrowing and emotional process. ",
+    },
+    {
+      title: "Reporting animal cruelty",
+      text: "Our Animal Protective Services Department works tirelessly to prevent abuse and protect companion animals. ",
+    },
+    {
+      title: "Pet food pantry",
+      text: "Free food assistance for pet owners living below the poverty line. ",
+    },
+    {
+      title: "Behavior resources",
+      text: "We offer phone, e-mail and on-site support for our adopters, foster families and pet owners seeking behavior assistance.",
+    },
+  ],
+};
+
+const infoCardData = {
+  title: "We place over 16,000 animals a year",
+  text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
+};
 </script>
