@@ -1,8 +1,10 @@
 <template>
   <label v-if="variant === 'default'" :for="id" class="block">
-    <span v-if="label" class="inline-flex mb-2 select-none text-sm leading-5">{{ label }}</span>
+    <span v-if="label" class="mb-2 inline-flex select-none text-sm leading-5">{{
+      label
+    }}</span>
     <input
-      v-if="(type !== 'textarea' && type !== 'file')"
+      v-if="type !== 'textarea' && type !== 'file'"
       :type="type"
       :id="id"
       :placeholder="placeholder"
@@ -12,6 +14,7 @@
     />
     <input
       v-if="type === 'file'"
+      :type="type"
       :id="id"
       :value="value"
       :name="name"
