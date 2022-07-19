@@ -1,9 +1,6 @@
 <template>
   <div>
-    <Hero
-      :imgSrc="heroImg"
-      imgDescr="Hero Image"
-    />
+    <Hero :img="{ src: 'src/assets/img/hero-image-01.jpg', alt: 'family' }" />
 
     <Stats />
 
@@ -21,17 +18,12 @@
             v-for="card in cards"
             :key="card.title"
           >
-            <Card
-              :imgSrc="card.imgSrc"
-              :imgAlt="card.imgAlt"
-              :title="card.title"
-              :text="card.text"
-            />
+            <Card v-bind="card" />
           </div>
         </div>
 
         <div class="mt-16 text-center">
-          <Button variant="primary" text="See all ways to get involved" />
+          <Button text="See all ways to get involved" url="#!" />
         </div>
       </div>
     </section>
@@ -48,42 +40,17 @@
           class="grid grid-cols-1 gap-10 px-0 sm:px-8 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-3"
         >
           <PostCard
-            :imgSrc="PostCardImg01"
-            imgAlt="Chewie fka Monkey"
-            title="Chewie fka Monkey"
-            text="Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well …"
-            share
-            :buttonLink="{ text: 'Learn more' }"
-          />
-          <PostCard
-            :imgSrc="PostCardImg02"
-            imgAlt="Slim aka Spunk"
-            title="Slim aka Spunk"
-            text="Slim (aka Spunk) is a big fellow with an equally big heart! This wonderful guy is bonded with Magic, on whom he relies for comfort and love. As a bonded …"
-            share
-            :buttonLink="{ text: 'Learn more' }"
-          />
-          <PostCard
-            :imgSrc="PostCardImg03"
-            imgAlt="Boo Boo"
-            title="Boo Boo"
-            text="Boo Boo loves tennis balls! He likes to play with them, walk with them, and swim in our doggie pools with them. If you have a stash of tennis balls, Boo Boo …"
-            share
-            :buttonLink="{ text: 'Learn more' }"
+            v-for="post in featuredPets"
+            :key="post.title"
+            v-bind="post"
           />
         </div>
 
         <div
-          class="mt-16 flex flex-col items-center justify-center md:flex-row space-y-10 md:space-y-0 md:space-x-10 lg:space-x-14"
+          class="mt-16 flex flex-col items-center justify-center space-y-10 md:flex-row md:space-y-0 md:space-x-10 lg:space-x-14"
         >
-          <Button
-            variant="secondary"
-            text="All adoptable dogs"
-          />
-          <Button
-            variant="secondary"
-            text="All adoptable cats"
-          />
+          <Button variant="secondary" text="All adoptable dogs" url="#!" />
+          <Button variant="secondary" text="All adoptable cats" url="#!" />
         </div>
       </div>
     </section>
@@ -92,24 +59,19 @@
       <div class="absolute top-0 left-0 h-full w-full">
         <img
           class="absolute top-0 left-0 h-full w-full object-cover"
-          :src="bgImg01"
+          src="src/assets/img/bg-image-01.jpg"
           alt="image description"
         />
       </div>
 
-      <InfoCard
-        :imgSrc="infoCardImg01"
-        imgAlt="We place over 16,000 animals a year"
-        v-bind="infoCardData"
-        :buttons="[
-          { variant: 'primary', text: 'Learn more about our impact' },
-        ]"
-      />
+      <InfoCard v-bind="infoCardData" />
     </section>
 
     <section class="bg-gray-dark pt-16 pb-20 md:pt-56 md:pb-24">
       <div class="mx-auto max-w-[61rem] px-4">
-        <h2 class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl">
+        <h2
+          class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
+        >
           For your pet
         </h2>
 
@@ -119,12 +81,7 @@
             v-for="card in cardsForPet"
             :key="card.title"
           >
-            <Card
-              :imgSrc="card.imgSrc"
-              :imgAlt="card.imgAlt"
-              :title="card.title"
-              :text="card.text"
-            />
+            <Card v-bind="card" />
           </div>
         </div>
 
@@ -134,45 +91,11 @@
       </div>
     </section>
 
-    <PostSection
-      :imgSrc="postSectionImg"
-      imgAlt="Need help?"
-      v-bind="postSectionData"
-      buttonLink
-      :buttons="[
-        { variant: 'primary', text: 'See all ways to get help' },
-      ]"
-    />
+    <PostSection v-bind="postSectionData" />
 
-    <section class="py-10 pb-36 md:pb-60">
+    <section class="pt-10 pb-40 md:pb-60">
       <div class="mx-auto max-w-5xl px-4">
-        <div class="flex flex-col-reverse lg:flex-row">
-          <div class="w-auto lg:w-1/2">
-            <div class="text-center text-xs lg:pr-16 lg:text-left">
-              <h2 class="mb-4 text-2xl font-bold md:text-4xl">
-                A second chance at nine lives
-              </h2>
-              <p>
-                Whiskers got his leg caught in a fox trap after getting loose
-                from his home. He lost a lot of skin, suffered nerve damage, ahd
-                a quickly spreading infection. His family brought him to our New
-                Castle Animal Health Center. They couldn’t afford the entirety
-                od his care and were condisdering euthanasia since the infection
-                would soon be life-threatening. Thanks to our pet retention
-                grant from Petco Love, we were able to bridge what his owners
-                couldn’t afford and saved Whiskers by amputating the badly
-                damaged leg. Whiskers now lives a life of three-legged luxury.
-                We’re grateful for Petco Love’s support, which results from all
-                of you who donate at checkout at the Petco stores.
-              </p>
-            </div>
-          </div>
-          <div class="mx-auto w-full max-w-md lg:w-1/2 lg:max-w-full">
-            <div class="mb-8 lg:mb-0">
-              <Carousel :slides="carouselSlides" />
-            </div>
-          </div>
-        </div>
+        <PostCarousel v-bind="postCarouselData" />
       </div>
     </section>
 
@@ -190,47 +113,34 @@
           class="grid grid-cols-1 gap-10 px-0 text-center font-bold sm:px-8 md:grid-cols-2 md:gap-16 md:px-0 lg:grid-cols-3"
         >
           <PostCard
-            :imgSrc="PostCardImg04"
-            imgAlt="Save a Life"
-            title="Save a Life"
-            text="Every dollar you donate will go to the programs and services that help save the lives of thousands of homeless animals each year."
-            :button="{ variant: 'secondary', text: 'Save a life' }"
-          />
-          <PostCard
-            :imgSrc="PostCardImg05"
-            imgAlt="Circle of Life"
-            title="Circle of Life"
-            text="Your generous monthly donation helps provide shelter, food, and medical care to thousands of animals who enter our shelters each year."
-            :button="{ variant: 'secondary', text: 'Become a member' }"
-          />
-          <PostCard
-            :imgSrc="PostCardImg06"
-            imgAlt="1929 Society"
-            title="1929 Society"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non."
-            :button="{ variant: 'secondary', text: 'Join the society' }"
+            v-for="card in cardsDonations"
+            :key="card.title"
+            v-bind="card"
           />
         </div>
 
         <div class="mt-16 text-center">
-          <ButtonLink text="See more ways to help" />
+          <ButtonLink text="See more ways to help" url="#!" />
         </div>
       </div>
     </section>
 
     <section class="py-20 lg:py-28">
-      <div class="mx-auto max-w-5xl px-4 lg:flex items-center">
-        <div class="lg:w-[43%] max-w-md lg:max-w-full flex-shrink-0 mx-auto lg:mr-20 xl:mr-28 mb-12 lg:mb-0 grid grid-cols-2 gap-6 sm:gap-8">
+      <div class="mx-auto max-w-5xl items-center px-4 lg:flex">
+        <div
+          class="mx-auto mb-12 grid max-w-md flex-shrink-0 grid-cols-2 gap-6 sm:gap-8 lg:mr-20 lg:mb-0 lg:w-[43%] lg:max-w-full xl:mr-28"
+        >
           <div
-            class="overflow-hidden flex items-center justify-center rounded-sm sm:rounded-lg bg-white shadow"
+            class="flex items-center justify-center overflow-hidden rounded-sm bg-white shadow sm:rounded-lg"
             v-for="item in imgGrid"
             :key="item"
           >
-            <h4 class="mb-2 text-xl font-bold">{{item.title}}</h4>
-            <img :src="item.imgSrc" :alt="item.imgAlt" />
+            <img v-bind="item.img" />
           </div>
         </div>
-        <div class="text-center text-xs sm:text-sm lg:text-left">
+        <div
+          class="mx-auto max-w-2xl text-center text-xs sm:text-sm lg:max-w-none lg:text-left"
+        >
           <h3 class="mb-2 text-2xl font-bold sm:text-3xl md:text-5xl">
             Support our lifesaving work and look good doing it
           </h3>
@@ -255,33 +165,17 @@
         <div
           class="grid grid-cols-1 gap-10 px-0 sm:px-8 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-3"
         >
-          <PostCard
-            :imgSrc="PostCardImg07"
-            imgAlt="$5 off our 5K Color Run"
-            title="$5 off our 5K Color Run"
-            text="We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!"
-            :buttonLink="{ text: 'Read more' }"
-          />
-          <PostCard
-            :imgSrc="PostCardImg08"
-            imgAlt="Walk-4-Paws"
-            title="Walk-4-Paws"
-            text="We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things."
-            :buttonLink="{ text: 'Read more' }"
-          />
-          <PostCard
-            :imgSrc="PostCardImg09"
-            imgAlt="Critter Camp"
-            title="Critter Camp"
-            text="Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12."
-            :buttonLink="{ text: 'Read more' }"
-          />
+          <PostCard v-for="post in blogPosts" :key="post.title" v-bind="post" />
         </div>
 
         <div
           class="mt-16 flex flex-col items-center justify-center md:flex-row"
         >
-          <Button variant="primary" text="View all news, events & resources " />
+          <Button
+            variant="primary"
+            text="View all news, events & resources "
+            url="#!"
+          />
         </div>
       </div>
     </section>
@@ -302,7 +196,6 @@
 
 <script setup>
 import Hero from "@/components/Hero.vue";
-import heroImg from "@/assets/img/hero-image-01.jpg";
 
 import Button from "@/components/Button.vue";
 import ButtonLink from "@/components/ButtonLink.vue";
@@ -310,171 +203,233 @@ import ButtonLink from "@/components/ButtonLink.vue";
 import Stats from "@/components/Stats.vue";
 
 import Card from "@/components/Card.vue";
-import cardImg01 from "@/assets/img/icon-pet.svg";
-import cardImg02 from "@/assets/img/icon-volunteer.svg";
-import cardImg03 from "@/assets/img/icon-dog-house.svg";
-import cardImg04 from "@/assets/img/icon-father-and-son.svg";
-import cardImg05 from "@/assets/img/icon-heart-rate.svg";
-import cardImg06 from "@/assets/img/icon-dog.svg";
-import cardImg07 from "@/assets/img/icon-pet-shop.svg";
-
 import PostCard from "@/components/PostCard.vue";
-import PostCardImg01 from "@/assets/img/img-pet-01.jpg";
-import PostCardImg02 from "@/assets/img/img-pet-02.jpg";
-import PostCardImg03 from "@/assets/img/img-pet-03.jpg";
-import PostCardImg04 from "@/assets/img/img-pet-04.jpg";
-import PostCardImg05 from "@/assets/img/img-pet-05.jpg";
-import PostCardImg06 from "@/assets/img/img-pet-06.jpg";
-import PostCardImg07 from "@/assets/img/img-pet-07.jpg";
-import PostCardImg08 from "@/assets/img/img-pet-08.jpg";
-import PostCardImg09 from "@/assets/img/content-img-03.jpg";
-
-import MarqueeSlider from "@/components/MarqueeSlider.vue";
-import logo01 from "@/assets/img/sponsors/petco-love.png";
-import logo02 from "@/assets/img/sponsors/discover.png";
-import logo03 from "@/assets/img/sponsors/faegre-drinker.png";
-import logo04 from "@/assets/img/sponsors/idexx.png";
-import logo05 from "@/assets/img/sponsors/merck.png";
-import logo06 from "@/assets/img/sponsors/barnes-thornbur.png";
-
-import Carousel from "@/components/Carousel.vue";
-import slideImg01 from "@/assets/img/slide01.jpg";
-import slideImg02 from "@/assets/img/slide02.jpg";
-
-import bgImg01 from "@/assets/img/bg-image-01.jpg";
-
-import imgGrid01 from "@/assets/img/merch-img-01.jpg";
-import imgGrid02 from "@/assets/img/merch-img-02.jpg";
-import imgGrid03 from "@/assets/img/merch-img-03.jpg";
-import imgGrid04 from "@/assets/img/merch-img-04.jpg";
 
 import PostSection from "@/components/PostSection.vue";
-import postSectionImg from "@/assets/img/content-img-02.jpg";
 
 import InfoCard from "@/components/InfoCard.vue";
-import infoCardImg01 from "@/assets/img/content-img-01.jpg";
+import PostCarousel from "@/components/PostCarousel.vue";
 
-const carouselSlides = [slideImg01, slideImg02, slideImg01, slideImg02];
+import MarqueeSlider from "@/components/MarqueeSlider.vue";
 
-const marqueeSlides = [
-  {
-    url: "#",
-    logo: logo01
-  },
-  {
-    url: "#",
-    logo: logo02
-  },
-  {
-    url: "#",
-    logo: logo03
-  },
-  {
-    url: "#",
-    logo: logo04
-  },
-  {
-    url: "#",
-    logo: logo05
-  },
-  {
-    url: "#",
-    logo: logo06
-  }
-];
+const postCarouselData = {
+  title: "A second chance at nine lives",
+  text: "Whiskers got his leg caught in a fox trap after getting loose from his home. He lost a lot of skin, suffered nerve damage,   ahd a quickly spreading infection. His family brought him to our New Castle Animal Health Center. They couldn’t afford the entirety od his care and were condisdering euthanasia since the infection would soon be life-threatening. Thanks to our pet retention grant from Petco Love, we were able to bridge what his owners couldn’t afford and saved Whiskers by amputating the badly damaged leg. Whiskers now lives a life of three-legged luxury. We’re grateful for Petco Love’s support, which results from all of you who donate at checkout at the Petco stores.",
+  slides: [
+    { src: "src/assets/img/slide01.jpg", alt: "kitty" },
+    { src: "src/assets/img/slide02.jpg", alt: "" }
+  ]
+};
 
-const imgGrid = [
+const featuredPets = [
   {
-    imgSrc: imgGrid01,
-    imgAlt: ""
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
+    title: "Chewie fka Monkey",
+    text: "Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well …",
+    share: true,
+    buttonLink: { text: "Learn more", url: "#!" }
   },
   {
-    imgSrc: imgGrid02,
-    imgAlt: ""
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-02.jpg" },
+    title: "Slim aka Spunk",
+    text: "Slim (aka Spunk) is a big fellow with an equally big heart! This wonderful guy is bonded with Magic, on whom he relies for comfort and love. As a bonded …",
+    share: true,
+    buttonLink: { text: "Learn more", url: "#!" }
   },
   {
-    imgSrc: imgGrid03,
-    imgAlt: ""
-  },
-  {
-    imgSrc: imgGrid04,
-    imgAlt: ""
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-03.jpg" },
+    title: "Boo Boo",
+    text: "Boo Boo loves tennis balls! He likes to play with them, walk with them, and swim in our doggie pools with them. If you have a stash of tennis balls, Boo Boo …",
+    share: true,
+    buttonLink: { text: "Learn more", url: "#!" }
   }
 ];
 
 const cards = [
   {
-    imgSrc: cardImg01,
-    imgAlt: "Adopt",
+    url: "#!",
+    img: { src: "src/assets/img/icon-pet.svg", alt: "Adopt" },
     title: "Adopt",
-    text: "Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?",
+    text: "Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?"
   },
   {
-    imgSrc: cardImg02,
-    imgAlt: "Volunteer",
+    url: "#!",
+    img: { src: "src/assets/img/icon-volunteer.svg", alt: "Volunteer" },
     title: "Volunteer",
-    text: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses.",
+    text: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses."
   },
   {
-    imgSrc: cardImg03,
-    imgAlt: "Foster",
+    url: "#!",
+    img: { src: "src/assets/img/icon-dog-house.svg", alt: "Foster" },
     title: "Foster",
-    text: "We’re saving more babies than ever, and one of the best ways for you to help is to become a foster.",
+    text: "We’re saving more babies than ever, and one of the best ways for you to help is to become a foster."
   },
   {
-    imgSrc: cardImg04,
-    imgAlt: "Get kids involved",
+    url: "#!",
+    img: {
+      src: "src/assets/img/icon-father-and-son.svg",
+      alt: "Get kids involved"
+    },
     title: "Get kids involved",
-    text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!",
+    text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!"
   }
 ];
 
 const cardsForPet = [
   {
-    imgSrc: cardImg05,
-    imgAlt: "Wellness clinic",
+    url: "#!",
+    img: { src: "src/assets/img/icon-heart-rate.svg", alt: "Wellness clinic" },
     title: "Wellness clinic",
-    text: "Low-cost, quality veterinary services available to the public",
+    text: "Low-cost, quality veterinary services available to the public"
   },
   {
-    imgSrc: cardImg06,
-    imgAlt: "Spay & neuter",
+    url: "#!",
+    img: { src: "src/assets/img/icon-dog.svg", alt: "Spay & neuter" },
     title: "Spay & neuter",
-    text: "Low-cost spay and neutering services for your pet",
+    text: "Low-cost spay and neutering services for your pet"
   },
   {
-    imgSrc: cardImg07,
-    imgAlt: "Daycare & boarding",
+    url: "#!",
+    img: { src: "src/assets/img/icon-pet-shop.svg", alt: "Daycare & boarding" },
+
     title: "Daycare & boarding",
-    text: "Luxury boarding & daycare for pampered pets",
+    text: "Luxury boarding & daycare for pampered pets"
+  }
+];
+
+const cardsDonations = [
+  {
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-04.jpg", alt: "" },
+    title: "Save a Life",
+    text: "Every dollar you donate will go to the programs and services that help save the lives of thousands of homeless animals each year.",
+    button: { variant: "secondary", text: "Save a life", url: "#!" }
+  },
+  {
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-05.jpg", alt: "" },
+    title: "Circle of Life",
+    text: "Your generous monthly donation helps provide shelter, food, and medical care to thousands of animals who enter our shelters each year.",
+    button: { variant: "secondary", text: "Become a member", url: "#!" }
+  },
+  {
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-06.jpg", alt: "" },
+    title: "1929 Society",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non.",
+    button: { variant: "secondary", text: "Join the society", url: "#!" }
+  }
+];
+
+const blogPosts = [
+  {
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+    title: "$5 off our 5K Color Run",
+    text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
+    buttonLink: { text: "Read more" }
+  },
+  {
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+    title: "Walk-4-Paws",
+    text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
+    buttonLink: { text: "Read more" }
+  },
+  {
+    url: "#!",
+    img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+    title: "Critter Camp",
+    text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
+    buttonLink: { text: "Read more" }
+  }
+];
+
+const marqueeSlides = [
+  {
+    url: "#",
+    img: { src: "src/assets/img/sponsors/petco-love.png", alt: "petco logo" }
+  },
+  {
+    url: "#",
+    img: { src: "src/assets/img/sponsors/discover.png", alt: "discover logo" }
+  },
+  {
+    url: "#",
+    img: {
+      src: "src/assets/img/sponsors/faegre-drinker.png",
+      alt: "faegre-drinker logo"
+    }
+  },
+  {
+    url: "#",
+    img: { src: "src/assets/img/sponsors/idexx.png", alt: "idexx logo" }
+  },
+  {
+    url: "#",
+    img: { src: "src/assets/img/sponsors/merck.png", alt: "merck logo" }
+  },
+  {
+    url: "#",
+    img: {
+      src: "src/assets/img/sponsors/barnes-thornbur.png",
+      alt: "barnes-thornbur logo"
+    }
+  }
+];
+
+const imgGrid = [
+  {
+    img: { src: "src/assets/img/merch-img-01.jpg", alt: "" }
+  },
+  {
+    img: { src: "src/assets/img/merch-img-02.jpg", alt: "" }
+  },
+  {
+    img: { src: "src/assets/img/merch-img-03.jpg", alt: "" }
+  },
+  {
+    img: { src: "src/assets/img/merch-img-04.jpg", alt: "" }
   }
 ];
 
 const postSectionData = {
+  img: { src: "src/assets/img/content-img-02.jpg", alt: "" },
   title: "Need help?",
   text: "Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do",
+
   textGrid: [
     {
       title: "Lost & found pets",
       text: "Losing your furry friend or finding another’s beloved animal can be a very harrowing and emotional process. ",
+      button: { text: "Learn more", url: "#!" }
     },
     {
       title: "Reporting animal cruelty",
       text: "Our Animal Protective Services Department works tirelessly to prevent abuse and protect companion animals. ",
+      button: { text: "Learn more", url: "#!" }
     },
     {
       title: "Pet food pantry",
       text: "Free food assistance for pet owners living below the poverty line. ",
+      button: { text: "Learn more", url: "#!" }
     },
     {
       title: "Behavior resources",
       text: "We offer phone, e-mail and on-site support for our adopters, foster families and pet owners seeking behavior assistance.",
-    },
+      button: { text: "Learn more", url: "#!" }
+    }
   ],
+  buttons: [{ variant: "primary", text: "See all ways to get help", url: "#!" }]
 };
 
 const infoCardData = {
+  img: { src: "src/assets/img/content-img-01.jpg", alt: "work" },
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
+  buttons: [{ variant: "primary", text: "Learn more about our impact" }]
 };
 </script>

@@ -7,7 +7,7 @@
           target="_blank"
           class="transition-opacity hover:opacity-80"
         >
-          <img :src="item.logo" alt="" />
+          <img v-bind="item.img" />
         </a>
       </li>
     </ul>

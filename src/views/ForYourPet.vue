@@ -25,7 +25,7 @@
       <div class="absolute top-0 left-0 h-full w-full">
         <img
           class="absolute top-0 left-0 h-full w-full object-cover"
-          :src="bgImg01"
+          src="@/assets/img/bg-image-01.jpg"
           alt="image description"
         />
       </div>
@@ -52,33 +52,17 @@
         <div
           class="grid grid-cols-1 gap-10 px-0 sm:px-8 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-3"
         >
-          <PostCard
-            :imgSrc="PostCardImg07"
-            imgAlt="$5 off our 5K Color Run"
-            title="$5 off our 5K Color Run"
-            text="We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!"
-            :buttonLink="{ text: 'Read more' }"
-          />
-          <PostCard
-            :imgSrc="PostCardImg08"
-            imgAlt="Walk-4-Paws"
-            title="Walk-4-Paws"
-            text="We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things."
-            :buttonLink="{ text: 'Read more' }"
-          />
-          <PostCard
-            :imgSrc="PostCardImg09"
-            imgAlt="Critter Camp"
-            title="Critter Camp"
-            text="Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12."
-            :buttonLink="{ text: 'Read more' }"
-          />
+          <PostCard v-for="post in blogPosts" :key="post.title" v-bind="post" />
         </div>
 
         <div
           class="mt-16 flex flex-col items-center justify-center md:flex-row"
         >
-          <Button variant="primary" text="View all news, events & resources" />
+          <Button
+            variant="primary"
+            text="View all news, events & resources"
+            url="#!"
+          />
         </div>
       </div>
     </section>
@@ -93,59 +77,40 @@ import PostCard from "@/components/PostCard.vue";
 import PostInline from "@/components/PostInline.vue";
 import InfoCard from "@/components/InfoCard.vue";
 
-import heroImg from "@/assets/img/hero-image-02.jpg";
-
-import cardImg01 from "@/assets/img/icon-heart-rate.svg";
-import cardImg02 from "@/assets/img/icon-dog.svg";
-import cardImg03 from "@/assets/img/icon-pet-shop.svg";
-import cardImg04 from "@/assets/img/icon-pet-insurance.svg";
-import cardImg05 from "@/assets/img/icon-cat.svg";
-
-import PostCardImg07 from "@/assets/img/img-pet-07.jpg";
-import PostCardImg08 from "@/assets/img/img-pet-08.jpg";
-import PostCardImg09 from "@/assets/img/content-img-03.jpg";
-
-import postInlineImg01 from "@/assets/img/content-img-04.jpg";
-
-import bgImg01 from "@/assets/img/bg-image-01.jpg";
-
-import infoCardImg01 from "@/assets/img/content-img-01.jpg";
-
 const heroInnerData = {
   title: "For your pet",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
-  imgSrc: heroImg,
-  imgAlt: "Welness clinic"
+  img: { src: "src/assets/img/hero-image-02.jpg", alt: "Welness clinic" }
 };
 
 const cards = [
   {
-    imgSrc: cardImg01,
-    imgAlt: "Adopt",
+    url: "#!",
+    img: { src: "src/assets/img/icon-heart-rate.svg", alt: "" },
     title: "Adopt",
     text: "Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?"
   },
   {
-    imgSrc: cardImg02,
-    imgAlt: "Volunteer",
+    url: "#!",
+    img: { src: "src/assets/img/icon-dog.svg", alt: "" },
     title: "Volunteer",
     text: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses."
   },
   {
-    imgSrc: cardImg03,
-    imgAlt: "Foster",
+    url: "#!",
+    img: { src: "src/assets/img/icon-pet-shop.svg", alt: "" },
     title: "Foster",
     text: "We’re saving more babies than ever, and one of the best ways for you to help is to become a foster."
   },
   {
-    imgSrc: cardImg04,
-    imgAlt: "Get kids involved",
+    url: "#!",
+    img: { src: "src/assets/img/icon-pet-insurance.svg", alt: "" },
     title: "Get kids involved",
     text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!"
   },
   {
-    imgSrc: cardImg05,
-    imgAlt: "Get kids involved",
+    url: "#!",
+    img: { src: "src/assets/img/icon-cat.svg", alt: "" },
     title: "Get kids involved",
     text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!"
   }
@@ -154,26 +119,50 @@ const cards = [
 const postInlineData = {
   title: "Give back to your community",
   text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families.",
-  imgSrc: postInlineImg01,
-  imgAlt: "Pay it forward, your free time has so much value",
+  img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
   buttons: [
     {
       variant: "secondary",
-      text: "Donate"
+      text: "Donate",
+      url: "#!"
     },
     {
       variant: "outlineSecondary",
-      text: "Sponsor"
+      text: "Sponsor",
+      url: "#!"
     }
   ]
 };
 
+const blogPosts = [
+  {
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+    title: "$5 off our 5K Color Run",
+    text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
+    buttonLink: { text: "Read more" }
+  },
+  {
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+    title: "Walk-4-Paws",
+    text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
+    buttonLink: { text: "Read more" }
+  },
+  {
+    url: "#!",
+    img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+    title: "Critter Camp",
+    text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
+    buttonLink: { text: "Read more" }
+  }
+];
+
 const infoCardData = {
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
-  imgSrc: infoCardImg01,
-  imgAlt: "We place over 16,000 animals a year",
+  img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
   buttons: [
     { variant: "primary", text: "Learn more about our impact", url: "#!" }
   ]
