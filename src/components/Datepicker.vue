@@ -1,5 +1,5 @@
 <template>
-  <label>
+  <label class="block">
     <span v-if="label" class="select-none text-sm">{{ label }}</span>
     <div class="dp flex">
       <Datepicker
