@@ -4,7 +4,7 @@
   >
     <h3 class="mb-2 text-2xl font-bold">{{ title }}</h3>
     <p>{{ text }}</p>
-    <ButtonLink class="mt-8" :text="buttonText" :url="link" />
+    <ButtonLink v-if="buttonLink" class="mt-8" v-bind="buttonLink" />
   </div>
 </template>
 
@@ -14,6 +14,7 @@ import ButtonLink from "./ButtonLink.vue";
 const props = defineProps({
   title: String,
   text: String,
-  buttonText: String,
+  button: Object,
+  buttonLink: Object
 });
 </script>

@@ -95,7 +95,11 @@
         <!-- /header logo -->
 
         <!-- header button mobile -->
-        <Button class="xl:hidden" variant="primary" text="Donate" />
+        <Button
+          class="xl:hidden"
+          variant="primary"
+          text="Donate"
+        />
         <!-- /header button mobile -->
 
         <!-- main menu burger -->

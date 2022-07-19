@@ -10,6 +10,8 @@ import DonateModal from './views/DonateModal.vue'
 import VolunteerModal from './views/VolunteerModal.vue'
 import AppointmentModal from './views/AppointmentModal.vue'
 import Storybook from './views/Storybook.vue'
+import Routes from './views/Routes.vue'
+
 
 
 import NotFound from './views/NotFound.vue'
@@ -28,5 +30,6 @@ export const routes = [
   { path: '/volunteer-modal', component: VolunteerModal, meta: { title: 'Volunteer modal' } },
   { path: '/appointment-modal', component: AppointmentModal, meta: { title: 'Appointment modal' } },
   { path: '/storybook', component: Storybook, meta: { title: 'Storybook' } },
+  { path: '/routes', component: Routes },
   { path: '/:path(.*)', component: NotFound },
 ]

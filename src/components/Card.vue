@@ -1,10 +1,10 @@
 <template>
   <a
-    class="block h-full hover:border-orange rounded-md border-2 border-transparent bg-white px-5 pt-8 pb-11 text-center shadow md:px-6 xl:py-12"
-    href="#0"
+    class="hover:border-orange block h-full rounded-md border-2 border-transparent bg-white px-5 pt-8 pb-11 text-center shadow transition-colors md:px-6 xl:py-12"
+    :href="url"
   >
     <div class="align-end min-h-5 md:min-h-7 flex pb-1 md:pb-4">
-      <img class="mx-auto scale-75 md:scale-100" :src="imgSrc" :alt="imgAlt" />
+      <img class="mx-auto scale-75 md:scale-100" v-bind="img" />
     </div>
     <div>
       <h3 class="mb-2 text-xl font-bold">{{ title }}</h3>
@@ -18,14 +18,11 @@
 import ButtonLink from "./ButtonLink.vue";
 
 const props = defineProps({
-  imgSrc: {
+  url: {
     type: String,
-    default: ""
+    required: true
   },
-  imgAlt: {
-    type: String,
-    default: ""
-  },
+  img: Object,
   title: String,
   text: String
 });

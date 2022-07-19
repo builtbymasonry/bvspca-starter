@@ -2,17 +2,16 @@
   <div class="relative overflow-hidden">
     <img
       class="relative top-0 left-0 w-full object-cover md:absolute md:h-full"
-      :src="imgSrc"
-      :alt="imgAlt"
+      v-bind="img"
     />
 
     <div
-      class="relative from-white to-white/30 px-5 py-8 pb-14 text-center md:mx-10 md:my-12 md:max-w-lg md:rounded-lg md:bg-gradient-radial md:px-12 md:py-12 md:text-left xl:mx-20 xl:my-24 xl:max-w-xl xl:px-20 xl:py-16"
+      class="md:bg-gradient-radial relative from-white to-white/30 px-5 py-8 pb-14 text-center md:mx-10 md:my-12 md:max-w-lg md:rounded-lg md:px-12 md:py-12 md:text-left xl:mx-20 xl:my-24 xl:max-w-xl xl:px-20 xl:py-16"
     >
       <h1 class="mb-3 text-4xl font-bold md:text-5xl lg:text-7xl">
         Putting the human back in humane
       </h1>
-      <p class="text-base leading-normal lg:text-2lg">
+      <p class="lg:text-2lg text-base leading-normal">
         We strive to end animal suffering and empower communities to find the
         heart in humanity
       </p>
@@ -34,13 +33,6 @@
 import Button from "./Button.vue";
 
 const props = defineProps({
-  imgSrc: {
-    type: String,
-    default: "#",
-  },
-  imgAlt: {
-    type: String,
-    default: "",
-  },
+  img: Object
 });
 </script>
