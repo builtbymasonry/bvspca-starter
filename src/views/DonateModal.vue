@@ -82,7 +82,7 @@
               <Button
                 text="Next"
                 variant="primary"
-                :arrow="true"
+                icon="arrowRight"
                 class="min-w-[105px]"
                 @click="formPage++"
               />

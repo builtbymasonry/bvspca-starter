@@ -1,5 +1,20 @@
 <template>
   <div>
+    <section class="py-8">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="mb-3 text-center text-xl font-bold">TableStatistics</h2>
+        <div class="mb-10">
+          <TableStatistics :data="monthlyData" />
+        </div>
+        <TableStatistics :data="quarterlyData" />
+      </div>
+    </section>
+    <section class="py-8">
+      <div class="mx-auto max-w-3xl px-4">
+        <h2 class="mb-3 text-center text-xl font-bold">Accordion</h2>
+        <Accordion :items="faq" />
+      </div>
+    </section>
     <section class="bg-purple py-8">
       <div class="mx-auto max-w-6xl px-4">
         <h2 class="mb-3 text-center text-xl font-bold text-white">
@@ -26,6 +41,339 @@
 import MapRentals from "@/components/MapRentals.vue";
 import TableServices from "@/components/TableServices.vue";
 import TablePackages from "@/components/TablePackages.vue";
+import Accordion from "@/components/Accordion.vue";
+import TableStatistics from "@/components/TableStatistics.vue";
+
+const quarterlyData = {
+  title: "2022",
+  rows: [
+    {
+      title: "PA 2022:",
+      content: [
+        {
+          label: "Jan-March",
+          value: "#1"
+        },
+        {
+          label: "April-June",
+          value: null
+        },
+        {
+          label: "July-Sept",
+          value: null
+        },
+        {
+          label: "Oct-Dec",
+          value: null
+        }
+      ]
+    },
+    {
+      title: "DE 2022",
+      content: [
+        {
+          label: "Jan-March",
+          value: "#1"
+        },
+        {
+          label: "April-June",
+          value: null
+        },
+        {
+          label: "July-Sept",
+          value: null
+        },
+        {
+          label: "Oct-Dec",
+          value: null
+        }
+      ]
+    },
+    {
+      title: "LA Hub 2022",
+      content: [
+        {
+          label: "Jan-March",
+          value: "#1"
+        },
+        {
+          label: "April-June",
+          value: null
+        },
+        {
+          label: "July-Sept",
+          value: null
+        },
+        {
+          label: "Oct-Dec",
+          value: null
+        }
+      ]
+    },
+    {
+      title: "All States Combined 2022",
+      content: [
+        {
+          label: "Jan-March",
+          value: "#1"
+        },
+        {
+          label: "April-June",
+          value: null
+        },
+        {
+          label: "July-Sept",
+          value: null
+        },
+        {
+          label: "Oct-Dec",
+          value: null
+        }
+      ]
+    }
+  ]
+};
+
+const monthlyData = {
+  title: "2022",
+  rows: [
+    {
+      title: "PA 2022:",
+      content: [
+        {
+          label: "Jan",
+          value: "#1"
+        },
+        {
+          label: "Feb",
+          value: "#2"
+        },
+        {
+          label: "March",
+          value: "#3"
+        },
+        {
+          label: "April",
+          value: "#4"
+        },
+        {
+          label: "May",
+          value: "#5"
+        },
+        {
+          label: "June",
+          value: null
+        },
+        {
+          label: "July",
+          value: null
+        },
+        {
+          label: "Aug",
+          value: null
+        },
+        {
+          label: "Sept",
+          value: null
+        },
+        {
+          label: "Oct",
+          value: null
+        },
+        {
+          label: "Nov",
+          value: null
+        },
+        {
+          label: "Dec",
+          value: null
+        }
+      ]
+    },
+    {
+      title: "DE 2022:",
+      content: [
+        {
+          label: "Jan",
+          value: "#1"
+        },
+        {
+          label: "Feb",
+          value: "#2"
+        },
+        {
+          label: "March",
+          value: "#3"
+        },
+        {
+          label: "April",
+          value: "#4"
+        },
+        {
+          label: "May",
+          value: "#5"
+        },
+        {
+          label: "June",
+          value: null
+        },
+        {
+          label: "July",
+          value: null
+        },
+        {
+          label: "Aug",
+          value: null
+        },
+        {
+          label: "Sept",
+          value: null
+        },
+        {
+          label: "Oct",
+          value: null
+        },
+        {
+          label: "Nov",
+          value: null
+        },
+        {
+          label: "Dec",
+          value: null
+        }
+      ]
+    },
+    {
+      title: "LA Hub 2022:",
+      content: [
+        {
+          label: "Jan",
+          value: "#1"
+        },
+        {
+          label: "Feb",
+          value: "#2"
+        },
+        {
+          label: "March",
+          value: "#3"
+        },
+        {
+          label: "April",
+          value: "#4"
+        },
+        {
+          label: "May",
+          value: "#5"
+        },
+        {
+          label: "June",
+          value: null
+        },
+        {
+          label: "July",
+          value: null
+        },
+        {
+          label: "Aug",
+          value: null
+        },
+        {
+          label: "Sept",
+          value: null
+        },
+        {
+          label: "Oct",
+          value: null
+        },
+        {
+          label: "Nov",
+          value: null
+        },
+        {
+          label: "Dec",
+          value: null
+        }
+      ]
+    },
+    {
+      title: "All States Combined 2022:",
+      content: [
+        {
+          label: "Jan",
+          value: "#1"
+        },
+        {
+          label: "Feb",
+          value: "#2"
+        },
+        {
+          label: "March",
+          value: "#3"
+        },
+        {
+          label: "April",
+          value: "#4"
+        },
+        {
+          label: "May",
+          value: "#5"
+        },
+        {
+          label: "June",
+          value: null
+        },
+        {
+          label: "July",
+          value: null
+        },
+        {
+          label: "Aug",
+          value: null
+        },
+        {
+          label: "Sept",
+          value: null
+        },
+        {
+          label: "Oct",
+          value: null
+        },
+        {
+          label: "Nov",
+          value: null
+        },
+        {
+          label: "Dec",
+          value: null
+        }
+      ]
+    }
+  ]
+};
+
+const faq = [
+  {
+    button: "Lorem ipsum dolor sit amet consectetur?",
+    panel:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in. Penatibus et magnis dis parturient. Dictum at tempor commodo ullamcorper a lacus."
+  },
+  {
+    button: "Lorem ipsum dolor sit amet?",
+    panel:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    button: "Lorem ipsum dolor sit amet consectetur?",
+    panel:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in. Penatibus et magnis dis parturient. Dictum at tempor commodo ullamcorper a lacus."
+  },
+  {
+    button: "Lorem ipsum dolor sit amet?",
+    panel:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  }
+];
 
 const dogPackages = {
   desktop: [
