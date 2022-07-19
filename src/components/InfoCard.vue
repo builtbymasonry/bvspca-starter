@@ -7,8 +7,7 @@
       <div class="relative h-80 overflow-hidden md:h-96 lg:h-auto lg:w-[46%]">
         <img
           class="absolute top-0 left-0 h-full w-full object-cover"
-          :src="imgSrc"
-          :alt="imgAlt"
+          v-bind="img"
         />
       </div>
       <div
@@ -38,14 +37,7 @@ const props = defineProps({
   title: String,
   text: String,
   buttons: Array,
-  imgSrc: {
-    type: String,
-    default: "#"
-  },
-  imgAlt: {
-    type: String,
-    default: ""
-  },
+  img: Object,
   reverse: {
     type: Boolean,
     default: false

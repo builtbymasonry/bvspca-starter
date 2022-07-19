@@ -2,7 +2,7 @@
   <ul class="flex items-center">
     <li
       v-for="item in socials"
-      :key="item.url"
+      :key="item.icon"
       class="inline-flex items-center"
     >
       <a
@@ -22,7 +22,6 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
 import BaseIcon from "@/components/BaseIcon.vue";
 
 const props = defineProps({

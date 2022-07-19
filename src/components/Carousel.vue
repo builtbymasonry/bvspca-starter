@@ -14,7 +14,7 @@
     class="spca-carousel"
   >
     <swiper-slide v-for="slide in slides" :key="slide">
-      <img :src="slide" alt="" class="w-full" />
+      <img v-bind="slide" class="w-full" />
     </swiper-slide>
   </swiper>
 </template>
