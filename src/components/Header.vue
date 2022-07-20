@@ -1,5 +1,5 @@
 <template>
-  <Popover v-slot="{open}" class="relative z-10 bg-white shadow">
+  <Popover v-slot="{ open }" class="relative z-10 bg-white shadow">
     <!-- upper header bar -->
     <div
       class="min-h-3 bg-purple hidden items-center px-3 py-2 text-white md:px-6 xl:flex"
@@ -95,15 +95,11 @@
         <!-- /header logo -->
 
         <!-- header button mobile -->
-        <Button
-          class="xl:hidden shadow-none"
-          variant="primary"
-          text="Donate"
-        />
+        <Button class="shadow-none xl:hidden" variant="primary" text="Donate" />
         <!-- /header button mobile -->
 
         <!-- main menu burger -->
-        <div class="inline-flex xl:hidden">
+        <div class="-mr-1 inline-flex xl:hidden">
           <PopoverButton
             class="inline-flex items-center justify-center text-black"
           >
@@ -287,7 +283,7 @@
       <div>
         <PopoverPanel
           focus
-          class="absolute inset-x-0 top-[90px] lg:top-[100px] origin-top-right transform transition xl:hidden"
+          class="absolute inset-x-0 top-[48px] origin-top-right transform transition md:top-[90px] lg:top-[100px] xl:hidden"
         >
           <!-- mobile menu nav -->
           <div class="bg-purple">
@@ -295,16 +291,20 @@
               <div v-for="item in navMobile" :key="item.label">
                 <a
                   v-show="activeMobileDrop === null"
-                  v-on="{ click: item.drop ? handleNavClick : null }"
+                  v-on="{
+                    click: item.drop ? handleNavClick : null,
+                    keyup: item.drop ? handleNavKeyUp : null
+                  }"
+                  :tabindex="item.drop ? '0' : ''"
                   :id="item.drop ? generateId(item.label) : null"
                   :href="item.url"
-                  class="hover:text-orange border-purple-dark flex cursor-pointer items-center border-b-[1px] p-3 transition-colors"
+                  class="hover:text-orange border-purple-dark flex cursor-pointer items-center border-b-[1px] py-3 px-4 transition-colors md:px-7"
                 >
                   {{ item.label }}
                   <BaseIcon
                     v-if="item.drop"
                     name="arrowRight"
-                    class="text-orange ml-auto mt-1 inline-flex h-3 w-3"
+                    class="text-orange ml-auto inline-flex h-3 w-3"
                   />
                 </a>
                 <ul
@@ -314,7 +314,7 @@
                   <li v-for="subItem in item.drop" :key="subItem.label">
                     <a
                       :href="subItem.url"
-                      class="hover:text-orange flex items-center p-3"
+                      class="hover:text-orange flex items-center py-3 px-4 md:px-7"
                       >{{ subItem.label }}</a
                     >
                   </li>
@@ -325,8 +325,10 @@
               <a
                 v-show="activeMobileDrop === null"
                 @click="handleNavClick"
+                @keyup="handleNavKeyUp"
+                tabindex="0"
                 :id="'SearchBar'"
-                class="hover:text-orange border-purple-medium flex cursor-pointer select-none items-center justify-between border-b-[1px] p-3 transition-colors"
+                class="hover:text-orange border-purple-medium flex cursor-pointer select-none items-center justify-between border-b-[1px] py-3 px-4 transition-colors md:px-7"
               >
                 <span>Search</span>
                 <BaseIcon name="search" class="text-orange h-3 w-3" />
@@ -411,6 +413,13 @@ const handleDropClose = (e) => {
   e.preventDefault();
   activeMobileDrop.value = null;
   scrollToTop();
+};
+
+const handleNavKeyUp = (e) => {
+  if (e.key === "Enter") {
+    activeMobileDrop.value = e.currentTarget.id;
+    scrollToTop();
+  }
 };
 
 const handleNavClick = (e) => {
