@@ -8,22 +8,16 @@
     <div
       class="md:bg-gradient-radial relative from-white to-white/30 px-5 py-8 pb-14 text-center md:mx-10 md:my-12 md:max-w-lg md:rounded-lg md:px-12 md:py-12 md:text-left xl:mx-20 xl:my-24 xl:max-w-xl xl:px-20 xl:py-16"
     >
-      <h1 class="mb-3 text-4xl font-bold md:text-5xl lg:text-7xl">
-        Putting the human back in humane
-      </h1>
-      <p class="lg:text-2lg text-base leading-normal">
-        We strive to end animal suffering and empower communities to find the
-        heart in humanity
-      </p>
+      <h1 class="mb-1 text-4xl font-bold md:text-6xl xl:text-7xl">{{title}}</h1>
+      <p class="mr-10 text-base md:text-lg xl:text-2lg">{{text}}</p>
       <div
-        class="mt-7 flex flex-wrap justify-center md:mx-0 md:justify-start xl:mt-12"
+        class="mt-7 xl:mt-12 flex flex-wrap justify-center md:justify-start space-x-5 xl:space-x-10"
       >
         <Button
-          class="mr-4 md:mr-5 lg:mr-10"
-          variant="primary"
-          text="Save a life"
+          v-for="button in buttons"
+          :key="button.text"
+          v-bind="button"
         />
-        <Button class="ml-4 md:ml-0" variant="outline" text="Learn more" />
       </div>
     </div>
   </div>
@@ -33,6 +27,9 @@
 import Button from "./Button.vue";
 
 const props = defineProps({
-  img: Object
+  img: Object,
+  title: String,
+  text: String,
+  buttons: Array
 });
 </script>

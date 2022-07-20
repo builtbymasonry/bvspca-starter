@@ -1,5 +1,5 @@
 <template>
-  <Popover class="relative z-10 bg-white shadow">
+  <Popover class="relative z-10  bg-white shadow">
     <!-- upper header bar -->
     <div
       class="min-h-3 bg-purple hidden items-center px-3 py-2 text-white md:px-6 xl:flex"
@@ -96,7 +96,7 @@
 
         <!-- header button mobile -->
         <Button
-          class="xl:hidden"
+          class="xl:hidden shadow-none"
           variant="primary"
           text="Donate"
         />
@@ -281,7 +281,7 @@
           class="absolute inset-x-0 top-0 origin-top-right transform transition xl:hidden"
         >
           <!-- mobile menu header -->
-          <div class="bg-white px-3 py-1 md:px-6 md:py-6">
+          <div class="bg-white px-3 py-1 md:px-6 md:py-5">
             <div
               class="flex items-center justify-between space-x-4 xl:space-x-12"
             >
@@ -345,7 +345,7 @@
                 v-show="activeMobileDrop === null"
                 @click="handleNavClick"
                 :id="'SearchBar'"
-                class="hover:text-orange border-purple-dark flex cursor-pointer select-none items-center justify-between border-b-[1px] p-3 transition-colors"
+                class="hover:text-orange border-purple-medium flex cursor-pointer select-none items-center justify-between border-b-[1px] p-3 transition-colors"
               >
                 <span>Search</span>
                 <BaseIcon name="search" class="text-orange h-3 w-3" />
@@ -361,7 +361,7 @@
                   class="relative mx-auto flex w-full max-w-[450px] items-center justify-center rounded-full border-2 border-white"
                 >
                   <input
-                    class="placeholder:text-gray-light w-full border-none bg-transparent px-5 py-3 text-sm text-white focus:ring-transparent"
+                    class="placeholder:text-gray-light w-full border-none bg-transparent px-5 py-3 text-sm font-normal text-white focus:ring-transparent"
                     type="text"
                     autocomplete="off"
                     spellcheck="false"
@@ -396,6 +396,7 @@
               :socials="socialList"
               class="flex justify-center space-x-8 px-3 py-8"
               iconSize="w-[25px] h-[25px]"
+              iconShadow
             />
           </div>
           <!-- /mobile menu nav -->

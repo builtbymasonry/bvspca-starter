@@ -98,9 +98,13 @@
         </h2>
 
         <div
-          class="grid grid-cols-1 gap-10 px-0 sm:px-8 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-3"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
         >
-          <PostCard v-for="post in blogPosts" :key="post.title" v-bind="post" />
+          <PostCard
+            v-for="post in blogPosts"
+            :key="post.title"
+            v-bind="post"
+          />
         </div>
 
         <div

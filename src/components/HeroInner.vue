@@ -1,6 +1,6 @@
 <template>
   <div class="relative overflow-hidden">
-    <div class="mx-auto max-w-screen-2xl md:px-4">
+    <div class="mx-auto max-w-7xl md:px-4">
       <img
         class="relative top-0 left-0 w-full object-cover md:absolute md:h-full"
         v-bind="img"

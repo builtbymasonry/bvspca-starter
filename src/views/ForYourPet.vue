@@ -9,9 +9,9 @@
           Resources for pet owners and lovers
         </h2>
 
-        <div class="-mx-4 flex flex-wrap justify-center gap-y-10 md:gap-y-8">
+        <div class="-mx-4 flex flex-wrap justify-center gap-y-10 sm:gap-y-8">
           <div
-            class="px-4 md:w-1/2 lg:w-1/3"
+            class="px-4 w-full sm:w-1/2 lg:w-1/3"
             v-for="card in cards"
             :key="card.title"
           >
@@ -50,13 +50,17 @@
         </h2>
 
         <div
-          class="grid grid-cols-1 gap-10 px-0 sm:px-8 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-3"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
         >
-          <PostCard v-for="post in blogPosts" :key="post.title" v-bind="post" />
+          <PostCard
+            v-for="post in blogPosts"
+            :key="post.title"
+            v-bind="post"
+          />
         </div>
 
         <div
-          class="mt-16 flex flex-col items-center justify-center md:flex-row"
+          class="mt-16 flex flex-wrap flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-5 lg:space-x-10"
         >
           <Button
             variant="primary"
@@ -87,32 +91,32 @@ const cards = [
   {
     url: "#!",
     img: { src: "src/assets/img/icon-heart-rate.svg", alt: "" },
-    title: "Adopt",
-    text: "Over 16,000 animals enter our shelters in hopes of finding a home to call their own. Is your new family member waiting for you?"
+    title: "Wellness clinic",
+    text: "Our full-service, high-quality hospital offers medical care ranging from routine vaccinations and health checks, to sick visits and diagnostics, to spay/neuter and special surgeries."
   },
   {
     url: "#!",
     img: { src: "src/assets/img/icon-dog.svg", alt: "" },
-    title: "Volunteer",
-    text: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities at both our Delaware and Pennsylvania campuses."
+    title: "Spay & neuter",
+    text: "Spayed/neutered pets live longer. Our accomplished veterinarians and medical staff operate in a professional, caring manner and will handle your pet kindly."
   },
   {
     url: "#!",
     img: { src: "src/assets/img/icon-pet-shop.svg", alt: "" },
-    title: "Foster",
-    text: "We’re saving more babies than ever, and one of the best ways for you to help is to become a foster."
+    title: "Daycare & boarding",
+    text: "Now your pet can have a luxury stay in daycare or boarding while helping animals in need. Eastern Shore Pet Resort helps fund ongoing operation of important work."
   },
   {
     url: "#!",
     img: { src: "src/assets/img/icon-pet-insurance.svg", alt: "" },
-    title: "Get kids involved",
-    text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!"
+    title: "Pet insurance",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. "
   },
   {
     url: "#!",
     img: { src: "src/assets/img/icon-cat.svg", alt: "" },
-    title: "Get kids involved",
-    text: "Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program!"
+    title: "Community cats",
+    text: "Our services increase the health and wellness of community cats while proactively reducing the number of animals being born without homes in our community."
   }
 ];
 
