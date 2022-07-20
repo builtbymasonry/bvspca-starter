@@ -10,7 +10,7 @@
       name="arrowRight"
       :class="[
         reverse ? 'mr-3 rotate-180' : 'ml-3',
-        'text-orange mt-1 inline-flex h-3 w-3'
+        'text-orange inline-flex h-3 w-3'
       ]"
     />
   </a>
