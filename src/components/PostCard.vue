@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a :href="url" class="mb-8 block overflow-hidden rounded-lg shadow">
+    <a :href="url" class="mb-8 block overflow-hidden rounded-sm md:rounded-lg shadow">
       <img
         class="w-full transition-all duration-300 hover:scale-[102%]"
         v-bind="img"
@@ -9,7 +9,7 @@
     <h3 class="mb-2 text-2xl font-bold">{{ title }}</h3>
     <p class="mb-8 text-sm">{{ text }}</p>
     <div v-if="share" class="mb-9 flex">
-      <span class="mr-6 text-xl font-bold">Share:</span>
+      <span class="mr-6 text-lg md:text-xl font-bold">Share:</span>
       <Socials :socials="socialList" class="space-x-4" />
     </div>
     <ButtonLink v-if="buttonLink" :text="buttonLink.text" :url="url" />

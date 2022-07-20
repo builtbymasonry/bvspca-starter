@@ -5,7 +5,7 @@
       :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
     >
       <div
-        class="relative mx-auto mb-10 max-w-sm flex-shrink-0 overflow-hidden rounded-sm shadow md:max-w-md md:rounded-md lg:mb-0 lg:w-2/5 lg:max-w-full"
+        class="relative mb-10 lg:mb-0 mx-auto flex-shrink-0 overflow-hidden rounded-sm md:rounded-md shadow sm:w-1/2 lg:w-2/5"
         :class="reverse ? 'lg:ml-14 xl:ml-20' : 'lg:mr-14 xl:mr-20'"
       >
         <img
@@ -13,7 +13,7 @@
           v-bind="img"
         />
       </div>
-      <div class="pt-2 text-center text-sm sm:text-left sm:text-base">
+      <div class="py-2 text-center text-sm sm:text-left sm:text-base">
         <h3 class="mb-2 text-2xl font-bold sm:text-4xl">{{ title }}</h3>
         <h4 class="mb-2 text-2xl font-bold sm:text-2xl">{{ subtitle }}</h4>
         <p class="mb-10 sm:mb-8">{{ text }}</p>

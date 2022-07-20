@@ -1,8 +1,12 @@
 <template>
   <div>
+    <HeroInner v-bind="heroInnerData" class="bg-gray-dark" />
+
+    <PostSection class="bg-gray-dark" v-bind="postSectionData" />
+
     <section class="py-14 lg:py-28">
       <div class="mx-auto grid max-w-7xl grid-cols-1 px-4 lg:grid-cols-2">
-        <div class="xxl:pr-36 pb-14 text-xs sm:text-sm lg:pb-0 lg:pr-20">
+        <div class="pb-14 text-xs sm:text-sm lg:pr-20 lg:pb-0 2xl:pr-36">
           <h3 class="mb-2 text-2xl font-bold sm:text-4xl">
             If you have lost your pet, we invite you to fill out the report to
             the right
@@ -57,80 +61,53 @@
         </div>
 
         <div class="rounded-lg bg-white p-8 shadow sm:p-12 xl:p-20">
-          <form class="divide-gray-dark -my-9 divide-y-2">
-            <div class="py-9">
-              <h3 class="-mt-2 mb-4 text-xl font-bold sm:text-4xl">
-                Lost & found pet form
-              </h3>
-              <Select inputLabel="Select location" :options="location" />
-            </div>
+          <FormLostFound />
+        </div>
+      </div>
+    </section>
 
-            <div class="py-9">
-              <h4 class="mb-3 text-lg font-bold tracking-wider">
-                About the pet
-              </h4>
-              <RadioGroup
-                class="mb-6"
-                label="Lost or found? *"
-                :options="[
-                  { value: 1, label: 'Lost' },
-                  { value: 2, label: 'Found' }
-                ]"
-              />
-              <RadioGroup
-                class="mb-6"
-                label="Type of pet *"
-                :options="[
-                  { value: 1, label: 'Cat' },
-                  { value: 2, label: 'Dog' },
-                  { value: 3, label: 'Other' }
-                ]"
-              />
-              <Input
-                class="mb-2"
-                type="file"
-                label="Upload a picture if possible"
-              />
-              <Input class="mb-2" label="Breed *" />
-              <Input class="mb-2" label="Animals Age (if known)" />
-              <Input class="mb-2" label="Weight (approximate)" />
-              <Input class="mb-2" label="Collar type and color" />
-              <Datepicker
-                class="mb-2"
-                placeholder="MM/DD/YYYY"
-                label="Date lost or found *"
-              />
-              <Input
-                class="mb-2"
-                type="textarea"
-                textAreaSize="md"
-                label="Give a description of the animal (name, color, distinguishing marks, etc.), and location of where the animal was lost. Include City, and Zip *"
-              />
-              <Input
-                class="mb-8"
-                label="Please identify the road or township where the animal was found or lost. *"
-              />
+    <section class="relative pt-20 pb-40 sm:pt-32 sm:pb-56 md:pb-28">
+      <div class="absolute top-0 left-0 h-full w-full">
+        <img
+          class="absolute top-0 left-0 h-full w-full object-cover"
+          src="@/assets/img/bg-image-01.jpg"
+          alt="image description"
+        />
+      </div>
 
-              <h4 class="mb-3 text-lg font-bold tracking-wider">Your info</h4>
-              <div class="mb-2 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-6">
-                <Input label="First Name *" />
-                <Input label="Last Name *" />
-              </div>
-              <Input class="mb-2" label="Email *" />
-              <Input class="mb-2" label="Phone *" />
-              <div class="mb-8 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-6">
-                <Input label="City *" />
-                <Input label="Zip code *" />
-              </div>
-              <Checkbox
-                class="mb-10 items-center"
-                label="I’m not a robot (that I know of)"
-              />
-              <div class="text-center sm:text-left">
-                <Button text="Submit" />
-              </div>
-            </div>
-          </form>
+      <InfoCard v-bind="infoCardData" />
+    </section>
+
+    <section
+      class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32"
+    >
+      <div class="mx-auto max-w-4xl px-4">
+        <PostInline v-bind="postInlineData" />
+      </div>
+    </section>
+
+    <section class="py-12 lg:py-20">
+      <div class="mx-auto max-w-7xl px-4">
+        <h2
+          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
+        >
+          Lost & found pets related news & resources
+        </h2>
+
+        <div
+          class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
+        >
+          <PostCard v-for="post in blogPosts" :key="post.title" v-bind="post" />
+        </div>
+
+        <div
+          class="mt-16 flex flex-col flex-wrap items-center justify-center space-y-8 sm:flex-row sm:space-y-0 sm:space-x-5 lg:space-x-10"
+        >
+          <Button
+            variant="primary"
+            text="View all news, events & resources"
+            url="#!"
+          />
         </div>
       </div>
     </section>
@@ -138,35 +115,93 @@
 </template>
 
 <script setup>
-import Select from "@/components/Select.vue";
-import Checkbox from "@/components/Checkbox.vue";
-import RadioGroup from "@/components/RadioGroup.vue";
-import Input from "@/components/Input.vue";
-import Datepicker from "@/components/Datepicker.vue";
 import Button from "@/components/Button.vue";
+import HeroInner from "@/components/HeroInner.vue";
+import PostSection from "@/components/PostSection.vue";
+import FormLostFound from "@/components/FormLostFound.vue";
+import PostInline from "@/components/PostInline.vue";
+import InfoCard from "@/components/InfoCard.vue";
+import PostCard from "@/components/PostCard.vue";
 
-const location = [
+const heroInnerData = {
+  title: "Lost & found pets",
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
+  img: { src: "src/assets/img/hero-image-06.jpg", alt: "Lost & found pets" }
+};
+
+const postSectionData = {
+  img: { src: "src/assets/img/content-img-12.jpg", alt: "" },
+  title: "Lost your pet? Found a pet?",
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
+  textGrid: [
+    {
+      title: "Tip one",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia."
+    },
+    {
+      title: "Tip two",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia."
+    },
+    {
+      title: "Tip three",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia."
+    },
+    {
+      title: "Tip four",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia."
+    }
+  ],
+  buttons: [
+    { variant: "primary", text: "Check Facebook page DE ", url: "#!" },
+    { variant: "outline", text: "Check Facebook page PA ", url: "#!" }
+  ],
+  reverse: true
+};
+
+const infoCardData = {
+  title: "We place over 16,000 animals a year",
+  text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
+  img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
+  buttons: [
+    { variant: "primary", text: "Learn more about our impact", url: "#!" }
+  ]
+};
+
+const postInlineData = {
+  title: "Give back to your community",
+  text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families.",
+  img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
+  reverse: true,
+  buttons: [
+    {
+      variant: "secondary",
+      text: "Get involved",
+      url: "#!"
+    }
+  ]
+};
+
+const blogPosts = [
   {
-    value: 0,
-    label: "Select",
-    disabled: true,
-    selected: true
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+    title: "$5 off our 5K Color Run",
+    text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
+    buttonLink: { text: "Read more" }
   },
   {
-    value: 1,
-    label: "option 01"
+    url: "#!",
+    img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+    title: "Walk-4-Paws",
+    text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
+    buttonLink: { text: "Read more" }
   },
   {
-    value: 2,
-    label: "option 02"
-  },
-  {
-    value: 3,
-    label: "option 03"
-  },
-  {
-    value: 4,
-    label: "option 04"
+    url: "#!",
+    img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+    title: "Critter Camp",
+    text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
+    buttonLink: { text: "Read more" }
   }
 ];
 </script>

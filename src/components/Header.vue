@@ -1,5 +1,5 @@
 <template>
-  <Popover class="relative z-10 bg-white shadow">
+  <Popover v-slot="{open}" class="relative z-10 bg-white shadow">
     <!-- upper header bar -->
     <div
       class="min-h-3 bg-purple hidden items-center px-3 py-2 text-white md:px-6 xl:flex"
@@ -96,7 +96,7 @@
 
         <!-- header button mobile -->
         <Button
-          class="xl:hidden"
+          class="xl:hidden shadow-none"
           variant="primary"
           text="Donate"
         />
@@ -108,7 +108,16 @@
             class="inline-flex items-center justify-center text-black"
           >
             <span class="sr-only">Open menu</span>
-            <MenuIcon class="h-10 w-10" aria-hidden="true" />
+            <MenuIcon
+              class="h-10 w-10"
+              :class="open ? 'hidden' : ''"
+              aria-hidden="true"
+            />
+            <XIcon
+              class="h-10 w-10"
+              :class="open ? '' : 'hidden'"
+              aria-hidden="true"
+            />
           </PopoverButton>
         </div>
         <!-- /main menu burger -->
@@ -278,36 +287,8 @@
       <div>
         <PopoverPanel
           focus
-          class="absolute inset-x-0 top-0 origin-top-right transform transition xl:hidden"
+          class="absolute inset-x-0 top-[90px] lg:top-[100px] origin-top-right transform transition xl:hidden"
         >
-          <!-- mobile menu header -->
-          <div class="bg-white px-3 py-1 md:px-6 md:py-6">
-            <div
-              class="flex items-center justify-between space-x-4 xl:space-x-12"
-            >
-              <div
-                class="-my-2 mr-auto max-w-[100px] flex-shrink-0 md:max-w-[150px] lg:max-w-none"
-              >
-                <a href="#">
-                  <span class="sr-only">Brandywine Valley SPCA</span>
-                  <img
-                    class="w-auto"
-                    src="@/assets/img/logo.svg"
-                    alt="Brandywine Valley SPCA"
-                  />
-                </a>
-              </div>
-              <Button class="xl:hidden" variant="primary" text="Donate" />
-              <PopoverButton
-                class="inline-flex items-center justify-center text-black"
-              >
-                <span class="sr-only">Close menu</span>
-                <XIcon class="h-10 w-10" aria-hidden="true" />
-              </PopoverButton>
-            </div>
-          </div>
-          <!-- /mobile menu header -->
-
           <!-- mobile menu nav -->
           <div class="bg-purple">
             <nav class="text-lg font-bold text-white">
@@ -317,7 +298,7 @@
                   v-on="{ click: item.drop ? handleNavClick : null }"
                   :id="item.drop ? generateId(item.label) : null"
                   :href="item.url"
-                  class="hover:text-orange border-purple-dark flex cursor-pointer select-none items-center border-b-[1px] p-3 transition-colors"
+                  class="hover:text-orange border-purple-dark flex cursor-pointer items-center border-b-[1px] p-3 transition-colors"
                 >
                   {{ item.label }}
                   <BaseIcon
@@ -345,7 +326,7 @@
                 v-show="activeMobileDrop === null"
                 @click="handleNavClick"
                 :id="'SearchBar'"
-                class="hover:text-orange border-purple-dark flex cursor-pointer select-none items-center justify-between border-b-[1px] p-3 transition-colors"
+                class="hover:text-orange border-purple-medium flex cursor-pointer select-none items-center justify-between border-b-[1px] p-3 transition-colors"
               >
                 <span>Search</span>
                 <BaseIcon name="search" class="text-orange h-3 w-3" />
@@ -361,7 +342,7 @@
                   class="relative mx-auto flex w-full max-w-[450px] items-center justify-center rounded-full border-2 border-white"
                 >
                   <input
-                    class="placeholder:text-gray-light w-full border-none bg-transparent px-5 py-3 text-sm text-white focus:ring-transparent"
+                    class="placeholder:text-gray-light w-full border-none bg-transparent px-5 py-3 text-sm font-normal text-white focus:ring-transparent"
                     type="text"
                     autocomplete="off"
                     spellcheck="false"
@@ -396,6 +377,7 @@
               :socials="socialList"
               class="flex justify-center space-x-8 px-3 py-8"
               iconSize="w-[25px] h-[25px]"
+              iconShadow
             />
           </div>
           <!-- /mobile menu nav -->

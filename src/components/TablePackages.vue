@@ -49,7 +49,7 @@
             "
           ></p>
           <p
-            class="text-xxs flex flex-col leading-snug"
+            class="text-xxs flex flex-col leading-snug lg:-mr-5"
             v-if="
               service.description && typeof service.description === 'string'
             "

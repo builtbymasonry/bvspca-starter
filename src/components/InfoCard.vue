@@ -1,7 +1,7 @@
 <template>
   <div class="relative z-10 mx-auto flex max-w-5xl px-4">
     <div
-      class="mb-0 flex flex-col overflow-hidden rounded-sm bg-white shadow md:-mb-32 md:rounded-lg"
+      class="mb-0 md:-mb-32 mx-auto sm:max-w-lg lg:max-w-full flex flex-col overflow-hidden rounded-sm md:rounded-lg bg-white shadow"
       :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
     >
       <div class="relative h-80 overflow-hidden md:h-96 lg:h-auto lg:w-[46%]">
