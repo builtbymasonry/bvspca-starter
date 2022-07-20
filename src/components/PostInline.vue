@@ -4,16 +4,16 @@
     :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
   >
     <div
-      class="mx-auto max-w-sm overflow-hidden rounded-sm md:max-w-md md:rounded-md lg:w-1/2 lg:max-w-full"
+      class="mx-auto max-w-sm relative overflow-hidden rounded-sm md:max-w-md md:rounded-md lg:w-1/2 lg:max-w-full shadow"
     >
-      <img class="w-full" v-bind="img" />
+      <img class="w-full lg:absolute lg:h-full lg:object-cover" v-bind="img" />
     </div>
     <div class="flex-col items-start justify-center text-xs lg:flex lg:w-1/2">
       <h2 class="mb-3 text-2xl font-bold sm:text-4xl">{{ title }}</h2>
       <p>{{ text }}</p>
       <div
         v-if="buttons"
-        class="mt-10 flex flex-wrap justify-center space-x-10 lg:justify-start"
+        class="mt-10 flex flex-wrap justify-center lg:justify-start space-x-10"
       >
         <Button
           v-for="button in buttons"

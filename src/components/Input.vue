@@ -12,6 +12,7 @@
     />
     <input
       v-if="type === 'file'"
+      :type="type"
       :id="id"
       :value="value"
       :name="name"
@@ -60,5 +61,5 @@ const defaultClass =
   "placeholder:text-gray-light bg-gray focus:ring-orange block w-full rounded-[10px] border-none px-4 py-3 text-sm leading-none focus:outline-none focus:ring-1";
 
 const fileClass =
-  "py-2 bg-transparent focus:ring-orange focus:outline-none focus:ring-1 focus-visible:ring-1 file:inline-flex file:items-center file:justify-center file:px-6 file:py-2 file:h-[35px] file:mr-5 file:bg-red file:border-0 file:shadow file:rounded-full file:text-sm file:leading-[1] file:font-bold file:text-white";
+  "py-2 w-full bg-transparent focus:ring-orange focus:outline-none focus:ring-1 focus-visible:ring-1 file:inline-flex file:items-center file:justify-center file:h-[35px] file:px-6 file:py-2 file:mr-5 file:bg-red file:border-0 file:shadow file:rounded-full file:text-sm file:leading-[1] file:font-bold file:text-white";
 </script>

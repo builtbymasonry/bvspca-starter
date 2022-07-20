@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Hero :img="{ src: 'src/assets/img/hero-image-01.jpg', alt: 'family' }" />
+    <Hero v-bind="heroData" />
 
     <Stats />
 
@@ -12,9 +12,9 @@
           You can make a difference by getting involved today
         </h2>
 
-        <div class="-mx-4 flex flex-wrap justify-center gap-y-10 md:gap-y-8">
+        <div class="-mx-4 flex flex-wrap justify-center gap-y-10 sm:gap-y-8">
           <div
-            class="px-4 md:w-1/2 lg:w-1/4"
+            class="px-4 w-full sm:w-1/2 lg:w-1/4"
             v-for="card in cards"
             :key="card.title"
           >
@@ -37,7 +37,7 @@
         </h2>
 
         <div
-          class="grid grid-cols-1 gap-10 px-0 sm:px-8 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-3"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
         >
           <PostCard
             v-for="post in featuredPets"
@@ -47,7 +47,7 @@
         </div>
 
         <div
-          class="mt-16 flex flex-col items-center justify-center space-y-10 md:flex-row md:space-y-0 md:space-x-10 lg:space-x-14"
+          class="mt-16 flex flex-wrap flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-5 lg:space-x-10"
         >
           <Button variant="secondary" text="All adoptable dogs" url="#!" />
           <Button variant="secondary" text="All adoptable cats" url="#!" />
@@ -75,9 +75,9 @@
           For your pet
         </h2>
 
-        <div class="-mx-4 flex flex-wrap justify-center gap-y-10 md:gap-y-8">
+        <div class="-mx-4 flex flex-wrap justify-center gap-y-10 sm:gap-y-8">
           <div
-            class="px-4 md:w-1/2 lg:w-1/3"
+            class="px-4 w-full sm:w-1/2 lg:w-1/3"
             v-for="card in cardsForPet"
             :key="card.title"
           >
@@ -110,7 +110,7 @@
         </h2>
 
         <div
-          class="grid grid-cols-1 gap-10 px-0 text-center font-bold sm:px-8 md:grid-cols-2 md:gap-16 md:px-0 lg:grid-cols-3"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8 xl:gap-16"
         >
           <PostCard
             v-for="card in cardsDonations"
@@ -144,7 +144,7 @@
           <h3 class="mb-2 text-2xl font-bold sm:text-3xl md:text-5xl">
             Support our lifesaving work and look good doing it
           </h3>
-          <p class="mb-10">
+          <p class="mb-10 lg:mr-24">
             Get your paws on our original and limited edition merchandise. Your
             purchases go towards the care of the 16,000+ animals we take in each
             year.
@@ -163,13 +163,17 @@
         </h2>
 
         <div
-          class="grid grid-cols-1 gap-10 px-0 sm:px-8 md:grid-cols-2 md:gap-8 md:px-0 lg:grid-cols-3"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
         >
-          <PostCard v-for="post in blogPosts" :key="post.title" v-bind="post" />
+          <PostCard
+            v-for="post in blogPosts"
+            :key="post.title"
+            v-bind="post"
+          />
         </div>
 
         <div
-          class="mt-16 flex flex-col items-center justify-center md:flex-row"
+          class="mt-16 flex flex-wrap flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-5 lg:space-x-10"
         >
           <Button
             variant="primary"
@@ -211,6 +215,16 @@ import InfoCard from "@/components/InfoCard.vue";
 import PostCarousel from "@/components/PostCarousel.vue";
 
 import MarqueeSlider from "@/components/MarqueeSlider.vue";
+
+const heroData = {
+  img: { src: 'src/assets/img/hero-image-01.jpg', alt: 'family' },
+  title: "Putting the human back in humane",
+  text: "We strive to end animal suffering and empower communities to find the heart in humanity",
+  buttons: [
+    { variant: "primary", text: "Save a life", url: "#!" },
+    { variant: "outline", text: "Learn more", url: "#!" }
+  ]
+};
 
 const postCarouselData = {
   title: "A second chance at nine lives",

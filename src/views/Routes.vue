@@ -20,6 +20,8 @@ const routes = [
   "/wellness-clinic",
   "/clinic-staff",
   "/spay-neuter",
-  "/community-cats"
+  "/community-cats",
+  "/need-help",
+  "/lost-found"
 ];
 </script>
