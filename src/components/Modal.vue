@@ -1,9 +1,5 @@
 <template>
-  <Button
-    :text="buttonText"
-    :variant="buttonVariant"
-    @click.prevent="openModal"
-  />
+  <Button v-if="button !== null" v-bind="button" @click.prevent="openModal" />
   <TransitionRoot appear :show="isOpen" as="template">
     <Dialog as="div" @close="closeModal" class="relative z-10">
       <TransitionChild
@@ -32,7 +28,11 @@
             leave-to="opacity-0 scale-95"
           >
             <DialogPanel
-              class="relative w-full transform rounded-lg bg-white px-8 py-14 text-left align-middle shadow transition-all xl:px-20 xl:pt-20 xl:pb-16"
+              class="relative mx-auto w-full transform rounded-lg bg-white text-left align-middle shadow transition-all"
+              :class="[
+                innerGutter && 'px-8 py-14 xl:px-20 xl:pt-20 xl:pb-16',
+                size === 'full' ? 'max-w-none' : `max-w-${size}`
+              ]"
             >
               <slot />
 
@@ -40,7 +40,7 @@
                 class="absolute -right-3 -top-5 flex h-[65px] w-[65px] items-center justify-center rounded-full bg-white fill-black shadow sm:-right-6 sm:-top-6"
                 @click="closeModal"
               >
-                <BaseIcon name="close" class="w-[22px] h-[22px]" />
+                <BaseIcon name="close" class="h-[22px] w-[22px]" />
               </button>
             </DialogPanel>
           </TransitionChild>
@@ -63,27 +63,33 @@ import {
 import BaseIcon from "./BaseIcon.vue";
 import Button from "./Button.vue";
 
-const isOpen = ref(true);
+const isOpen = ref(false);
 
-function closeModal() {
+const closeModal = () => {
   isOpen.value = false;
-}
-function openModal() {
+};
+
+const openModal = () => {
   isOpen.value = true;
   emit("modalShowed");
-}
+};
 
-const props = defineProps({
-  buttonText: {
-    type: String,
-    default: "Open modal"
-  },
-  buttonVariant: {
-    type: String,
-    default: "primary"
-  },
+defineExpose({
+  openModal
+});
+
+defineProps({
+  button: Object,
   title: String,
-  description: String
+  description: String,
+  size: {
+    type: String,
+    default: "full"
+  },
+  innerGutter: {
+    type: Boolean,
+    default: true
+  }
 });
 
 const emit = defineEmits(["modalShowed"]);

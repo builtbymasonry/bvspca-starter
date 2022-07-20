@@ -55,10 +55,6 @@ const props = defineProps({
   text: String,
   textGrid: Array,
   buttons: Array,
-  buttonLink: {
-    type: Boolean,
-    default: false
-  },
   reverse: {
     type: Boolean,
     default: false

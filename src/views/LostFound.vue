@@ -2,21 +2,18 @@
   <div>
     <HeroInner v-bind="heroInnerData" class="bg-gray-dark" />
 
-    <PostSection
-      class="bg-gray-dark"
-      v-bind="postSectionData"
-    />
+    <PostSection class="bg-gray-dark" v-bind="postSectionData" />
 
     <section class="py-14 lg:py-28">
       <div class="mx-auto grid max-w-7xl grid-cols-1 px-4 lg:grid-cols-2">
-        <div class="lg:pr-20 2xl:pr-36 pb-14 lg:pb-0 text-xs sm:text-sm">
+        <div class="pb-14 text-xs sm:text-sm lg:pr-20 lg:pb-0 2xl:pr-36">
           <h3 class="mb-2 text-2xl font-bold sm:text-4xl">
             If you have lost your pet, we invite you to fill out the report to
             the right
           </h3>
           <p class="mb-6">
             Please look at the list of
-            <a class="font-bold text-red hover:text-red-dark" href="#0"
+            <a class="text-red hover:text-red-dark font-bold" href="#0"
               >recently found pets</a
             >
             and you can also do a walk-through of our shelter to determine if
@@ -26,7 +23,7 @@
           </p>
           <p class="mb-12">
             All Lost/Found Reports will also be posted to our Lost/Found
-            <a class="font-bold text-red hover:text-red-dark" href="#0"
+            <a class="text-red hover:text-red-dark font-bold" href="#0"
               >Facebook Page</a
             >, an online community we have set up to help reunite pets and
             owners.
@@ -54,7 +51,7 @@
             <li class="pl-2">
               Also, we strongly urge all pet owners to permanently identify
               their pet with a microchip. This can be done for at our
-              <a class="font-bold text-red hover:text-red-dark" href="#0"
+              <a class="text-red hover:text-red-dark font-bold" href="#0"
                 >clinics</a
               >. While collars can fall off and tags can go missing, a microchip
               is permanent and ensures that your contact information remains
@@ -64,7 +61,7 @@
         </div>
 
         <div class="rounded-lg bg-white p-8 shadow sm:p-12 xl:p-20">
-          <FormLostFound/>
+          <FormLostFound />
         </div>
       </div>
     </section>
@@ -98,17 +95,13 @@
         </h2>
 
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
+          class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
         >
-          <PostCard
-            v-for="post in blogPosts"
-            :key="post.title"
-            v-bind="post"
-          />
+          <PostCard v-for="post in blogPosts" :key="post.title" v-bind="post" />
         </div>
 
         <div
-          class="mt-16 flex flex-wrap flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-5 lg:space-x-10"
+          class="mt-16 flex flex-col flex-wrap items-center justify-center space-y-8 sm:flex-row sm:space-y-0 sm:space-x-5 lg:space-x-10"
         >
           <Button
             variant="primary"
@@ -118,7 +111,6 @@
         </div>
       </div>
     </section>
-
   </div>
 </template>
 

@@ -2,6 +2,12 @@
   <div>
     <section class="py-8">
       <div class="mx-auto max-w-6xl px-4">
+        <h2 class="mb-3 text-center text-xl font-bold">PostInline Video</h2>
+        <PostInline v-bind="postInlineVideo" />
+      </div>
+    </section>
+    <section class="py-8">
+      <div class="mx-auto max-w-6xl px-4">
         <h2 class="mb-3 text-center text-xl font-bold">TableStatistics</h2>
         <div class="mb-10">
           <TableStatistics :data="monthlyData" />
@@ -43,6 +49,14 @@ import TableServices from "@/components/TableServices.vue";
 import TablePackages from "@/components/TablePackages.vue";
 import Accordion from "@/components/Accordion.vue";
 import TableStatistics from "@/components/TableStatistics.vue";
+import PostInline from "@/components/PostInline.vue";
+
+const postInlineVideo = {
+  title: "Our mission & vision",
+  text: "Founded in 1929, the Brandywine Valley SPCA exists to end animal suffering and to involve the entire community in the welfare and well-being of animals. Our mission is to put the “human” back in humane animal treatment and advocate on their behalf. Our vision is to be the recognized leader in animal welfare that empowers communities to treat life with respect and dignity.",
+  img: { src: "src/assets/img/content-img-99.jpg", alt: "man holding kittens" },
+  video: { src: "https://www.youtube.com/embed/BHACKCNDMW8" }
+};
 
 const quarterlyData = {
   title: "2022",
