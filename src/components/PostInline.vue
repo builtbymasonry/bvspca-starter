@@ -10,6 +10,8 @@
       <div
         v-if="video"
         @click="openVideo"
+        @keyup.enter="openVideo"
+        tabindex="0"
         class="absolute top-1/2 left-1/2 -ml-10 -mt-10 h-20 w-20 cursor-pointer"
       >
         <svg class="w-full" viewBox="0 0 86 86">

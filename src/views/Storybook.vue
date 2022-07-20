@@ -1,5 +1,11 @@
 <template>
   <div>
+    <section class="bg-gray-dark py-8">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="mb-3 text-center text-xl font-bold">FilterBar</h2>
+        <FilterBar />
+      </div>
+    </section>
     <section class="py-8">
       <div class="mx-auto max-w-6xl px-4">
         <h2 class="mb-3 text-center text-xl font-bold">PostInline Video</h2>
@@ -50,6 +56,7 @@ import TablePackages from "@/components/TablePackages.vue";
 import Accordion from "@/components/Accordion.vue";
 import TableStatistics from "@/components/TableStatistics.vue";
 import PostInline from "@/components/PostInline.vue";
+import FilterBar from "@/components/FilterBar.vue";
 
 const postInlineVideo = {
   title: "Our mission & vision",
