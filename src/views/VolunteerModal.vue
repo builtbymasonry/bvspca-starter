@@ -1,5 +1,8 @@
 <template>
-  <Modal buttonText="Volunteer" @modalShowed="delayedSetRightColHeight">
+  <Modal
+    :button="{ text: 'Volunteer', variant: 'secondary' }"
+    @modalShowed="delayedSetRightColHeight"
+  >
     <div class="mx-auto max-w-[1140px]">
       <!-- desktop version -->
       <div class="hidden lg:block">
@@ -292,7 +295,7 @@ const rightCol = ref(null);
 const formPage = ref(1);
 
 onMounted(() => {
-  setRightColHeight();
+  // delayedSetRightColHeight();
 
   window.addEventListener("resize", setRightColHeight);
 });

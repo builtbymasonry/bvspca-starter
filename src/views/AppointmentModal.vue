@@ -1,5 +1,5 @@
 <template>
-  <Modal>
+  <Modal :button="{ text: 'Modal' }">
     <div class="mx-auto max-w-[1140px]">
       <!-- desktop version -->
       <div class="hidden lg:block">
