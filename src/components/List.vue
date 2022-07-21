@@ -9,7 +9,7 @@
       <BaseIcon
         name="check"
         class="absolute top-0 left-0 w-6 h-6"
-        :class="iconColor"
+        :class="bulletClass"
       />
       {{ item.text }}
     </li>
@@ -24,7 +24,7 @@ const props = defineProps({
     type: Object,
     required: true
   },
-  iconColor: {
+  bulletClass: {
     type: String,
     default: 'text-orange'
   }

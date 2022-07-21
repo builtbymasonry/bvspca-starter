@@ -193,7 +193,7 @@ const listData2 = {
       text: 'Sign a statement providing that the owner will notify the Bureau of Dog Law Enforcement, state dog warden, and local police if the dog is loose, attacks a human or animal, or dies.'
     }
   ],
-  iconColor: 'text-red'
+  bulletClass: 'text-red'
 };
 
 const postInlineData = {
