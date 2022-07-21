@@ -68,12 +68,13 @@ module.exports = {
           light: '#8E5AA9',
           DEFAULT: '#511C6C',
           medium: '#3D0E55',
-          dark: '#34084B'
+          dark: '#34084B',
         },
         gray: {
           light: '#acadae',
           DEFAULT: '#EFEFEF',
-          dark: '#F1F1F1'
+          dark: '#F1F1F1',
+          darker: '#B4B4B5'
         },
         black: {
           light: '#262626',
@@ -92,7 +93,13 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(circle at center, var(--tw-gradient-stops))',
-      }
+      },
+      ringWidth: {
+        DEFAULT: '2px',
+      },
+      ringColor: {
+        DEFAULT: '#FDB813',
+      },
     },
   },
   plugins: [

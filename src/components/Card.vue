@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import ButtonLink from "./ButtonLink.vue";
+import ButtonLink from "@/components/ButtonLink.vue";
 
 const props = defineProps({
   url: {

@@ -16,7 +16,7 @@
 
         <div class="-mx-4 flex flex-wrap justify-center gap-y-10 sm:gap-y-8">
           <div
-            class="px-4 w-full sm:w-1/2 lg:w-1/3"
+            class="px-12 md:px-4 w-full sm:w-1/2 lg:w-1/3"
             v-for="card in cards"
             :key="card.title"
           >

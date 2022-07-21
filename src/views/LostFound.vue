@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeroInner v-bind="heroInnerData" class="bg-gray-dark" />
+    <HeroInner v-bind="heroInnerData" />
 
     <PostSection
       class="bg-gray-dark"

@@ -9,7 +9,7 @@
       <img class="w-full lg:absolute lg:h-full lg:object-cover" v-bind="img" />
     </div>
     <div class="flex-col items-start justify-center text-xs lg:flex lg:w-1/2">
-      <h2 class="mb-3 text-2xl font-bold sm:text-4xl">{{ title }}</h2>
+      <h2 class="mb-3 text-2xl font-bold md:text-3xl xl:text-4xl">{{ title }}</h2>
       <p>{{ text }}</p>
       <div
         v-if="buttons"
