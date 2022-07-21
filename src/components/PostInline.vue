@@ -4,9 +4,9 @@
     :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
   >
     <div
-      class="relative mx-auto max-w-sm overflow-hidden rounded-sm md:max-w-md md:rounded-md lg:w-1/2 lg:max-w-full"
+      class="relative mx-auto max-w-sm overflow-hidden rounded-sm md:max-w-md md:rounded-md lg:w-1/2 lg:max-w-full shadow"
     >
-      <img class="w-full" v-bind="img" />
+      <img class="w-full lg:absolute lg:h-full lg:object-cover" v-bind="img" />
       <div
         v-if="video"
         @click="openVideo"
@@ -30,7 +30,7 @@
         </svg>
       </div>
     </div>
-    <div class="flex-col items-start justify-center text-xs lg:flex lg:w-1/2">
+    <div class="py-2 flex-col items-start justify-center text-xs lg:flex lg:w-1/2">
       <h2 class="mb-3 text-2xl font-bold md:text-3xl xl:text-4xl">{{ title }}</h2>
       <p>{{ text }}</p>
       <div
