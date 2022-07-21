@@ -6,7 +6,7 @@
       classDefault,
       classSize(),
       classVariant(),
-      disabled ? 'pointer-events-none bg-[#B4B4B5]' : ''
+      disabled ? 'pointer-events-none bg-gray-darker' : ''
     ]"
   >
     {{ text }}

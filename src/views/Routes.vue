@@ -22,6 +22,7 @@ const routes = [
   "/spay-neuter",
   "/community-cats",
   "/need-help",
-  "/lost-found"
+  "/lost-found",
+  "/animal-cruelty"
 ];
 </script>

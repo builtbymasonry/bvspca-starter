@@ -283,7 +283,7 @@
       <div>
         <PopoverPanel
           focus
-          class="absolute inset-x-0 top-[48px] origin-top-right transform transition md:top-[90px] lg:top-[100px] xl:hidden"
+          class="absolute inset-x-0 top-[48px] md:top-[90px] lg:top-[100px] origin-top-right transform transition xl:hidden"
         >
           <!-- mobile menu nav -->
           <div class="bg-purple">
@@ -328,7 +328,7 @@
                 @keyup="handleNavKeyUp"
                 tabindex="0"
                 :id="'SearchBar'"
-                class="hover:text-orange border-purple-medium flex cursor-pointer select-none items-center justify-between border-b-[1px] py-3 px-4 transition-colors md:px-7"
+                class="hover:text-orange border-purple flex cursor-pointer select-none items-center justify-between border-b-[1px] p-3 transition-colors"
               >
                 <span>Search</span>
                 <BaseIcon name="search" class="text-orange h-3 w-3" />
@@ -365,7 +365,7 @@
 
             <div
               v-show="activeMobileDrop !== null"
-              class="bg-purple-dark py-2 text-center"
+              class="bg-purple-medium py-2 text-center"
             >
               <ButtonLink
                 class="text-white"
