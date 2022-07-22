@@ -23,6 +23,7 @@ const routes = [
   "/community-cats",
   "/need-help",
   "/lost-found",
-  "/animal-cruelty"
+  "/animal-cruelty",
+  "/rehoming"
 ];
 </script>

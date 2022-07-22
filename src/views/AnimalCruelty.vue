@@ -1,5 +1,5 @@
 <template>
-  <HeroInner v-bind="heroInnerData" class="bg-gray-dark" />
+  <HeroInner v-bind="heroInnerData" />
 
   <section class="py-14 lg:py-28 bg-gray-dark">
     <div class="mx-auto max-w-4xl px-4">
@@ -23,7 +23,7 @@
     <div class="mx-auto max-w-7xl px-4">
       <h2 class="mb-8 text-2xl md:text-3xl xl:text-4xl font-bold text-center">The following are some guidelines to help you recognize cruelty:</h2>
       <List
-        class="max-w-5xl mx-auto lg:px-14 md:columns-2 md:gap-10 lg:gap-14 text-sm font-bold"
+        class="max-w-5xl mx-auto lg:px-14 md:columns-2 md:gap-10 lg:gap-14 text-xs sm:text-sm font-bold"
         v-bind="listData"
       />
     </div>
@@ -31,7 +31,7 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
-      <PostInline v-bind="postInlineData" />
+      <PostInline class="flex-col-reverse gap-12" v-bind="postInlineData" />
       <div class="pt-14 lg:pt-24 mx-auto max-w-2xl text-xs text-center">
         <h2 class="mb-4 text-2xl md:text-3xl xl:text-4xl font-bold">What should I do if an animal bites me?</h2>
         <p>In addition to seeking medical treatment, you should notify the Brandywine Valley SPCA’s Animal Protective Services Division at 484-302-0018 as well as the local police department where the bite occurred. All animal bites, whether they are from stray, wild, or domesticated animals, should be reported right away.</p>
@@ -43,7 +43,7 @@
     <div class="mx-auto max-w-5xl px-4">
       <h2 class="mb-8 text-2xl font-bold text-center">A dog that is declared dangerous will return to its owner per state law and the owner is required to follow the directives of the law which include:</h2>
       <List
-        class="max-w-5xl mx-auto lg:px-10 md:columns-2 md:gap-10 lg:gap-14 text-sm"
+        class="max-w-5xl mx-auto lg:px-10 md:columns-2 md:gap-10 lg:gap-14 text-xs sm:text-sm"
         v-bind="listData2"
       />
     </div>
@@ -56,34 +56,34 @@
   </section>
 
   <section class="pb-14 lg:pb-28">
-      <div class="mx-auto max-w-7xl px-4">
-        <h2
-          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
-        >
-          Animal cruelty related news & resources
-        </h2>
+    <div class="mx-auto max-w-7xl px-4">
+      <h2
+        class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
+      >
+        Animal cruelty related news & resources
+      </h2>
 
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
-        >
-          <PostCard
-            v-for="post in blogPosts"
-            :key="post.title"
-            v-bind="post"
-          />
-        </div>
-
-        <div
-          class="mt-16 flex flex-col items-center justify-center md:flex-row"
-        >
-          <Button
-            variant="primary"
-            text="View all news, events & resources"
-            url="#!"
-          />
-        </div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
+      >
+        <PostCard
+          v-for="post in blogPosts"
+          :key="post.title"
+          v-bind="post"
+        />
       </div>
-    </section>
+
+      <div
+        class="mt-16 flex flex-col items-center justify-center md:flex-row"
+      >
+        <Button
+          variant="primary"
+          text="View all news, events & resources"
+          url="#!"
+        />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup>

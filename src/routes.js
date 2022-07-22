@@ -7,6 +7,7 @@ import SpayNeuter from './views/SpayNeuter.vue'
 import NeedHelp from './views/NeedHelp.vue'
 import LostFound from './views/LostFound.vue'
 import AnimalCruelty from './views/AnimalCruelty.vue'
+import Rehoming from './views/Rehoming.vue'
 import DonateModal from './views/DonateModal.vue'
 import VolunteerModal from './views/VolunteerModal.vue'
 import AppointmentModal from './views/AppointmentModal.vue'
@@ -28,6 +29,7 @@ export const routes = [
   { path: '/need-help', component: NeedHelp, meta: { title: 'Need Help' } },
   { path: '/lost-found', component: LostFound, meta: { title: 'Lost & Found' } },
   { path: '/animal-cruelty', component: AnimalCruelty, meta: { title: 'Animal Cruelty' } },
+  { path: '/rehoming', component: Rehoming, meta: { title: 'Rehoming' } },
   { path: '/donate-modal', component: DonateModal, meta: { title: 'Donate modal' } },
   { path: '/volunteer-modal', component: VolunteerModal, meta: { title: 'Volunteer modal' } },
   { path: '/appointment-modal', component: AppointmentModal, meta: { title: 'Appointment modal' } },
