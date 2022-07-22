@@ -7,14 +7,16 @@
       class="mainSlider"
     >
       <SwiperSlide v-for="(slide, i) in slides" :key="i">
-        <div v-if="slide.video" class="relative" tabindex="0">
-          <video width="500" class="w-full" height="240" controls>
-            <source :src="slide.video.src" type="video/mp4" />
-          </video>
-        </div>
-        <div v-else>
-          <img v-bind="slide.img" class="w-full" />
-        </div>
+        <video
+          v-if="slide.video"
+          width="500"
+          class="absolute inset-0 h-full w-full object-cover"
+          height="240"
+          controls
+        >
+          <source :src="slide.video.src" type="video/mp4" />
+        </video>
+        <img v-else v-bind="slide.img" class="w-full" />
       </SwiperSlide>
     </Swiper>
   </div>
