@@ -81,16 +81,14 @@ const heroInnerData = {
 const contactCard = {
   contactItems: [
     {
-      title: `For a rehoming consultation,
-      please contact our free Pet Resource Center:`,
+      title: `For a rehoming consultation, \n please contact our free Pet Resource Center:`,
       textLink: "(484) 301-5200",
       url: "tel:4843015200",
       subtext: [
         {
           text: "or",
           textLink: "(302) 516-1010",
-          url: "tel:3025161010",
-          linkSize: "small"
+          url: "tel:3025161010"
         }
       ]
     },
@@ -118,11 +116,7 @@ const postInlineData = {
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
   buttons: [
-    {
-      variant: "secondary",
-      text: "Donate",
-      url: "#!"
-    }
+    { variant: "secondary", text: "Donate", url: "#!" },
   ]
 };
 
