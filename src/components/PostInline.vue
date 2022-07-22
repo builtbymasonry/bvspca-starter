@@ -16,7 +16,6 @@
       >
         <svg class="w-full" viewBox="0 0 86 86">
           <circle
-            id="Oval"
             fill="#FFFFFF"
             opacity="0.691824777"
             cx="43"
@@ -25,7 +24,6 @@
           ></circle>
           <path
             d="M50.0024162,35.0030752 L61.9008492,50.1465353 C62.9244895,51.4493502 62.6981737,53.3353148 61.3953588,54.358955 C60.8668022,54.7742496 60.2140859,55 59.5418942,55 L34.1723915,55 C32.5155373,55 31.1723915,53.6568542 31.1723915,52 C31.1723915,51.3278083 31.398142,50.675092 31.8134365,50.1465353 L43.7118695,35.0030752 C45.0767232,33.2659887 47.5913426,32.9642343 49.3284291,34.329088 C49.5791516,34.5260843 49.80542,34.7523527 50.0024162,35.0030752 Z"
-            id="Triangle-Copy-3"
             fill="#D50032"
             transform="translate(46.857143, 43.000000) rotate(-270.000000) translate(-46.857143, -43.000000) "
           ></path>
@@ -83,9 +81,7 @@ import ButtonLink from "./ButtonLink.vue";
 
 const modal = ref(null);
 
-const openVideo = () => {
-  modal.value.openModal();
-};
+const openVideo = () => modal.value.openModal();
 
 const props = defineProps({
   title: String,
