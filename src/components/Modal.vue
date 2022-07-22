@@ -78,7 +78,7 @@ defineExpose({
   openModal
 });
 
-defineProps({
+const props = defineProps({
   button: Object,
   title: String,
   description: String,

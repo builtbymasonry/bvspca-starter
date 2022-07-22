@@ -120,7 +120,6 @@
 import { computed, ref } from "vue";
 import {
   Listbox,
-  ListboxLabel,
   ListboxButton,
   ListboxOptions,
   ListboxOption

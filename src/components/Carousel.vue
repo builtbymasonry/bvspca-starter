@@ -1,5 +1,5 @@
 <template>
-  <swiper
+  <Swiper
     :modules="modules"
     :slides-per-view="1"
     :pagination="{
@@ -13,40 +13,28 @@
     :effect="'fade'"
     class="spca-carousel"
   >
-    <swiper-slide v-for="slide in slides" :key="slide">
+    <SwiperSlide v-for="slide in slides" :key="slide">
       <img v-bind="slide" class="w-full" />
-    </swiper-slide>
-  </swiper>
+    </SwiperSlide>
+  </Swiper>
 </template>
-<script>
-// import Swiper core and required modules
-import { Pagination, EffectFade, Autoplay } from "swiper";
-
-// Import Swiper Vue.js components
+<script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
 
-// Import Swiper styles
+import { Pagination, EffectFade, Autoplay } from "swiper";
+
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/autoplay";
 
-export default {
-  props: {
-    slides: {
-      type: Array,
-      required: true
-    }
-  },
-  components: {
-    Swiper,
-    SwiperSlide
-  },
-  setup() {
-    return {
-      modules: [Pagination, EffectFade, Autoplay]
-    };
+const props = defineProps({
+  slides: {
+    type: Array,
+    required: true
   }
-};
+});
+
+const modules = [Pagination, EffectFade, Autoplay];
 </script>
 
 <style>
