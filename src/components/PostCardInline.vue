@@ -10,20 +10,28 @@
         />
       </div>
       <div class="p-10 text-xs lg:p-20">
-        <h2 class="mb-1 text-xl font-bold">{{ title }}</h2>
-        <h3 class="text-gray-light mb-4 text-xs font-bold">{{ subtitle }}</h3>
+        <h2 v-if="title" class="mb-1 text-xl font-bold">{{ title }}</h2>
+        <h2 v-if="titleAlt" class="mb-4 text-xl lg:text-2xl font-bold">{{ titleAlt }}</h2>
+        <h3 v-if="subtitle" class="text-gray-light mb-4 text-xs font-bold">{{ subtitle }}</h3>
         <p>{{ text }}</p>
+        <ButtonLink v-if="buttonLink" class="mt-8" :text="buttonLink.text" :url="buttonLink.url" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import ButtonLink from "./ButtonLink.vue";
+
 const props = defineProps({
   title: String,
+  titleAlt: String,
   subtitle: String,
   text: String,
   img: Object,
+  buttonLink: {
+    type: Object
+  },
   reverse: {
     type: Boolean,
     default: false

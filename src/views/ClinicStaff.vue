@@ -3,7 +3,7 @@
     <section class="bg-gray-dark py-14 lg:py-28">
       <div class="mx-auto max-w-6xl px-4">
         <div class="mx-auto mb-10 max-w-2xl text-center text-sm sm:mb-14">
-          <h2 class="mb-2 text-4xl font-bold lg:text-6xl">Clinic staff</h2>
+          <h2 class="mb-2 text-2xl sm:text-4xl lg:text-6xl font-bold">Clinic staff</h2>
           <p>
             Our veterinary team is proud to provide high-quality medical
             services to communities across Southeastern Pennsylvania and
