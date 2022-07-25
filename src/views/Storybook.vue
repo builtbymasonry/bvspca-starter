@@ -1,6 +1,23 @@
 <template>
   <div>
     <section class="py-8">
+      <div class="mx-auto max-w-screen-2xl">
+        <h2 class="mb-3 text-center text-xl font-bold">SliderThumbs</h2>
+        <div class="lg:flex">
+          <div class="w-full lg:w-1/2"></div>
+          <div class="mx-auto w-full max-w-xl lg:w-1/2 lg:max-w-none">
+            <SliderThumbs :slides="profileSlides" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-gray-dark py-8">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="mb-3 text-center text-xl font-bold">FilterBar</h2>
+        <FilterBar />
+      </div>
+    </section>
+    <section class="py-8">
       <div class="mx-auto max-w-6xl px-4">
         <h2 class="mb-3 text-center text-xl font-bold">PostInline Video</h2>
         <PostInline v-bind="postInlineVideo" />
@@ -50,6 +67,27 @@ import TablePackages from "@/components/TablePackages.vue";
 import Accordion from "@/components/Accordion.vue";
 import TableStatistics from "@/components/TableStatistics.vue";
 import PostInline from "@/components/PostInline.vue";
+import FilterBar from "@/components/FilterBar.vue";
+import SliderThumbs from "@/components/SliderThumbs.vue";
+
+const profileSlides = [
+  {
+    img: { src: "src/assets/img/profile-slide01.jpg", alt: "" }
+  },
+  {
+    img: { src: "src/assets/img/profile-slide02.jpg", alt: "" }
+  },
+  {
+    img: { src: "src/assets/img/profile-slide01.jpg", alt: "" }
+  },
+  {
+    img: { src: "src/assets/img/profile-slide02.jpg", alt: "" }
+  },
+  {
+    img: { src: "src/assets/img/profile-slide01.jpg", alt: "" },
+    video: { src: "src/assets/video/profile-slide-video.mp4" }
+  }
+];
 
 const postInlineVideo = {
   title: "Our mission & vision",
