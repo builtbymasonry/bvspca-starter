@@ -4,76 +4,76 @@
   <PostSection v-bind="postSectionData" />
 
   <section class="bg-skew bg-purple pt-12 pb-5 text-white lg:pt-20">
-      <div class="mx-auto max-w-7xl px-4">
-        <h2
-          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
-        >
-          Featured pets
-        </h2>
+    <div class="mx-auto max-w-7xl px-4">
+      <h2
+        class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
+      >
+        Featured pets
+      </h2>
 
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
-        >
-          <PostCard
-            v-for="post in featuredPets"
-            :key="post.title"
-            v-bind="post"
-          />
-        </div>
-
-        <div
-          class="mt-16 flex flex-wrap flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-5 lg:space-x-10"
-        >
-          <Button variant="secondary" text="All fosterable dogs" url="#!" />
-          <Button variant="secondary" text="All fosterable cats" url="#!" />
-        </div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
+      >
+        <PostCard
+          v-for="post in featuredPets"
+          :key="post.title"
+          v-bind="post"
+        />
       </div>
-    </section>
 
-    <section class="pb-14 lg:pb-28 pt-48 sm:pt-60 bg-gray-dark">
-      <div class="mx-auto grid max-w-7xl grid-cols-1 px-4 lg:grid-cols-2">
-        <div class="pb-14 text-xs sm:text-sm lg:pr-20 lg:pb-0 2xl:pr-36">
-          <h3 class="mb-2 text-2xl font-bold sm:text-4xl">
-            We’re saving more babies than ever, and one of the best ways for you to help is to become a foster.
-          </h3>
-          <p class="mb-6">
-            Fosters can watch infant puppies and kittens grow to adoption age, as well as older animals who need time to socialize or recover after medical procedures.
-          </p>
-          <p class="mb-12">
-            Foster timeframes range from two weeks to two months. We provide you with all of the supplies you need, and we’ll work with you to tailor timeframe and pets to your unique situation.
-          </p>
-          <h4 class="mb-6 text-lg font-bold tracking-wider">
-            Other suggestions include:
-          </h4>
-          <ul class="list-disc space-y-2 pl-5 marker:text-xs">
-            <li class="pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-            <li class="pl-2">Curabitur in dapibus nisl.</li>
-            <li class="pl-2">Donec at libero eget odio lacinia aliquam non eu arcu.</li>
-            <li class="pl-2">Suspendisse potenti. Pellentesque eu orci nisi.</li>
-            <li class="pl-2">Pellentesque finibus lorem dignissim bibendum pretium.</li>
-            <li class="pl-2">Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis euismod.</li>
-            <li class="pl-2">Etiam pharetra dui sit amet tempus scelerisque.</li>
-            <li class="pl-2">Vivamus et dolor tellus.</li>
-            <li class="pl-2">Donec vulputate, justo vitae lobortis tempus, metu.</li>
-          </ul>
-        </div>
-
-        <div class="rounded-lg bg-white p-8 shadow sm:p-12 xl:p-20">
-          <FormFosterCare />
-        </div>
+      <div
+        class="mt-16 flex flex-wrap flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-5 lg:space-x-10"
+      >
+        <Button variant="secondary" text="All fosterable dogs" url="#!" />
+        <Button variant="secondary" text="All fosterable cats" url="#!" />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="py-14 lg:py-28">
-      <div class="mx-auto max-w-3xl px-4">
-        <h2 class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl">
-          Frequently Asked Questions
-        </h2>
-        <Accordion :items="faq" />
+  <section class="pb-14 lg:pb-28 pt-48 sm:pt-60 bg-gray-dark">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 px-4 lg:grid-cols-2">
+      <div class="pb-14 text-xs sm:text-sm lg:pr-20 lg:pb-0 2xl:pr-36">
+        <h3 class="mb-2 text-2xl font-bold sm:text-4xl">
+          We’re saving more babies than ever, and one of the best ways for you to help is to become a foster.
+        </h3>
+        <p class="mb-6">
+          Fosters can watch infant puppies and kittens grow to adoption age, as well as older animals who need time to socialize or recover after medical procedures.
+        </p>
+        <p class="mb-12">
+          Foster timeframes range from two weeks to two months. We provide you with all of the supplies you need, and we’ll work with you to tailor timeframe and pets to your unique situation.
+        </p>
+        <h4 class="mb-6 text-lg font-bold tracking-wider">
+          Other suggestions include:
+        </h4>
+        <ul class="list-disc space-y-2 pl-5 marker:text-xs">
+          <li class="pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+          <li class="pl-2">Curabitur in dapibus nisl.</li>
+          <li class="pl-2">Donec at libero eget odio lacinia aliquam non eu arcu.</li>
+          <li class="pl-2">Suspendisse potenti. Pellentesque eu orci nisi.</li>
+          <li class="pl-2">Pellentesque finibus lorem dignissim bibendum pretium.</li>
+          <li class="pl-2">Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis euismod.</li>
+          <li class="pl-2">Etiam pharetra dui sit amet tempus scelerisque.</li>
+          <li class="pl-2">Vivamus et dolor tellus.</li>
+          <li class="pl-2">Donec vulputate, justo vitae lobortis tempus, metu.</li>
+        </ul>
       </div>
-    </section>
 
-    <section class="relative pt-20 pb-40 sm:pt-32 sm:pb-56 md:pb-28">
+      <div class="rounded-lg bg-white p-8 shadow sm:p-12 xl:p-20">
+        <FormFosterCare />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 lg:py-28">
+    <div class="mx-auto max-w-3xl px-4">
+      <h2 class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl">
+        Frequently Asked Questions
+      </h2>
+      <Accordion :items="faq" />
+    </div>
+  </section>
+
+  <section class="relative pt-20 pb-40 sm:pt-32 sm:pb-56 md:pb-28">
     <div class="absolute top-0 left-0 h-full w-full">
       <img
         class="absolute top-0 left-0 h-full w-full object-cover"

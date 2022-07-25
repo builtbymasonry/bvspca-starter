@@ -13,16 +13,22 @@
           v-bind="img"
         />
       </div>
-      <div class="py-2 text-center text-sm sm:text-left sm:text-base">
+      <div class="py-2 text-center sm:text-left">
         <div class="mb-10 sm:mb-8">
           <h3 v-if="title" class="text-2xl sm:text-4xl font-bold">{{ title }}</h3>
           <h4 v-if="subtitle" class="mt-2 text-2xl font-bold">{{ subtitle }}</h4>
-          <p v-if="text" class="mt-2">{{ text }}</p>
+          <p v-if="text" class="mt-2 text-sm sm:text-base">{{ text }}</p>
         </div>
-        <div v-if="textGrid" class="grid gap-10 sm:grid-cols-2 sm:gap-8">
+        <div v-if="textList" class="text-xs">
+          <p v-for="paragraph in textList" :key="paragraph.text" class="mt-6 first:-mt-5">{{paragraph.text}}</p>
+          <ul class="mt-2 list-disc space-y-2 pl-5 marker:text-xs text-left">
+            <li v-for="item in list" :key="item.text" class="pl-2">{{item.text}}</li>
+          </ul>
+        </div>
+        <div v-if="textGrid" class="grid gap-10 sm:grid-cols-2 sm:gap-8 text-xs">
           <div v-for="item in textGrid" :key="item.title">
             <h4 class="mb-2 text-xl font-bold">{{ item.title }}</h4>
-            <p class="text-xs">{{ item.text }}</p>
+            <p>{{ item.text }}</p>
             <ButtonLink
               v-if="item.button"
               v-bind="item.button"
@@ -55,8 +61,10 @@ const props = defineProps({
   titleAlt: String,
   subtitle: String,
   text: String,
+  textList: Array,
   textGrid: Array,
   buttons: Array,
+  list: Array,
   reverse: {
     type: Boolean,
     default: false

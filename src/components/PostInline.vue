@@ -1,12 +1,10 @@
 <template>
   <div
-    class="flex flex-col gap-5 items-center text-center sm:gap-10 lg:gap-20 lg:text-left"
+    class="flex flex-col gap-5 items-center gap-y-10 text-center lg:text-left"
     :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
   >
-    <div
-      class="relative mx-auto max-w-sm overflow-hidden rounded-sm md:max-w-md md:rounded-md lg:w-1/2 lg:max-w-full shadow"
-    >
-      <img class="w-full" v-bind="img" />
+    <div class="relative mx-auto max-w-sm md:max-w-md lg:max-w-full w-full lg:w-1/2">
+      <img class="w-full rounded-sm md:rounded-md shadow" v-bind="img" />
       <div
         v-if="video"
         @click="openVideo"
@@ -29,9 +27,13 @@
           ></path>
         </svg>
       </div>
+      <Carousel
+        v-if="carousel"
+        :slides="carousel.slides"
+      />
     </div>
-    <div class="py-2 flex-col items-start justify-center text-xs lg:flex lg:w-1/2">
-      <h2 class="mb-3 text-2xl font-bold md:text-3xl xl:text-4xl">{{ title }}</h2>
+    <div class="py-2 lg:pr-10 lg:flex lg:flex-col lg:items-start lg:justify-center lg:w-1/2 text-xs">
+      <h2 class="mb-3 text-2xl md:text-3xl xl:text-4xl font-bold">{{ title }}</h2>
       <p>{{ text }}</p>
       <div
         v-if="buttons"
@@ -75,9 +77,9 @@
 import { ref } from "vue";
 
 import Button from "@/components/Button.vue";
-import Modal from "./Modal.vue";
-import Button1 from "@/components/Button.vue";
 import ButtonLink from "./ButtonLink.vue";
+import Modal from "./Modal.vue";
+import Carousel from "./Carousel.vue";
 
 const modal = ref(null);
 
@@ -91,6 +93,9 @@ const props = defineProps({
   video: {
     type: Object,
     default: null
+  },
+  carousel: {
+    type: Object,
   },
   reverse: {
     type: Boolean,
