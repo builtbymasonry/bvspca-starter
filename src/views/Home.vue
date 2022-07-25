@@ -95,7 +95,7 @@
 
     <section class="pt-10 pb-40 md:pb-60">
       <div class="mx-auto max-w-5xl px-4">
-        <PostCarousel v-bind="postCarouselData" />
+        <PostInline v-bind="postInlineData" />
       </div>
     </section>
 
@@ -188,7 +188,7 @@ import PostCardsSection from "@/components/PostCardsSection.vue";
 import PostSection from "@/components/PostSection.vue";
 
 import InfoCard from "@/components/InfoCard.vue";
-import PostCarousel from "@/components/PostCarousel.vue";
+import PostInline from "@/components/PostInline.vue";
 
 import MarqueeSlider from "@/components/MarqueeSlider.vue";
 
@@ -202,13 +202,16 @@ const heroData = {
   ]
 };
 
-const postCarouselData = {
+const postInlineData = {
   title: "A second chance at nine lives",
   text: "Whiskers got his leg caught in a fox trap after getting loose from his home. He lost a lot of skin, suffered nerve damage,   ahd a quickly spreading infection. His family brought him to our New Castle Animal Health Center. They couldn’t afford the entirety od his care and were condisdering euthanasia since the infection would soon be life-threatening. Thanks to our pet retention grant from Petco Love, we were able to bridge what his owners couldn’t afford and saved Whiskers by amputating the badly damaged leg. Whiskers now lives a life of three-legged luxury. We’re grateful for Petco Love’s support, which results from all of you who donate at checkout at the Petco stores.",
-  slides: [
-    { src: "src/assets/img/slide01.jpg", alt: "kitty" },
-    { src: "src/assets/img/slide02.jpg", alt: "" }
-  ]
+  carousel: {
+    slides: [
+      { src: "src/assets/img/slide01.jpg", alt: "kitty" },
+      { src: "src/assets/img/slide02.jpg", alt: "" }
+    ]
+  },
+  reverse: true
 };
 
 const featuredPets = [
