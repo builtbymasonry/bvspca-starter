@@ -2,6 +2,12 @@
   <div>
     <section class="py-8">
       <div class="mx-auto max-w-screen-2xl">
+        <h2 class="mb-3 text-center text-xl font-bold">MapLocations</h2>
+        <MapLocations :locations="locations" />
+      </div>
+    </section>
+    <section class="py-8">
+      <div class="mx-auto max-w-screen-2xl">
         <h2 class="mb-3 text-center text-xl font-bold">SliderThumbs</h2>
         <div class="lg:flex">
           <div class="w-full lg:w-1/2"></div>
@@ -69,6 +75,104 @@ import TableStatistics from "@/components/TableStatistics.vue";
 import PostInline from "@/components/PostInline.vue";
 import FilterBar from "@/components/FilterBar.vue";
 import SliderThumbs from "@/components/SliderThumbs.vue";
+import MapLocations from "@/components/MapLocations.vue";
+
+const locations = [
+  {
+    name: "Dover",
+    address: ["1757 Horsepond Rd.", "Dover, DE 19901"],
+    phone: [
+      { title: "Main", number: "(484) 302-0018" },
+      { title: "AHC", number: "(302) 516-1004" }
+    ],
+    email: ["info@bvspca.org "],
+    buttonContact: { url: "#!" },
+    coordinates: {
+      lat: 39.1414900571048,
+      lng: -75.47439972883507
+    }
+  },
+  {
+    name: "New Castle",
+    address: ["600 South Street", "New Castle, DE 19720"],
+    phone: [{ title: "Main", number: "(302) 516-1005" }],
+    email: ["info@bvspca.org "],
+    buttonContact: { url: "#!" },
+    coordinates: {
+      lat: 39.65997584020019,
+      lng: -75.57023031534025
+    }
+  },
+  {
+    name: "Georgetown",
+    address: ["22918 Dupont Boulevard", "Georgetown, DE 19947"],
+    phone: [
+      { title: "Main", number: "(302) 858-4203" },
+      { title: "AHC", number: "(302) 516-1004" }
+    ],
+    email: ["info@bvspca.org "],
+    buttonContact: { url: "#!" },
+    coordinates: {
+      lat: 38.66560267717307,
+      lng: -75.38127138650519
+    }
+  },
+  {
+    name: "West Chester",
+    address: ["600 South Street", "New Castle, DE 19720"],
+    phone: [{ title: "Main", number: "(302) 516-1005" }],
+    email: ["info@bvspca.org "],
+    buttonContact: { url: "#!" },
+    coordinates: {
+      lat: 39.65997584020019,
+      lng: -75.57023031534025
+    }
+  },
+  {
+    name: "Malvern",
+    address: ["600 South Street", "New Castle, DE 19720"],
+    phone: [{ title: "Main", number: "(302) 516-1005" }],
+    email: ["info@bvspca.org "],
+    buttonContact: { url: "#!" },
+    coordinates: {
+      lat: 39.65997584020019,
+      lng: -75.57023031534025
+    }
+  },
+  {
+    name: "Plymouth Meeting",
+    address: ["600 South Street", "New Castle, DE 19720"],
+    phone: [{ title: "Main", number: "(302) 516-1005" }],
+    email: ["info@bvspca.org "],
+    buttonContact: { url: "#!" },
+    coordinates: {
+      lat: 39.65997584020019,
+      lng: -75.57023031534025
+    }
+  },
+  {
+    name: "ARC",
+    address: ["600 South Street", "New Castle, DE 19720"],
+    phone: [{ title: "Main", number: "(302) 516-1005" }],
+    email: ["info@bvspca.org "],
+    buttonContact: { url: "#!" },
+    coordinates: {
+      lat: 39.65997584020019,
+      lng: -75.57023031534025
+    }
+  },
+  {
+    name: "Eastern Shore Pet Resort",
+    address: ["600 South Street", "New Castle, DE 19720"],
+    phone: [{ title: "Main", number: "(302) 516-1005" }],
+    email: ["info@bvspca.org "],
+    buttonContact: { url: "#!" },
+    coordinates: {
+      lat: 39.65997584020019,
+      lng: -75.57023031534025
+    }
+  }
+];
 
 const profileSlides = [
   {
@@ -76,6 +180,10 @@ const profileSlides = [
   },
   {
     img: { src: "src/assets/img/profile-slide02.jpg", alt: "" }
+  },
+  {
+    img: { src: "src/assets/img/profile-slide01.jpg", alt: "" },
+    video: { src: "src/assets/video/profile-slide-video.mp4" }
   },
   {
     img: { src: "src/assets/img/profile-slide01.jpg", alt: "" }
