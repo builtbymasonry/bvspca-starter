@@ -148,7 +148,7 @@
               >
                 <div>
                   <PopoverPanel
-                    class="absolute z-10 -ml-4 mt-2 max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[2.5rem] after:bg-white after:content-[''] sm:px-0 lg:-left-9 lg:ml-0"
+                    class="absolute z-10 -ml-4 mt-2 max-w-md transform px-2 after:absolute after:-top-[0.8rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[2.5rem] after:bg-white after:content-[''] sm:px-0 lg:-left-9 lg:ml-0"
                   >
                     <div
                       class="overflow-hidden rounded-lg rounded-t-none shadow"
@@ -201,7 +201,7 @@
             >
               <div>
                 <PopoverPanel
-                  class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:left-0 lg:ml-0"
+                  class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.6rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1rem] after:bg-white after:content-[''] sm:px-0 lg:left-0 lg:ml-0"
                 >
                   <div class="overflow-hidden rounded-lg rounded-t-none shadow">
                     <div
@@ -250,7 +250,7 @@
             >
               <div>
                 <PopoverPanel
-                  class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.78rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1.2rem] after:bg-white after:content-[''] sm:px-0 lg:right-0 lg:ml-0"
+                  class="absolute z-10 -ml-4 mt-[1.1rem] max-w-md transform px-2 after:absolute after:-top-[0.6rem] after:-left-[0.5rem] after:-right-[0.5rem] after:h-[1rem] after:bg-white after:content-[''] sm:px-0 lg:right-0 lg:ml-0"
                 >
                   <div class="overflow-hidden rounded-lg rounded-t-none shadow">
                     <div

@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex flex-col gap-5 text-center sm:gap-10 lg:gap-20 lg:text-left"
+    class="flex flex-col gap-5 items-center text-center sm:gap-10 lg:gap-20 lg:text-left"
     :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
   >
     <div
       class="relative mx-auto max-w-sm overflow-hidden rounded-sm md:max-w-md md:rounded-md lg:w-1/2 lg:max-w-full shadow"
     >
-      <img class="w-full lg:absolute lg:h-full lg:object-cover" v-bind="img" />
+      <img class="w-full" v-bind="img" />
       <div
         v-if="video"
         @click="openVideo"

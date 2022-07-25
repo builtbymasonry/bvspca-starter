@@ -1,6 +1,7 @@
 <template>
   <div>
     <HeroInner v-bind="heroInnerData" class="bg-gray-dark" />
+
     <section class="py-12 md:py-20 lg:py-28">
       <div class="mx-auto max-w-5xl px-4">
         <h2
@@ -41,35 +42,10 @@
       </div>
     </section>
 
-    <section class="bg-gray-dark py-12 lg:py-20">
-      <div class="mx-auto max-w-7xl px-4">
-        <h2
-          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
-        >
-          For your pet related news & resources
-        </h2>
-
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
-        >
-          <PostCard
-            v-for="post in blogPosts"
-            :key="post.title"
-            v-bind="post"
-          />
-        </div>
-
-        <div
-          class="mt-16 flex flex-wrap flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-5 lg:space-x-10"
-        >
-          <Button
-            variant="primary"
-            text="View all news, events & resources"
-            url="#!"
-          />
-        </div>
-      </div>
-    </section>
+    <PostCardsSection
+      class="bg-gray-dark"
+      v-bind="postCardsSectionData"
+    />
   </div>
 </template>
 
@@ -78,6 +54,7 @@ import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
 import Card from "@/components/Card.vue";
 import PostCard from "@/components/PostCard.vue";
+import PostCardsSection from "@/components/PostCardsSection.vue";
 import PostInline from "@/components/PostInline.vue";
 import InfoCard from "@/components/InfoCard.vue";
 
@@ -139,29 +116,35 @@ const postInlineData = {
   ]
 };
 
-const blogPosts = [
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
-    title: "$5 off our 5K Color Run",
-    text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
-    buttonLink: { text: "Read more" }
-  },
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
-    title: "Walk-4-Paws",
-    text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
-    buttonLink: { text: "Read more" }
-  },
-  {
-    url: "#!",
-    img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
-    title: "Critter Camp",
-    text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
-    buttonLink: { text: "Read more" }
-  }
-];
+const postCardsSectionData = {
+  title: "For your pet related news & resources",
+  blogPosts: [
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      title: "$5 off our 5K Color Run",
+      text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      title: "Walk-4-Paws",
+      text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      title: "Critter Camp",
+      text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
+      buttonLink: { text: "Read more", url: "#!" }
+    }
+  ],
+  buttons: [
+    { variant: "primary", text: "View all news, events & resources", url: "#!" },
+  ]
+}
 
 const infoCardData = {
   title: "We place over 16,000 animals a year",

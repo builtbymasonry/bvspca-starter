@@ -1,5 +1,5 @@
 <template>
-  <HeroInner v-bind="heroInnerData" class="bg-gray-dark" />
+  <HeroInner v-bind="heroInnerData" />
 
   <section class="py-14 lg:py-28 bg-gray-dark">
     <div class="mx-auto max-w-4xl px-4">
@@ -23,7 +23,7 @@
     <div class="mx-auto max-w-7xl px-4">
       <h2 class="mb-8 text-2xl md:text-3xl xl:text-4xl font-bold text-center">The following are some guidelines to help you recognize cruelty:</h2>
       <List
-        class="max-w-5xl mx-auto lg:px-14 md:columns-2 md:gap-10 lg:gap-14 text-sm font-bold"
+        class="max-w-5xl mx-auto lg:px-14 md:columns-2 md:gap-10 lg:gap-14 text-xs sm:text-sm font-bold"
         v-bind="listData"
       />
     </div>
@@ -31,7 +31,7 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
-      <PostInline v-bind="postInlineData" />
+      <PostInline class="flex-col-reverse gap-12" v-bind="postInlineData" />
       <div class="pt-14 lg:pt-24 mx-auto max-w-2xl text-xs text-center">
         <h2 class="mb-4 text-2xl md:text-3xl xl:text-4xl font-bold">What should I do if an animal bites me?</h2>
         <p>In addition to seeking medical treatment, you should notify the Brandywine Valley SPCA’s Animal Protective Services Division at 484-302-0018 as well as the local police department where the bite occurred. All animal bites, whether they are from stray, wild, or domesticated animals, should be reported right away.</p>
@@ -43,7 +43,7 @@
     <div class="mx-auto max-w-5xl px-4">
       <h2 class="mb-8 text-2xl font-bold text-center">A dog that is declared dangerous will return to its owner per state law and the owner is required to follow the directives of the law which include:</h2>
       <List
-        class="max-w-5xl mx-auto lg:px-10 md:columns-2 md:gap-10 lg:gap-14 text-sm"
+        class="max-w-5xl mx-auto lg:px-10 md:columns-2 md:gap-10 lg:gap-14 text-xs sm:text-sm"
         v-bind="listData2"
       />
     </div>
@@ -55,35 +55,10 @@
     </div>
   </section>
 
-  <section class="pb-14 lg:pb-28">
-      <div class="mx-auto max-w-7xl px-4">
-        <h2
-          class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
-        >
-          Animal cruelty related news & resources
-        </h2>
-
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
-        >
-          <PostCard
-            v-for="post in blogPosts"
-            :key="post.title"
-            v-bind="post"
-          />
-        </div>
-
-        <div
-          class="mt-16 flex flex-col items-center justify-center md:flex-row"
-        >
-          <Button
-            variant="primary"
-            text="View all news, events & resources"
-            url="#!"
-          />
-        </div>
-      </div>
-    </section>
+  <PostCardsSection
+    class="pt-0 lg:pt-0"
+    v-bind="postCardsSectionData"
+  />
 </template>
 
 <script setup>
@@ -94,6 +69,7 @@ import PostSection from "@/components/PostSection.vue";
 import List from "@/components/List.vue";
 import PostInline from "@/components/PostInline.vue";
 import PostCard from "@/components/PostCard.vue";
+import PostCardsSection from "@/components/PostCardsSection.vue";
 
 const heroInnerData = {
   title: "Reporting animal cruelty",
@@ -211,27 +187,33 @@ const postInlineData2 = {
   reverse: true
 };
 
-const blogPosts = [
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
-    title: "$5 off our 5K Color Run",
-    text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
-    buttonLink: { text: "Read more" }
-  },
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
-    title: "Walk-4-Paws",
-    text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
-    buttonLink: { text: "Read more" }
-  },
-  {
-    url: "#!",
-    img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
-    title: "Critter Camp",
-    text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
-    buttonLink: { text: "Read more" }
-  }
-];
+const postCardsSectionData = {
+  title: "Animal cruelty related news & resources",
+  blogPosts: [
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      title: "$5 off our 5K Color Run",
+      text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      title: "Walk-4-Paws",
+      text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      title: "Critter Camp",
+      text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
+      buttonLink: { text: "Read more", url: "#!" }
+    }
+  ],
+  buttons: [
+    { variant: "primary", text: "View all news, events & resources", url: "#!" },
+  ]
+}
 </script>
