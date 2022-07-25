@@ -3,7 +3,7 @@
     <div class="block md:flex">
       <div class="h-[600px] min-h-[648px] w-full grow md:h-auto">
         <GoogleMap
-          :api-key="GoogleAPI"
+          :api-key="GOOGLE_API_KEY"
           style="height: 100%; width: 100%"
           :zoom="zoomIndex || 8"
           :center="locationsCenter"
@@ -15,7 +15,7 @@
             :key="i"
           >
             <div style="width: 30px; height: 40px">
-              <img :src="catPin" alt="" />
+              <img :src="pin" />
             </div>
           </CustomMarker>
         </GoogleMap>
@@ -62,16 +62,11 @@
   </div>
 </template>
 <script setup>
-import {
-  GoogleMap,
-  CustomMarker,
-  Marker,
-  MarkerCluster
-} from "vue3-google-map";
+import { GoogleMap, CustomMarker } from "vue3-google-map";
 
-import catPin from "@/assets/img/pin-cat.svg";
+import pin from "@/assets/img/pin-cat.svg";
 
-const GoogleAPI = "AIzaSyBIKsc31TXAvusDAeRpJ8_p6TnMOsU324s";
+const GOOGLE_API_KEY = "AIzaSyBIKsc31TXAvusDAeRpJ8_p6TnMOsU324s";
 
 const renderAddress = (address) => {
   if (Array.isArray(address)) {
