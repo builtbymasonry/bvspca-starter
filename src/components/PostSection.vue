@@ -14,9 +14,11 @@
         />
       </div>
       <div class="py-2 text-center text-sm sm:text-left sm:text-base">
-        <h3 class="mb-2 text-2xl font-bold sm:text-4xl">{{ title }}</h3>
-        <h4 class="mb-2 text-2xl font-bold sm:text-2xl">{{ subtitle }}</h4>
-        <p class="mb-10 sm:mb-8">{{ text }}</p>
+        <div class="mb-10 sm:mb-8">
+          <h3 v-if="title" class="text-2xl sm:text-4xl font-bold">{{ title }}</h3>
+          <h4 v-if="subtitle" class="mt-2 text-2xl font-bold">{{ subtitle }}</h4>
+          <p v-if="text" class="mt-2">{{ text }}</p>
+        </div>
         <div v-if="textGrid" class="grid gap-10 sm:grid-cols-2 sm:gap-8">
           <div v-for="item in textGrid" :key="item.title">
             <h4 class="mb-2 text-xl font-bold">{{ item.title }}</h4>
@@ -31,8 +33,7 @@
         </div>
         <div
           v-if="buttons"
-          class="mt-14 flex flex-row flex-wrap items-start justify-center space-y-10 sm:space-y-0 sm:space-x-5 lg:flex-col lg:justify-start lg:space-y-8 lg:space-x-0 xl:flex-row xl:space-y-0 xl:space-x-8"
-          :class="reverse ? 'xl:-mr-12' : ''"
+          class="mt-14 xl:-mr-12 flex flex-row flex-wrap items-start justify-center space-y-10 sm:space-y-0 sm:space-x-5 lg:flex-col lg:justify-start lg:space-y-8 lg:space-x-0 xl:flex-row xl:space-y-0 xl:space-x-8"
         >
           <Button
             v-for="button in buttons"
@@ -51,6 +52,7 @@ import ButtonLink from "@/components/ButtonLink.vue";
 
 const props = defineProps({
   title: String,
+  titleAlt: String,
   subtitle: String,
   text: String,
   textGrid: Array,

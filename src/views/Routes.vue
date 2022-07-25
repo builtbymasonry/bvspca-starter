@@ -26,6 +26,7 @@ const routes = [
   "/animal-cruelty",
   "/rehoming",
   "/behavior-resources",
-  "/volunteer"
+  "/volunteer",
+  "/foster"
 ];
 </script>

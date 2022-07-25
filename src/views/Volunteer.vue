@@ -75,35 +75,7 @@
     </div>
   </section>
 
-  <section class="py-14 lg:py-28">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2
-        class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
-      >
-        Volunteer related events & resources
-      </h2>
-
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
-      >
-        <PostCard
-          v-for="post in blogPosts"
-          :key="post.title"
-          v-bind="post"
-        />
-      </div>
-
-      <div
-        class="mt-16 flex flex-col items-center justify-center md:flex-row"
-      >
-        <Button
-          variant="primary"
-          text="View all news, events & resources"
-          url="#!"
-        />
-      </div>
-    </div>
-  </section>
+  <PostCardsSection  v-bind="postCardsSectionData"/>
 </template>
 
 <script setup>
@@ -114,6 +86,7 @@ import PostInline from "@/components/PostInline.vue";
 import PostCardInline from "@/components/PostCardInline.vue";
 import TextBanner from "@/components/TextBanner.vue";
 import PostCard from "@/components/PostCard.vue";
+import PostCardsSection from "@/components/PostCardsSection.vue";
 import PostCardBox from "@/components/PostCardBox.vue";
 import InfoCard from "@/components/InfoCard.vue";
 
@@ -294,29 +267,35 @@ const postCardBoxes = [
   }
 ];
 
-const blogPosts = [
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
-    title: "$5 off our 5K Color Run",
-    text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
-    buttonLink: { text: "Read more" }
-  },
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
-    title: "Walk-4-Paws",
-    text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
-    buttonLink: { text: "Read more" }
-  },
-  {
-    url: "#!",
-    img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
-    title: "Critter Camp",
-    text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
-    buttonLink: { text: "Read more" }
-  }
-];
+const postCardsSectionData = {
+  title: "Volunteer related events & resources",
+  blogPosts: [
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      title: "$5 off our 5K Color Run",
+      text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      title: "Walk-4-Paws",
+      text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      title: "Critter Camp",
+      text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
+      buttonLink: { text: "Read more", url: "#!" }
+    }
+  ],
+  buttons: [
+    { variant: "primary", text: "View all news, events & resources", url: "#!" },
+  ]
+};
 
 const infoCardData = {
   title: "We place over 16,000 animals a year",
