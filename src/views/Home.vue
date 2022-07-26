@@ -14,7 +14,7 @@
 
         <div class="-mx-4 flex flex-wrap justify-center gap-y-10 sm:gap-y-8">
           <div
-            class="px-12 md:px-4 w-full sm:w-1/2 lg:w-1/4"
+            class="w-full px-12 sm:w-1/2 md:px-4 lg:w-1/4"
             v-for="card in cards"
             :key="card.title"
           >
@@ -37,7 +37,7 @@
         </h2>
 
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
+          class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
         >
           <PostCard
             v-for="post in featuredPets"
@@ -47,7 +47,7 @@
         </div>
 
         <div
-          class="mt-16 flex flex-wrap flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-5 lg:space-x-10"
+          class="mt-16 flex flex-col flex-wrap items-center justify-center space-y-8 sm:flex-row sm:space-y-0 sm:space-x-5 lg:space-x-10"
         >
           <Button variant="secondary" text="All adoptable dogs" url="#!" />
           <Button variant="secondary" text="All adoptable cats" url="#!" />
@@ -57,11 +57,21 @@
 
     <section class="relative pt-48 pb-28 sm:pt-60 md:pb-0">
       <div class="absolute top-0 left-0 h-full w-full">
-        <img
-          class="absolute top-0 left-0 h-full w-full object-cover"
-          src="src/assets/img/bg-image-01.jpg"
-          alt="image description"
-        />
+        <picture>
+          <source
+            media="(max-width: 767px)"
+            srcset="src/assets/img/bg-image-01-sm.jpg"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="src/assets/img/bg-image-01.jpg"
+          />
+          <img
+            class="absolute top-0 left-0 h-full w-full object-cover"
+            src="src/assets/img/bg-image-01.jpg"
+            alt="background"
+          />
+        </picture>
       </div>
 
       <InfoCard v-bind="infoCardData" />
@@ -77,7 +87,7 @@
 
         <div class="-mx-4 flex flex-wrap justify-center gap-y-10 sm:gap-y-8">
           <div
-            class="px-12 md:px-4 w-full sm:w-1/2 lg:w-1/3"
+            class="w-full px-12 sm:w-1/2 md:px-4 lg:w-1/3"
             v-for="card in cardsForPet"
             :key="card.title"
           >
@@ -110,7 +120,7 @@
         </h2>
 
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8 xl:gap-16"
+          class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:gap-16"
         >
           <PostCard
             v-for="card in cardsDonations"
@@ -154,10 +164,7 @@
       </div>
     </section>
 
-    <PostCardsSection
-      class="bg-gray-dark"
-      v-bind="postCardsSectionData"
-    />
+    <PostCardsSection class="bg-gray-dark" v-bind="postCardsSectionData" />
 
     <section class="hidden bg-white py-12 md:block">
       <h2 class="mb-10 px-5 text-center text-2xl font-bold lg:text-4xl">
@@ -193,7 +200,7 @@ import PostCarousel from "@/components/PostCarousel.vue";
 import MarqueeSlider from "@/components/MarqueeSlider.vue";
 
 const heroData = {
-  img: { src: 'src/assets/img/hero-image-01.jpg', alt: 'family' },
+  img: { src: "src/assets/img/hero-image-01.jpg", alt: "family" },
   title: "Putting the human back in humane",
   text: "We strive to end animal suffering and empower communities to find the heart in humanity",
   buttons: [
@@ -340,9 +347,9 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" },
+    { variant: "primary", text: "View all news, events & resources", url: "#!" }
   ]
-}
+};
 
 const marqueeSlides = [
   {

@@ -183,7 +183,10 @@ const profileSlides = [
   },
   {
     img: { src: "src/assets/img/profile-slide01.jpg", alt: "" },
-    video: { src: "src/assets/video/profile-slide-video.mp4" }
+    video: {
+      src: "src/assets/video/profile-slide-video.mp4",
+      poster: "src/assets/img/profile-slide01.jpg"
+    }
   },
   {
     img: { src: "src/assets/img/profile-slide01.jpg", alt: "" }
@@ -193,7 +196,10 @@ const profileSlides = [
   },
   {
     img: { src: "src/assets/img/profile-slide01.jpg", alt: "" },
-    video: { src: "src/assets/video/profile-slide-video.mp4" }
+    video: {
+      src: "src/assets/video/profile-slide-video.mp4",
+      poster: "src/assets/img/profile-slide01.jpg"
+    }
   }
 ];
 
