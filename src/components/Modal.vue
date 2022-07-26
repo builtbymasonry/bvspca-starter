@@ -28,8 +28,9 @@
             leave-to="opacity-0 scale-95"
           >
             <DialogPanel
-              class="relative mx-auto w-full transform rounded-lg bg-white text-left align-middle shadow transition-all"
+              class="relative mx-auto w-full transform bg-white text-left align-middle shadow transition-all"
               :class="[
+                rounded ? 'rounded-lg' : '',
                 innerGutter && 'px-8 py-14 xl:px-20 xl:pt-20 xl:pb-16',
                 size === 'full' ? 'max-w-none' : `max-w-${size}`
               ]"
@@ -87,6 +88,10 @@ const props = defineProps({
     default: "full"
   },
   innerGutter: {
+    type: Boolean,
+    default: true
+  },
+  rounded: {
     type: Boolean,
     default: true
   }
