@@ -1,26 +1,42 @@
 <template>
   <HeroInner v-bind="heroInnerData" />
 
-  <section class="py-14 lg:py-28 bg-gray-dark">
-    <div class="mx-auto max-w-4xl px-4 grid grid-cols-1 sm:grid-cols-2 gap-10 items-center text-sm text-center sm:text-left">
+  <section class="bg-gray-dark py-14 lg:py-28">
+    <div
+      class="mx-auto grid max-w-4xl grid-cols-1 items-center gap-10 px-4 text-center text-sm sm:grid-cols-2 sm:text-left"
+    >
       <div>
-        <h2 class="mb-4 text-2xl md:text-3xl xl:text-4xl font-bold">Finding a new family</h2>
-        <p>Sometimes emergencies happen, and families are forced to part with a pet. However, surrendering your pet to a sheltering agency should be considered a last resort. We can offer guidance and tips to help you find a new family for your dog or cat.</p>
+        <h2 class="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">
+          Finding a new family
+        </h2>
+        <p>
+          Sometimes emergencies happen, and families are forced to part with a
+          pet. However, surrendering your pet to a sheltering agency should be
+          considered a last resort. We can offer guidance and tips to help you
+          find a new family for your dog or cat.
+        </p>
       </div>
-      <ContactCard
-        class="lg:whitespace-pre-wrap"
-        v-bind="contactCard"
-      />
+      <ContactCard class="lg:whitespace-pre-wrap" v-bind="contactCard" />
     </div>
   </section>
 
   <section class="relative pt-20 pb-40 sm:pt-32 sm:pb-56 md:pb-28">
     <div class="absolute top-0 left-0 h-full w-full">
-      <img
-        class="absolute top-0 left-0 h-full w-full object-cover"
-        src="@/assets/img/bg-image-01.jpg"
-        alt="image description"
-      />
+      <picture>
+        <source
+          media="(max-width: 767px)"
+          srcset="src/assets/img/bg-image-01-sm.jpg"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="src/assets/img/bg-image-01.jpg"
+        />
+        <img
+          class="absolute top-0 left-0 h-full w-full object-cover"
+          src="src/assets/img/bg-image-01.jpg"
+          alt="background"
+        />
+      </picture>
     </div>
 
     <InfoCard v-bind="infoCardData" />
@@ -34,7 +50,7 @@
     </div>
   </section>
 
-  <PostCardsSection  v-bind="postCardsSectionData"/>
+  <PostCardsSection v-bind="postCardsSectionData" />
 </template>
 
 <script setup>
@@ -55,21 +71,25 @@ const contactCard = {
   contactItems: [
     {
       title: `For a rehoming consultation, \n please contact our free Pet Resource Center:`,
-      textLink: "(484) 301-5200",
-      url: "tel:4843015200",
-      subtext: [
-        {
-          text: "or",
-          textLink: "(302) 516-1010",
-          url: "tel:3025161010"
-        }
-      ]
+      link: {
+        url: "(484) 301-5200",
+        type: "tel"
+      }
+    },
+    {
+      title: "or",
+      link: {
+        url: "(302) 516-1010",
+        type: "tel"
+      }
     },
     {
       title: "Or email us at:",
-      textLink: "PetResourceCenter@bvspca.org",
-      url: "mailto:PetResourceCenter@bvspca.org",
-      linkSize: "small"
+      link: {
+        url: "PetResourceCenter@bvspca.org",
+        type: "mailto",
+        textSize: "lg"
+      }
     }
   ]
 };
@@ -88,9 +108,7 @@ const postInlineData = {
   text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families.",
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
-  buttons: [
-    { variant: "secondary", text: "Donate", url: "#!" },
-  ]
+  buttons: [{ variant: "secondary", text: "Donate", url: "#!" }]
 };
 
 const postCardsSectionData = {
@@ -119,7 +137,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" },
+    { variant: "primary", text: "View all news, events & resources", url: "#!" }
   ]
-}
+};
 </script>

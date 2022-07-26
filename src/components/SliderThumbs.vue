@@ -13,6 +13,7 @@
           class="absolute inset-0 h-full w-full object-cover"
           height="240"
           controls
+          :poster="slide.video.poster && slide.video.poster"
         >
           <source :src="slide.video.src" type="video/mp4" />
         </video>

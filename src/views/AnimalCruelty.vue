@@ -1,13 +1,18 @@
 <template>
   <HeroInner v-bind="heroInnerData" />
 
-  <section class="py-14 lg:py-28 bg-gray-dark">
+  <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-4xl px-4">
-      <div class="mb-10 mx-auto max-w-xl text-sm text-center">
-        <h2 class="mb-4 text-2xl md:text-3xl xl:text-5xl font-bold">How do you report cruelty?</h2>
-        <p>If you have any questions or concerns about animal protective services in your neighborhood, please reach out</p>
+      <div class="mx-auto mb-10 max-w-xl text-center text-sm">
+        <h2 class="mb-4 text-2xl font-bold md:text-3xl xl:text-5xl">
+          How do you report cruelty?
+        </h2>
+        <p>
+          If you have any questions or concerns about animal protective services
+          in your neighborhood, please reach out
+        </p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 items-start gap-10 sm:gap-8">
+      <div class="grid grid-cols-1 items-start gap-10 sm:grid-cols-2 sm:gap-8">
         <ContactCard
           v-for="card in contactCards"
           :key="card.title"
@@ -19,11 +24,13 @@
 
   <PostSection v-bind="postSectionData" />
 
-  <section class="py-14 lg:py-28 bg-purple text-white">
+  <section class="bg-purple py-14 text-white lg:py-28">
     <div class="mx-auto max-w-7xl px-4">
-      <h2 class="mb-8 text-2xl md:text-3xl xl:text-4xl font-bold text-center">The following are some guidelines to help you recognize cruelty:</h2>
+      <h2 class="mb-8 text-center text-2xl font-bold md:text-3xl xl:text-4xl">
+        The following are some guidelines to help you recognize cruelty:
+      </h2>
       <List
-        class="max-w-5xl mx-auto lg:px-14 md:columns-2 md:gap-10 lg:gap-14 text-xs sm:text-sm font-bold"
+        class="mx-auto max-w-5xl text-xs font-bold sm:text-sm md:columns-2 md:gap-10 lg:gap-14 lg:px-14"
         v-bind="listData"
       />
     </div>
@@ -32,18 +39,30 @@
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
       <PostInline class="flex-col-reverse gap-12" v-bind="postInlineData" />
-      <div class="pt-14 lg:pt-24 mx-auto max-w-2xl text-xs text-center">
-        <h2 class="mb-4 text-2xl md:text-3xl xl:text-4xl font-bold">What should I do if an animal bites me?</h2>
-        <p>In addition to seeking medical treatment, you should notify the Brandywine Valley SPCA’s Animal Protective Services Division at 484-302-0018 as well as the local police department where the bite occurred. All animal bites, whether they are from stray, wild, or domesticated animals, should be reported right away.</p>
+      <div class="mx-auto max-w-2xl pt-14 text-center text-xs lg:pt-24">
+        <h2 class="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">
+          What should I do if an animal bites me?
+        </h2>
+        <p>
+          In addition to seeking medical treatment, you should notify the
+          Brandywine Valley SPCA’s Animal Protective Services Division at
+          484-302-0018 as well as the local police department where the bite
+          occurred. All animal bites, whether they are from stray, wild, or
+          domesticated animals, should be reported right away.
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="py-14 lg:py-28 bg-gray-dark">
+  <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
-      <h2 class="mb-8 text-2xl font-bold text-center">A dog that is declared dangerous will return to its owner per state law and the owner is required to follow the directives of the law which include:</h2>
+      <h2 class="mb-8 text-center text-2xl font-bold">
+        A dog that is declared dangerous will return to its owner per state law
+        and the owner is required to follow the directives of the law which
+        include:
+      </h2>
       <List
-        class="max-w-5xl mx-auto lg:px-10 md:columns-2 md:gap-10 lg:gap-14 text-xs sm:text-sm"
+        class="mx-auto max-w-5xl text-xs sm:text-sm md:columns-2 md:gap-10 lg:gap-14 lg:px-10"
         v-bind="listData2"
       />
     </div>
@@ -55,10 +74,7 @@
     </div>
   </section>
 
-  <PostCardsSection
-    class="pt-0 lg:pt-0"
-    v-bind="postCardsSectionData"
-  />
+  <PostCardsSection class="pt-0 lg:pt-0" v-bind="postCardsSectionData" />
 </template>
 
 <script setup>
@@ -80,18 +96,42 @@ const contactCards = [
   {
     title: "Pennsylvania APS",
     contactItems: [
-      { title: "Chester and Delaware Counties only:", textLink: "(484) 302-0018", url: "tel:4843020018" }
+      {
+        title: "Chester and Delaware Counties only:",
+        link: {
+          url: "(484) 302-0018",
+          type: "tel"
+        }
+      }
     ],
-    button: { variant: "primary", text: "Report abuse PA", url: "#!" }
+    button: { text: "Report abuse PA", url: "#!" }
   },
   {
     title: "Delaware Animal Services",
     contactItems: [
-      { title: "New Castle, Kent & Sussex Counties:", textLink: "(302) 255-4646", url: "tel:3022554646" },
-      { title: "City of Newark – within city limits (Newark Police)", textLink: "(302) 366-7111", url: "tel:3023667111" },
-      { title: "City of Dover – within city limits (Dover Police)", textLink: "(302) 736-7111", url: "tel:3027367111" }
+      {
+        title: "New Castle, Kent & Sussex Counties:",
+        link: {
+          url: "(302) 255-4646",
+          type: "tel"
+        }
+      },
+      {
+        title: "City of Newark – within city limits (Newark Police)",
+        link: {
+          url: "(302) 366-7111",
+          type: "tel"
+        }
+      },
+      {
+        title: "City of Dover – within city limits (Dover Police)",
+        link: {
+          url: "(302) 736-7111",
+          type: "tel"
+        }
+      }
     ],
-    button: { variant: "primary", text: "Report abuse DE", url: "#!" }
+    button: { text: "Report abuse DE", url: "#!" }
   }
 ];
 
@@ -122,54 +162,54 @@ const postSectionData = {
 const listData = {
   data: [
     {
-      text: 'All animals require shelter from the rain, snow, wind, and sun. Shelter is any non-metal structure that will keep the animal warm and dry.'
+      text: "All animals require shelter from the rain, snow, wind, and sun. Shelter is any non-metal structure that will keep the animal warm and dry."
     },
     {
-      text: 'All animals require necessary veterinary care. Necessary vet care is that which is required to treat illness or injury.'
+      text: "All animals require necessary veterinary care. Necessary vet care is that which is required to treat illness or injury."
     },
     {
-      text: 'All animals require clean and sanitary living conditions. Living space should be free of debris, and waste should be removed routinely.'
+      text: "All animals require clean and sanitary living conditions. Living space should be free of debris, and waste should be removed routinely."
     },
     {
-      text: 'All animals require necessary drink and sustenance. Water and food must be provided in amounts sufficient to maintain weight and hydration.'
+      text: "All animals require necessary drink and sustenance. Water and food must be provided in amounts sufficient to maintain weight and hydration."
     },
     {
-      text: 'No animal can be abandoned. Abandoned animals are those whose caretaker has forsaken their duty of care.'
+      text: "No animal can be abandoned. Abandoned animals are those whose caretaker has forsaken their duty of care."
     },
     {
-      text: 'No animal can be beaten or neglected.'
+      text: "No animal can be beaten or neglected."
     }
-  ],
+  ]
 };
 
 const listData2 = {
+  bulletClass: "text-red",
   data: [
     {
-      text: 'Register the animal with the Bureau of Dog Law Enforcement and re-register on an annual basis. The registration fee is $500 per calendar year for the life of the dog.'
+      text: "Register the animal with the Bureau of Dog Law Enforcement and re-register on an annual basis. The registration fee is $500 per calendar year for the life of the dog."
     },
     {
-      text: 'Confine the dog in a proper enclosure and post a warning sign with a symbol that warns the public of the presence of a dangerous dog.'
+      text: "Confine the dog in a proper enclosure and post a warning sign with a symbol that warns the public of the presence of a dangerous dog."
     },
     {
-      text: 'Keep the dog muzzled and leashed when outside of the proper enclosure.'
+      text: "Keep the dog muzzled and leashed when outside of the proper enclosure."
     },
     {
-      text: 'Have the dog sterilized and microchipped.'
+      text: "Have the dog sterilized and microchipped."
     },
     {
-      text: 'Remain compliant with court ordered restitution.'
+      text: "Remain compliant with court ordered restitution."
     },
     {
-      text: 'Be compliant with court ordered restitution.'
+      text: "Be compliant with court ordered restitution."
     },
     {
-      text: 'Post a bond or purchase and maintain liability insurance in the amount of $50,000 to pay for injuries inflicted by the dog. This insurance must not be cancelled during the license period unless the owner disposes of the dog.'
+      text: "Post a bond or purchase and maintain liability insurance in the amount of $50,000 to pay for injuries inflicted by the dog. This insurance must not be cancelled during the license period unless the owner disposes of the dog."
     },
     {
-      text: 'Sign a statement providing that the owner will notify the Bureau of Dog Law Enforcement, state dog warden, and local police if the dog is loose, attacks a human or animal, or dies.'
+      text: "Sign a statement providing that the owner will notify the Bureau of Dog Law Enforcement, state dog warden, and local police if the dog is loose, attacks a human or animal, or dies."
     }
-  ],
-  bulletClass: 'text-red'
+  ]
 };
 
 const postInlineData = {
@@ -213,7 +253,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" },
+    { variant: "primary", text: "View all news, events & resources", url: "#!" }
   ]
-}
+};
 </script>

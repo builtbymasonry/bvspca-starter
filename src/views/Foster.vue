@@ -12,7 +12,7 @@
       </h2>
 
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8"
+        class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
       >
         <PostCard
           v-for="post in featuredPets"
@@ -22,7 +22,7 @@
       </div>
 
       <div
-        class="mt-16 flex flex-wrap flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-5 lg:space-x-10"
+        class="mt-16 flex flex-col flex-wrap items-center justify-center space-y-8 sm:flex-row sm:space-y-0 sm:space-x-5 lg:space-x-10"
       >
         <Button variant="secondary" text="All fosterable dogs" url="#!" />
         <Button variant="secondary" text="All fosterable cats" url="#!" />
@@ -30,31 +30,47 @@
     </div>
   </section>
 
-  <section class="pb-14 lg:pb-28 pt-48 sm:pt-60 bg-gray-dark">
+  <section class="bg-gray-dark pb-14 pt-48 sm:pt-60 lg:pb-28">
     <div class="mx-auto grid max-w-7xl grid-cols-1 px-4 lg:grid-cols-2">
       <div class="pb-14 text-xs sm:text-sm lg:pr-20 lg:pb-0 2xl:pr-36">
         <h3 class="mb-2 text-2xl font-bold sm:text-4xl">
-          We’re saving more babies than ever, and one of the best ways for you to help is to become a foster.
+          We’re saving more babies than ever, and one of the best ways for you
+          to help is to become a foster.
         </h3>
         <p class="mb-6">
-          Fosters can watch infant puppies and kittens grow to adoption age, as well as older animals who need time to socialize or recover after medical procedures.
+          Fosters can watch infant puppies and kittens grow to adoption age, as
+          well as older animals who need time to socialize or recover after
+          medical procedures.
         </p>
         <p class="mb-12">
-          Foster timeframes range from two weeks to two months. We provide you with all of the supplies you need, and we’ll work with you to tailor timeframe and pets to your unique situation.
+          Foster timeframes range from two weeks to two months. We provide you
+          with all of the supplies you need, and we’ll work with you to tailor
+          timeframe and pets to your unique situation.
         </p>
         <h4 class="mb-6 text-lg font-bold tracking-wider">
           Other suggestions include:
         </h4>
         <ul class="list-disc space-y-2 pl-5 marker:text-xs">
-          <li class="pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+          <li class="pl-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </li>
           <li class="pl-2">Curabitur in dapibus nisl.</li>
-          <li class="pl-2">Donec at libero eget odio lacinia aliquam non eu arcu.</li>
+          <li class="pl-2">
+            Donec at libero eget odio lacinia aliquam non eu arcu.
+          </li>
           <li class="pl-2">Suspendisse potenti. Pellentesque eu orci nisi.</li>
-          <li class="pl-2">Pellentesque finibus lorem dignissim bibendum pretium.</li>
-          <li class="pl-2">Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis euismod.</li>
+          <li class="pl-2">
+            Pellentesque finibus lorem dignissim bibendum pretium.
+          </li>
+          <li class="pl-2">
+            Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis
+            euismod.
+          </li>
           <li class="pl-2">Etiam pharetra dui sit amet tempus scelerisque.</li>
           <li class="pl-2">Vivamus et dolor tellus.</li>
-          <li class="pl-2">Donec vulputate, justo vitae lobortis tempus, metu.</li>
+          <li class="pl-2">
+            Donec vulputate, justo vitae lobortis tempus, metu.
+          </li>
         </ul>
       </div>
 
@@ -66,7 +82,9 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-3xl px-4">
-      <h2 class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl">
+      <h2
+        class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
+      >
         Frequently Asked Questions
       </h2>
       <Accordion :items="faq" />
@@ -75,11 +93,21 @@
 
   <section class="relative pt-20 pb-40 sm:pt-32 sm:pb-56 md:pb-28">
     <div class="absolute top-0 left-0 h-full w-full">
-      <img
-        class="absolute top-0 left-0 h-full w-full object-cover"
-        src="@/assets/img/bg-image-01.jpg"
-        alt="image description"
-      />
+      <picture>
+        <source
+          media="(max-width: 767px)"
+          srcset="src/assets/img/bg-image-01-sm.jpg"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="src/assets/img/bg-image-01.jpg"
+        />
+        <img
+          class="absolute top-0 left-0 h-full w-full object-cover"
+          src="src/assets/img/bg-image-01.jpg"
+          alt="background"
+        />
+      </picture>
     </div>
 
     <InfoCard v-bind="infoCardData" />
@@ -93,10 +121,7 @@
     </div>
   </section>
 
-  <PostCardsSection
-    class="bg-gray-dark"
-    v-bind="postCardsSectionData"
-  />
+  <PostCardsSection class="bg-gray-dark" v-bind="postCardsSectionData" />
 </template>
 
 <script setup>
@@ -118,7 +143,8 @@ const heroInnerData = {
 
 const postSectionData = {
   img: { src: "src/assets/img/content-img-17.jpg", alt: "" },
-  subtitle: "Fostering is an amazing way to help a shelter animal without committing to adopting.",
+  subtitle:
+    "Fostering is an amazing way to help a shelter animal without committing to adopting.",
   textGrid: [
     {
       title: "Benefit one",
@@ -137,9 +163,7 @@ const postSectionData = {
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia."
     }
   ],
-  buttons: [
-    { variant: "primary", text: "Apply now", url: "#!" },
-  ]
+  buttons: [{ variant: "primary", text: "Apply now", url: "#!" }]
 };
 
 const featuredPets = [
@@ -226,9 +250,7 @@ const postInlineData = {
   text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families.",
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
-  buttons: [
-    { variant: "secondary", text: "Donate", url: "#!" },
-  ]
+  buttons: [{ variant: "secondary", text: "Donate", url: "#!" }]
 };
 
 const postCardsSectionData = {
@@ -257,7 +279,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" },
+    { variant: "primary", text: "View all news, events & resources", url: "#!" }
   ]
-}
+};
 </script>

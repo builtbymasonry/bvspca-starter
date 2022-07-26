@@ -30,19 +30,19 @@
             <button
               @click="setCurrentLocation(currentLocationIndex - 1)"
               aria-label="Go to previous location"
-              class="text-red hover:text-red-light -0 inline-flex h-7 w-7 shrink items-center justify-center"
+              class="text-red hover:text-red-light -0 inline-flex h-7 w-7 shrink touch-manipulation items-center justify-center"
             >
               <BaseIcon name="angleLeft" aria-hidden="true" class="h-3 w-3" />
             </button>
             <span
               ref="locationNameRef"
-              class="shrink grow select-none px-3 text-center text-base font-bold leading-tight text-black xsm:text-xl"
+              class="xsm:text-xl shrink grow select-none px-3 text-center text-base font-bold leading-tight text-black"
               >{{ currentLocation ? currentLocation.name : "" }}</span
             >
             <button
               @click="setCurrentLocation(currentLocationIndex + 1)"
               aria-label="Go to next location"
-              class="text-red hover:text-red-light -0 inline-flex h-7 w-7 shrink items-center justify-center"
+              class="text-red hover:text-red-light -0 inline-flex h-7 w-7 shrink touch-manipulation items-center justify-center"
             >
               <BaseIcon name="angleRight" aria-hidden="true" class="h-3 w-3" />
             </button>
@@ -60,7 +60,7 @@
             >
               <button
                 @click.prevent="setCurrentLocation(i)"
-                class="select-none whitespace-nowrap border-b-[5px] pb-5 text-sm font-bold leading-none transition-colors"
+                class="touch-manipulation select-none whitespace-nowrap border-b-[5px] pb-5 text-sm font-bold leading-none transition-colors"
                 :class="
                   i === currentLocationIndex
                     ? 'text-red border-red'
@@ -216,7 +216,7 @@ watch(windowWidth, () => {
 onMounted(() => {
   currentLocation.value = props.locations[currentLocationIndex.value];
 
-  setIsNavOverflowed()
+  setIsNavOverflowed();
 });
 
 const props = defineProps({
