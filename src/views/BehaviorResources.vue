@@ -114,7 +114,7 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more" }
     }
   ],
-  buttons: [{ variant: "primary", text: "Load more", url: "#!" }]
+  buttons: [{ text: "Load more", url: "#!" }]
 };
 
 const postCardsSectionData2 = {
@@ -163,7 +163,7 @@ const postCardsSectionData2 = {
       buttonLink: { text: "Read more" }
     }
   ],
-  buttons: [{ variant: "primary", text: "Load more", url: "#!" }]
+  buttons: [{ text: "Load more", url: "#!" }]
 };
 
 const contactCard = {
@@ -198,13 +198,13 @@ const infoCardData = {
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
   img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
   buttons: [
-    { variant: "primary", text: "Learn more about our impact", url: "#!" }
+    { text: "Learn more about our impact", url: "#!" }
   ]
 };
 
 const postInlineData = {
   title: "Help keep programs like this alive",
-  text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families.",
+  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
   buttons: [

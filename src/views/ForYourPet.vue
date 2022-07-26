@@ -106,7 +106,7 @@ const cards = [
 
 const postInlineData = {
   title: "Give back to your community",
-  text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families.",
+  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
   buttons: [
@@ -149,7 +149,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" }
+    { text: "View all news, events & resources", url: "#!" }
   ]
 };
 
@@ -158,7 +158,7 @@ const infoCardData = {
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
   img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
   buttons: [
-    { variant: "primary", text: "Learn more about our impact", url: "#!" }
+    { text: "Learn more about our impact", url: "#!" }
   ]
 };
 </script>

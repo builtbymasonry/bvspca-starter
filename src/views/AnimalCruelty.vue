@@ -215,15 +215,15 @@ const listData2 = {
 const postInlineData = {
   img: { src: "src/assets/img/content-img-15.jpg", alt: "" },
   title: "Dangerous dogs",
-  text: "Dangerous dogs are governed by state law. By law, a dog may be declared dangerous dog if it has attacked, inflicted severe injury to, or killed a human being or a domestic animal without provocation. A dog may also be considered dangerous if it was involved in committing a crime. For a dog to be declared dangerous in Pennsylvania, a police officer must file a complaint with a magisterial district justice charging the owner or keeper with harboring a dangerous dog. Brandywine Valley SPCA’s Animal Protective Services Division does not have police powers and cannot file charges of harboring a dangerous dog. Police must file charges against the owner of the dog and the case must go before a judge in order for any dog to be declared dangerous. The judge will make the final disposition on the animal.",
+  text: ["Dangerous dogs are governed by state law. By law, a dog may be declared dangerous dog if it has attacked, inflicted severe injury to, or killed a human being or a domestic animal without provocation. A dog may also be considered dangerous if it was involved in committing a crime. For a dog to be declared dangerous in Pennsylvania, a police officer must file a complaint with a magisterial district justice charging the owner or keeper with harboring a dangerous dog. Brandywine Valley SPCA’s Animal Protective Services Division does not have police powers and cannot file charges of harboring a dangerous dog. Police must file charges against the owner of the dog and the case must go before a judge in order for any dog to be declared dangerous. The judge will make the final disposition on the animal."],
   reverse: true
 };
 
 const postInlineData2 = {
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   title: "Give back to your community",
-  text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families.",
-  buttons: [{ variant: "primary", text: "Donate", url: "#!" }],
+  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
+  buttons: [{ text: "Donate", url: "#!" }],
   reverse: true
 };
 
@@ -253,7 +253,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" }
+    { text: "View all news, events & resources", url: "#!" }
   ]
 };
 </script>
