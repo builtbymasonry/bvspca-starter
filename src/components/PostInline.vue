@@ -32,9 +32,27 @@
         :slides="carousel.slides"
       />
     </div>
-    <div class="py-2 lg:pr-10 lg:flex lg:flex-col lg:items-start lg:justify-center lg:w-1/2 text-xs">
-      <h2 class="mb-3 text-2xl md:text-3xl xl:text-4xl font-bold">{{ title }}</h2>
-      <p>{{ text }}</p>
+    <div
+      class="py-2 lg:flex lg:flex-col lg:items-start lg:justify-center lg:w-1/2 text-xs"
+      :class="reverse ? 'lg:pr-10' : 'lg:pl-10'"
+    >
+      <h2 v-if="title" class="mb-3 text-2xl md:text-3xl xl:text-4xl font-bold">{{ title }}</h2>
+      <h3 v-if="subtitle" class="mb-3 text-2xl font-bold">{{ subtitle }}</h3>
+      <p v-if="text">{{ text }}</p>
+      <div v-if="textGroup" class="space-y-5">
+        <p
+          v-for="paragraph in textGroup"
+          :key="paragraph.text"
+        >
+          {{ paragraph.text }}
+        </p>
+      </div>
+      <div v-if="share" class="mt-6 flex">
+        <span class="mr-6 text-lg md:text-xl font-bold">Share:</span>
+        <Socials
+        :socials="socialList"
+        class="space-x-4" />
+      </div>
       <div
         v-if="buttons"
         class="mt-10 flex flex-wrap justify-center space-x-10 lg:justify-start"
@@ -80,6 +98,7 @@ import Button from "@/components/Button.vue";
 import ButtonLink from "./ButtonLink.vue";
 import Modal from "./Modal.vue";
 import Carousel from "./Carousel.vue";
+import Socials from "./Socials.vue";
 
 const modal = ref(null);
 
@@ -87,9 +106,15 @@ const openVideo = () => modal.value.openModal();
 
 const props = defineProps({
   title: String,
+  subtitle: String,
   text: String,
+  textGroup: Array,
   buttons: Array,
   img: Object,
+  share: {
+    type: Boolean,
+    default: false
+  },
   video: {
     type: Object,
     default: null
@@ -102,4 +127,19 @@ const props = defineProps({
     default: false
   }
 });
+
+const socialList = [
+  {
+    url: "#",
+    icon: "facebook"
+  },
+  {
+    url: "#",
+    icon: "twitter"
+  },
+  {
+    url: "#",
+    icon: "share"
+  }
+];
 </script>

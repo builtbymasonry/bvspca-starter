@@ -39,7 +39,7 @@
         </div>
         <div
           v-if="buttons"
-          class="mt-14 xl:-mr-12 flex flex-row flex-wrap items-start justify-center space-y-10 sm:space-y-0 sm:space-x-5 lg:flex-col lg:justify-start lg:space-y-8 lg:space-x-0 xl:flex-row xl:space-y-0 xl:space-x-8"
+          class="mt-14 xl:-mr-12 flex flex-wrap flex-col sm:flex-row lg:flex-col xl:flex-row items-center sm:items-start justify-center lg:justify-start space-y-10 sm:space-y-0 lg:space-y-8 xl:space-y-0 sm:space-x-5 lg:space-x-0 xl:space-x-8"
         >
           <Button
             v-for="button in buttons"
