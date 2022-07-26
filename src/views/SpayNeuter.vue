@@ -36,10 +36,21 @@
 
     <section class="relative pt-40 pb-28 sm:pt-60 md:mb-32 md:pb-0">
       <div class="absolute top-0 left-0 h-full w-full">
-        <img
-          class="absolute top-0 left-0 h-full w-full object-cover"
-          src="src/assets/img/bg-image-01.jpg"
-        />
+        <picture>
+          <source
+            media="(max-width: 767px)"
+            srcset="src/assets/img/bg-image-01-sm.jpg"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="src/assets/img/bg-image-01.jpg"
+          />
+          <img
+            class="absolute top-0 left-0 h-full w-full object-cover"
+            src="src/assets/img/bg-image-01.jpg"
+            alt="background"
+          />
+        </picture>
       </div>
 
       <InfoCard v-bind="infoCardData" />
@@ -51,10 +62,7 @@
       </div>
     </section>
 
-    <PostCardsSection
-      class="bg-gray-dark"
-      v-bind="postCardsSectionData"
-    />
+    <PostCardsSection class="bg-gray-dark" v-bind="postCardsSectionData" />
   </div>
 </template>
 
@@ -277,7 +285,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" },
+    { variant: "primary", text: "View all news, events & resources", url: "#!" }
   ]
-}
+};
 </script>

@@ -1,40 +1,51 @@
 <template>
   <HeroInner v-bind="heroInnerData" />
 
-  <PostCardsSection
-    class="bg-gray-dark"
-    v-bind="postCardsSectionData"
-  />
+  <PostCardsSection class="bg-gray-dark" v-bind="postCardsSectionData" />
 
-  <PostCardsSection v-bind="postCardsSectionData2"/>
+  <PostCardsSection v-bind="postCardsSectionData2" />
 
-  <section class="py-14 lg:py-28 bg-gray-dark">
-    <div class="mx-auto max-w-4xl px-4 grid grid-cols-1 sm:grid-cols-2 gap-10 items-center text-sm text-center sm:text-left">
+  <section class="bg-gray-dark py-14 lg:py-28">
+    <div
+      class="mx-auto grid max-w-4xl grid-cols-1 items-center gap-10 px-4 text-center text-sm sm:grid-cols-2 sm:text-left"
+    >
       <div>
-        <h2 class="mb-4 text-2xl md:text-3xl xl:text-4xl font-bold">Behavior Team</h2>
-        <p>The Brandywine Valley SPCA offers phone, e-mail and on-site support for our adopters, foster families and pet owners seeking assistance to keep their pet at home.</p>
+        <h2 class="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">
+          Behavior Team
+        </h2>
+        <p>
+          The Brandywine Valley SPCA offers phone, e-mail and on-site support
+          for our adopters, foster families and pet owners seeking assistance to
+          keep their pet at home.
+        </p>
       </div>
-      <ContactCard
-        class="lg:whitespace-pre-wrap"
-        v-bind="contactCard"
-      />
+      <ContactCard class="lg:whitespace-pre-wrap" v-bind="contactCard" />
     </div>
   </section>
 
   <section class="relative pt-20 pb-40 sm:pt-32 sm:pb-56 md:pb-28">
     <div class="absolute top-0 left-0 h-full w-full">
-      <img
-        class="absolute top-0 left-0 h-full w-full object-cover"
-        src="@/assets/img/bg-image-01.jpg"
-        alt="image description"
-      />
+      <picture>
+        <source
+          media="(max-width: 767px)"
+          srcset="src/assets/img/bg-image-01-sm.jpg"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="src/assets/img/bg-image-01.jpg"
+        />
+        <img
+          class="absolute top-0 left-0 h-full w-full object-cover"
+          src="src/assets/img/bg-image-01.jpg"
+          alt="background"
+        />
+      </picture>
     </div>
-
     <InfoCard v-bind="infoCardData" />
   </section>
 
   <section
-    class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32 border-b-2 border-white"
+    class="bg-skew bg-skew-reverse bg-purple border-b-2 border-white pt-8 pb-20 text-white md:py-24 lg:py-32"
   >
     <div class="mx-auto max-w-4xl px-4">
       <PostInline v-bind="postInlineData" />
@@ -103,9 +114,7 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more" }
     }
   ],
-  buttons: [
-    { variant: "primary", text: "Load more", url: "#!" },
-  ]
+  buttons: [{ variant: "primary", text: "Load more", url: "#!" }]
 };
 
 const postCardsSectionData2 = {
@@ -154,30 +163,32 @@ const postCardsSectionData2 = {
       buttonLink: { text: "Read more" }
     }
   ],
-  buttons: [
-    { variant: "primary", text: "Load more", url: "#!" },
-  ]
+  buttons: [{ variant: "primary", text: "Load more", url: "#!" }]
 };
 
 const contactCard = {
   contactItems: [
     {
       title: `Please contact our \n free Pet Resource Center at:`,
-      textLink: "(484) 301-5200",
-      url: "tel:4843015200",
-      subtext: [
-        {
-          text: "or",
-          textLink: "(302) 516-1010",
-          url: "tel:3025161010"
-        }
-      ]
+      link: {
+        url: "(484) 301-5200",
+        type: "tel"
+      }
+    },
+    {
+      title: "or",
+      link: {
+        url: "(302) 516-1010",
+        type: "tel"
+      }
     },
     {
       title: "Or email us at:",
-      textLink: "PetResourceCenter@bvspca.org",
-      url: "mailto:PetResourceCenter@bvspca.org",
-      linkSize: "small"
+      link: {
+        url: "PetResourceCenter@bvspca.org",
+        type: "mailto",
+        textSize: "lg"
+      }
     }
   ]
 };
@@ -198,7 +209,7 @@ const postInlineData = {
   reverse: true,
   buttons: [
     { variant: "secondary", text: "Donate", url: "#!" },
-    { variant: "outlineSecondary", text: "Sponsor", url: "#!" },
+    { variant: "outlineSecondary", text: "Sponsor", url: "#!" }
   ]
 };
 </script>

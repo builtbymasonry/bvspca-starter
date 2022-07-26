@@ -10,16 +10,18 @@
   <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-6xl px-4">
       <div class="mx-auto mb-10 max-w-2xl text-center text-sm sm:mb-14">
-        <h2 class="mb-2 text-2xl sm:text-4xl lg:text-5xl font-bold">Volunteer Opportunities</h2>
+        <h2 class="mb-2 text-2xl font-bold sm:text-4xl lg:text-5xl">
+          Volunteer Opportunities
+        </h2>
         <Select
-          class="mt-8 mx-4 text-left md:hidden"
+          class="mx-4 mt-8 text-left md:hidden"
           inputLabel="Select Category"
           :options="categories"
-          inputStyle="bg-white"
+          themeColor="white"
         />
       </div>
 
-      <div class="space-y-10 lg:space-y-14 text-center md:text-left">
+      <div class="space-y-10 text-center md:text-left lg:space-y-14">
         <PostCardInline
           v-for="post in volunteerData"
           v-bind="post"
@@ -29,18 +31,19 @@
     </div>
   </section>
 
-  <TextBanner
-    class="bg-purple text-white"
-    v-bind="textBannerData"
-  />
+  <TextBanner class="bg-purple text-white" v-bind="textBannerData" />
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-7xl px-4">
-      <h2 class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl">
+      <h2
+        class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
+      >
         Other ways to help out
       </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start gap-14 sm:gap-8 text-center sm:text-left">
+      <div
+        class="grid grid-cols-1 items-start gap-14 text-center sm:grid-cols-2 sm:gap-8 sm:text-left lg:grid-cols-3"
+      >
         <PostCardBox
           v-for="post in postCardBoxes"
           :key="post.title"
@@ -50,18 +53,25 @@
     </div>
   </section>
 
-  <TextBanner
-    class="pt-0 lg:pt-0"
-    v-bind="textBannerData2"
-  />
+  <TextBanner class="pt-0 lg:pt-0" v-bind="textBannerData2" />
 
   <section class="relative pt-20 pb-40 sm:pt-32 sm:pb-56 md:pb-28">
     <div class="absolute top-0 left-0 h-full w-full">
-      <img
-        class="absolute top-0 left-0 h-full w-full object-cover"
-        src="@/assets/img/bg-image-01.jpg"
-        alt="image description"
-      />
+      <picture>
+        <source
+          media="(max-width: 767px)"
+          srcset="src/assets/img/bg-image-01-sm.jpg"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="src/assets/img/bg-image-01.jpg"
+        />
+        <img
+          class="absolute top-0 left-0 h-full w-full object-cover"
+          src="src/assets/img/bg-image-01.jpg"
+          alt="background"
+        />
+      </picture>
     </div>
 
     <InfoCard v-bind="infoCardData" />
@@ -75,7 +85,7 @@
     </div>
   </section>
 
-  <PostCardsSection  v-bind="postCardsSectionData"/>
+  <PostCardsSection v-bind="postCardsSectionData" />
 </template>
 
 <script setup>
@@ -101,29 +111,30 @@ const categories = [
     value: 0,
     label: "Select",
     disabled: true,
-    selected: true,
+    selected: true
   },
   {
     value: 1,
-    label: "option 01",
+    label: "option 01"
   },
   {
     value: 2,
-    label: "option 02",
+    label: "option 02"
   },
   {
     value: 3,
-    label: "option 03",
+    label: "option 03"
   },
   {
     value: 4,
-    label: "option 04",
-  },
+    label: "option 04"
+  }
 ];
 
 const postInlineData = {
   img: { src: "src/assets/img/content-img-16.jpg", alt: "" },
-  title: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities",
+  title:
+    "The Brandywine Valley SPCA has a wide variety of volunteer opportunities",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Pellentesque finibus lorem dignissim bibendum pretium. Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis euismod.",
   buttons: [{ variant: "primary", text: "Learn more about us", url: "#!" }]
 };
@@ -133,9 +144,7 @@ const postInlineData2 = {
   text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families.",
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
-  buttons: [
-    { variant: "secondary", text: "Donate", url: "#!" },
-  ]
+  buttons: [{ variant: "secondary", text: "Donate", url: "#!" }]
 };
 
 const volunteerData = [
@@ -216,15 +225,15 @@ const volunteerData = [
 const textBannerData = {
   title: "Looking for community service?",
   text: "Community service and volunteering are often confused. If you’ve been court-ordered to do community service or need school credit we’ve got you covered.",
-  buttons: [{variant: "secondary", text: "View community service" }]
+  buttons: [{ variant: "secondary", text: "View community service" }]
 };
 
 const textBannerData2 = {
   title: "Have questions or need help?",
   text: "Give us a call or stop by one of our healthcare locations for more help.",
   buttons: [
-    {variant: "primary", text: "Contact us" },
-    {variant: "outline", text: "Wellness clinic locations" }
+    { text: "Contact us" },
+    { variant: "outline", text: "Wellness clinic locations" }
   ]
 };
 
@@ -234,36 +243,28 @@ const postCardBoxes = [
     img: { src: "src/assets/img/postcardbox-img-01.jpg", alt: "" },
     title: "Kong stuffing parties",
     text: [
-      {
-        paragraph: "Looking for a fun activity for kids to help out at the shelter? Schedule a Kong Stuffing Party and help us feed our dogs in an enriching way! The kongs (a hard hollow rubber toy) are stuffed with a mixture of kibble and peanut butter, and then frozen for a delicious treat for our four-legged friends. Email Hailey Marcus at hmarcus@bvspca.org, to schedule your kong stuffing party!",
-      },
-      {
-        paragraph: "Please note: this opportunity is for kids 7 years +, group size maximum 15 kids.",
-      }
+      "Looking for a fun activity for kids to help out at the shelter? Schedule a Kong Stuffing Party and help us feed our dogs in an enriching way! The kongs (a hard hollow rubber toy) are stuffed with a mixture of kibble and peanut butter, and then frozen for a delicious treat for our four-legged friends. Email Hailey Marcus at hmarcus@bvspca.org, to schedule your kong stuffing party!",
+      "Please note: this opportunity is for kids 7 years +, group size maximum 15 kids."
     ],
-    buttonLink: { text: "Schedule today", url: "#" }
+    button: { text: "Schedule today", url: "#!" }
   },
   {
     url: "#!",
     img: { src: "src/assets/img/postcardbox-img-02.jpg", alt: "" },
     title: "Baking",
     text: [
-      {
-        paragraph: "Want a group activity that helps the shelter dogs? Consider baking homemade dog treats for our canine residents. The BVSPCA has several approved recipes that are easy to make. Drop off the homemade treats during shelter hours."
-      }
+      "Want a group activity that helps the shelter dogs? Consider baking homemade dog treats for our canine residents. The BVSPCA has several approved recipes that are easy to make. Drop off the homemade treats during shelter hours."
     ],
-    buttonLink: { text: "Get Recipe", url: "#" }
+    button: { text: "Get Recipe", url: "#!" }
   },
   {
     url: "#!",
     img: { src: "src/assets/img/postcardbox-img-03.jpg", alt: "" },
     title: "Homemade toys",
     text: [
-      {
-        paragraph: "Would you like to help our feline friends stay entertained? Create fun and easy cat toys to provide entertainment and enrichment for the cats and kittens while they are in our care. Click below for DIY cat toy instructions."
-      }
+      "Would you like to help our feline friends stay entertained? Create fun and easy cat toys to provide entertainment and enrichment for the cats and kittens while they are in our care. Click below for DIY cat toy instructions."
     ],
-    buttonLink: { text: "Learn how", url: "#" }
+    button: { text: "Learn how", url: "#!" }
   }
 ];
 
@@ -293,7 +294,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" },
+    { variant: "primary", text: "View all news, events & resources", url: "#!" }
   ]
 };
 

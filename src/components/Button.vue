@@ -6,7 +6,7 @@
       classDefault,
       classSize(),
       classVariant(),
-      disabled ? 'pointer-events-none bg-gray-darker' : ''
+      disabled ? 'bg-gray-darker pointer-events-none' : ''
     ]"
   >
     {{ text }}
@@ -50,7 +50,7 @@ const props = defineProps({
 });
 
 const classDefault =
-  "inline-flex items-center justify-center whitespace-nowrap border-2 rounded-full font-bold transition-all";
+  "inline-flex items-center justify-center whitespace-nowrap border-2 rounded-full font-bold transition-all duration-300";
 
 const classSize = () => ({
   "px-6 md:px-8 py-2 h-[35px] md:h-[50px] text-sm lg:text-lg leading-normal":

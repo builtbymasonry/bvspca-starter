@@ -1,7 +1,7 @@
 <template>
   <div>
+    <!-- default style -->
     <div v-if="variant === 'default'" class="w-full text-black">
-      <!-- default style -->
       <label v-if="inputLabel" class="mb-2 block select-none text-sm">{{
         inputLabel
       }}</label>
@@ -12,14 +12,15 @@
             class="focus:ring-orange w-full focus:rounded-[10px] focus:outline-none focus:ring-1 focus-visible:ring-1"
           >
             <div
-              class="bg-gray relative block w-full min-w-0 cursor-pointer border-none py-3 pl-4 pr-5 text-left text-sm leading-[1.215]"
+              class="relative block w-full min-w-0 cursor-pointer border-none py-3 pl-4 pr-5 text-left text-sm leading-[1.215]"
               :class="[
                 open ? 'rounded-t-[10px]' : 'rounded-[10px]',
                 {
                   'min-w-[120px]': props.size === 'md',
                   'min-w-[80px]': props.size === 'sm',
                   'min-w-0': props.size === 'xs'
-                }
+                },
+                `bg-${themeColor}`
               ]"
             >
               <span class="block truncate">{{ label }}</span>
@@ -49,9 +50,10 @@
                 :class="[
                   selected ? 'bg-gray-200' : '',
                   disabled ? 'hidden' : '',
-                  active ? 'bg-gray-200' : ''
+                  active ? 'bg-gray-200' : '',
+                  `bg-${themeColor}`
                 ]"
-                class="bg-gray block cursor-pointer truncate py-3 px-4 font-bold transition-colors hover:bg-gray-200"
+                class="block cursor-pointer truncate py-3 px-4 font-bold transition-colors hover:bg-gray-200"
                 >{{ option.label }}</span
               >
             </ListboxOption>
@@ -59,8 +61,8 @@
         </div>
       </Listbox>
     </div>
+    <!-- outline variant -->
     <div v-if="variant === 'outline'" class="w-full text-black">
-      <!-- outline variant -->
       <label v-if="inputLabel" class="mb-2 block select-none text-sm">{{
         inputLabel
       }}</label>
@@ -89,7 +91,7 @@
             </div>
           </ListboxButton>
           <ListboxOptions
-            class="absolute z-20 max-h-60 w-full overflow-auto rounded-b-[17px] border-2 border-t-0 border-black text-sm focus:outline-none"
+            class="absolute z-20 -mt-[2px] max-h-60 w-full overflow-auto rounded-b-[17px] border-2 border-t-0 border-black text-sm focus:outline-none"
           >
             <ListboxOption
               v-slot="{ selected, disabled, active }"
@@ -136,7 +138,11 @@ const props = defineProps({
     type: String,
     default: "default"
   },
-  inputLabel: [String, Number]
+  inputLabel: [String, Number],
+  themeColor: {
+    type: String,
+    default: "gray"
+  }
 });
 
 const label = computed(() => {

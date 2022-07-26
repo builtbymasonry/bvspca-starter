@@ -8,15 +8,17 @@
       </div>
     </section>
 
-    <section class="py-12 md:py-20 lg:py-28 bg-gray-dark">
+    <section class="bg-gray-dark py-12 md:py-20 lg:py-28">
       <div class="mx-auto max-w-5xl px-4">
-        <h2 class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl">
+        <h2
+          class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
+        >
           How can we help?
         </h2>
 
         <div class="-mx-4 flex flex-wrap justify-center gap-y-10 sm:gap-y-8">
           <div
-            class="px-12 md:px-4 w-full sm:w-1/2 lg:w-1/3"
+            class="w-full px-12 sm:w-1/2 md:px-4 lg:w-1/3"
             v-for="card in cards"
             :key="card.title"
           >
@@ -30,11 +32,21 @@
 
     <section class="relative pt-20 pb-40 sm:pt-32 sm:pb-56 md:pb-28">
       <div class="absolute top-0 left-0 h-full w-full">
-        <img
-          class="absolute top-0 left-0 h-full w-full object-cover"
-          src="@/assets/img/bg-image-01.jpg"
-          alt="image description"
-        />
+        <picture>
+          <source
+            media="(max-width: 767px)"
+            srcset="src/assets/img/bg-image-01-sm.jpg"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="src/assets/img/bg-image-01.jpg"
+          />
+          <img
+            class="absolute top-0 left-0 h-full w-full object-cover"
+            src="src/assets/img/bg-image-01.jpg"
+            alt="background"
+          />
+        </picture>
       </div>
 
       <InfoCard v-bind="infoCardData" />
@@ -48,7 +60,7 @@
       </div>
     </section>
 
-    <PostCardsSection v-bind="postCardsSectionData"/>
+    <PostCardsSection v-bind="postCardsSectionData" />
   </div>
 </template>
 
@@ -178,7 +190,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" },
+    { variant: "primary", text: "View all news, events & resources", url: "#!" }
   ]
-}
+};
 </script>
