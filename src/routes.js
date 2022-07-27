@@ -12,6 +12,7 @@ import BehaviorResources from './views/BehaviorResources.vue'
 import Volunteer from './views/Volunteer.vue'
 import Foster from './views/Foster.vue'
 import ForKids from './views/ForKids.vue'
+import AboutUs from './views/AboutUs.vue'
 import DonateModal from './views/DonateModal.vue'
 import VolunteerModal from './views/VolunteerModal.vue'
 import AppointmentModal from './views/AppointmentModal.vue'
@@ -38,6 +39,7 @@ export const routes = [
   { path: '/volunteer', component: Volunteer, meta: { title: 'Volunteer' } },
   { path: '/foster', component: Foster, meta: { title: 'Foster' } },
   { path: '/for-kids', component: ForKids, meta: { title: 'For Kids' } },
+  { path: '/about-us', component: AboutUs, meta: { title: 'About Us' } },
   { path: '/donate-modal', component: DonateModal, meta: { title: 'Donate modal' } },
   { path: '/volunteer-modal', component: VolunteerModal, meta: { title: 'Volunteer modal' } },
   { path: '/appointment-modal', component: AppointmentModal, meta: { title: 'Appointment modal' } },

@@ -3,9 +3,9 @@
 
   <section class="bg-gray-dark py-14 lg:py-28">
     <div
-      class="mx-auto grid max-w-4xl grid-cols-1 items-center gap-10 px-4 text-center text-sm sm:grid-cols-2 sm:text-left"
+      class="mx-auto grid max-w-4xl grid-cols-1 items-center gap-5 px-4 text-center text-sm sm:grid-cols-2 sm:text-left"
     >
-      <div>
+      <div class="pb-10 sm:pb-0 sm:pr-10 lg:pr-14">
         <h2 class="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">
           Finding a new family
         </h2>
@@ -99,13 +99,13 @@ const infoCardData = {
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
   img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
   buttons: [
-    { variant: "primary", text: "Learn more about our impact", url: "#!" }
+    { text: "Learn more about our impact", url: "#!" }
   ]
 };
 
 const postInlineData = {
   title: "Help keep programs like this alive",
-  text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families.",
+  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
   buttons: [{ variant: "secondary", text: "Donate", url: "#!" }]
@@ -137,7 +137,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" }
+    { text: "View all news, events & resources", url: "#!" }
   ]
 };
 </script>

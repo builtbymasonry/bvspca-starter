@@ -204,14 +204,14 @@ const heroData = {
   title: "Putting the human back in humane",
   text: "We strive to end animal suffering and empower communities to find the heart in humanity",
   buttons: [
-    { variant: "primary", text: "Save a life", url: "#!" },
+    { text: "Save a life", url: "#!" },
     { variant: "outline", text: "Learn more", url: "#!" }
   ]
 };
 
 const postInlineData = {
   title: "A second chance at nine lives",
-  text: "Whiskers got his leg caught in a fox trap after getting loose from his home. He lost a lot of skin, suffered nerve damage,   ahd a quickly spreading infection. His family brought him to our New Castle Animal Health Center. They couldn’t afford the entirety od his care and were condisdering euthanasia since the infection would soon be life-threatening. Thanks to our pet retention grant from Petco Love, we were able to bridge what his owners couldn’t afford and saved Whiskers by amputating the badly damaged leg. Whiskers now lives a life of three-legged luxury. We’re grateful for Petco Love’s support, which results from all of you who donate at checkout at the Petco stores.",
+  text: ["Whiskers got his leg caught in a fox trap after getting loose from his home. He lost a lot of skin, suffered nerve damage,   ahd a quickly spreading infection. His family brought him to our New Castle Animal Health Center. They couldn’t afford the entirety od his care and were condisdering euthanasia since the infection would soon be life-threatening. Thanks to our pet retention grant from Petco Love, we were able to bridge what his owners couldn’t afford and saved Whiskers by amputating the badly damaged leg. Whiskers now lives a life of three-legged luxury. We’re grateful for Petco Love’s support, which results from all of you who donate at checkout at the Petco stores."],
   carousel: {
     slides: [
       { src: "src/assets/img/slide01.jpg", alt: "kitty" },
@@ -350,7 +350,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" }
+    { text: "View all news, events & resources", url: "#!" }
   ]
 };
 
@@ -429,13 +429,13 @@ const postSectionData = {
       button: { text: "Learn more", url: "#!" }
     }
   ],
-  buttons: [{ variant: "primary", text: "See all ways to get help", url: "#!" }]
+  buttons: [{ text: "See all ways to get help", url: "#!" }]
 };
 
 const infoCardData = {
   img: { src: "src/assets/img/content-img-01.jpg", alt: "work" },
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
-  buttons: [{ variant: "primary", text: "Learn more about our impact" }]
+  buttons: [{ text: "Learn more about our impact" }]
 };
 </script>

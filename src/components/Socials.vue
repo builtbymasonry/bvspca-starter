@@ -50,6 +50,9 @@ const classList = () => {
     },
     {
       "text-white hover:text-orange": props.variant === "white"
+    },
+    {
+      "text-red hover:text-red-dark": props.variant === "red"
     }
   ];
 };

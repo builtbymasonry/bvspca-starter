@@ -33,7 +33,7 @@
   <section class="bg-gray-dark pb-14 pt-48 sm:pt-60 lg:pb-28">
     <div class="mx-auto grid max-w-7xl grid-cols-1 px-4 lg:grid-cols-2">
       <div class="pb-14 text-xs sm:text-sm lg:pr-20 lg:pb-0 2xl:pr-36">
-        <h3 class="mb-2 text-2xl font-bold sm:text-4xl">
+        <h3 class="mb-6 text-2xl font-bold sm:text-4xl">
           We’re saving more babies than ever, and one of the best ways for you
           to help is to become a foster.
         </h3>
@@ -163,7 +163,7 @@ const postSectionData = {
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia."
     }
   ],
-  buttons: [{ variant: "primary", text: "Apply now", url: "#!" }]
+  buttons: [{ text: "Apply now", url: "#!" }]
 };
 
 const featuredPets = [
@@ -241,13 +241,13 @@ const infoCardData = {
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
   img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
   buttons: [
-    { variant: "primary", text: "Learn more about our impact", url: "#!" }
+    { text: "Learn more about our impact", url: "#!" }
   ]
 };
 
 const postInlineData = {
   title: "Give back to your community",
-  text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families.",
+  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
   buttons: [{ variant: "secondary", text: "Donate", url: "#!" }]
@@ -279,7 +279,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" }
+    { text: "View all news, events & resources", url: "#!" }
   ]
 };
 </script>

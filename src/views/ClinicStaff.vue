@@ -91,14 +91,8 @@ const textBannerData = {
   title: "Have questions or need help?",
   text: "Give us a call or stop by one of our healthcare locations for more help.",
   buttons: [
-    {
-      variant: "primary",
-      text: "Contact us"
-    },
-    {
-      variant: "outline",
-      text: "Wellness clinic locations"
-    }
+    { text: "Contact us"},
+    { variant: "outline", text: "Wellness clinic locations" }
   ]
 };
 </script>

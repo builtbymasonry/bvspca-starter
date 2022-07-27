@@ -205,9 +205,14 @@ const profileSlides = [
 
 const postInlineVideo = {
   title: "Our mission & vision",
-  text: "Founded in 1929, the Brandywine Valley SPCA exists to end animal suffering and to involve the entire community in the welfare and well-being of animals. Our mission is to put the “human” back in humane animal treatment and advocate on their behalf. Our vision is to be the recognized leader in animal welfare that empowers communities to treat life with respect and dignity.",
-  img: { src: "src/assets/img/content-img-99.jpg", alt: "man holding kittens" },
-  video: { src: "https://www.youtube.com/embed/BHACKCNDMW8" }
+  text: ["Founded in 1929, the Brandywine Valley SPCA exists to end animal suffering and to involve the entire community in the welfare and well-being of animals. Our mission is to put the “human” back in humane animal treatment and advocate on their behalf. Our vision is to be the recognized leader in animal welfare that empowers communities to treat life with respect and dignity."],
+  video: {
+    src: "https://www.youtube.com/embed/BHACKCNDMW8",
+    thumb: {
+      src: "src/assets/img/content-img-99.jpg",
+      alt: ""
+    }
+  }
 };
 
 const quarterlyData = {

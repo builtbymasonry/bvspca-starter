@@ -133,7 +133,7 @@ const postSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "Schedule an appointment" },
+    { text: "Schedule an appointment" },
     { variant: "outline", text: "Learn more about our impact" }
   ],
   reverse: true
@@ -220,7 +220,7 @@ const textBoxData = {
 const postInlineData = {
   img: { src: "src/assets/img/content-img-10.jpg", alt: "" },
   title: "Help keep our Community Cats program alive",
-  text: "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families. ",
+  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   buttons: [{ variant: "secondary", text: "Donate", url: "#!" }]
 };
 
@@ -250,7 +250,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" },
+    { text: "View all news, events & resources", url: "#!" },
   ]
 }
 </script>
