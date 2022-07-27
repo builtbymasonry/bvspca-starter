@@ -28,6 +28,7 @@ const routes = [
   "/behavior-resources",
   "/volunteer",
   "/foster",
-  "/for-kids"
+  "/for-kids",
+  "/about-us"
 ];
 </script>

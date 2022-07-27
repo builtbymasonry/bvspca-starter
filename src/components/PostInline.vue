@@ -4,15 +4,16 @@
     :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
   >
     <div class="relative mx-auto max-w-sm md:max-w-md lg:max-w-full w-full lg:w-1/2">
-      <img class="w-full rounded-sm md:rounded-md shadow" v-bind="img" />
+      <img v-if="img" class="w-full rounded-sm md:rounded-md shadow" v-bind="img" />
       <div
         v-if="video"
         @click="openVideo"
         @keyup.enter="openVideo"
         tabindex="0"
-        class="absolute top-0 left-0 w-full h-full flex items-center justify-center cursor-pointer group"
+        class="relative overflow-hidden rounded-sm md:rounded-md shadow group cursor-pointer"
       >
-        <div class="flex items-center justify-center w-[86px] h-[86px] rounded-full bg-white/70 group-hover:bg-white transition-all">
+        <img class="w-full transition-transform duration-300 group-hover:scale-105" v-bind="video.thumb" />
+        <div class="absolute top-1/2 left-1/2 -mx-10 -my-10 flex items-center justify-center w-20 h-20 rounded-full bg-white/70 group-hover:bg-white transition-colors duration-300">
           <BaseIcon
             name="angleRight"
             class="ml-[5%] w-[30%] h-[30%] text-red"
@@ -53,7 +54,7 @@
       </div>
       <ButtonLink
         v-if="video"
-        class="mt-12"
+        class="mt-10"
         text="Watch the video"
         @click.prevent="openVideo"
       />
