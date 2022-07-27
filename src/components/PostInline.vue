@@ -3,34 +3,26 @@
     class="flex flex-col items-center gap-5 gap-y-10 text-center lg:text-left"
     :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
   >
-    <div
-      v-on="video ? { click: openVideo, keyup: openVideo } : {}"
-      :tabindex="video ? 0 : -1"
-      class="relative mx-auto w-full max-w-sm md:max-w-md lg:w-1/2 lg:max-w-full"
-      :class="video && 'cursor-pointer'"
-    >
-      <svg
+    <div class="relative mx-auto max-w-sm md:max-w-md lg:max-w-full w-full lg:w-1/2">
+      <img v-if="img" class="w-full rounded-sm md:rounded-md shadow" v-bind="img" />
+      <div
         v-if="video"
-        class="absolute top-1/2 left-1/2 -ml-10 -mt-10 h-20 w-20"
-        viewBox="0 0 86 86"
+        @click="openVideo"
+        @keyup.enter="openVideo"
+        tabindex="0"
+        class="relative overflow-hidden rounded-sm md:rounded-md shadow group cursor-pointer"
       >
-        <circle
-          fill="#FFFFFF"
-          opacity="0.691824777"
-          cx="43"
-          cy="43"
-          r="43"
-        ></circle>
-        <path
-          d="M50.0024162,35.0030752 L61.9008492,50.1465353 C62.9244895,51.4493502 62.6981737,53.3353148 61.3953588,54.358955 C60.8668022,54.7742496 60.2140859,55 59.5418942,55 L34.1723915,55 C32.5155373,55 31.1723915,53.6568542 31.1723915,52 C31.1723915,51.3278083 31.398142,50.675092 31.8134365,50.1465353 L43.7118695,35.0030752 C45.0767232,33.2659887 47.5913426,32.9642343 49.3284291,34.329088 C49.5791516,34.5260843 49.80542,34.7523527 50.0024162,35.0030752 Z"
-          fill="#D50032"
-          transform="translate(46.857143, 43.000000) rotate(-270.000000) translate(-46.857143, -43.000000) "
-        ></path>
-      </svg>
-      <Carousel v-if="carousel" :slides="carousel.slides" />
-      <img
-        class="w-full rounded-sm shadow md:rounded-md"
-        v-bind="img"
+        <img class="w-full transition-transform duration-300 group-hover:scale-105" v-bind="video.thumb" />
+        <div class="absolute top-1/2 left-1/2 -mx-10 -my-10 flex items-center justify-center w-20 h-20 rounded-full bg-white/70 group-hover:bg-white transition-colors duration-300">
+          <BaseIcon
+            name="angleRight"
+            class="ml-[5%] w-[30%] h-[30%] text-red"
+          />
+        </div>
+      </div>
+      <Carousel
+        v-if="carousel"
+        :slides="carousel.slides"
       />
     </div>
     <div
@@ -41,15 +33,16 @@
         {{ title }}
       </h2>
       <h3 v-if="subtitle" class="mb-3 text-2xl font-bold">{{ subtitle }}</h3>
-      <p v-if="text">{{ text }}</p>
-      <div v-if="textGroup" class="space-y-5">
-        <p v-for="paragraph in textGroup" :key="paragraph.text">
-          {{ paragraph.text }}
-        </p>
+      <div v-if="text" class="space-y-5">
+        <p v-for="p in text" :key="p">{{ p }}</p>
       </div>
       <div v-if="share" class="mt-6 flex">
-        <span class="mr-6 text-lg font-bold md:text-xl">Share:</span>
-        <Socials :socials="socialList" class="space-x-4" />
+        <span class="mr-6 text-lg md:text-xl font-bold">Share:</span>
+        <Socials
+          :socials="socialList"
+          variant="red"
+          class="space-x-4"
+        />
       </div>
       <div
         v-if="buttons"
@@ -58,14 +51,12 @@
         <Button
           v-for="button in buttons"
           :key="button.text"
-          :url="button.url"
-          :variant="button.variant || primary"
-          :text="button.text"
+          v-bind="button"
         />
       </div>
       <ButtonLink
         v-if="video"
-        class="mt-12"
+        class="mt-10"
         text="Watch the video"
         @click.prevent="openVideo"
       />
@@ -94,10 +85,11 @@
 import { ref } from "vue";
 
 import Button from "@/components/Button.vue";
-import ButtonLink from "./ButtonLink.vue";
-import Modal from "./Modal.vue";
-import Carousel from "./Carousel.vue";
-import Socials from "./Socials.vue";
+import ButtonLink from "@/components/ButtonLink.vue";
+import BaseIcon from "@/components/BaseIcon.vue";
+import Modal from "@/components/Modal.vue";
+import Carousel from "@/components/Carousel.vue";
+import Socials from "@/components/Socials.vue";
 
 const modal = ref(null);
 
@@ -110,8 +102,7 @@ const openVideo = (e) => {
 const props = defineProps({
   title: String,
   subtitle: String,
-  text: String,
-  textGroup: Array,
+  text: Array,
   buttons: Array,
   img: Object,
   share: {

@@ -43,24 +43,30 @@
     </div>
   </section>
 
+  <section class="py-14 lg:py-28">
+    <div class="mx-auto max-w-5xl px-4 flex flex-col lg:flex-row-reverse gap-5 items-center gap-y-10 text-center lg:text-left">
+      <div class="relative mx-auto max-w-sm md:max-w-md lg:max-w-full w-full lg:w-2/3">
+        <img class="w-full" src="src/assets/img/content-img-21.jpg" alt="image description" />
+      </div>
+      <div class="py-2 pr-5 lg:flex lg:flex-col lg:items-start lg:justify-center lg:w-1/3 text-xs">
+        <h2 class="mb-3 text-2xl md:text-3xl xl:text-4xl font-bold">Check out upcoming events</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. </p>
+        <Button class="mt-10" text="View event calendar" url="#!" />
+      </div>
+    </div>
+  </section>
 
-
-
-
-
-
-
-
-
-
+  <PostCardsSection class="bg-gray-dark" v-bind="postCardsSectionData" />
 </template>
 
 <script setup>
+import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
 import PostInline from "@/components/PostInline.vue";
 import PostSection from "@/components/PostSection.vue";
 import Accordion from "@/components/Accordion.vue";
 import PackageCard from "@/components/PackageCard.vue";
+import PostCardsSection from "@/components/PostCardsSection.vue";
 
 const heroInnerData = {
   title: "For Kids",
@@ -69,9 +75,9 @@ const heroInnerData = {
 };
 
 const postInlineData = {
-  title: "Whatever you need, we’re here to help",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Pellentesque finibus lorem dignissim bibendum pretium. Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis euismod.",
-  buttons: [{ variant: "primary", text: "Learn more about us", url: "#!" }],
+  title: "Junior volunteers",
+  text: ["Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program! After you and your chaperon or guardian (18 years+) have both submitted volunteer applications and have attended a volunteer orientation you are welcome to volunteer within our organization. Junior volunteers can tag along as you help out, and participate in several activities such as puppy socialization, kitten socialization, grooming, reading to companions, etc. all under your supervision."],
+  buttons: [{ text: "Apply to be a junior volunteer", url: "#!" }],
   carousel: {
     slides: [
       { src: "src/assets/img/slide03.jpg", alt: "slide alt1" },
@@ -85,14 +91,8 @@ const postInlineData = {
 
 const postInlineData2 = {
   title: "Birthday parties",
-  textGroup: [
-    {
-      text: "The BVSPCA is dedicated to promoting the welfare and humane treatment of animals, so why not start early? Birthday celebrations at the BVSPCA teach children how to be compassionate to our four-legged friends. It’s sure to be a howling good time!"
-    },
-    {
-      text: "Parties can be scheduled on Saturdays & Sundays between the hours of 11am and 5pm. Please provide a few additional dates in the event that your preferred date is not available. We require a $50.00 non-refundable deposit to secure your date and time. Minimum age requirement is 7 years old."
-    }
-  ],
+  text: [ "The BVSPCA is dedicated to promoting the welfare and humane treatment of animals, so why not start early? Birthday celebrations at the BVSPCA teach children how to be compassionate to our four-legged friends. It’s sure to be a howling good time!",
+    "Parties can be scheduled on Saturdays & Sundays between the hours of 11am and 5pm. Please provide a few additional dates in the event that your preferred date is not available. We require a $50.00 non-refundable deposit to secure your date and time. Minimum age requirement is 7 years old." ],
   carousel: {
     slides: [
       { src: "src/assets/img/slide05.jpg", alt: "slide alt1" },
@@ -107,17 +107,17 @@ const postInlineData2 = {
 const postInlineData3 = {
   img: { src: "src/assets/img/content-img-19.jpg", alt: "" },
   subtitle: "Request friends and family to send items off our wish list instead of buying gifts",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi.",
+  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
   share: true,
-  buttons: [ {variant: "primary", text: "View our wishlist", url: "#!" }],
+  buttons: [ {text: "View our wishlist", url: "#!" }],
   reverse: true
 };
 
 const postInlineData4 = {
   img: { src: "src/assets/img/content-img-20.jpg", alt: "" },
   subtitle: "Other ways to honor your special day with charitable causes",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi.",
-  buttons: [ {variant: "primary", text: "Get involved", url: "#!" }],
+  text: [ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi." ],
+  buttons: [ {text: "Get involved", url: "#!" }],
 };
 
 const postSectionData = {
@@ -138,7 +138,7 @@ const postSectionData = {
     { text: "Each camp session runs from 9am to 3pm with an aftercare option available during summer programs only. The weekly cost covers all activities, arts & crafts materials, snacks, and camp t-shirt." }
   ],
   buttons: [
-    { variant: "primary", text: "Register today", url: "#!" },
+    { text: "Register today", url: "#!" },
   ]
 };
 
@@ -200,7 +200,7 @@ const packagePennsylvaniaData = {
     {text: "You may bring cake, food, beverages and additional decorations – a refrigerator is available for your use"}
   ],
   buttons: [
-    { variant: "primary", text: "Schedule party - West Chester", url: "#!" }
+    { text: "Schedule party - West Chester", url: "#!" }
   ]
 };
 
@@ -219,9 +219,38 @@ const packageDelawareData = {
     {text: "You may bring cake, food, beverages and additional decorations – a refrigerator is available for your use"}
   ],
   buttons: [
-    { variant: "primary", text: "Schedule party - New Castle", url: "#!" },
-    { variant: "primary", text: "Schedule party - Georgetown", url: "#!" }
+    { text: "Schedule party - New Castle", url: "#!" },
+    { text: "Schedule party - Georgetown", url: "#!" }
   ]
-}
+};
 
+const postCardsSectionData = {
+  title: "For kids related events & resources",
+  blogPosts: [
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      title: "$5 off our 5K Color Run",
+      text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      title: "Walk-4-Paws",
+      text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      title: "Critter Camp",
+      text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
+      buttonLink: { text: "Read more", url: "#!" }
+    }
+  ],
+  buttons: [
+    { text: "View all news, events & resources", url: "#!" }
+  ]
+};
 </script>

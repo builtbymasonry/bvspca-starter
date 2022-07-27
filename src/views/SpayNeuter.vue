@@ -245,8 +245,8 @@ const textBannerData = {
 const postInlineData = {
   img: { src: "src/assets/img/content-img-08.jpg", alt: "" },
   title: "Pay it forward, your free time has so much value",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. ",
-  buttons: [{ variant: "primary", text: "Get involved", url: "#!" }],
+  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. "],
+  buttons: [{ text: "Get involved", url: "#!" }],
   reverse: true
 };
 
@@ -255,7 +255,7 @@ const infoCardData = {
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
   buttons: [
-    { variant: "primary", text: "Learn more about our impact", url: "#!" }
+    { text: "Learn more about our impact", url: "#!" }
   ]
 };
 
@@ -285,7 +285,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" }
+    { text: "View all news, events & resources", url: "#!" }
   ]
 };
 </script>

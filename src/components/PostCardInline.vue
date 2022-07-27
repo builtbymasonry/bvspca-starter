@@ -9,13 +9,16 @@
       />
     </div>
     <div class="p-10 text-xs lg:p-20">
-      <h2 v-if="title" class="mb-1 text-xl font-bold">{{ title }}</h2>
-      <h2 v-if="titleAlt" class="mb-4 text-xl font-bold lg:text-2xl">
-        {{ titleAlt }}
-      </h2>
-      <h3 v-if="subtitle" class="text-gray-light mb-4 text-xs font-bold">
-        {{ subtitle }}
-      </h3>
+      <div class="mb-4">
+        <h2
+          v-if="title"
+          class="text-xl font-bold"
+          :class="titleExtra"
+        >
+          {{ title }}
+        </h2>
+        <h3 v-if="subtitle" class="mt-1 text-gray-light text-xs font-bold">{{ subtitle }}</h3>
+      </div>
       <p>{{ text }}</p>
       <ButtonLink
         v-if="buttonLink"
@@ -42,6 +45,7 @@ const props = defineProps({
   reverse: {
     type: Boolean,
     default: false
-  }
+  },
+  titleExtra: String
 });
 </script>

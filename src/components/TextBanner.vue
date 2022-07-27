@@ -1,6 +1,6 @@
 <template>
   <div class="py-14 lg:py-28">
-    <div class="mx-auto max-w-7xl px-4 text-center text-xs md:text-sm">
+    <div class="mx-auto max-w-3xl px-4 text-center text-xs md:text-sm">
       <h2 class="mb-2 text-2xl font-bold sm:text-4xl md:mb-4 md:text-5xl">
         {{ title }}
       </h2>

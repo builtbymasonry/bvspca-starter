@@ -83,8 +83,8 @@ const heroInnerData = {
 const postInlineData = {
   img: { src: "src/assets/img/content-img-13.jpg", alt: "" },
   title: "Whatever you need, we’re here to help",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Pellentesque finibus lorem dignissim bibendum pretium. Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis euismod.",
-  buttons: [{ variant: "primary", text: "Learn more about us", url: "#!" }]
+  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Pellentesque finibus lorem dignissim bibendum pretium. Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis euismod."],
+  buttons: [{ text: "Learn more about us", url: "#!" }]
 };
 
 const cards = [
@@ -146,13 +146,13 @@ const infoCardData = {
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
   img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
   buttons: [
-    { variant: "primary", text: "Learn more about our impact", url: "#!" }
+    { text: "Learn more about our impact", url: "#!" }
   ]
 };
 
 const postInlineData2 = {
   title: "Pay it forward, your free time has so much value",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi.",
+  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
   img: { src: "src/assets/img/content-img-08.jpg", alt: "" },
   reverse: true,
   buttons: [
@@ -190,7 +190,7 @@ const postCardsSectionData = {
     }
   ],
   buttons: [
-    { variant: "primary", text: "View all news, events & resources", url: "#!" }
+    { text: "View all news, events & resources", url: "#!" }
   ]
 };
 </script>
