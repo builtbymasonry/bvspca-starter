@@ -1,6 +1,10 @@
 <template>
   <div>
     <section class="py-8">
+      <h2 class="mb-3 text-center text-xl font-bold">MarqueeSponsors</h2>
+      <MarqueeSponsors :slides="sponsorSlides" />
+    </section>
+    <section class="py-8">
       <div class="mx-auto max-w-screen-2xl">
         <h2 class="mb-3 text-center text-xl font-bold">MapLocations</h2>
         <MapLocations :locations="locations" />
@@ -76,6 +80,38 @@ import PostInline from "@/components/PostInline.vue";
 import FilterBar from "@/components/FilterBar.vue";
 import SliderThumbs from "@/components/SliderThumbs.vue";
 import MapLocations from "@/components/MapLocations.vue";
+import MarqueeSponsors from "@/components/MarqueeSponsors.vue";
+
+const sponsorSlides = [
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo01.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo05.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo06.png", alt: "" },
+    url: "#!"
+  }
+  // {
+  //   img: { src: "src/assets/img/sponsors/sponsor-logo07.png", alt: "" },
+  //   url: "#!"
+  // }
+];
 
 const locations = [
   {
