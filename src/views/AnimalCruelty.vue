@@ -88,7 +88,7 @@ import PostCard from "@/components/PostCard.vue";
 import PostCardsSection from "@/components/PostCardsSection.vue";
 
 const heroInnerData = {
-  title: "Reporting animal cruelty",
+  title: `Reporting \nanimal cruelty`,
   img: { src: "src/assets/img/hero-image-08.jpg", alt: "Lost & found pets" }
 };
 

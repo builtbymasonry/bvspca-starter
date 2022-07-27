@@ -3,9 +3,9 @@
 
   <section class="bg-gray-dark py-14 lg:py-28">
     <div
-      class="mx-auto grid max-w-4xl grid-cols-1 items-center gap-10 px-4 text-center text-sm sm:grid-cols-2 sm:text-left"
+      class="mx-auto grid max-w-4xl grid-cols-1 items-center gap-5 px-4 text-center text-sm sm:grid-cols-2 sm:text-left"
     >
-      <div>
+      <div class="pb-10 sm:pb-0 sm:pr-10 lg:pr-14">
         <h2 class="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">
           Finding a new family
         </h2>

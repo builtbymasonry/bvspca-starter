@@ -33,7 +33,7 @@
   <section class="bg-gray-dark pb-14 pt-48 sm:pt-60 lg:pb-28">
     <div class="mx-auto grid max-w-7xl grid-cols-1 px-4 lg:grid-cols-2">
       <div class="pb-14 text-xs sm:text-sm lg:pr-20 lg:pb-0 2xl:pr-36">
-        <h3 class="mb-2 text-2xl font-bold sm:text-4xl">
+        <h3 class="mb-6 text-2xl font-bold sm:text-4xl">
           We’re saving more babies than ever, and one of the best ways for you
           to help is to become a foster.
         </h3>
