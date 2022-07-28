@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col gap-5 items-center gap-y-10 text-center lg:text-left"
+    class="flex flex-col items-center gap-5 gap-y-10 text-center lg:text-left"
     :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
   >
     <div class="relative mx-auto max-w-sm md:max-w-md lg:max-w-full w-full lg:w-1/2">
@@ -26,10 +26,12 @@
       />
     </div>
     <div
-      class="py-2 lg:flex lg:flex-col lg:items-start lg:justify-center lg:w-1/2 text-xs"
+      class="py-2 text-xs lg:flex lg:w-1/2 lg:flex-col lg:items-start lg:justify-center"
       :class="reverse ? 'lg:pr-10' : 'lg:pl-10'"
     >
-      <h2 v-if="title" class="mb-3 text-2xl md:text-3xl xl:text-4xl font-bold">{{ title }}</h2>
+      <h2 v-if="title" class="mb-3 text-2xl font-bold md:text-3xl xl:text-4xl">
+        {{ title }}
+      </h2>
       <h3 v-if="subtitle" class="mb-3 text-2xl font-bold">{{ subtitle }}</h3>
       <div v-if="text" class="space-y-5">
         <p v-for="p in text" :key="p">{{ p }}</p>
@@ -65,6 +67,7 @@
       size="5xl"
       :button="null"
       :innerGutter="false"
+      :rounded="false"
     >
       <iframe
         class="aspect-[16/9] w-full"
@@ -90,7 +93,11 @@ import Socials from "@/components/Socials.vue";
 
 const modal = ref(null);
 
-const openVideo = () => modal.value.openModal();
+const openVideo = (e) => {
+  if (e.key && e.key !== "Enter") return;
+
+  modal.value.openModal();
+};
 
 const props = defineProps({
   title: String,
@@ -107,7 +114,7 @@ const props = defineProps({
     default: null
   },
   carousel: {
-    type: Object,
+    type: Object
   },
   reverse: {
     type: Boolean,
