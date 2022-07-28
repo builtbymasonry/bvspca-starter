@@ -8,6 +8,7 @@
     {{ text }}
     <BaseIcon
       name="arrowRight"
+      class="mt-0.5"
       :class="[
         reverse ? 'mr-3 rotate-180' : 'ml-3',
         'text-orange inline-flex h-3 w-3'

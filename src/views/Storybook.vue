@@ -2,7 +2,7 @@
   <div>
     <section class="py-8">
       <h2 class="mb-3 text-center text-xl font-bold">MarqueeSponsors</h2>
-      <MarqueeSponsors :slides="sponsorSlides" />
+      <MarqueeSponsors :slides="sponsorSlides" class="hidden md:block" />
     </section>
     <section class="py-8">
       <div class="mx-auto max-w-screen-2xl">
@@ -106,11 +106,55 @@ const sponsorSlides = [
   {
     img: { src: "src/assets/img/sponsors/sponsor-logo06.png", alt: "" },
     url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo07.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo07.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo01.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    url: "#!"
+  },
+  {
+    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    url: "#!"
   }
-  // {
-  //   img: { src: "src/assets/img/sponsors/sponsor-logo07.png", alt: "" },
-  //   url: "#!"
-  // }
 ];
 
 const locations = [
@@ -122,7 +166,7 @@ const locations = [
       { title: "AHC", number: "(302) 516-1004" }
     ],
     email: ["info@bvspca.org "],
-    buttonContact: { url: "#!" },
+    button: { url: "#!" },
     coordinates: {
       lat: 39.1414900571048,
       lng: -75.47439972883507
@@ -133,7 +177,7 @@ const locations = [
     address: ["600 South Street", "New Castle, DE 19720"],
     phone: [{ title: "Main", number: "(302) 516-1005" }],
     email: ["info@bvspca.org "],
-    buttonContact: { url: "#!" },
+    button: { url: "#!" },
     coordinates: {
       lat: 39.65997584020019,
       lng: -75.57023031534025
@@ -147,7 +191,7 @@ const locations = [
       { title: "AHC", number: "(302) 516-1004" }
     ],
     email: ["info@bvspca.org "],
-    buttonContact: { url: "#!" },
+    button: { url: "#!" },
     coordinates: {
       lat: 38.66560267717307,
       lng: -75.38127138650519
@@ -158,7 +202,7 @@ const locations = [
     address: ["600 South Street", "New Castle, DE 19720"],
     phone: [{ title: "Main", number: "(302) 516-1005" }],
     email: ["info@bvspca.org "],
-    buttonContact: { url: "#!" },
+    button: { url: "#!" },
     coordinates: {
       lat: 39.65997584020019,
       lng: -75.57023031534025
@@ -169,7 +213,7 @@ const locations = [
     address: ["600 South Street", "New Castle, DE 19720"],
     phone: [{ title: "Main", number: "(302) 516-1005" }],
     email: ["info@bvspca.org "],
-    buttonContact: { url: "#!" },
+    button: { url: "#!" },
     coordinates: {
       lat: 39.65997584020019,
       lng: -75.57023031534025
@@ -180,7 +224,7 @@ const locations = [
     address: ["600 South Street", "New Castle, DE 19720"],
     phone: [{ title: "Main", number: "(302) 516-1005" }],
     email: ["info@bvspca.org "],
-    buttonContact: { url: "#!" },
+    button: { url: "#!" },
     coordinates: {
       lat: 39.65997584020019,
       lng: -75.57023031534025
@@ -191,7 +235,7 @@ const locations = [
     address: ["600 South Street", "New Castle, DE 19720"],
     phone: [{ title: "Main", number: "(302) 516-1005" }],
     email: ["info@bvspca.org "],
-    buttonContact: { url: "#!" },
+    button: { url: "#!" },
     coordinates: {
       lat: 39.65997584020019,
       lng: -75.57023031534025
@@ -202,7 +246,7 @@ const locations = [
     address: ["600 South Street", "New Castle, DE 19720"],
     phone: [{ title: "Main", number: "(302) 516-1005" }],
     email: ["info@bvspca.org "],
-    buttonContact: { url: "#!" },
+    button: { url: "#!" },
     coordinates: {
       lat: 39.65997584020019,
       lng: -75.57023031534025
@@ -241,7 +285,9 @@ const profileSlides = [
 
 const postInlineVideo = {
   title: "Our mission & vision",
-  text: ["Founded in 1929, the Brandywine Valley SPCA exists to end animal suffering and to involve the entire community in the welfare and well-being of animals. Our mission is to put the “human” back in humane animal treatment and advocate on their behalf. Our vision is to be the recognized leader in animal welfare that empowers communities to treat life with respect and dignity."],
+  text: [
+    "Founded in 1929, the Brandywine Valley SPCA exists to end animal suffering and to involve the entire community in the welfare and well-being of animals. Our mission is to put the “human” back in humane animal treatment and advocate on their behalf. Our vision is to be the recognized leader in animal welfare that empowers communities to treat life with respect and dignity."
+  ],
   video: {
     src: "https://www.youtube.com/embed/BHACKCNDMW8",
     thumb: {
