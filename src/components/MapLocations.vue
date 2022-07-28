@@ -30,19 +30,29 @@
             <button
               @click="setCurrentLocation(currentLocationIndex - 1)"
               aria-label="Go to previous location"
-              class="text-red hover:text-red-light -0 inline-flex h-7 w-7 shrink touch-manipulation items-center justify-center"
+              class="inline-flex h-7 w-7 shrink touch-manipulation items-center justify-center"
+              :class="
+                currentLocationIndex === 0
+                  ? 'pointer-events-none text-red-400'
+                  : 'text-red hover:text-red-light'
+              "
             >
               <BaseIcon name="angleLeft" aria-hidden="true" class="h-3 w-3" />
             </button>
             <span
               ref="locationNameRef"
               class="xsm:text-xl shrink grow select-none px-3 text-center text-base font-bold leading-tight text-black"
-              >{{ currentLocation ? currentLocation.name : "" }}</span
+              >{{ currentLocation && currentLocation.name }}</span
             >
             <button
               @click="setCurrentLocation(currentLocationIndex + 1)"
               aria-label="Go to next location"
-              class="text-red hover:text-red-light -0 inline-flex h-7 w-7 shrink touch-manipulation items-center justify-center"
+              class="inline-flex h-7 w-7 shrink touch-manipulation items-center justify-center"
+              :class="
+                currentLocationIndex === locations.length - 1
+                  ? 'pointer-events-none text-red-400'
+                  : 'text-red hover:text-red-light'
+              "
             >
               <BaseIcon name="angleRight" aria-hidden="true" class="h-3 w-3" />
             </button>
@@ -123,10 +133,10 @@
                 </ul>
               </div>
               <div
-                v-if="location.buttonContact"
+                v-if="location.button"
                 class="shrink basis-full p-3 text-center md:basis-1/2 md:text-left lg:basis-0"
               >
-                <Button v-bind="location.buttonContact" text="Contact us" />
+                <Button v-bind="location.button" text="Contact us" />
               </div>
             </div>
           </div>
@@ -188,7 +198,11 @@ const renderAddress = (address) =>
   address.map((str) => `<span>${str}</span>`).join("");
 
 const renderPhone = (phone) =>
-  `<span class="font-bold flex justify-center md:justify-start flex-wrap">${phone.title}:&nbsp;<a class="text-red hover:text-red-light" href="tel:${phone.number}">${phone.number}</a></span>`;
+  `<span class="font-bold flex justify-center md:justify-start flex-wrap">${
+    phone.title ? phone.title + ":&nbsp;" : ""
+  }<a class="text-red hover:text-red-light" href="tel:${phone.number}">${
+    phone.number
+  }</a></span>`;
 
 const computePosition = computed(() => {
   return {

@@ -79,6 +79,8 @@ defineExpose({
   openModal
 });
 
+const emit = defineEmits(["modalShowed"]);
+
 const props = defineProps({
   button: Object,
   title: String,
@@ -96,6 +98,4 @@ const props = defineProps({
     default: true
   }
 });
-
-const emit = defineEmits(["modalShowed"]);
 </script>

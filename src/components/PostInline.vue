@@ -3,27 +3,34 @@
     class="flex flex-col items-center gap-5 gap-y-10 text-center lg:text-left"
     :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
   >
-    <div class="relative mx-auto max-w-sm md:max-w-md lg:max-w-full w-full lg:w-1/2">
-      <img v-if="img" class="w-full rounded-sm md:rounded-md shadow" v-bind="img" />
+    <div
+      class="relative mx-auto w-full max-w-sm md:max-w-md lg:w-1/2 lg:max-w-full"
+    >
+      <img
+        v-if="img"
+        class="w-full rounded-sm shadow md:rounded-md"
+        v-bind="img"
+      />
       <div
         v-if="video"
-        @click="openVideo"
-        @keyup.enter="openVideo"
-        tabindex="0"
-        class="relative overflow-hidden rounded-sm md:rounded-md shadow group cursor-pointer"
+        v-on="video ? { click: openVideo, keyup: openVideo } : {}"
+        :tabindex="video ? 0 : -1"
+        class="group relative cursor-pointer overflow-hidden rounded-sm shadow md:rounded-md"
       >
-        <img class="w-full transition-transform duration-300 group-hover:scale-105" v-bind="video.thumb" />
-        <div class="absolute top-1/2 left-1/2 -mx-10 -my-10 flex items-center justify-center w-20 h-20 rounded-full bg-white/70 group-hover:bg-white transition-colors duration-300">
+        <img
+          class="w-full transition-transform duration-300 group-hover:scale-105"
+          v-bind="video.thumb"
+        />
+        <div
+          class="absolute top-1/2 left-1/2 -mx-10 -my-10 flex h-20 w-20 items-center justify-center rounded-full bg-white/70 transition-colors duration-300 group-hover:bg-white/90"
+        >
           <BaseIcon
             name="angleRight"
-            class="ml-[5%] w-[30%] h-[30%] text-red"
+            class="text-red ml-[5%] h-[30%] w-[30%]"
           />
         </div>
       </div>
-      <Carousel
-        v-if="carousel"
-        :slides="carousel.slides"
-      />
+      <Carousel v-if="carousel" :slides="carousel.slides" />
     </div>
     <div
       class="py-2 text-xs lg:flex lg:w-1/2 lg:flex-col lg:items-start lg:justify-center"
@@ -37,22 +44,14 @@
         <p v-for="p in text" :key="p">{{ p }}</p>
       </div>
       <div v-if="share" class="mt-6 flex">
-        <span class="mr-6 text-lg md:text-xl font-bold">Share:</span>
-        <Socials
-          :socials="socialList"
-          variant="red"
-          class="space-x-4"
-        />
+        <span class="mr-6 text-lg font-bold md:text-xl">Share:</span>
+        <Socials :socials="socialList" variant="red" class="space-x-4" />
       </div>
       <div
         v-if="buttons"
         class="mt-10 flex flex-wrap justify-center space-x-10 lg:justify-start"
       >
-        <Button
-          v-for="button in buttons"
-          :key="button.text"
-          v-bind="button"
-        />
+        <Button v-for="button in buttons" :key="button.text" v-bind="button" />
       </div>
       <ButtonLink
         v-if="video"
