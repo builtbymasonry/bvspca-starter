@@ -7,7 +7,7 @@
           :href="slide.url"
           :key="i"
           target="_blank"
-          :class="bubbleClass(i)"
+          :class="slideClass(i)"
           class="absolute flex items-center justify-center rounded-full p-4 shadow transition-transform duration-300 hover:scale-105"
         >
           <img v-bind="slide.img" class="max-w-full" />
@@ -25,7 +25,7 @@ import "vue3-marquee/dist/style.css";
 const initSlides = ref([]);
 const MAX_SLIDES = 15; // Max amount of slides to be displayed, rest will be removed
 
-const bubbleClass = (index) => {
+const slideClass = (index) => {
   {
     switch (index) {
       case 0:
