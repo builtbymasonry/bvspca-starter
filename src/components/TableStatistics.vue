@@ -1,16 +1,17 @@
 <template>
   <div>
     <h3
+      v-if="data.title"
       class="bg-purple rounded-sm px-2 py-2 text-center text-lg font-bold leading-tight text-white md:mb-0 md:py-3 lg:text-xl"
     >
       {{ data.title }}
     </h3>
     <!-- mobile view -->
-    <div class="block md:hidden">
+    <div class="block md:hidden divide-y divide-solid divide-gray">
       <div
         v-for="(row, i) in data.rows"
         :key="row.title"
-        class="border-gray border-b pt-9 pb-12"
+        class="pt-9 pb-12"
       >
         <h3 class="mb-3 text-center text-lg font-bold text-black">
           {{ row.title }}
@@ -36,9 +37,9 @@
       <div
         v-for="row in data.rows"
         :key="row.title"
-        class="even:bg-gray-dark flex items-center rounded-sm bg-white pr-2"
+        class="even:bg-gray-dark flex items-center rounded-sm pr-2"
       >
-        <div class="w-44 shrink grow-0 py-4 pl-5 pr-3 lg:w-56">
+        <div v-if="row.title" class="w-44 shrink grow-0 py-4 pl-5 pr-3 lg:w-56">
           <h3>{{ row.title }}</h3>
         </div>
         <div

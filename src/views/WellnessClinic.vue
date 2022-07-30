@@ -94,7 +94,7 @@ const heroInnerData = {
 const postSectionData = {
   img: { src: "src/assets/img/content-img-05.jpg", alt: "" },
   title: "Affordable healthcare with an impact",
-  text: "In addition, by bringing their pets to our Brandywine vet hospitals for care, clients support the plight of homeless pets, as any proceeds from the BVSPCA’s clinics benefit the mission and programs at the Brandywine Valley SPCA.",
+  text: ["In addition, by bringing their pets to our Brandywine vet hospitals for care, clients support the plight of homeless pets, as any proceeds from the BVSPCA’s clinics benefit the mission and programs at the Brandywine Valley SPCA."],
   textGrid: [
     {
       title: "Feature one",

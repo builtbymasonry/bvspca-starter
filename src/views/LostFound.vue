@@ -119,7 +119,7 @@ const heroInnerData = {
 const postSectionData = {
   img: { src: "src/assets/img/content-img-12.jpg", alt: "" },
   title: "Lost your pet? Found a pet?",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
+  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."],
   textGrid: [
     {
       title: "Tip one",

@@ -405,7 +405,7 @@ const imgGrid = [
 const postSectionData = {
   img: { src: "src/assets/img/content-img-02.jpg", alt: "" },
   title: "Need help?",
-  text: "Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do",
+  text: ["Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"],
 
   textGrid: [
     {
