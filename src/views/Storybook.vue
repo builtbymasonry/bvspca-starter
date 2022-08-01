@@ -1,6 +1,10 @@
 <template>
   <div>
-    <section class="py-8">
+    <section>
+      <h2 class="mb-3 text-center text-xl font-bold">LocationProfile</h2>
+      <LocationProfile :location="locationProfile" />
+    </section>
+    <!-- <section class="bg-gray-dark py-8">
       <h2 class="mb-3 text-center text-xl font-bold">MarqueeSponsors</h2>
       <MarqueeSponsors :slides="sponsorSlides" class="hidden md:block" />
     </section>
@@ -67,7 +71,7 @@
         <h2 class="mb-3 text-center text-xl font-bold">MapRentals</h2>
         <MapRentals v-bind="map" />
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 <script setup>
@@ -81,6 +85,35 @@ import FilterBar from "@/components/FilterBar.vue";
 import SliderThumbs from "@/components/SliderThumbs.vue";
 import MapLocations from "@/components/MapLocations.vue";
 import MarqueeSponsors from "@/components/MarqueeSponsors.vue";
+import LocationProfile from "@/components/LocationProfile.vue";
+
+const locationProfile = {
+  img: { src: "src/assets/img/location-photo-01.jpg", alt: "Dover" },
+  name: "Dover",
+  address: ["1757 Horsepond Rd.", "Dover, DE 19901"],
+  phone: [
+    { title: "Phone", number: "(302) 601-7000" },
+    { title: "AHC Phone", number: "(302) 516-1004" }
+  ],
+  hours: [
+    {
+      title: "Shelter hours",
+      description: `Sun - Thurs 11am - 9pm \nFri & Sat 11am - 10pm`
+    },
+    {
+      title: "Spay/Neuter Surgery hours",
+      description: "Tuesdays and Fridays, by appointment"
+    },
+    {
+      title: "Animal Health Center hours",
+      description: `Monday: 9:00 am – 5:00 pm \n(sick visit walk-ins end at 1:00 \npm; waiting times may vary)`
+    },
+    {
+      description: `Thursday& Friday: 10:00 am – 5:00 pm \n(sick visit walk-ins end at 1:00 pm; \nwaiting times may vary)`
+    }
+  ],
+  coordinates: { lat: 39.14137979713557, lng: -75.47439046561871 }
+};
 
 const sponsorSlides = [
   {

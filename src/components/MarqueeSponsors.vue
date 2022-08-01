@@ -8,7 +8,7 @@
           :key="i"
           target="_blank"
           :class="slideClass(i)"
-          class="absolute flex items-center justify-center rounded-full p-4 shadow transition-transform duration-300 hover:scale-105"
+          class="absolute flex items-center justify-center overflow-hidden rounded-full bg-white p-4 shadow transition-transform duration-300 hover:scale-105"
         >
           <img v-bind="slide.img" class="max-w-full" />
         </a>

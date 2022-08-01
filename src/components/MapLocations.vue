@@ -8,15 +8,12 @@
         style="height: 100%; width: 100%"
         disableDefaultUi
       >
-        <CustomMarker
+        <Marker
           v-for="(location, i) in locations"
-          :options="{ position: location.coordinates }"
+          :options="{ position: location.coordinates, icon: pin }"
           :key="i"
         >
-          <div style="width: 30px; height: 40px">
-            <img :src="pin" />
-          </div>
-        </CustomMarker>
+        </Marker>
       </GoogleMap>
     </div>
     <div class="z-5 relative -mt-40 w-full px-8 md:px-12">
@@ -147,7 +144,7 @@
 </template>
 <script setup>
 import { computed, onMounted, ref, watch } from "vue";
-import { GoogleMap, CustomMarker } from "vue3-google-map";
+import { GoogleMap, Marker } from "vue3-google-map";
 import { useWindowSize } from "vue-window-size";
 import Button from "./Button.vue";
 import BaseIcon from "./BaseIcon.vue";

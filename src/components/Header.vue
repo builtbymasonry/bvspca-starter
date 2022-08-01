@@ -328,7 +328,7 @@
                 @keyup="handleNavKeyUp"
                 tabindex="0"
                 :id="'SearchBar'"
-                class="hover:text-orange border-purple flex cursor-pointer select-none items-center justify-between border-b-[1px] p-3 transition-colors"
+                class="hover:text-orange border-purple flex cursor-pointer select-none items-center justify-between border-b-[1px] py-3 px-4 md:px-7 transition-colors"
               >
                 <span>Search</span>
                 <BaseIcon name="search" class="text-orange h-3 w-3" />
