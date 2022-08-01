@@ -1,14 +1,15 @@
 <template>
   <div
-    class="flex flex-col items-center gap-5 gap-y-10 text-center lg:text-left"
+    class="flex flex-col items-center gap-10 lg:gap-20 text-center lg:text-left"
     :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
   >
     <div
-      class="relative mx-auto w-full max-w-sm md:max-w-md lg:w-1/2 lg:max-w-full"
+      class="relative shrink-0 mx-auto w-full max-w-sm md:max-w-md lg:w-1/2 lg:max-w-full"
     >
       <img
         v-if="img"
-        class="w-full rounded-sm shadow md:rounded-md"
+        class="w-full"
+        :class="img.type === 'default' ? '' : 'rounded-sm md:rounded-md shadow'"
         v-bind="img"
       />
       <div
@@ -30,11 +31,10 @@
           />
         </div>
       </div>
-      <Carousel v-if="carousel" :slides="carousel.slides" />
+      <Carousel class="w-full" v-if="carousel" :slides="carousel.slides" />
     </div>
     <div
       class="py-2 text-xs lg:flex lg:w-1/2 lg:flex-col lg:items-start lg:justify-center"
-      :class="reverse ? 'lg:pr-10' : 'lg:pl-10'"
     >
       <h2 v-if="title" class="mb-3 text-2xl font-bold md:text-3xl xl:text-4xl">
         {{ title }}
@@ -43,6 +43,15 @@
       <div v-if="text" class="space-y-5">
         <p v-for="p in text" :key="p">{{ p }}</p>
       </div>
+      <ul v-if="list" class="list-disc space-y-2 mt-5 pl-5 marker:text-xs">
+        <li
+          class="pl-2"
+          v-for="item in list"
+          :key="item.text"
+        >
+          {{item.text}}
+        </li>
+      </ul>
       <div v-if="share" class="mt-6 flex">
         <span class="mr-6 text-lg font-bold md:text-xl">Share:</span>
         <Socials :socials="socialList" variant="red" class="space-x-4" />
@@ -102,6 +111,7 @@ const props = defineProps({
   title: String,
   subtitle: String,
   text: Array,
+  list: Array,
   buttons: Array,
   img: Object,
   share: {

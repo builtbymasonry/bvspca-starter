@@ -113,7 +113,7 @@ const heroInnerData = {
 const postSectionData = {
   img: { src: "src/assets/img/content-img-09.jpg", alt: "" },
   title: "Outdoor cats need love too",
-  text: "Our services increase the health and wellness of community cats while proactively reducing the number of animals being born without homes in our community. TNVR has been shown to be the most humane, most efficient, and least costly method of stabilizing community cat populations.",
+  text: ["Our services increase the health and wellness of community cats while proactively reducing the number of animals being born without homes in our community. TNVR has been shown to be the most humane, most efficient, and least costly method of stabilizing community cat populations."],
   textGrid: [
     {
       title: "Feature one",

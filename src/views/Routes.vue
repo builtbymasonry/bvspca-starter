@@ -29,6 +29,9 @@ const routes = [
   "/volunteer",
   "/foster",
   "/for-kids",
-  "/about-us"
+  "/about-us",
+  "/careers",
+  "/impact",
+  "/statistics"
 ];
 </script>

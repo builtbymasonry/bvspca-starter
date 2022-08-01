@@ -1,23 +1,33 @@
 <template>
   <section class="py-14 lg:py-28">
     <div
-      class="mx-auto max-w-7xl px-4 lg:flex"
+      class="mx-auto max-w-7xl px-4 flex flex-col items-center gap-10 lg:gap-14 xl:gap-20"
       :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
     >
       <div
-        class="relative mb-10 lg:mb-0 mx-auto flex-shrink-0 overflow-hidden rounded-sm md:rounded-md shadow sm:w-1/2 lg:w-2/5"
-        :class="reverse ? 'lg:ml-14 xl:ml-20' : 'lg:mr-14 xl:mr-20'"
+        v-if="img"
+        class="relative mx-auto shrink-0 w-full sm:w-1/2 lg:w-2/5"
       >
         <img
-          class="w-full lg:absolute lg:h-full lg:object-cover"
+          class="w-full lg:absolute lg:h-full lg:object-cover rounded-sm md:rounded-md shadow"
           v-bind="img"
+        />
+      </div>
+      <div
+        v-if="carousel"
+        class="relative mx-auto shrink-0 w-full sm:w-1/2"
+      >
+        <Carousel
+          :slides="carousel.slides"
         />
       </div>
       <div class="py-2 text-center sm:text-left">
         <div class="mb-10 sm:mb-8">
           <h3 v-if="title" class="text-2xl sm:text-4xl font-bold">{{ title }}</h3>
           <h4 v-if="subtitle" class="mt-2 text-2xl font-bold">{{ subtitle }}</h4>
-          <p v-if="text" class="mt-2 text-sm sm:text-base">{{ text }}</p>
+          <div v-if="text" class="mt-2 space-y-5 text-sm sm:text-base">
+            <p v-for="p in text" :key="p">{{ p }}</p>
+          </div>
         </div>
         <div v-if="textList" class="text-xs">
           <p v-for="paragraph in textList" :key="paragraph.text" class="mt-6 first:-mt-5">{{paragraph.text}}</p>
@@ -55,12 +65,13 @@
 <script setup>
 import Button from "@/components/Button.vue";
 import ButtonLink from "@/components/ButtonLink.vue";
+import Carousel from "@/components/Carousel.vue";
 
 const props = defineProps({
   title: String,
   titleAlt: String,
   subtitle: String,
-  text: String,
+  text: Array,
   textList: Array,
   textGrid: Array,
   buttons: Array,
@@ -69,6 +80,7 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-  img: Object
+  img: Object,
+  carousel: Object
 });
 </script>
