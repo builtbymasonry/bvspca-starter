@@ -6,7 +6,7 @@
   <section class="bg-skew bg-purple pt-12 pb-5 text-white lg:pt-20">
     <div class="mx-auto max-w-7xl px-4">
       <h2
-        class="mb-10 text-center text-2xl font-bold tracking-wide md:mb-16 md:text-3xl xl:text-5xl"
+        class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
       >
         Featured pets
       </h2>

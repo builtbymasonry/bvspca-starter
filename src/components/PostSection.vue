@@ -1,7 +1,7 @@
 <template>
   <section class="py-14 lg:py-28">
     <div
-      class="mx-auto max-w-7xl px-4 flex flex-col items-center gap-10 lg:gap-14 xl:gap-20"
+      class="mx-auto max-w-7xl px-4 flex flex-col gap-10 lg:gap-14 xl:gap-20"
       :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
     >
       <div
@@ -21,7 +21,7 @@
           :slides="carousel.slides"
         />
       </div>
-      <div class="py-2 text-center sm:text-left">
+      <div class="py-2 flex flex-col justify-center text-center sm:text-left">
         <div class="mb-10 sm:mb-8">
           <h3 v-if="title" class="text-2xl sm:text-4xl font-bold">{{ title }}</h3>
           <h4 v-if="subtitle" class="mt-2 text-2xl font-bold">{{ subtitle }}</h4>
