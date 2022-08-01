@@ -16,6 +16,7 @@ import AboutUs from './views/AboutUs.vue'
 import Careers from './views/Careers.vue'
 import Impact from './views/Impact.vue'
 import Statistics from './views/Statistics.vue'
+import PetList from './views/PetList.vue'
 import DonateModal from './views/DonateModal.vue'
 import VolunteerModal from './views/VolunteerModal.vue'
 import AppointmentModal from './views/AppointmentModal.vue'
@@ -46,6 +47,7 @@ export const routes = [
   { path: '/careers', component: Careers, meta: { title: 'Careers' } },
   { path: '/impact', component: Impact, meta: { title: 'Impact' } },
   { path: '/statistics', component: Statistics, meta: { title: 'Statistics' } },
+  { path: '/pet-list', component: PetList, meta: { title: 'Pet List' } },
   { path: '/donate-modal', component: DonateModal, meta: { title: 'Donate modal' } },
   { path: '/volunteer-modal', component: VolunteerModal, meta: { title: 'Volunteer modal' } },
   { path: '/appointment-modal', component: AppointmentModal, meta: { title: 'Appointment modal' } },

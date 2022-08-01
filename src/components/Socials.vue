@@ -46,7 +46,7 @@ const props = defineProps({
 const classList = () => {
   return [
     {
-      "text-orange hover:text-white": props.variant === "orange"
+      "text-orange hover:text-orange-dark": props.variant === "orange"
     },
     {
       "text-white hover:text-orange": props.variant === "white"

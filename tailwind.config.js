@@ -100,6 +100,9 @@ module.exports = {
       ringColor: {
         DEFAULT: '#FDB813',
       },
+      transitionDuration: {
+        DEFAULT: '300ms',
+      }
     },
   },
   plugins: [

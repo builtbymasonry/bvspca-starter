@@ -1,5 +1,5 @@
 <template>
-  <div class="border-b-2 border-[#D8D8D8] pb-12 md:pb-6">
+  <div class="border-b-2 border-gray-light pb-6">
     <div class="relative md:flex">
       <div class="xsm:w-[211px] relative mr-7 w-[174px] shrink-0 grow-0">
         <input
