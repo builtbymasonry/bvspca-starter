@@ -1,25 +1,7 @@
 <template>
   <HeroInner v-bind="heroInnerData" class="bg-gray-dark" />
 
-  <section class="py-14 lg:py-28">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2
-        class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
-      >
-        Featured dogs
-      </h2>
-
-      <div
-        class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
-      >
-        <PostCard
-          v-for="post in featuredPets"
-          :key="post.title"
-          v-bind="post"
-        />
-      </div>
-    </div>
-  </section>
+  <PostCardsSection v-bind="postCardsDogsData" />
 
   <section class="py-14 lg:py-28 bg-gray-dark">
     <div class="mx-auto max-w-7xl px-4">
@@ -80,45 +62,18 @@
 import Button from "@/components/Button.vue"
 import HeroInner from "@/components/HeroInner.vue"
 import PostCard from "@/components/PostCard.vue"
-import CardPetProfile from "@/components/CardPetProfile.vue";
+import CardPetProfile from "@/components/CardPetProfile.vue"
 import PostInline from "@/components/PostInline.vue"
 import InfoCard from "@/components/InfoCard.vue"
-import PostCardsSection from "@/components/PostCardsSection.vue";
-import FilterBar from "@/components/FilterBar.vue";
-import Pagination from "@/components/Pagination.vue";
+import PostCardsSection from "@/components/PostCardsSection.vue"
+import FilterBar from "@/components/FilterBar.vue"
+import Pagination from "@/components/Pagination.vue"
 
 const heroInnerData = {
   title: "Adopt a dog",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
   img: { src: "src/assets/img/hero-image-18.jpg", alt: "" }
 };
-
-const featuredPets = [
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
-    title: "Chewie fka Monkey",
-    text: "Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well …",
-    share: true,
-    buttonLink: { text: "Learn more", url: "#!" }
-  },
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-02.jpg" },
-    title: "Slim aka Spunk",
-    text: "Slim (aka Spunk) is a big fellow with an equally big heart! This wonderful guy is bonded with Magic, on whom he relies for comfort and love. As a bonded …",
-    share: true,
-    buttonLink: { text: "Learn more", url: "#!" }
-  },
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-03.jpg" },
-    title: "Boo Boo",
-    text: "Boo Boo loves tennis balls! He likes to play with them, walk with them, and swim in our doggie pools with them. If you have a stash of tennis balls, Boo Boo …",
-    share: true,
-    buttonLink: { text: "Learn more", url: "#!" }
-  }
-];
 
 const profileList = [
   {
@@ -257,6 +212,36 @@ const postInlineData = {
   buttons: [
     { variant: "secondary", text: "Donate", url: "#!" },
     { variant: "outlineSecondary", text: "Sponsor", url: "#!" }
+  ]
+};
+
+const postCardsDogsData = {
+  title: "Featured dogs",
+  blogPosts: [
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
+      title: "Chewie fka Monkey",
+      text: "Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well …",
+      share: true,
+      buttonLink: { text: "Learn more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-02.jpg" },
+      title: "Slim aka Spunk",
+      text: "Slim (aka Spunk) is a big fellow with an equally big heart! This wonderful guy is bonded with Magic, on whom he relies for comfort and love. As a bonded …",
+      share: true,
+      buttonLink: { text: "Learn more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-03.jpg" },
+      title: "Boo Boo",
+      text: "Boo Boo loves tennis balls! He likes to play with them, walk with them, and swim in our doggie pools with them. If you have a stash of tennis balls, Boo Boo …",
+      share: true,
+      buttonLink: { text: "Learn more", url: "#!" }
+    }
   ]
 };
 

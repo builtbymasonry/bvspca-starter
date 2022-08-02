@@ -161,54 +161,26 @@ const postSectionData = {
 
 const listData = {
   data: [
-    {
-      text: "All animals require shelter from the rain, snow, wind, and sun. Shelter is any non-metal structure that will keep the animal warm and dry."
-    },
-    {
-      text: "All animals require necessary veterinary care. Necessary vet care is that which is required to treat illness or injury."
-    },
-    {
-      text: "All animals require clean and sanitary living conditions. Living space should be free of debris, and waste should be removed routinely."
-    },
-    {
-      text: "All animals require necessary drink and sustenance. Water and food must be provided in amounts sufficient to maintain weight and hydration."
-    },
-    {
-      text: "No animal can be abandoned. Abandoned animals are those whose caretaker has forsaken their duty of care."
-    },
-    {
-      text: "No animal can be beaten or neglected."
-    }
+    "All animals require shelter from the rain, snow, wind, and sun. Shelter is any non-metal structure that will keep the animal warm and dry.",
+    "All animals require necessary veterinary care. Necessary vet care is that which is required to treat illness or injury.",
+    "All animals require clean and sanitary living conditions. Living space should be free of debris, and waste should be removed routinely.",
+    "All animals require necessary drink and sustenance. Water and food must be provided in amounts sufficient to maintain weight and hydration.",
+    "No animal can be abandoned. Abandoned animals are those whose caretaker has forsaken their duty of care.",
+    "No animal can be beaten or neglected."
   ]
 };
 
 const listData2 = {
   bulletClass: "text-red",
   data: [
-    {
-      text: "Register the animal with the Bureau of Dog Law Enforcement and re-register on an annual basis. The registration fee is $500 per calendar year for the life of the dog."
-    },
-    {
-      text: "Confine the dog in a proper enclosure and post a warning sign with a symbol that warns the public of the presence of a dangerous dog."
-    },
-    {
-      text: "Keep the dog muzzled and leashed when outside of the proper enclosure."
-    },
-    {
-      text: "Have the dog sterilized and microchipped."
-    },
-    {
-      text: "Remain compliant with court ordered restitution."
-    },
-    {
-      text: "Be compliant with court ordered restitution."
-    },
-    {
-      text: "Post a bond or purchase and maintain liability insurance in the amount of $50,000 to pay for injuries inflicted by the dog. This insurance must not be cancelled during the license period unless the owner disposes of the dog."
-    },
-    {
-      text: "Sign a statement providing that the owner will notify the Bureau of Dog Law Enforcement, state dog warden, and local police if the dog is loose, attacks a human or animal, or dies."
-    }
+    "Register the animal with the Bureau of Dog Law Enforcement and re-register on an annual basis. The registration fee is $500 per calendar year for the life of the dog.",
+    "Confine the dog in a proper enclosure and post a warning sign with a symbol that warns the public of the presence of a dangerous dog.",
+    "Keep the dog muzzled and leashed when outside of the proper enclosure.",
+    "Have the dog sterilized and microchipped.",
+    "Remain compliant with court ordered restitution.",
+    "Be compliant with court ordered restitution.",
+    "Post a bond or purchase and maintain liability insurance in the amount of $50,000 to pay for injuries inflicted by the dog. This insurance must not be cancelled during the license period unless the owner disposes of the dog.",
+    "Sign a statement providing that the owner will notify the Bureau of Dog Law Enforcement, state dog warden, and local police if the dog is loose, attacks a human or animal, or dies."
   ]
 };
 

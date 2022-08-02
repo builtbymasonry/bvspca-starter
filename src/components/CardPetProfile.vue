@@ -20,9 +20,6 @@
         <dd>{{row.value}}</dd>
       </div>
     </dl>
-
-
-
     <Button v-if="button" class="mt-8" v-bind="button" :url="url" />
   </div>
 </template>
