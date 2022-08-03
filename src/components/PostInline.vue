@@ -1,15 +1,15 @@
 <template>
   <div
-    class="flex flex-col items-center gap-10 lg:gap-20 text-center lg:text-left"
+    class="flex flex-col items-center gap-10 text-center lg:gap-20 lg:text-left"
     :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
   >
     <div
-      class="relative shrink-0 mx-auto w-full max-w-sm md:max-w-md lg:w-1/2 lg:max-w-full"
+      class="relative mx-auto w-full max-w-sm shrink-0 md:max-w-md lg:w-1/2 lg:max-w-full"
     >
       <img
         v-if="img"
         class="w-full"
-        :class="img.type === 'default' ? '' : 'rounded-sm md:rounded-md shadow'"
+        :class="img.type === 'default' ? '' : 'rounded-sm shadow md:rounded-md'"
         v-bind="img"
       />
       <div
@@ -43,13 +43,12 @@
       <div v-if="text" class="space-y-5">
         <p v-for="p in text" :key="p">{{ p }}</p>
       </div>
-      <ul v-if="list" class="list-disc space-y-2 mt-5 pl-5 marker:text-xs">
-        <li
-          class="pl-2"
-          v-for="item in list"
-          :key="item.text"
-        >
-          {{item.text}}
+      <ul
+        v-if="list"
+        class="mx-auto mt-5 max-w-lg list-disc space-y-2 pl-5 text-left marker:text-xs lg:max-w-none"
+      >
+        <li v-for="(item, i) in list" :key="i" class="pl-2">
+          {{ item }}
         </li>
       </ul>
       <div v-if="share" class="mt-6 flex">

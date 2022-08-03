@@ -122,121 +122,112 @@ const featuredPets = [
 
 const profileList = [
   {
-    url: "#!",
+    url: "/pet-profile",
     img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
     title: "Chewie fka Monkey",
-    list: [
+    description: [
       { title: "Age:", value: "2 years 4 months 5 days" },
       { title: "Gender:", value: "Female" },
       { title: "Breed:", value: "Retriever, Labrador/Mix" },
       { title: "Location:", value: "WC Main Dog Kennel" },
       { title: "ID:", value: "49144731" }
-    ],
-    button: { text: "Learn more", url: "#!" }
+    ]
   },
   {
-    url: "#!",
+    url: "/pet-profile",
     img: { src: "src/assets/img/img-pet-02.jpg" },
     title: "Slim aka Spunk",
-    list: [
+    description: [
       { title: "Age:", value: "2 years 4 months 5 days" },
       { title: "Gender:", value: "Female" },
       { title: "Breed:", value: "Retriever, Labrador/Mix" },
       { title: "Location:", value: "WC Main Dog Kennel" },
       { title: "ID:", value: "49144731" }
-    ],
-    button: { text: "Learn more", url: "#!" }
+    ]
   },
   {
-    url: "#!",
+    url: "/pet-profile",
     img: { src: "src/assets/img/img-pet-03.jpg" },
     title: "Boo Boo",
-    list: [
+    description: [
       { title: "Age:", value: "2 years 4 months 5 days" },
       { title: "Gender:", value: "Female" },
       { title: "Breed:", value: "Retriever, Labrador/Mix" },
       { title: "Location:", value: "WC Main Dog Kennel" },
       { title: "ID:", value: "49144731" }
-    ],
-    button: { text: "Learn more", url: "#!" }
+    ]
   },
   {
-    url: "#!",
+    url: "/pet-profile",
     img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
     title: "Chewie fka Monkey",
-    list: [
+    description: [
       { title: "Age:", value: "2 years 4 months 5 days" },
       { title: "Gender:", value: "Female" },
       { title: "Breed:", value: "Retriever, Labrador/Mix" },
       { title: "Location:", value: "WC Main Dog Kennel" },
       { title: "ID:", value: "49144731" }
-    ],
-    button: { text: "Learn more", url: "#!" }
+    ]
   },
   {
-    url: "#!",
+    url: "/pet-profile",
     img: { src: "src/assets/img/img-pet-02.jpg" },
     title: "Slim aka Spunk",
-    list: [
+    description: [
       { title: "Age:", value: "2 years 4 months 5 days" },
       { title: "Gender:", value: "Female" },
       { title: "Breed:", value: "Retriever, Labrador/Mix" },
       { title: "Location:", value: "WC Main Dog Kennel" },
       { title: "ID:", value: "49144731" }
-    ],
-    button: { text: "Learn more", url: "#!" }
+    ]
   },
   {
-    url: "#!",
+    url: "/pet-profile",
     img: { src: "src/assets/img/img-pet-03.jpg" },
     title: "Boo Boo",
-    list: [
+    description: [
       { title: "Age:", value: "2 years 4 months 5 days" },
       { title: "Gender:", value: "Female" },
       { title: "Breed:", value: "Retriever, Labrador/Mix" },
       { title: "Location:", value: "WC Main Dog Kennel" },
       { title: "ID:", value: "49144731" }
-    ],
-    button: { text: "Learn more", url: "#!" }
+    ]
   },
   {
-    url: "#!",
+    url: "/pet-profile",
     img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
     title: "Chewie fka Monkey",
-    list: [
+    description: [
       { title: "Age:", value: "2 years 4 months 5 days" },
       { title: "Gender:", value: "Female" },
       { title: "Breed:", value: "Retriever, Labrador/Mix" },
       { title: "Location:", value: "WC Main Dog Kennel" },
       { title: "ID:", value: "49144731" }
-    ],
-    button: { text: "Learn more", url: "#!" }
+    ]
   },
   {
-    url: "#!",
+    url: "/pet-profile",
     img: { src: "src/assets/img/img-pet-02.jpg" },
     title: "Slim aka Spunk",
-    list: [
+    description: [
       { title: "Age:", value: "2 years 4 months 5 days" },
       { title: "Gender:", value: "Female" },
       { title: "Breed:", value: "Retriever, Labrador/Mix" },
       { title: "Location:", value: "WC Main Dog Kennel" },
       { title: "ID:", value: "49144731" }
-    ],
-    button: { text: "Learn more", url: "#!" }
+    ]
   },
   {
-    url: "#!",
+    url: "/pet-profile",
     img: { src: "src/assets/img/img-pet-03.jpg" },
     title: "Boo Boo",
-    list: [
+    description: [
       { title: "Age:", value: "2 years 4 months 5 days" },
       { title: "Gender:", value: "Female" },
       { title: "Breed:", value: "Retriever, Labrador/Mix" },
       { title: "Location:", value: "WC Main Dog Kennel" },
       { title: "ID:", value: "49144731" }
-    ],
-    button: { text: "Learn more", url: "#!" }
+    ]
   }
 ];
 

@@ -5,36 +5,43 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-7xl px-4">
-      <h2 class="mb-8 text-center text-2xl font-bold sm:text-3xl md:mb-10 lg:text-4xl">
+      <h2
+        class="mb-8 text-center text-2xl font-bold sm:text-3xl md:mb-10 lg:text-4xl"
+      >
         Monthly Statistics
       </h2>
 
       <div class="space-y-10 md:space-y-16">
-        <TableStatistics :data="monthly2022Data" />
-        <TableStatistics :data="monthly2021Data" />
-        <TableStatistics :data="monthly2020Data" />
-        <TableStatistics :data="monthly2019Data" />
-        <TableStatistics :data="monthly2018Data" />
-        <TableStatistics :data="monthly2017Data" />
+        <TableStatistics
+          v-for="year in monthlyStatistics"
+          :key="year.title"
+          :data="year"
+        />
       </div>
 
-      <h2 class="mb-8 mt-14 text-center text-2xl font-bold sm:text-3xl md:mb-12 lg:text-4xl">
+      <h2
+        class="mb-8 mt-14 text-center text-2xl font-bold sm:text-3xl md:mb-12 lg:text-4xl"
+      >
         Quarterly Statistics
       </h2>
       <div class="space-y-10 md:space-y-16">
-        <TableStatistics :data="quarterly2022Data" />
-        <TableStatistics :data="quarterly2021Data" />
-        <TableStatistics :data="quarterly2020Data" />
-        <TableStatistics :data="quarterly2019Data" />
-        <TableStatistics :data="quarterly2018Data" />
-        <TableStatistics :data="quarterly2017Data" />
+        <TableStatistics
+          v-for="year in quarterlyStatistics"
+          :key="year.title"
+          :data="year"
+        />
       </div>
 
-      <h2 class="mb-8 mt-14 text-center text-2xl font-bold sm:text-3xl md:mb-12 lg:text-4xl">
+      <h2
+        class="mb-8 mt-14 text-center text-2xl font-bold sm:text-3xl md:mb-12 lg:text-4xl"
+      >
         Annual Statistics
       </h2>
       <div class="space-y-10 md:space-y-16">
-        <TableStatistics class="md:bg-gray-dark md:rounded-lg" :data="annualData" />
+        <TableStatistics
+          class="md:bg-gray-dark md:rounded-lg"
+          :data="annualStatistics"
+        />
       </div>
     </div>
   </section>
@@ -60,12 +67,14 @@
 
     <InfoCard v-bind="infoCardData" />
 
-    <div class="bg-skew bg-skew-reverse bg-purple mt-28 pt-8 pb-20 text-white md:py-24 lg:py-28"></div>
+    <div
+      class="bg-skew bg-skew-reverse bg-purple mt-28 pt-8 pb-20 text-white md:py-24 lg:py-28"
+    ></div>
   </section>
 </template>
 
 <script setup>
-import HeroInner from "@/components/HeroInner.vue"
+import HeroInner from "@/components/HeroInner.vue";
 import PostSection from "@/components/PostSection.vue";
 import TableStatistics from "@/components/TableStatistics.vue";
 import InfoCard from "@/components/InfoCard.vue";
@@ -93,599 +102,593 @@ const postSectionData = {
   reverse: true
 };
 
-const monthly2022Data = {
-  title: "2022",
-  rows: [
-    {
-      title: "PA 2022:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: null },
-        { label: "July", value: null },
-        { label: "Aug", value: null },
-        { label: "Sept", value: null },
-        { label: "Oct", value: null },
-        { label: "Nov", value: null },
-        { label: "Dec", value: null }
-      ]
-    },
-    {
-      title: "DE 2022:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: null },
-        { label: "July", value: null },
-        { label: "Aug", value: null },
-        { label: "Sept", value: null },
-        { label: "Oct", value: null },
-        { label: "Nov", value: null },
-        { label: "Dec", value: null }
-      ]
-    },
-    {
-      title: "LA Hub 2022:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: null },
-        { label: "July", value: null },
-        { label: "Aug", value: null },
-        { label: "Sept", value: null},
-        { label: "Oct", value: null},
-        { label: "Nov", value: null },
-        { label: "Dec", value: null }
-      ]
-    },
-    {
-      title: "All States Combined 2022:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: null },
-        { label: "July", value: null },
-        { label: "Aug", value: null },
-        { label: "Sept", value: null },
-        { label: "Oct", value: null },
-        { label: "Nov", value: null },
-        { label: "Dec", value: null }
-      ]
-    }
-  ]
-};
+const monthlyStatistics = [
+  {
+    title: "2022",
+    rows: [
+      {
+        title: "PA 2022:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: null },
+          { label: "July", value: null },
+          { label: "Aug", value: null },
+          { label: "Sept", value: null },
+          { label: "Oct", value: null },
+          { label: "Nov", value: null },
+          { label: "Dec", value: null }
+        ]
+      },
+      {
+        title: "DE 2022:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: null },
+          { label: "July", value: null },
+          { label: "Aug", value: null },
+          { label: "Sept", value: null },
+          { label: "Oct", value: null },
+          { label: "Nov", value: null },
+          { label: "Dec", value: null }
+        ]
+      },
+      {
+        title: "LA Hub 2022:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: null },
+          { label: "July", value: null },
+          { label: "Aug", value: null },
+          { label: "Sept", value: null },
+          { label: "Oct", value: null },
+          { label: "Nov", value: null },
+          { label: "Dec", value: null }
+        ]
+      },
+      {
+        title: "All States Combined 2022:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: null },
+          { label: "July", value: null },
+          { label: "Aug", value: null },
+          { label: "Sept", value: null },
+          { label: "Oct", value: null },
+          { label: "Nov", value: null },
+          { label: "Dec", value: null }
+        ]
+      }
+    ]
+  },
+  {
+    title: "2021",
+    rows: [
+      {
+        title: "PA 2021:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      },
+      {
+        title: "DE 2021:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      },
+      {
+        title: "LA Hub 2021:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      },
+      {
+        title: "All States Combined 2021:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      }
+    ]
+  },
+  {
+    title: "2020",
+    rows: [
+      {
+        title: "PA 2020:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      },
+      {
+        title: "DE 2020:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      },
+      {
+        title: "PA & DE Combined 2020:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      }
+    ]
+  },
+  {
+    title: "2019",
+    rows: [
+      {
+        title: "PA 2019:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      },
+      {
+        title: "DE 2019:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      },
+      {
+        title: "PA & DE Combined 2019:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      }
+    ]
+  },
+  {
+    title: "2018",
+    rows: [
+      {
+        title: "PA 2018:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      },
+      {
+        title: "DE 2018:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      },
+      {
+        title: "PA & DE Combined 2018:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      }
+    ]
+  },
+  {
+    title: "2017",
+    rows: [
+      {
+        title: "PA 2017:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      },
+      {
+        title: "DE 2017:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      },
+      {
+        title: "PA & DE Combined 2017:",
+        content: [
+          { label: "Jan", value: "#1" },
+          { label: "Feb", value: "#2" },
+          { label: "March", value: "#3" },
+          { label: "April", value: "#4" },
+          { label: "May", value: "#5" },
+          { label: "June", value: "#6" },
+          { label: "July", value: "#7" },
+          { label: "Aug", value: "#8" },
+          { label: "Sept", value: "#9" },
+          { label: "Oct", value: "#10" },
+          { label: "Nov", value: "#11" },
+          { label: "Dec", value: "#12" }
+        ]
+      }
+    ]
+  }
+];
 
-const monthly2021Data = {
-  title: "2021",
-  rows: [
-    {
-      title: "PA 2021:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    },
-    {
-      title: "DE 2021:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    },
-    {
-      title: "LA Hub 2021:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9"},
-        { label: "Oct", value: "#10"},
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    },
-    {
-      title: "All States Combined 2021:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    }
-  ]
-};
+const quarterlyStatistics = [
+  {
+    title: "2022",
+    rows: [
+      {
+        title: "PA 2022:",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: null },
+          { label: "July-Sept", value: null },
+          { label: "Oct-Dec", value: null }
+        ]
+      },
+      {
+        title: "DE 2022",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: null },
+          { label: "July-Sept", value: null },
+          { label: "Oct-Dec", value: null }
+        ]
+      },
+      {
+        title: "LA Hub 2022",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: null },
+          { label: "July-Sept", value: null },
+          { label: "Oct-Dec", value: null }
+        ]
+      },
+      {
+        title: "All States Combined 2022",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: null },
+          { label: "July-Sept", value: null },
+          { label: "Oct-Dec", value: null }
+        ]
+      }
+    ]
+  },
+  {
+    title: "2021",
+    rows: [
+      {
+        title: "PA 2021:",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      },
+      {
+        title: "DE 2021",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      },
+      {
+        title: "LA Hub 2021",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      },
+      {
+        title: "All States Combined 2021",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      }
+    ]
+  },
+  {
+    title: "2020",
+    rows: [
+      {
+        title: "PA 2020:",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      },
+      {
+        title: "DE 2020",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      },
+      {
+        title: "PA & DE Combined 2020:",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      }
+    ]
+  },
+  {
+    title: "2019",
+    rows: [
+      {
+        title: "PA 2019:",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      },
+      {
+        title: "DE 2019",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      },
+      {
+        title: "PA & DE Combined 2019:",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      }
+    ]
+  },
+  {
+    title: "2018",
+    rows: [
+      {
+        title: "PA 2018:",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      },
+      {
+        title: "DE 2018",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      },
+      {
+        title: "PA & DE Combined 2018:",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      }
+    ]
+  },
+  {
+    title: "2017",
+    rows: [
+      {
+        title: "PA 2017:",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      },
+      {
+        title: "DE 2017",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      },
+      {
+        title: "PA & DE Combined 2017:",
+        content: [
+          { label: "Jan-March", value: "#1" },
+          { label: "April-June", value: "#2" },
+          { label: "July-Sept", value: "#3" },
+          { label: "Oct-Dec", value: "#4" }
+        ]
+      }
+    ]
+  }
+];
 
-const monthly2020Data = {
-  title: "2020",
-  rows: [
-    {
-      title: "PA 2020:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    },
-    {
-      title: "DE 2020:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    },
-    {
-      title: "PA & DE Combined 2020:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    }
-  ]
-};
-
-const monthly2019Data = {
-  title: "2019",
-  rows: [
-    {
-      title: "PA 2019:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    },
-    {
-      title: "DE 2019:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    },
-    {
-      title: "PA & DE Combined 2019:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    }
-  ]
-};
-
-const monthly2018Data = {
-  title: "2018",
-  rows: [
-    {
-      title: "PA 2018:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    },
-    {
-      title: "DE 2018:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    },
-    {
-      title: "PA & DE Combined 2018:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    }
-  ]
-};
-
-const monthly2017Data = {
-  title: "2017",
-  rows: [
-    {
-      title: "PA 2017:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    },
-    {
-      title: "DE 2017:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    },
-    {
-      title: "PA & DE Combined 2017:",
-      content: [
-        { label: "Jan", value: "#1" },
-        { label: "Feb", value: "#2" },
-        { label: "March", value: "#3" },
-        { label: "April", value: "#4" },
-        { label: "May", value: "#5" },
-        { label: "June", value: "#6" },
-        { label: "July", value: "#7" },
-        { label: "Aug", value: "#8" },
-        { label: "Sept", value: "#9" },
-        { label: "Oct", value: "#10" },
-        { label: "Nov", value: "#11" },
-        { label: "Dec", value: "#12" }
-      ]
-    }
-  ]
-};
-
-const quarterly2022Data = {
-  title: "2022",
-  rows: [
-    {
-      title: "PA 2022:",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: null },
-        { label: "July-Sept", value: null },
-        { label: "Oct-Dec", value: null }
-      ]
-    },
-    {
-      title: "DE 2022",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: null },
-        { label: "July-Sept", value: null },
-        { label: "Oct-Dec", value: null }
-      ]
-    },
-    {
-      title: "LA Hub 2022",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: null },
-        { label: "July-Sept", value: null },
-        { label: "Oct-Dec", value: null }
-      ]
-    },
-    {
-      title: "All States Combined 2022",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: null },
-        { label: "July-Sept", value: null },
-        { label: "Oct-Dec", value: null }
-      ]
-    }
-  ]
-};
-
-const quarterly2021Data = {
-  title: "2021",
-  rows: [
-    {
-      title: "PA 2021:",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    },
-    {
-      title: "DE 2021",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    },
-    {
-      title: "LA Hub 2021",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    },
-    {
-      title: "All States Combined 2021",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    }
-  ]
-};
-
-const quarterly2020Data = {
-  title: "2020",
-  rows: [
-    {
-      title: "PA 2020:",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    },
-    {
-      title: "DE 2020",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    },
-    {
-      title: "PA & DE Combined 2020:",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    }
-  ]
-};
-
-const quarterly2019Data = {
-  title: "2019",
-  rows: [
-    {
-      title: "PA 2019:",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    },
-    {
-      title: "DE 2019",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    },
-    {
-      title: "PA & DE Combined 2019:",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    }
-  ]
-};
-
-const quarterly2018Data = {
-  title: "2018",
-  rows: [
-    {
-      title: "PA 2018:",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    },
-    {
-      title: "DE 2018",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    },
-    {
-      title: "PA & DE Combined 2018:",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    }
-  ]
-};
-
-const quarterly2017Data = {
-  title: "2017",
-  rows: [
-    {
-      title: "PA 2017:",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    },
-    {
-      title: "DE 2017",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    },
-    {
-      title: "PA & DE Combined 2017:",
-      content: [
-        { label: "Jan-March", value: "#1" },
-        { label: "April-June", value: "#2" },
-        { label: "July-Sept", value: "#3" },
-        { label: "Oct-Dec", value: "#4" }
-      ]
-    }
-  ]
-};
-
-const annualData = {
+const annualStatistics = {
   rows: [
     {
       content: [
@@ -705,5 +708,4 @@ const infoCardData = {
   img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
   buttons: [{ text: "Learn more about our impact", url: "#!" }]
 };
-
 </script>
