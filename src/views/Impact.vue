@@ -45,7 +45,7 @@
     </div>
   </section>
 
-  <section class="py-14 lg:py-28 bg-gray-dark">
+  <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-4xl px-4">
       <PostInline v-bind="postInlineData4" />
     </div>
@@ -61,8 +61,8 @@
 </template>
 
 <script setup>
-import HeroInner from "@/components/HeroInner.vue"
-import PostInline from "@/components/PostInline.vue"
+import HeroInner from "@/components/HeroInner.vue";
+import PostInline from "@/components/PostInline.vue";
 import PostSection from "@/components/PostSection.vue";
 import InfoCard from "@/components/InfoCard.vue";
 import PostCardsSection from "@/components/PostCardsSection.vue";
@@ -91,44 +91,50 @@ const postInlineData = {
 
 const postInlineData2 = {
   title: "Impacting lifesaving across the country",
-  text: ["The past five years have seen substantial change in our area. We transformed the faltering then Chester County SPCA into the f irst open admission no-kill shelter in Pennsylvania. We then provided the leadership needed for the state of Delaware to become the f irst and only no-kill state in the country. Our next step is to share what we’ve learned and help other shelters achieve the same success."],
-  img: { src: "src/assets/img/content-img-23.png", alt: "", type: 'default' },
+  text: [
+    "The past five years have seen substantial change in our area. We transformed the faltering then Chester County SPCA into the f irst open admission no-kill shelter in Pennsylvania. We then provided the leadership needed for the state of Delaware to become the f irst and only no-kill state in the country. Our next step is to share what we’ve learned and help other shelters achieve the same success."
+  ],
+  img: { src: "src/assets/img/content-img-23.png", alt: "", type: "default" },
   reverse: true
 };
 
 const postInlineData3 = {
   title: "Looking toward tomorrow",
-  text: ["Late in 2020, we made a bold move to better serve the animals in our community and to improve our f inancial position. We purchased a former emergency veterinary center to replace our New Castle Campus."],
-  list: [
-    {text: "First in-house shelter ICU in Delaware to treat shelter animals that currently go for outside emergency care as well as for families who can’t afford specialty care for their pets"},
-    {text: "Double the clinic space for veterinary care for family  pets"},
-    {text: "New specialty surgery capabilities for shelter pets &  family pets from all of our locations"},
-    {text: "Quarantine treatment rooms to help more shelter &  family pets with contagious diseases"},
-    {text: "Indoor/outdoor dog runs & outdoor dog play yards"},
-    {text: "Double the cat housing capacity Outdoor catio for adoptable cats"},
-    {text: "Large community room for humane education and  service groups"}
+  text: [
+    "Late in 2020, we made a bold move to better serve the animals in our community and to improve our f inancial position. We purchased a former emergency veterinary center to replace our New Castle Campus."
   ],
-  img: { src: "src/assets/img/content-img-25.png", alt: "", type: 'default' }
+  list: [
+    "First in-house shelter ICU in Delaware to treat shelter animals that currently go for outside emergency care as well as for families who can’t afford specialty care for their pets",
+    "Double the clinic space for veterinary care for family  pets",
+    "New specialty surgery capabilities for shelter pets &  family pets from all of our locations",
+    "Quarantine treatment rooms to help more shelter &  family pets with contagious diseases",
+    "Indoor/outdoor dog runs & outdoor dog play yards",
+    "Double the cat housing capacity Outdoor catio for adoptable cats",
+    "Large community room for humane education and  service groups"
+  ],
+  img: { src: "src/assets/img/content-img-25.png", alt: "", type: "default" }
 };
 
 const postInlineData4 = {
   title: "Give back to your community",
-  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
+  text: [
+    "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
+  ],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   buttons: [
     { text: "Donate", url: "#!" },
-    { variant: "outline", text: "Sponsor", url: "#!" },
+    { variant: "outline", text: "Sponsor", url: "#!" }
   ],
   reverse: true
 };
 
 const postInlineData5 = {
   title: "Join the team",
-  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
+  text: [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."
+  ],
   img: { src: "src/assets/img/content-img-22.jpg", alt: "" },
-  buttons: [
-    { text: "View open positions", url: "#!" }
-  ]
+  buttons: [{ text: "View open positions", url: "#!" }]
 };
 
 const postSectionData = {
@@ -141,7 +147,9 @@ const postSectionData = {
     ]
   },
   title: "Finding the heart in humanity",
-  text: ["Each year, we care for nearly 19,000 animals and we are finding homes or other placement for at least 95% of the homeless pets that enter our shelter. Through our dedication to maintaining an open door policy for all animals and our commitment to lifesaving and second chances, the Brandywine Valley SPCA is working tirelessly to cultivate a no-kill community."],
+  text: [
+    "Each year, we care for nearly 19,000 animals and we are finding homes or other placement for at least 95% of the homeless pets that enter our shelter. Through our dedication to maintaining an open door policy for all animals and our commitment to lifesaving and second chances, the Brandywine Valley SPCA is working tirelessly to cultivate a no-kill community."
+  ],
   textGrid: [
     {
       title: "Feature one",
@@ -185,8 +193,6 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more", url: "#!" }
     }
   ],
-  buttons: [
-    { text: "View all news, events & resources", url: "#!" }
-  ]
+  buttons: [{ text: "View all news, events & resources", url: "#!" }]
 };
 </script>

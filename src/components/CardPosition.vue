@@ -1,18 +1,27 @@
 <template>
-  <div class="p-10 lg:p-12 xl:p-16 text-xs text-center lg:text-left shadow rounded-sm sm:rounded-lg bg-white">
-    <span v-if="subtitle" class="block text-xs font-bold text-gray-light">{{ subtitle }}</span>
+  <div
+    class="rounded-sm bg-white p-10 text-center text-xs shadow sm:rounded-lg lg:p-12 lg:text-left xl:p-16"
+  >
+    <span v-if="subtitle" class="text-gray-light block text-xs font-bold">{{
+      subtitle
+    }}</span>
     <h3 v-if="title" class="mb-2 text-lg font-bold">{{ title }}</h3>
     <p v-if="text">{{ text }}</p>
     <div
       v-if="buttons"
-      class="mt-10 lg:mt-12 flex flex-wrap items-center justify-center lg:justify-start lg:space-x-10 xl:space-x-12 space-y-8 lg:space-y-0"
+      class="mt-10 flex flex-col flex-wrap items-center justify-center space-y-8 lg:mt-12 lg:flex-row lg:justify-start lg:space-x-10 lg:space-y-0 xl:space-x-12"
     >
-      <div
-        v-for="button in buttons"
-        :key="button.text"
-      >
-        <Button v-if="button.type === 'button'" v-bind="button" />
-        <ButtonLink v-if="button.type === 'buttonLink'" v-bind="button" />
+      <div v-for="button in buttons" :key="button.text">
+        <Button
+          v-if="button.type === 'button'"
+          :url="button.url"
+          :text="button.text"
+        />
+        <ButtonLink
+          v-if="button.type === 'buttonLink'"
+          :url="button.url"
+          :text="button.text"
+        />
       </div>
     </div>
   </div>

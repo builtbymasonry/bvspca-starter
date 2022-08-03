@@ -7,7 +7,7 @@
       <p>{{ text }}</p>
       <div
         v-if="buttons"
-        class="mt-10 flex flex-col items-center justify-center space-y-10 md:flex-row md:space-y-0 md:space-x-5 lg:space-x-10"
+        class="mt-10 flex flex-col items-center justify-center space-y-5 md:flex-row md:space-y-0 md:space-x-5 lg:space-x-10"
       >
         <Button
           v-for="button in buttons"
