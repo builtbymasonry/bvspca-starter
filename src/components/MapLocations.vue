@@ -178,10 +178,10 @@ const setCurrentLocation = (index) => {
   currentLocationIndex.value = index;
   currentLocation.value = props.locations[currentLocationIndex.value];
 
-  moveMapToLocation();
+  panToCurrentLocation();
 };
 
-const moveMapToLocation = () => {
+const panToCurrentLocation = () => {
   // Reset zoom to default if initial was changed
   if (DEFAULT_MAP_ZOOM !== mapRef.value.map.zoom) {
     mapRef.value.map.zoom = DEFAULT_MAP_ZOOM;
@@ -214,7 +214,7 @@ watch(
   (ready) => {
     if (!ready) return;
 
-    moveMapToLocation();
+    panToCurrentLocation();
   }
 );
 

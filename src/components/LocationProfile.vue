@@ -47,7 +47,7 @@
                     : '&nbsp;'
                 "
               ></dt>
-              <dl>{{ item.description }}</dl>
+              <dd>{{ item.description }}</dd>
             </div>
           </dl>
         </div>
