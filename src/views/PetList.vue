@@ -21,17 +21,17 @@
     </div>
   </section>
 
-  <section class="py-14 lg:py-28 bg-gray-dark">
+  <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-7xl px-4">
-      <h2
-        class="mb-10 text-center text-2xl font-bold md:text-3xl xl:text-5xl"
-      >
+      <h2 class="mb-10 text-center text-2xl font-bold md:text-3xl xl:text-5xl">
         All adoptable dogs
       </h2>
 
       <FilterBar class="mb-10" />
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 sm:gap-y-20">
+      <div
+        class="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 sm:gap-y-20 lg:grid-cols-3"
+      >
         <CardPetProfile
           v-for="profile in profileList"
           :key="profile.title"
@@ -39,7 +39,7 @@
         />
       </div>
 
-      <Pagination class="mt-16 lg:mt-24" />
+      <Pagination class="mt-16 justify-center lg:mt-24" />
     </div>
   </section>
 
@@ -77,12 +77,12 @@
 </template>
 
 <script setup>
-import Button from "@/components/Button.vue"
-import HeroInner from "@/components/HeroInner.vue"
-import PostCard from "@/components/PostCard.vue"
+import Button from "@/components/Button.vue";
+import HeroInner from "@/components/HeroInner.vue";
+import PostCard from "@/components/PostCard.vue";
 import CardPetProfile from "@/components/CardPetProfile.vue";
-import PostInline from "@/components/PostInline.vue"
-import InfoCard from "@/components/InfoCard.vue"
+import PostInline from "@/components/PostInline.vue";
+import InfoCard from "@/components/InfoCard.vue";
 import PostCardsSection from "@/components/PostCardsSection.vue";
 import FilterBar from "@/components/FilterBar.vue";
 import Pagination from "@/components/Pagination.vue";
@@ -126,11 +126,11 @@ const profileList = [
     img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
     title: "Chewie fka Monkey",
     list: [
-      {title: "Age:", value: "2 years 4 months 5 days"},
-      {title: "Gender:", value: "Female"},
-      {title: "Breed:", value: "Retriever, Labrador/Mix"},
-      {title: "Location:", value: "WC Main Dog Kennel"},
-      {title: "ID:", value: "49144731"}
+      { title: "Age:", value: "2 years 4 months 5 days" },
+      { title: "Gender:", value: "Female" },
+      { title: "Breed:", value: "Retriever, Labrador/Mix" },
+      { title: "Location:", value: "WC Main Dog Kennel" },
+      { title: "ID:", value: "49144731" }
     ],
     button: { text: "Learn more", url: "#!" }
   },
@@ -139,11 +139,11 @@ const profileList = [
     img: { src: "src/assets/img/img-pet-02.jpg" },
     title: "Slim aka Spunk",
     list: [
-      {title: "Age:", value: "2 years 4 months 5 days"},
-      {title: "Gender:", value: "Female"},
-      {title: "Breed:", value: "Retriever, Labrador/Mix"},
-      {title: "Location:", value: "WC Main Dog Kennel"},
-      {title: "ID:", value: "49144731"}
+      { title: "Age:", value: "2 years 4 months 5 days" },
+      { title: "Gender:", value: "Female" },
+      { title: "Breed:", value: "Retriever, Labrador/Mix" },
+      { title: "Location:", value: "WC Main Dog Kennel" },
+      { title: "ID:", value: "49144731" }
     ],
     button: { text: "Learn more", url: "#!" }
   },
@@ -152,11 +152,11 @@ const profileList = [
     img: { src: "src/assets/img/img-pet-03.jpg" },
     title: "Boo Boo",
     list: [
-      {title: "Age:", value: "2 years 4 months 5 days"},
-      {title: "Gender:", value: "Female"},
-      {title: "Breed:", value: "Retriever, Labrador/Mix"},
-      {title: "Location:", value: "WC Main Dog Kennel"},
-      {title: "ID:", value: "49144731"}
+      { title: "Age:", value: "2 years 4 months 5 days" },
+      { title: "Gender:", value: "Female" },
+      { title: "Breed:", value: "Retriever, Labrador/Mix" },
+      { title: "Location:", value: "WC Main Dog Kennel" },
+      { title: "ID:", value: "49144731" }
     ],
     button: { text: "Learn more", url: "#!" }
   },
@@ -165,11 +165,11 @@ const profileList = [
     img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
     title: "Chewie fka Monkey",
     list: [
-      {title: "Age:", value: "2 years 4 months 5 days"},
-      {title: "Gender:", value: "Female"},
-      {title: "Breed:", value: "Retriever, Labrador/Mix"},
-      {title: "Location:", value: "WC Main Dog Kennel"},
-      {title: "ID:", value: "49144731"}
+      { title: "Age:", value: "2 years 4 months 5 days" },
+      { title: "Gender:", value: "Female" },
+      { title: "Breed:", value: "Retriever, Labrador/Mix" },
+      { title: "Location:", value: "WC Main Dog Kennel" },
+      { title: "ID:", value: "49144731" }
     ],
     button: { text: "Learn more", url: "#!" }
   },
@@ -178,11 +178,11 @@ const profileList = [
     img: { src: "src/assets/img/img-pet-02.jpg" },
     title: "Slim aka Spunk",
     list: [
-      {title: "Age:", value: "2 years 4 months 5 days"},
-      {title: "Gender:", value: "Female"},
-      {title: "Breed:", value: "Retriever, Labrador/Mix"},
-      {title: "Location:", value: "WC Main Dog Kennel"},
-      {title: "ID:", value: "49144731"}
+      { title: "Age:", value: "2 years 4 months 5 days" },
+      { title: "Gender:", value: "Female" },
+      { title: "Breed:", value: "Retriever, Labrador/Mix" },
+      { title: "Location:", value: "WC Main Dog Kennel" },
+      { title: "ID:", value: "49144731" }
     ],
     button: { text: "Learn more", url: "#!" }
   },
@@ -191,11 +191,11 @@ const profileList = [
     img: { src: "src/assets/img/img-pet-03.jpg" },
     title: "Boo Boo",
     list: [
-      {title: "Age:", value: "2 years 4 months 5 days"},
-      {title: "Gender:", value: "Female"},
-      {title: "Breed:", value: "Retriever, Labrador/Mix"},
-      {title: "Location:", value: "WC Main Dog Kennel"},
-      {title: "ID:", value: "49144731"}
+      { title: "Age:", value: "2 years 4 months 5 days" },
+      { title: "Gender:", value: "Female" },
+      { title: "Breed:", value: "Retriever, Labrador/Mix" },
+      { title: "Location:", value: "WC Main Dog Kennel" },
+      { title: "ID:", value: "49144731" }
     ],
     button: { text: "Learn more", url: "#!" }
   },
@@ -204,11 +204,11 @@ const profileList = [
     img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
     title: "Chewie fka Monkey",
     list: [
-      {title: "Age:", value: "2 years 4 months 5 days"},
-      {title: "Gender:", value: "Female"},
-      {title: "Breed:", value: "Retriever, Labrador/Mix"},
-      {title: "Location:", value: "WC Main Dog Kennel"},
-      {title: "ID:", value: "49144731"}
+      { title: "Age:", value: "2 years 4 months 5 days" },
+      { title: "Gender:", value: "Female" },
+      { title: "Breed:", value: "Retriever, Labrador/Mix" },
+      { title: "Location:", value: "WC Main Dog Kennel" },
+      { title: "ID:", value: "49144731" }
     ],
     button: { text: "Learn more", url: "#!" }
   },
@@ -217,11 +217,11 @@ const profileList = [
     img: { src: "src/assets/img/img-pet-02.jpg" },
     title: "Slim aka Spunk",
     list: [
-      {title: "Age:", value: "2 years 4 months 5 days"},
-      {title: "Gender:", value: "Female"},
-      {title: "Breed:", value: "Retriever, Labrador/Mix"},
-      {title: "Location:", value: "WC Main Dog Kennel"},
-      {title: "ID:", value: "49144731"}
+      { title: "Age:", value: "2 years 4 months 5 days" },
+      { title: "Gender:", value: "Female" },
+      { title: "Breed:", value: "Retriever, Labrador/Mix" },
+      { title: "Location:", value: "WC Main Dog Kennel" },
+      { title: "ID:", value: "49144731" }
     ],
     button: { text: "Learn more", url: "#!" }
   },
@@ -230,11 +230,11 @@ const profileList = [
     img: { src: "src/assets/img/img-pet-03.jpg" },
     title: "Boo Boo",
     list: [
-      {title: "Age:", value: "2 years 4 months 5 days"},
-      {title: "Gender:", value: "Female"},
-      {title: "Breed:", value: "Retriever, Labrador/Mix"},
-      {title: "Location:", value: "WC Main Dog Kennel"},
-      {title: "ID:", value: "49144731"}
+      { title: "Age:", value: "2 years 4 months 5 days" },
+      { title: "Gender:", value: "Female" },
+      { title: "Breed:", value: "Retriever, Labrador/Mix" },
+      { title: "Location:", value: "WC Main Dog Kennel" },
+      { title: "ID:", value: "49144731" }
     ],
     button: { text: "Learn more", url: "#!" }
   }
@@ -244,14 +244,14 @@ const infoCardData = {
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
   img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
-  buttons: [
-    { text: "Learn more about our impact", url: "#!" }
-  ]
+  buttons: [{ text: "Learn more about our impact", url: "#!" }]
 };
 
 const postInlineData = {
   title: "Give back to your community",
-  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
+  text: [
+    "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
+  ],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
   buttons: [
@@ -285,8 +285,6 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more", url: "#!" }
     }
   ],
-  buttons: [
-    { text: "View all news, events & resources", url: "#!" }
-  ]
+  buttons: [{ text: "View all news, events & resources", url: "#!" }]
 };
 </script>
