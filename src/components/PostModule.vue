@@ -16,7 +16,7 @@
         class="w-full"
         :class="[
           img.type === 'default' ? '' : 'rounded-sm md:rounded-md shadow',
-          img.type === 'cover' ? 'lg:absolute lg:h-full lg:object-cover' : ''
+          img.type === 'cover' && 'lg:absolute lg:h-full lg:object-cover'
         ]"
         v-bind="img"
       />
@@ -60,8 +60,8 @@
           v-if="title"
           class="text-2xl font-bold"
           :class="[
-            title.size === 'lg' ? 'sm:text-4xl lg:text-5xl' : '',
-            title.size === 'md' ? 'sm:text-4xl' : '',
+            title.size === 'lg' && 'sm:text-4xl lg:text-5xl',
+            title.size === 'md' && 'sm:text-4xl',
           ]"
         >
           {{ title.text }}
@@ -84,7 +84,7 @@
         </div>
       </div>
 
-      <ul v-if="list" class="list-disc space-y-2 mt-5 pl-5 marker:text-xs">
+      <ul v-if="list" class="list-disc space-y-2 mx-auto mt-5 pl-5 max-w-lg lg:max-w-none marker:text-xs text-left">
         <li
           v-for="item in list"
           :key="item"
@@ -97,7 +97,7 @@
       <List
         v-if="customList"
         v-bind="customList"
-        class="mt-6 text-left"
+        class="mt-6 mx-auto max-w-lg lg:max-w-none text-left"
       />
 
       <div v-if="share" class="mt-6 flex">
@@ -160,7 +160,6 @@ const openVideo = (e) => {
 
 const props = defineProps({
   title: Object,
-  subtitle: String,
   text: Array,
   textGrid: Array,
   list: Array,

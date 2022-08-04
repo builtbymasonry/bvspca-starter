@@ -82,7 +82,7 @@
       <h2 class="mb-10 text-center text-2xl font-bold md:text-3xl xl:text-5xl">
         Frequently asked questions
       </h2>
-      <Accordion :items="faq" />
+      <Accordion :items="faq" dividerColor="border-gray-darkest" />
     </div>
   </section>
 
@@ -137,7 +137,7 @@ const heroInnerData = {
 };
 
 const postModuleData = {
-  title: { size: "md", text: "Adoption Process" },
+  title: { text: "Adoption Process", size: "md" },
   text: [
     "We strongly encourage all members of a family to come and meet with any pet being considered, being that the addition of a new pet is, in our eyes, the equivalent of adding a new family member.  We also recommend that potential adopters be mindful of lifestyle, level of activity, work situations, and living situations when deciding which dog or cat is right for them."
   ],
@@ -163,7 +163,7 @@ const postModuleData = {
 };
 
 const postModuleData2 = {
-  title: { size: "md", text: "What to bring" },
+  title: { text: "What to bring", size: "md" },
   customList: {
     data: [
       "A current driver’s license (you must be over 18 years of age to adopt)",
@@ -177,7 +177,7 @@ const postModuleData2 = {
 };
 
 const PostModuleData3 = {
-  title: { size: "lg", text: "Give back to your community" },
+  title: { text: "Give back to your community", size: "lg" },
   text: [
     "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
   ],
