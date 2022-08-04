@@ -79,11 +79,15 @@
       </div>
     </section>
 
-    <PostSection v-bind="postSectionData" />
+    <section class="py-14 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4">
+        <PostModule v-bind="postModuleData" />
+      </div>
+    </section>
 
     <section class="pt-10 pb-40 md:pb-60">
       <div class="mx-auto max-w-5xl px-4">
-        <PostInline v-bind="postInlineData" />
+        <PostModule class="text-xs" v-bind="postModuleData2" />
       </div>
     </section>
 
@@ -98,7 +102,7 @@
         </h2>
 
         <div
-          class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:gap-16"
+          class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:gap-16 text-center"
         >
           <PostCard
             v-for="card in cardsDonations"
@@ -113,32 +117,9 @@
       </div>
     </section>
 
-    <section class="py-20 lg:py-28">
-      <div class="mx-auto max-w-5xl items-center px-4 lg:flex">
-        <div
-          class="mx-auto mb-12 grid max-w-md flex-shrink-0 grid-cols-2 gap-6 sm:gap-8 lg:mr-20 lg:mb-0 lg:w-[43%] lg:max-w-full xl:mr-28"
-        >
-          <div
-            class="flex items-center justify-center overflow-hidden rounded-sm bg-white shadow sm:rounded-lg"
-            v-for="item in imgGrid"
-            :key="item"
-          >
-            <img v-bind="item.img" />
-          </div>
-        </div>
-        <div
-          class="mx-auto max-w-2xl text-center text-xs sm:text-sm lg:max-w-none lg:text-left"
-        >
-          <h3 class="mb-2 text-2xl font-bold sm:text-3xl md:text-5xl">
-            Support our lifesaving work and look good doing it
-          </h3>
-          <p class="mb-10 lg:mr-24">
-            Get your paws on our original and limited edition merchandise. Your
-            purchases go towards the care of the 16,000+ animals we take in each
-            year.
-          </p>
-          <Button variant="primary" text="Shop now" />
-        </div>
+    <section class="py-14 lg:py-28">
+      <div class="mx-auto max-w-5xl px-4">
+        <PostModule class="text-sm" v-bind="postModuleData3" />
       </div>
     </section>
 
@@ -171,6 +152,7 @@ import PostCard from "@/components/PostCard.vue";
 import PostCardsSection from "@/components/PostCardsSection.vue";
 
 import PostSection from "@/components/PostSection.vue";
+import PostModule from "@/components/PostModule.vue";
 
 import InfoCard from "@/components/InfoCard.vue";
 import PostInline from "@/components/PostInline.vue";
@@ -187,8 +169,39 @@ const heroData = {
   ]
 };
 
-const postInlineData = {
-  title: "A second chance at nine lives",
+const postModuleData = {
+  img: { src: "src/assets/img/content-img-02.jpg", alt: "", type: "cover" },
+  title: { text: "Need help?", size: "lg"},
+  text: ["Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"],
+  textGrid: [
+    {
+      title: "Lost & found pets",
+      text: "Losing your furry friend or finding another’s beloved animal can be a very harrowing and emotional process. ",
+      button: { text: "Learn more", url: "#!" }
+    },
+    {
+      title: "Reporting animal cruelty",
+      text: "Our Animal Protective Services Department works tirelessly to prevent abuse and protect companion animals. ",
+      button: { text: "Learn more", url: "#!" }
+    },
+    {
+      title: "Pet food pantry",
+      text: "Free food assistance for pet owners living below the poverty line. ",
+      button: { text: "Learn more", url: "#!" }
+    },
+    {
+      title: "Behavior resources",
+      text: "We offer phone, e-mail and on-site support for our adopters, foster families and pet owners seeking behavior assistance.",
+      button: { text: "Learn more", url: "#!" }
+    }
+  ],
+  buttons: [{ text: "See all ways to get help", url: "#!" }],
+  layoutAlt: true,
+  stretchColumns: true
+};
+
+const postModuleData2 = {
+  title: { text: "A second chance at nine lives", size: "md"},
   text: ["Whiskers got his leg caught in a fox trap after getting loose from his home. He lost a lot of skin, suffered nerve damage,   ahd a quickly spreading infection. His family brought him to our New Castle Animal Health Center. They couldn’t afford the entirety od his care and were condisdering euthanasia since the infection would soon be life-threatening. Thanks to our pet retention grant from Petco Love, we were able to bridge what his owners couldn’t afford and saved Whiskers by amputating the badly damaged leg. Whiskers now lives a life of three-legged luxury. We’re grateful for Petco Love’s support, which results from all of you who donate at checkout at the Petco stores."],
   carousel: {
     slides: [
@@ -197,6 +210,28 @@ const postInlineData = {
     ]
   },
   reverse: true
+};
+
+const postModuleData3 = {
+  title: { text: "Support our lifesaving work and look good doing it", size: "lg"},
+  text: ["Get your paws on our original and limited edition merchandise. Your purchases go towards the care of the 16,000+ animals we take in each year. "],
+  imgGrid: [
+    {
+      img: { src: "src/assets/img/merch-img-01.jpg", alt: "" }
+    },
+    {
+      img: { src: "src/assets/img/merch-img-02.jpg", alt: "" }
+    },
+    {
+      img: { src: "src/assets/img/merch-img-03.jpg", alt: "" }
+    },
+    {
+      img: { src: "src/assets/img/merch-img-04.jpg", alt: "" }
+    }
+  ],
+  buttons: [
+    { text: "Shop now", url: "#!" },
+  ]
 };
 
 const postCardsPetsData = {
@@ -371,51 +406,6 @@ const marqueeSlides = [
     }
   }
 ];
-
-const imgGrid = [
-  {
-    img: { src: "src/assets/img/merch-img-01.jpg", alt: "" }
-  },
-  {
-    img: { src: "src/assets/img/merch-img-02.jpg", alt: "" }
-  },
-  {
-    img: { src: "src/assets/img/merch-img-03.jpg", alt: "" }
-  },
-  {
-    img: { src: "src/assets/img/merch-img-04.jpg", alt: "" }
-  }
-];
-
-const postSectionData = {
-  img: { src: "src/assets/img/content-img-02.jpg", alt: "" },
-  title: "Need help?",
-  text: ["Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"],
-
-  textGrid: [
-    {
-      title: "Lost & found pets",
-      text: "Losing your furry friend or finding another’s beloved animal can be a very harrowing and emotional process. ",
-      button: { text: "Learn more", url: "#!" }
-    },
-    {
-      title: "Reporting animal cruelty",
-      text: "Our Animal Protective Services Department works tirelessly to prevent abuse and protect companion animals. ",
-      button: { text: "Learn more", url: "#!" }
-    },
-    {
-      title: "Pet food pantry",
-      text: "Free food assistance for pet owners living below the poverty line. ",
-      button: { text: "Learn more", url: "#!" }
-    },
-    {
-      title: "Behavior resources",
-      text: "We offer phone, e-mail and on-site support for our adopters, foster families and pet owners seeking behavior assistance.",
-      button: { text: "Learn more", url: "#!" }
-    }
-  ],
-  buttons: [{ text: "See all ways to get help", url: "#!" }]
-};
 
 const infoCardData = {
   img: { src: "src/assets/img/content-img-01.jpg", alt: "work" },

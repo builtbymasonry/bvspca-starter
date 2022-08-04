@@ -73,6 +73,37 @@
         <MapRentals v-bind="map" />
       </div>
     </section>
+
+    <div class="py-12 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4">
+        <PostModule v-bind="postModuleData1" />
+      </div>
+    </div>
+
+    <div class="py-12 lg:py-28 bg-gray-dark">
+      <div class="mx-auto max-w-7xl px-4">
+        <PostModule v-bind="postModuleData2" />
+      </div>
+    </div>
+
+    <section class="py-12 lg:py-28">
+      <div class="mx-auto max-w-5xl px-4">
+        <PostModule class="text-sm" v-bind="postModuleData3" />
+      </div>
+    </section>
+
+    <section class="py-14 lg:py-28 bg-gray-dark">
+      <div class="mx-auto max-w-4xl px-4">
+        <PostModule class="text-xs" v-bind="postModuleData4" />
+        <PostModule class="mt-24 text-xs" v-bind="postModuleData5" />
+      </div>
+    </section>
+
+    <section class="bg-purple text-white py-14 lg:py-28">
+    <div class="mx-auto max-w-4xl px-4">
+      <PostModule v-bind="postInlineData6" />
+    </div>
+  </section>
   </div>
 </template>
 <script setup>
@@ -86,6 +117,7 @@ import FilterBar from "@/components/FilterBar.vue";
 import SliderThumbs from "@/components/SliderThumbs.vue";
 import MapLocations from "@/components/MapLocations.vue";
 import MarqueeSponsors from "@/components/MarqueeSponsors.vue";
+import PostModule from "@/components/PostModule.vue";
 import LocationProfile from "@/components/LocationProfile.vue";
 import Locations from "@/components/Locations.vue";
 
@@ -986,5 +1018,112 @@ const map = {
       }
     }
   ]
+};
+
+const postModuleData1 = {
+  img: { src: "src/assets/img/content-img-02.jpg", alt: "" },
+  title: { text: "Need help?", size: "lg" },
+  text: ["Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"],
+  textGrid: [
+    {
+      title: "Lost & found pets",
+      text: "Losing your furry friend or finding another’s beloved animal can be a very harrowing and emotional process. ",
+      button: { text: "Learn more", url: "#!" }
+    },
+    {
+      title: "Reporting animal cruelty",
+      text: "Our Animal Protective Services Department works tirelessly to prevent abuse and protect companion animals. ",
+      button: { text: "Learn more", url: "#!" }
+    }
+  ],
+  buttons: [{ text: "See all ways to get help", url: "#!" }],
+  layoutAlt: true,
+  reverse: true
+};
+
+const postModuleData2 = {
+  img: { src: "src/assets/img/content-img-02.jpg", alt: "", type: "cover" },
+  title: { text: "Need help?", size: "lg" },
+  text: ["Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"],
+  textGrid: [
+    {
+      title: "Lost & found pets",
+      text: "Losing your furry friend or finding another’s beloved animal can be a very harrowing and emotional process. ",
+      button: { text: "Learn more", url: "#!" }
+    },
+    {
+      title: "Reporting animal cruelty",
+      text: "Our Animal Protective Services Department works tirelessly to prevent abuse and protect companion animals. ",
+      button: { text: "Learn more", url: "#!" }
+    },
+    {
+      title: "Pet food pantry",
+      text: "Free food assistance for pet owners living below the poverty line. ",
+      button: { text: "Learn more", url: "#!" }
+    },
+    {
+      title: "Behavior resources",
+      text: "We offer phone, e-mail and on-site support for our adopters, foster families and pet owners seeking behavior assistance.",
+      button: { text: "Learn more", url: "#!" }
+    }
+  ],
+  buttons: [
+    { text: "See all ways to get help", url: "#!" },
+    { variant: "outline", text: "See all ways to get help", url: "#!" }
+  ],
+  layoutAlt: true,
+  stretchColumns: true
+};
+
+const postModuleData3 = {
+  title: {text: "A second chance at nine lives", size: "md"},
+  text: [
+    "Whiskers got his leg caught in a fox trap after getting loose from his home. He lost a lot of skin, suffered nerve damage, ahd a quickly spreading infection. His family brought him.",
+    "Thanks to our pet retention grant from Petco Love, we were able to bridge what his owners couldn’t afford and saved Whiskers by amputating the badly damaged leg. Whiskers now lives a life of three-legged luxury. We’re grateful for Petco Love’s support, which results from all of you who donate at checkout at the Petco stores."
+  ],
+  buttons: [ {text: "Get involved", url: "#!" }],
+  carousel: {
+    slides: [
+      { src: "src/assets/img/slide01.jpg", alt: "kitty" },
+      { src: "src/assets/img/slide02.jpg", alt: "" }
+    ]
+  },
+  reverse: true
+};
+
+const postModuleData4 = {
+  img: { src: "src/assets/img/content-img-19.jpg", alt: "" },
+  title: { text: "Request friends and family to send items off our wish list instead of buying gifts"},
+  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
+  share: true,
+  buttons: [ {text: "View our wishlist", url: "#!" }],
+  reverse: true
+};
+
+const postModuleData5 = {
+  img: { src: "src/assets/img/content-img-20.jpg", alt: "" },
+  title: { text: "Other ways to honor your special day with charitable causes"},
+  list: [
+    "Lorem ipsum dolor sit amet,",
+    "consectetur adipiscing elit."
+  ],
+  customList: {
+    data: [
+      "Lorem ipsum dolor sit amet,",
+      "consectetur adipiscing elit."
+    ]
+  },
+  buttons: [ {text: "Get involved", url: "#!" }],
+};
+
+const postInlineData6 = {
+  title: { text: "Give back to your community", size: "md"},
+  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
+  img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
+  buttons: [
+    { variant: "secondary", text: "Donate", url: "#!" },
+    { variant: "outlineSecondary", text: "Sponsor", url: "#!" }
+  ],
+  reverse: true
 };
 </script>

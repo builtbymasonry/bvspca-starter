@@ -128,14 +128,14 @@ const postSectionData = {
     { text: "At camp, young animal lovers will:" }
   ],
   list: [
-    { text: "Learn special skills through our camp workshops, such as pet CPR, grooming, and behavioral training" },
-    { text: "Learn about animal care" },
-    { text: "Hear from guest speakers in the animal world using video conferencing" },
-    { text: "Meet adoptable pet" },
-    { text: "Engage in creative and educational activities" },
-    { text: "Participate in team-building workshops" },
-    { text: "Practice their reading skills by reading to our companions" },
-    { text: "Each camp session runs from 9am to 3pm with an aftercare option available during summer programs only. The weekly cost covers all activities, arts & crafts materials, snacks, and camp t-shirt." }
+    "Learn special skills through our camp workshops, such as pet CPR, grooming, and behavioral training",
+    "Learn about animal care",
+    "Hear from guest speakers in the animal world using video conferencing",
+    "Meet adoptable pet",
+    "Engage in creative and educational activities",
+    "Participate in team-building workshops",
+    "Practice their reading skills by reading to our companions",
+    "Each camp session runs from 9am to 3pm with an aftercare option available during summer programs only. The weekly cost covers all activities, arts & crafts materials, snacks, and camp t-shirt."
   ],
   buttons: [
     { text: "Register today", url: "#!" },
@@ -189,15 +189,15 @@ const packagePennsylvaniaData = {
   title: "Pennsylvania Party Package",
   subtitle: "For $200, your party package includes:",
   list: [
-    {text: "Use of our party room and kitchenette for 1 ½ hours"},
-    {text: "12 Children Maximum; must be accompanied by at least 2 chaperones (18 years and older) – A BVSPCA representative will lead the event"},
-    {text: "Table and chairs (set up and break down) and birthday-themed decorations including balloons, a tablecloth, napkins and paper plates"},
-    {text: "A tour of the facility/meet with some of our adorable adoptable animals"},
-    {text: "One craft project (choices vary) or activity"},
-    {text: "Special gift for the birthday boy or girl"},
-    {text: "Small gift bags with party favors"},
-    {text: "Downloadable party invitations"},
-    {text: "You may bring cake, food, beverages and additional decorations – a refrigerator is available for your use"}
+    "Use of our party room and kitchenette for 1 ½ hours",
+    "12 Children Maximum; must be accompanied by at least 2 chaperones (18 years and older) – A BVSPCA representative will lead the event",
+    "Table and chairs (set up and break down) and birthday-themed decorations including balloons, a tablecloth, napkins and paper plates",
+    "A tour of the facility/meet with some of our adorable adoptable animals",
+    "One craft project (choices vary) or activity",
+    "Special gift for the birthday boy or girl",
+    "Small gift bags with party favors",
+    "Downloadable party invitations",
+    "You may bring cake, food, beverages and additional decorations – a refrigerator is available for your use"
   ],
   buttons: [
     { text: "Schedule party - West Chester", url: "#!" }
@@ -208,15 +208,15 @@ const packageDelawareData = {
   title: "Delaware Party Package",
   subtitle: "For $175, your party package includes:",
   list: [
-    {text: "Use of our party room and kitchenette for 1 ½ hours"},
-    {text: "12 Children Maximum; must be accompanied by at least 2 chaperones (18 years and older) – A BVSPCA representative will lead the event"},
-    {text: "Table and chairs (set up and break down) and birthday-themed decorations including balloons, a tablecloth, napkins and paper plates"},
-    {text: "A tour of the facility/meet with some of our adorable adoptable animals"},
-    {text: "One craft project (choices vary) or activity"},
-    {text: "Special gift for the birthday boy or girl"},
-    {text: "Small gift bags with party favors"},
-    {text: "Downloadable party invitations"},
-    {text: "You may bring cake, food, beverages and additional decorations – a refrigerator is available for your use"}
+    "Use of our party room and kitchenette for 1 ½ hours",
+    "12 Children Maximum; must be accompanied by at least 2 chaperones (18 years and older) – A BVSPCA representative will lead the event",
+    "Table and chairs (set up and break down) and birthday-themed decorations including balloons, a tablecloth, napkins and paper plates",
+    "A tour of the facility/meet with some of our adorable adoptable animals",
+    "One craft project (choices vary) or activity",
+    "Special gift for the birthday boy or girl",
+    "Small gift bags with party favors",
+    "Downloadable party invitations",
+    "You may bring cake, food, beverages and additional decorations – a refrigerator is available for your use"
   ],
   buttons: [
     { text: "Schedule party - New Castle", url: "#!" },
