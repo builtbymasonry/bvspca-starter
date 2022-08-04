@@ -32,7 +32,7 @@
         <div v-if="textList" class="text-xs">
           <p v-for="paragraph in textList" :key="paragraph.text" class="mt-6 first:-mt-5">{{paragraph.text}}</p>
           <ul class="mt-2 list-disc space-y-2 pl-5 marker:text-xs text-left">
-            <li v-for="item in list" :key="item.text" class="pl-2">{{item.text}}</li>
+            <li v-for="item in list" :key="item" class="pl-2">{{item}}</li>
           </ul>
         </div>
         <div v-if="textGrid" class="grid gap-10 sm:grid-cols-2 sm:gap-8 text-xs">

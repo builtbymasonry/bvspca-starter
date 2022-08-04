@@ -6,9 +6,9 @@
         <li
           class="pl-2"
           v-for="item in list"
-          :key="item.text"
+          :key="item"
         >
-          {{item.text}}
+          {{item}}
         </li>
       </ul>
       <div

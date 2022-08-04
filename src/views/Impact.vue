@@ -100,13 +100,13 @@ const postInlineData3 = {
   title: "Looking toward tomorrow",
   text: ["Late in 2020, we made a bold move to better serve the animals in our community and to improve our f inancial position. We purchased a former emergency veterinary center to replace our New Castle Campus."],
   list: [
-    {text: "First in-house shelter ICU in Delaware to treat shelter animals that currently go for outside emergency care as well as for families who can’t afford specialty care for their pets"},
-    {text: "Double the clinic space for veterinary care for family  pets"},
-    {text: "New specialty surgery capabilities for shelter pets &  family pets from all of our locations"},
-    {text: "Quarantine treatment rooms to help more shelter &  family pets with contagious diseases"},
-    {text: "Indoor/outdoor dog runs & outdoor dog play yards"},
-    {text: "Double the cat housing capacity Outdoor catio for adoptable cats"},
-    {text: "Large community room for humane education and  service groups"}
+    "First in-house shelter ICU in Delaware to treat shelter animals that currently go for outside emergency care as well as for families who can’t afford specialty care for their pets",
+    "Double the clinic space for veterinary care for family  pets",
+    "New specialty surgery capabilities for shelter pets &  family pets from all of our locations",
+    "Quarantine treatment rooms to help more shelter &  family pets with contagious diseases",
+    "Indoor/outdoor dog runs & outdoor dog play yards",
+    "Double the cat housing capacity Outdoor catio for adoptable cats",
+    "Large community room for humane education and  service groups"
   ],
   img: { src: "src/assets/img/content-img-25.png", alt: "", type: 'default' }
 };

@@ -1,15 +1,23 @@
 <template>
   <div
-    class="flex flex-col items-center gap-10 lg:gap-20 text-center lg:text-left"
-    :class="reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'"
+    class="grid grid-cols-1 gap-10 xl:gap-20 text-center lg:text-left"
+    :class="[
+      layoutAlt ? 'lg:grid-cols-2/5' : 'lg:grid-cols-2',
+      layoutAlt && reverse ? 'lg:grid-cols-5/2' : 'lg:grid-cols-2',
+      stretchColumns ? '' : 'items-center'
+    ]"
   >
     <div
-      class="relative mx-auto w-full max-w-sm md:max-w-md lg:w-1/2 lg:max-w-[520px]"
+      class="relative mx-auto w-full max-w-sm md:max-w-md lg:max-w-full"
+      :class="reverse ? 'lg:order-2' : 'lg:order-1'"
     >
       <img
         v-if="img"
         class="w-full"
-        :class="img.type === 'default' ? '' : 'rounded-sm md:rounded-md shadow'"
+        :class="[
+          img.type === 'default' ? '' : 'rounded-sm md:rounded-md shadow',
+          img.type === 'cover' ? 'lg:absolute lg:h-full lg:object-cover' : ''
+        ]"
         v-bind="img"
       />
       <div
@@ -33,17 +41,20 @@
       </div>
       <Carousel class="w-full" v-if="carousel" :slides="carousel.slides" />
     </div>
+
     <div
-      class="py-2 text-xs lg:flex lg:w-1/2 lg:flex-col lg:items-start lg:justify-center"
+      class="lg:py-2 flex flex-col items-center lg:items-start justify-center"
+      :class="reverse ? 'lg:order-1' : 'lg:order-2'"
     >
-      <h2 v-if="title" class="mb-3 text-2xl font-bold md:text-3xl xl:text-4xl">
-        {{ title }}
-      </h2>
-      <h3 v-if="subtitle" class="mb-3 text-2xl font-bold">{{ subtitle }}</h3>
-      <div v-if="text" class="space-y-5">
+      <div class="space-y-2">
+        <h2 v-if="title" class="text-2xl md:text-3xl xl:text-4xl font-bold">{{ title }}</h2>
+        <h3 v-if="subtitle" class="text-2xl font-bold">{{ subtitle }}</h3>
+      </div>
+      <div v-if="text" class="mt-2 space-y-5">
         <p v-for="p in text" :key="p">{{ p }}</p>
       </div>
-      <div v-if="textGrid" class="mt-10 sm:mt-8 grid gap-10 sm:grid-cols-2 sm:gap-8 text-xs">
+
+      <div v-if="textGrid" class="mt-10 grid gap-10 sm:grid-cols-2 sm:gap-8 text-xs text-center sm:text-left">
         <div v-for="item in textGrid" :key="item.title">
           <h4 class="mb-2 text-xl font-bold">{{ item.title }}</h4>
           <p>{{ item.text }}</p>
@@ -55,29 +66,35 @@
           />
         </div>
       </div>
+
       <ul v-if="list" class="list-disc space-y-2 mt-5 pl-5 marker:text-xs">
         <li
-          class="pl-2"
           v-for="item in list"
           :key="item"
+          class="pl-2"
         >
           {{item}}
         </li>
       </ul>
+
       <List
         v-if="customList"
         v-bind="customList"
+        class="mt-6 text-left"
       />
+
       <div v-if="share" class="mt-6 flex">
         <span class="mr-6 text-lg font-bold md:text-xl">Share:</span>
         <Socials :socials="socialList" variant="red" class="space-x-4" />
       </div>
+
       <div
         v-if="buttons"
-        class="mt-10 flex flex-wrap justify-center space-x-10 lg:justify-start"
+        class="mt-7 -m-5 flex flex-wrap flex-row items-center sm:items-start justify-center lg:justify-start"
       >
-        <Button v-for="button in buttons" :key="button.text" v-bind="button" />
+        <Button class="m-5" v-for="button in buttons" :key="button.text" v-bind="button" />
       </div>
+
       <ButtonLink
         v-if="video"
         class="mt-10"
@@ -147,21 +164,20 @@ const props = defineProps({
   reverse: {
     type: Boolean,
     default: false
-  }
+  },
+  layoutAlt: {
+    type: Boolean,
+    default: false
+  },
+  stretchColumns: {
+    type: Boolean,
+    default: false
+  },
 });
 
 const socialList = [
-  {
-    url: "#",
-    icon: "facebook"
-  },
-  {
-    url: "#",
-    icon: "twitter"
-  },
-  {
-    url: "#",
-    icon: "share"
-  }
+  { url: "#", icon: "facebook" },
+  { url: "#", icon: "twitter" },
+  { url: "#", icon: "share" }
 ];
 </script>

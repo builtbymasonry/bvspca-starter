@@ -25,6 +25,8 @@ module.exports = {
       },
       gridTemplateColumns: {
         'footerNav': '12rem 7rem 6rem',
+        '5/2': '60fr 40%',
+        '2/5': '40% 60fr'
       },
       zIndex: {
         1: '1',
@@ -35,7 +37,7 @@ module.exports = {
       },
       fontSize: {
         'none': ['0', { lineHeight: '0' }], /* 0px/0px */
-        'xxs': ['0.63rem', { lineHeight: '2' }], /* 10px/24px */
+        'xxs': ['0.63rem', { lineHeight: '1.4' }], /* 10px/14px */
         'xs': ['0.75rem', { lineHeight: '2' }], /* 12px/24px */
         'sm': ['0.875rem', { lineHeight: '1.85' }], /* 14px/26px */
         'base': ['1rem', { lineHeight: '1.875' }], /* 16px/30px */
@@ -74,7 +76,8 @@ module.exports = {
           light: '#acadae',
           DEFAULT: '#EFEFEF',
           dark: '#F1F1F1',
-          darker: '#B4B4B5'
+          darker: '#B4B4B5',
+          darkest: '#CFCFCF'
         },
         black: {
           light: '#262626',
@@ -83,7 +86,7 @@ module.exports = {
         }
       },
       borderRadius: {
-        DEFAULT: '1rem',
+        DEFAULT: '1.13rem', /* 18px */
         'sm': '1.75rem', /* 28px */
         'md': '2rem', /* 32px */
         'lg': '2.2rem', /* 35px */
