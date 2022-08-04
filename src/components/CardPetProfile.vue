@@ -16,7 +16,7 @@
         <dd>{{ item.value }}</dd>
       </div>
     </dl>
-    <Button class="mt-8" text="Learn more" :url="url" />
+    <Button v-if="url" class="mt-8" text="Learn more" :url="url" />
   </div>
 </template>
 

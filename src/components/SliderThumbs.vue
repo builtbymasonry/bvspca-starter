@@ -1,10 +1,10 @@
 <template>
-  <div class="mb-[20px]">
+  <div class="h-[360px] sm:h-[480px] md:h-[83%] md:mb-[20px]">
     <Swiper
       :thumbs="{ swiper: thumbsSwiper }"
       :pagination="{ clickable: true }"
       :modules="modules"
-      class="mainSlider"
+      class="mainSlider h-full"
     >
       <SwiperSlide v-for="(slide, i) in slides" :key="i">
         <video
@@ -17,7 +17,7 @@
         >
           <source :src="slide.video.src" type="video/mp4" />
         </video>
-        <img v-else v-bind="slide.img" class="w-full" />
+        <img v-else v-bind="slide.img" class="absolute inset-0 h-full w-full object-cover" />
       </SwiperSlide>
     </Swiper>
   </div>
@@ -28,32 +28,23 @@
     :freeMode="true"
     :watchSlidesProgress="true"
     :modules="modules"
-    class="hidden md:block"
+    class="hidden md:block !m-0 h-[17%]"
   >
     <SwiperSlide v-for="(slide, i) in slides" :key="i">
-      <div class="relative block w-full pt-[66%]">
+      <div class="relative block w-full h-full group">
         <img
           v-bind="slide.img"
           class="absolute inset-0 h-full w-full object-cover"
         />
-        <svg
+        <div
           v-show="slide.video"
-          class="absolute top-1/2 left-1/2 -ml-5 -mt-5 h-10 w-10"
-          viewBox="0 0 86 86"
+          class="absolute top-1/2 left-1/2 -mx-5 -my-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/70 transition-colors duration-300 group-hover:bg-white/90"
         >
-          <circle
-            fill="#FFFFFF"
-            opacity="0.691824777"
-            cx="43"
-            cy="43"
-            r="43"
-          ></circle>
-          <path
-            d="M50.0024162,35.0030752 L61.9008492,50.1465353 C62.9244895,51.4493502 62.6981737,53.3353148 61.3953588,54.358955 C60.8668022,54.7742496 60.2140859,55 59.5418942,55 L34.1723915,55 C32.5155373,55 31.1723915,53.6568542 31.1723915,52 C31.1723915,51.3278083 31.398142,50.675092 31.8134365,50.1465353 L43.7118695,35.0030752 C45.0767232,33.2659887 47.5913426,32.9642343 49.3284291,34.329088 C49.5791516,34.5260843 49.80542,34.7523527 50.0024162,35.0030752 Z"
-            fill="#D50032"
-            transform="translate(46.857143, 43.000000) rotate(-270.000000) translate(-46.857143, -43.000000) "
-          ></path>
-        </svg>
+          <BaseIcon
+            name="angleRight"
+            class="text-red ml-[5%] h-[30%] w-[30%]"
+          />
+        </div>
       </div>
     </SwiperSlide>
   </Swiper>
@@ -62,6 +53,7 @@
 import { ref } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { FreeMode, Thumbs, Pagination } from "swiper";
+import BaseIcon from "@/components/BaseIcon.vue";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -83,6 +75,9 @@ const props = defineProps({
 });
 </script>
 <style>
+.mainSlider {
+  overflow: visible;
+}
 .mainSlider .swiper-slide {
   height: auto;
   display: flex;
@@ -91,6 +86,10 @@ const props = defineProps({
 }
 
 .mainSlider .swiper-pagination {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 34px;
@@ -111,6 +110,9 @@ const props = defineProps({
 }
 
 @media (min-width: 768px) {
+  .mainSlider {
+    overflow: hidden;
+  }
   .mainSlider .swiper-pagination {
     display: none;
   }

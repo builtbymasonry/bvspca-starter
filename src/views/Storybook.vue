@@ -17,15 +17,13 @@
         <MapLocations :locations="locations" />
       </div>
     </section>
-    <section class="py-8">
-      <div class="mx-auto max-w-screen-2xl">
-        <h2 class="mb-3 text-center text-xl font-bold">SliderThumbs</h2>
-        <div class="lg:flex">
-          <div class="w-full lg:w-1/2"></div>
-          <div class="mx-auto w-full max-w-xl lg:w-1/2 lg:max-w-none">
-            <SliderThumbs :slides="profileSlides" />
-          </div>
-        </div>
+    <section class="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-2 text-center md:text-left">
+      <div class="ml-auto mt-7 md:mt-0 w-full md:max-w-xl px-4 xl:px-0 py-14 order-2 md:order-1">
+        <h2 class="mb-10 text-2xl md:text-3xl xl:text-5xl font-bold">Chewie fka Monkey</h2>
+        <p>Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well with kids. Chewie has got basic commands like sit, stay, down, out, and enough down pat. He's done well in dog playgroups at the shelter and would enjoy dogs he meets, but he does best as the only dog in the family. Come meet this big hunk of love and make him your newest family member. Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well with kids. Chewie has got basic commands like sit, stay, down, out, and enough down pat. He's done well in dog playgroups at the shelter and would enjoy dogs he meets, but he does best as the only dog in the family. Come meet this big hunk of love and make him your newest family member.</p>
+      </div>
+      <div class="md:flex flex-col justify-between order-1 md:order-2">
+        <SliderThumbs :slides="profileSlides" />
       </div>
     </section>
     <section class="bg-gray-dark py-8">

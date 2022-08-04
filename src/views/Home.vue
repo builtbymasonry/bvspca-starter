@@ -28,32 +28,10 @@
       </div>
     </section>
 
-    <section class="bg-skew bg-purple pt-12 pb-5 text-white lg:pt-20">
-      <div class="mx-auto max-w-7xl px-4">
-        <h2
-          class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
-        >
-          Featured pets
-        </h2>
-
-        <div
-          class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3"
-        >
-          <PostCard
-            v-for="post in featuredPets"
-            :key="post.title"
-            v-bind="post"
-          />
-        </div>
-
-        <div
-          class="mt-16 flex flex-col flex-wrap items-center justify-center space-y-8 sm:flex-row sm:space-y-0 sm:space-x-5 lg:space-x-10"
-        >
-          <Button variant="secondary" text="All adoptable dogs" url="#!" />
-          <Button variant="secondary" text="All adoptable cats" url="#!" />
-        </div>
-      </div>
-    </section>
+    <PostCardsSection
+      class="bg-skew bg-purple pt-12 lg:pt-20 pb-5 lg:pb-5 text-white"
+      v-bind="postCardsPetsData"
+    />
 
     <section class="relative pt-48 pb-28 sm:pt-60 md:pb-0">
       <div class="absolute top-0 left-0 h-full w-full">
@@ -221,32 +199,39 @@ const postInlineData = {
   reverse: true
 };
 
-const featuredPets = [
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
-    title: "Chewie fka Monkey",
-    text: "Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well …",
-    share: true,
-    buttonLink: { text: "Learn more", url: "#!" }
-  },
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-02.jpg" },
-    title: "Slim aka Spunk",
-    text: "Slim (aka Spunk) is a big fellow with an equally big heart! This wonderful guy is bonded with Magic, on whom he relies for comfort and love. As a bonded …",
-    share: true,
-    buttonLink: { text: "Learn more", url: "#!" }
-  },
-  {
-    url: "#!",
-    img: { src: "src/assets/img/img-pet-03.jpg" },
-    title: "Boo Boo",
-    text: "Boo Boo loves tennis balls! He likes to play with them, walk with them, and swim in our doggie pools with them. If you have a stash of tennis balls, Boo Boo …",
-    share: true,
-    buttonLink: { text: "Learn more", url: "#!" }
-  }
-];
+const postCardsPetsData = {
+  title: "Featured dogs",
+  blogPosts: [
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
+      title: "Chewie fka Monkey",
+      text: "Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well …",
+      share: true,
+      buttonLink: { text: "Learn more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-02.jpg" },
+      title: "Slim aka Spunk",
+      text: "Slim (aka Spunk) is a big fellow with an equally big heart! This wonderful guy is bonded with Magic, on whom he relies for comfort and love. As a bonded …",
+      share: true,
+      buttonLink: { text: "Learn more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-03.jpg" },
+      title: "Boo Boo",
+      text: "Boo Boo loves tennis balls! He likes to play with them, walk with them, and swim in our doggie pools with them. If you have a stash of tennis balls, Boo Boo …",
+      share: true,
+      buttonLink: { text: "Learn more", url: "#!" }
+    }
+  ],
+  buttons: [
+    { variant: "secondary", text: "All adoptable dogs", url: "#!" },
+    { variant: "secondary", text: "All adoptable cats", url: "#!" }
+  ]
+};
 
 const cards = [
   {
