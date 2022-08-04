@@ -9,15 +9,12 @@
           :center="locationsCenter"
           disableDefaultUi
         >
-          <CustomMarker
+          <Marker
             v-for="(location, i) in locations"
-            :options="{ position: location.coordinates }"
+            :options="{ position: location.coordinates, icon: pin }"
             :key="i"
           >
-            <div style="width: 30px; height: 40px">
-              <img :src="pin" />
-            </div>
-          </CustomMarker>
+          </Marker>
         </GoogleMap>
       </div>
       <div
@@ -62,7 +59,7 @@
   </div>
 </template>
 <script setup>
-import { GoogleMap, CustomMarker } from "vue3-google-map";
+import { GoogleMap, Marker } from "vue3-google-map";
 
 import pin from "@/assets/img/pin-cat.svg";
 

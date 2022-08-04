@@ -1,6 +1,13 @@
 <template>
   <div>
-    <section class="py-8">
+    <section>
+      <Locations :locations="locationsData" />
+    </section>
+    <section>
+      <h2 class="mb-3 text-center text-xl font-bold">LocationProfile</h2>
+      <LocationProfile :location="locationProfile" />
+    </section>
+    <section class="bg-gray-dark py-8">
       <h2 class="mb-3 text-center text-xl font-bold">MarqueeSponsors</h2>
       <MarqueeSponsors :slides="sponsorSlides" class="hidden md:block" />
     </section>
@@ -111,6 +118,111 @@ import SliderThumbs from "@/components/SliderThumbs.vue";
 import MapLocations from "@/components/MapLocations.vue";
 import MarqueeSponsors from "@/components/MarqueeSponsors.vue";
 import PostModule from "@/components/PostModule.vue";
+import LocationProfile from "@/components/LocationProfile.vue";
+import Locations from "@/components/Locations.vue";
+
+const locationsData = [
+  {
+    name: "Dover",
+    address: ["1757 Horsepond Rd.", "Dover, DE 19901"],
+    distance: 2.9,
+    phone: [
+      { title: "Phone", number: "(484) 302-0018" },
+      { title: "AHC Phone", number: "(302) 516-1004" }
+    ],
+    hours: [
+      {
+        title: "Shelter hours",
+        description: `Sun - Thurs 11am - 9pm \nFri & Sat 11am - 10pm`
+      },
+      {
+        title: "Animal Health Center hours",
+        description: "Monday: 9:00 am – 5:00 pm",
+        link: { url: "#!", text: "See full hours" }
+      }
+    ],
+    coordinates: {
+      lat: 39.1414900571048,
+      lng: -75.47439972883507
+    }
+  },
+  {
+    name: "New Castle",
+    address: ["1757 Horsepond Rd.", "Dover, DE 19901"],
+    distance: 2.9,
+    phone: [
+      { title: "Phone", number: "(111) 111-1111" },
+      { title: "AHC Phone", number: "(302) 516-1004" }
+    ],
+    hours: [
+      {
+        title: "Shelter hours",
+        description: `Sun - Thurs 11am - 9pm \nFri & Sat 11am - 10pm`
+      },
+      {
+        title: "Animal Health Center hours",
+        description: "Monday: 9:00 am – 5:00 pm",
+        link: { url: "#!", text: "See full hours" }
+      }
+    ],
+    coordinates: {
+      lat: 39.65997584020019,
+      lng: -75.57023031534025
+    }
+  },
+  {
+    name: "Eastern Shore Pet Resort",
+    address: ["1757 Horsepond Rd.", "Dover, DE 19901"],
+    distance: 2.9,
+    phone: [
+      { title: "Phone", number: "(222) 222-2222" },
+      { title: "AHC Phone", number: "(302) 516-1004" }
+    ],
+    hours: [
+      {
+        title: "Shelter hours",
+        description: `Sun - Thurs 11am - 9pm \nFri & Sat 11am - 10pm`
+      },
+      {
+        title: "Animal Health Center hours",
+        description: "Monday: 9:00 am – 5:00 pm",
+        link: { url: "#!", text: "See full hours" }
+      }
+    ],
+    coordinates: {
+      lat: 38.72256761723463,
+      lng: -75.34210678465972
+    }
+  }
+];
+
+const locationProfile = {
+  img: { src: "src/assets/img/location-photo-01.jpg", alt: "Dover" },
+  name: "Dover",
+  address: ["1757 Horsepond Rd.", "Dover, DE 19901"],
+  phone: [
+    { title: "Phone", number: "(302) 601-7000" },
+    { title: "AHC Phone", number: "(302) 516-1004" }
+  ],
+  hours: [
+    {
+      title: "Shelter hours",
+      description: `Sun - Thurs 11am - 9pm \nFri & Sat 11am - 10pm`
+    },
+    {
+      title: "Spay/Neuter Surgery hours",
+      description: "Tuesdays and Fridays, by appointment"
+    },
+    {
+      title: "Animal Health Center hours",
+      description: `Monday: 9:00 am – 5:00 pm \n(sick visit walk-ins end at 1:00 \npm; waiting times may vary)`
+    },
+    {
+      description: `Thursday& Friday: 10:00 am – 5:00 pm \n(sick visit walk-ins end at 1:00 pm; \nwaiting times may vary)`
+    }
+  ],
+  coordinates: { lat: 39.14137979713557, lng: -75.47439046561871 }
+};
 
 const sponsorSlides = [
   {

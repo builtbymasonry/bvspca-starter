@@ -1,29 +1,40 @@
 <template>
-  <div class="flex items-center justify-center">
-    <a href="#" class="w-12 h-10 flex items-center justify-center bg-white rounded-[10px] shadow text-orange hover:text-orange-dark transition-colors">
+  <div class="flex items-center">
+    <a
+      href="#"
+      class="text-orange hover:text-orange-dark flex h-10 w-12 items-center justify-center rounded-[10px] bg-white shadow transition-colors"
+    >
       <BaseIcon name="arrowLeft" />
     </a>
 
-    <ul class="flex items-center justify-center mx-6 sm:mx-12 text-sm sm:text-lg font-bold">
-      <li
-        v-for="item in list"
-        :key="item.number"
-      >
+    <ul
+      class="mx-6 flex items-center justify-center text-sm font-bold sm:mx-12 sm:text-lg"
+    >
+      <li v-for="item in list" :key="item.number">
         <a
           v-if="item.number"
           :href="item.url"
-          class="w-6 sm:w-7 h-6 sm:h-7 flex items-center justify-center rounded-full transition-colors hover:bg-purple-light hover:text-white"
+          class="hover:bg-purple-light flex h-6 w-6 items-center justify-center rounded-full transition-colors hover:text-white sm:h-7 sm:w-7"
           :class="[
-            item.current ? 'bg-purple-light text-white pointer-events-none' : ''
+            item.current ? 'bg-purple-light pointer-events-none text-white' : ''
           ]"
         >
-         {{item.number}}
+          {{ item.number }}
         </a>
-        <span v-if="item.dots" class="block text-center w-6 sm:w-7 sm:ml-1">{{item.dots}}</span>
+        <span
+          v-if="item.dots"
+          class="block w-6 cursor-pointer text-center sm:w-7"
+          tabindex="0"
+          role="button"
+          >…</span
+        >
       </li>
     </ul>
 
-    <a href="#" class="w-12 h-10 flex items-center justify-center bg-white rounded-[10px] shadow text-orange hover:text-orange-dark transition-colors">
+    <a
+      href="#"
+      class="text-orange hover:text-orange-dark flex h-10 w-12 items-center justify-center rounded-[10px] bg-white shadow transition-colors"
+    >
       <BaseIcon name="arrowRight" />
     </a>
   </div>
@@ -33,12 +44,12 @@
 import BaseIcon from "./BaseIcon.vue";
 
 const list = [
-  { number: "1", url: "#", current: true},
-  { number: "2", url: "#"},
-  { number: "3", url: "#"},
-  { number: "4", url: "#"},
-  { number: "5", url: "#"},
-  { dots: "..."},
-  { number: "15", url: "#"},
+  { number: "1", url: "#", current: true },
+  { number: "2", url: "#" },
+  { number: "3", url: "#" },
+  { number: "4", url: "#" },
+  { number: "5", url: "#" },
+  { dots: true },
+  { number: "15", url: "#" }
 ];
 </script>
