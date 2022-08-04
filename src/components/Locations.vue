@@ -160,7 +160,9 @@
               </div>
             </li>
           </ul>
-          <Pagination class="justify-center mb-16 lg:mb-0 lg:ml-[47px] lg:justify-start" />
+          <Pagination
+            class="mb-16 justify-center lg:mb-0 lg:ml-[47px] lg:justify-start"
+          />
         </div>
       </div>
       <div
@@ -442,5 +444,8 @@ const props = defineProps({
   font-size: 18px !important;
   line-height: 1;
   padding-bottom: 8px;
+}
+.locations .gm-style .gm-style-iw-tc {
+  filter: none !important;
 }
 </style>
