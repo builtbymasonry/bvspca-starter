@@ -34,12 +34,6 @@
     </section>
     <section class="py-8">
       <div class="mx-auto max-w-6xl px-4">
-        <h2 class="mb-3 text-center text-xl font-bold">PostInline Video</h2>
-        <PostInline v-bind="postInlineVideo" />
-      </div>
-    </section>
-    <section class="py-8">
-      <div class="mx-auto max-w-6xl px-4">
         <h2 class="mb-3 text-center text-xl font-bold">TableStatistics</h2>
         <div class="mb-10">
           <TableStatistics :data="monthlyData" />
@@ -87,6 +81,13 @@
     </div>
 
     <section class="py-12 lg:py-28">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="mb-10 text-center text-xl font-bold">PostModule Video</h2>
+        <PostModule class="text-sm" v-bind="postModuleVideo" />
+      </div>
+    </section>
+
+    <section class="py-12 lg:py-28">
       <div class="mx-auto max-w-5xl px-4">
         <PostModule class="text-sm" v-bind="postModuleData3" />
       </div>
@@ -100,10 +101,16 @@
     </section>
 
     <section class="bg-purple text-white py-14 lg:py-28">
-    <div class="mx-auto max-w-4xl px-4">
-      <PostModule v-bind="postInlineData6" />
-    </div>
-  </section>
+      <div class="mx-auto max-w-4xl px-4">
+        <PostModule v-bind="postModuleData6" />
+      </div>
+    </section>
+
+    <section class="py-14 lg:py-28">
+      <div class="mx-auto max-w-4xl px-4">
+        <PostModule v-bind="postModuleData7" />
+      </div>
+    </section>
   </div>
 </template>
 <script setup>
@@ -112,7 +119,6 @@ import TableServices from "@/components/TableServices.vue";
 import TablePackages from "@/components/TablePackages.vue";
 import Accordion from "@/components/Accordion.vue";
 import TableStatistics from "@/components/TableStatistics.vue";
-import PostInline from "@/components/PostInline.vue";
 import FilterBar from "@/components/FilterBar.vue";
 import SliderThumbs from "@/components/SliderThumbs.vue";
 import MapLocations from "@/components/MapLocations.vue";
@@ -425,8 +431,8 @@ const profileSlides = [
   }
 ];
 
-const postInlineVideo = {
-  title: "Our mission & vision",
+const postModuleVideo = {
+  title: { text: "Our mission & vision", size: "md"},
   text: [
     "Founded in 1929, the Brandywine Valley SPCA exists to end animal suffering and to involve the entire community in the welfare and well-being of animals. Our mission is to put the “human” back in humane animal treatment and advocate on their behalf. Our vision is to be the recognized leader in animal welfare that empowers communities to treat life with respect and dignity."
   ],
@@ -1116,7 +1122,7 @@ const postModuleData5 = {
   buttons: [ {text: "Get involved", url: "#!" }],
 };
 
-const postInlineData6 = {
+const postModuleData6 = {
   title: { text: "Give back to your community", size: "md"},
   text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
@@ -1124,6 +1130,15 @@ const postInlineData6 = {
     { variant: "secondary", text: "Donate", url: "#!" },
     { variant: "outlineSecondary", text: "Sponsor", url: "#!" }
   ],
+  reverse: true
+};
+
+const postModuleData7 = {
+  title: { text: "Impacting lifesaving across the country", size: "md"},
+  text: [
+    "The past five years have seen substantial change in our area. We transformed the faltering then Chester County SPCA into the f irst open admission no-kill shelter in Pennsylvania. We then provided the leadership needed for the state of Delaware to become the f irst and only no-kill state in the country. Our next step is to share what we’ve learned and help other shelters achieve the same success."
+  ],
+  img: { src: "src/assets/img/content-img-23.png", alt: "", type: "default" },
   reverse: true
 };
 </script>
