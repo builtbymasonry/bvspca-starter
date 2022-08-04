@@ -1022,7 +1022,7 @@ const map = {
 
 const postModuleData1 = {
   img: { src: "src/assets/img/content-img-02.jpg", alt: "" },
-  title: "Need help?",
+  title: { text: "Need help?", size: "lg" },
   text: ["Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"],
   textGrid: [
     {
@@ -1043,7 +1043,7 @@ const postModuleData1 = {
 
 const postModuleData2 = {
   img: { src: "src/assets/img/content-img-02.jpg", alt: "", type: "cover" },
-  title: "Need help?",
+  title: { text: "Need help?", size: "lg" },
   text: ["Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"],
   textGrid: [
     {
@@ -1076,7 +1076,7 @@ const postModuleData2 = {
 };
 
 const postModuleData3 = {
-  title: "A second chance at nine lives",
+  title: {text: "A second chance at nine lives", size: "md"},
   text: [
     "Whiskers got his leg caught in a fox trap after getting loose from his home. He lost a lot of skin, suffered nerve damage, ahd a quickly spreading infection. His family brought him.",
     "Thanks to our pet retention grant from Petco Love, we were able to bridge what his owners couldn’t afford and saved Whiskers by amputating the badly damaged leg. Whiskers now lives a life of three-legged luxury. We’re grateful for Petco Love’s support, which results from all of you who donate at checkout at the Petco stores."
@@ -1093,7 +1093,7 @@ const postModuleData3 = {
 
 const postModuleData4 = {
   img: { src: "src/assets/img/content-img-19.jpg", alt: "" },
-  subtitle: "Request friends and family to send items off our wish list instead of buying gifts",
+  title: { text: "Request friends and family to send items off our wish list instead of buying gifts"},
   text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
   share: true,
   buttons: [ {text: "View our wishlist", url: "#!" }],
@@ -1102,7 +1102,7 @@ const postModuleData4 = {
 
 const postModuleData5 = {
   img: { src: "src/assets/img/content-img-20.jpg", alt: "" },
-  subtitle: "Other ways to honor your special day with charitable causes",
+  title: { text: "Other ways to honor your special day with charitable causes"},
   list: [
     "Lorem ipsum dolor sit amet,",
     "consectetur adipiscing elit."
@@ -1117,7 +1117,7 @@ const postModuleData5 = {
 };
 
 const postInlineData6 = {
-  title: "Give back to your community",
+  title: { text: "Give back to your community", size: "md"},
   text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   buttons: [
