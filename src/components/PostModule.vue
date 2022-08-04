@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-1 gap-10 xl:gap-20 text-center lg:text-left"
+    class="grid grid-cols-1 gap-10 sm:gap-14 xl:gap-20 text-center lg:text-left"
     :class="[
       layoutAlt ? 'lg:grid-cols-2/5' : 'lg:grid-cols-2',
       layoutAlt && reverse ? 'lg:grid-cols-5/2' : 'lg:grid-cols-2',
@@ -20,6 +20,15 @@
         ]"
         v-bind="img"
       />
+      <div v-if="imgGrid" class="grid grid-cols-2 gap-6 sm:gap-8">
+        <div
+          class="flex items-center justify-center overflow-hidden rounded-sm bg-white shadow sm:rounded-lg"
+          v-for="item in imgGrid"
+          :key="item"
+        >
+          <img v-bind="item.img" />
+        </div>
+      </div>
       <div
         v-if="video"
         v-on="video ? { click: openVideo, keyup: openVideo } : {}"
@@ -43,12 +52,20 @@
     </div>
 
     <div
-      class="lg:py-2 flex flex-col items-center lg:items-start justify-center"
+      class="lg:py-2 flex flex-col items-center lg:items-start justify-center px-0 sm:px-10 lg:px-0"
       :class="reverse ? 'lg:order-1' : 'lg:order-2'"
     >
       <div class="space-y-2">
-        <h2 v-if="title" class="text-2xl md:text-3xl xl:text-4xl font-bold">{{ title }}</h2>
-        <h3 v-if="subtitle" class="text-2xl font-bold">{{ subtitle }}</h3>
+        <h3
+          v-if="title"
+          class="text-2xl font-bold"
+          :class="[
+            title.size === 'lg' ? 'sm:text-4xl lg:text-5xl' : '',
+            title.size === 'md' ? 'sm:text-4xl' : '',
+          ]"
+        >
+          {{ title.text }}
+        </h3>
       </div>
       <div v-if="text" class="mt-2 space-y-5">
         <p v-for="p in text" :key="p">{{ p }}</p>
@@ -142,7 +159,7 @@ const openVideo = (e) => {
 };
 
 const props = defineProps({
-  title: String,
+  title: Object,
   subtitle: String,
   text: Array,
   textGrid: Array,
@@ -150,6 +167,7 @@ const props = defineProps({
   customList: Object,
   buttons: Array,
   img: Object,
+  imgGrid: Array,
   share: {
     type: Boolean,
     default: false
