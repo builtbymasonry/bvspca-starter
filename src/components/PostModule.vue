@@ -52,7 +52,7 @@
     </div>
 
     <div
-      class="lg:py-2 flex flex-col items-center lg:items-start justify-center px-0 sm:px-10 lg:px-0"
+      class="lg:py-2 flex flex-col items-center lg:items-start px-0 sm:px-10 lg:px-0"
       :class="reverse ? 'lg:order-1' : 'lg:order-2'"
     >
       <div class="space-y-2">
@@ -84,7 +84,7 @@
         </div>
       </div>
 
-      <ul v-if="list" class="list-disc space-y-2 mx-auto mt-5 pl-5 max-w-lg lg:max-w-none marker:text-xs text-left">
+      <ul v-if="list" class="list-disc space-y-2 mx-auto lg:mx-0 mt-5 pl-5 max-w-lg lg:max-w-none marker:text-xs text-left">
         <li
           v-for="item in list"
           :key="item"
@@ -97,7 +97,7 @@
       <List
         v-if="customList"
         v-bind="customList"
-        class="mt-6 mx-auto max-w-lg lg:max-w-none text-left"
+        class="mt-6 mx-auto lg:mx-0 max-w-lg lg:max-w-none text-left"
       />
 
       <div v-if="share" class="mt-6 flex">
