@@ -232,9 +232,9 @@ const tablePreventionData = {
 };
 
 const textBoxData = {
-  title: "Looking for spay & neuter services?",
+  title: { text: "Looking for spay & neuter services?"},
   text: "Our accomplished veterinarians and medical staff operate in a professional, caring manner and will handle your pet kindly.",
-  buttonLink: { text: "Spay & neuter services", url: "#!" }
+  button: { type: "buttonLink", text: "Spay & neuter services", url: "#!" }
 };
 
 const textBannerData = {
