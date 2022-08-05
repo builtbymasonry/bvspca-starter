@@ -100,7 +100,7 @@ import Stats from "@/components/Stats.vue"
 import PostModule from "@/components/PostModule.vue"
 import PostCardBox from "@/components/PostCardBox.vue"
 import TextBox from "@/components/TextBox.vue"
-import PostCardsSection from "@/components/PostCardsSection.vue"
+import PostCardsSection from "@/components/sections/PostCardsSection.vue"
 
 const heroInnerData = {
   title: "Donate",

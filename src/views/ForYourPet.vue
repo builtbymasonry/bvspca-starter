@@ -61,7 +61,7 @@ import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
 import Card from "@/components/Card.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 import PostModule from "@/components/PostModule.vue";
 import InfoCard from "@/components/InfoCard.vue";
 

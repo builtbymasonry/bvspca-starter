@@ -119,7 +119,7 @@ import PostModule from "@/components/PostModule.vue"
 import CardLevel from "@/components/CardLevel.vue"
 import InfoCard from "@/components/InfoCard.vue"
 import MarqueeSponsors from "@/components/MarqueeSponsors.vue"
-import PostCardsSection from "@/components/PostCardsSection.vue"
+import PostCardsSection from "@/components/sections/PostCardsSection.vue"
 
 const heroInnerData = {
   title: "Sponsor",
