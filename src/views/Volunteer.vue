@@ -258,7 +258,7 @@ const postCardBoxes = [
       "Looking for a fun activity for kids to help out at the shelter? Schedule a Kong Stuffing Party and help us feed our dogs in an enriching way! The kongs (a hard hollow rubber toy) are stuffed with a mixture of kibble and peanut butter, and then frozen for a delicious treat for our four-legged friends. Email Hailey Marcus at hmarcus@bvspca.org, to schedule your kong stuffing party!",
       "Please note: this opportunity is for kids 7 years +, group size maximum 15 kids."
     ],
-    button: { text: "Schedule today", url: "#!" }
+    buttons: [{ type: "buttonLink", text: "Schedule today", url: "#!" }]
   },
   {
     url: "#!",
@@ -267,7 +267,7 @@ const postCardBoxes = [
     text: [
       "Want a group activity that helps the shelter dogs? Consider baking homemade dog treats for our canine residents. The BVSPCA has several approved recipes that are easy to make. Drop off the homemade treats during shelter hours."
     ],
-    button: { text: "Get Recipe", url: "#!" }
+    buttons: [{ type: "buttonLink", text: "Get Recipe", url: "#!" }]
   },
   {
     url: "#!",
@@ -276,7 +276,7 @@ const postCardBoxes = [
     text: [
       "Would you like to help our feline friends stay entertained? Create fun and easy cat toys to provide entertainment and enrichment for the cats and kittens while they are in our care. Click below for DIY cat toy instructions."
     ],
-    button: { text: "Learn how", url: "#!" }
+    buttons: [{ type: "buttonLink", text: "Learn how", url: "#!" }]
   }
 ];
 

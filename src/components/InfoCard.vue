@@ -13,11 +13,11 @@
       <div
         class="px-9 py-9 pb-14 text-center text-xs sm:px-16 sm:py-12 lg:w-[54%] lg:py-20 lg:text-left"
       >
-        <h3 class="mb-2 text-xl font-bold sm:text-4xl">{{ title }}</h3>
+        <h3 class="mb-2 lg:-mr-4 text-xl font-bold sm:text-4xl">{{ title }}</h3>
         <p>{{ text }}</p>
         <div
           v-if="buttons"
-          class="mt-10 flex flex-wrap justify-center space-x-5 lg:justify-start lg:space-x-10"
+          class="mt-10 space-y-10"
         >
           <Button
             v-for="button in buttons"

@@ -220,9 +220,9 @@ const tablePreventionData = {
 };
 
 const textBoxData = {
-  title: "Looking other wellness services?",
+  title: { text: "Looking other wellness services?"},
   text: "Our accomplished veterinarians and medical staff operate in a professional, caring manner and will handle your pet kindly.",
-  buttonLink: { text: "All wellness services", url: "#!" }
+  button: { type: "buttonLink", text: "All wellness services", url: "#!" }
 };
 
 const textBannerData = {
