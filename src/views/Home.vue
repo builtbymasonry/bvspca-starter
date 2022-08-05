@@ -151,11 +151,9 @@ import Card from "@/components/Card.vue";
 import PostCard from "@/components/PostCard.vue";
 import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
-import PostSection from "@/components/PostSection.vue";
 import PostModule from "@/components/PostModule.vue";
 
 import InfoCard from "@/components/InfoCard.vue";
-import PostInline from "@/components/PostInline.vue";
 
 import MarqueeSlider from "@/components/MarqueeSlider.vue";
 

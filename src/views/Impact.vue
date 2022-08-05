@@ -1,11 +1,15 @@
 <template>
   <HeroInner v-bind="heroInnerData" />
 
-  <PostSection v-bind="postSectionData" class="bg-gray-dark" />
+  <section class="py-14 lg:py-28 bg-gray-dark">
+    <div class="mx-auto max-w-7xl px-4">
+      <PostModule v-bind="postModuleData" />
+    </div>
+  </section>
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
-      <PostInline v-bind="postInlineData" />
+      <PostModule class="text-xs" v-bind="postModuleData2" />
     </div>
   </section>
 
@@ -35,25 +39,25 @@
     class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32"
   >
     <div class="mx-auto max-w-4xl px-4">
-      <PostInline v-bind="postInlineData2" />
+      <PostModule class="text-sm font-bold" v-bind="postModuleData3" />
     </div>
   </section>
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
-      <PostInline v-bind="postInlineData3" />
+      <PostModule class="text-xs" v-bind="postModuleData4" />
     </div>
   </section>
 
   <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-4xl px-4">
-      <PostInline v-bind="postInlineData4" />
+      <PostModule class="text-sm" v-bind="postModuleData5" />
     </div>
   </section>
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-4xl px-4">
-      <PostInline v-bind="postInlineData5" />
+      <PostModule class="text-xs" v-bind="postModuleData6" />
     </div>
   </section>
 
@@ -62,8 +66,7 @@
 
 <script setup>
 import HeroInner from "@/components/HeroInner.vue";
-import PostInline from "@/components/PostInline.vue";
-import PostSection from "@/components/PostSection.vue";
+import PostModule from "@/components/PostModule.vue";
 import InfoCard from "@/components/InfoCard.vue";
 import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
@@ -73,8 +76,8 @@ const heroInnerData = {
   img: { src: "src/assets/img/hero-image-16.jpg", alt: "" }
 };
 
-const postInlineData = {
-  title: "A second chance at nine lives",
+const postModuleData2 = {
+  title: { text: "A second chance at nine lives", size: "md"},
   text: [
     "Whiskers got his leg caught in a fox trap after getting loose from his home. He lost a lot of skin, suffered nerve damage, and ahd a quickly spreading infection. His family brought him to our New Castle Animal Health Center. They couldn’t afford the entirety od his care and were condisdering euthanasia since the infection would soon be life-threatening. Thanks to our pet retention grant from Petco Love, we were able to bridge what his owners couldn’t afford and saved Whiskers by amputating the badly damaged leg. Whiskers now lives a life of three-legged luxury. We’re grateful for Petco Love’s support, which results from all of you who donate at checkout at the Petco stores."
   ],
@@ -89,8 +92,8 @@ const postInlineData = {
   reverse: true
 };
 
-const postInlineData2 = {
-  title: "Impacting lifesaving across the country",
+const postModuleData3 = {
+  title: { text: "Impacting lifesaving across the country", size: "md"},
   text: [
     "The past five years have seen substantial change in our area. We transformed the faltering then Chester County SPCA into the f irst open admission no-kill shelter in Pennsylvania. We then provided the leadership needed for the state of Delaware to become the f irst and only no-kill state in the country. Our next step is to share what we’ve learned and help other shelters achieve the same success."
   ],
@@ -98,8 +101,8 @@ const postInlineData2 = {
   reverse: true
 };
 
-const postInlineData3 = {
-  title: "Looking toward tomorrow",
+const postModuleData4 = {
+  title: { text: "Looking toward tomorrow", size: "md"},
   text: [
     "Late in 2020, we made a bold move to better serve the animals in our community and to improve our f inancial position. We purchased a former emergency veterinary center to replace our New Castle Campus."
   ],
@@ -115,8 +118,8 @@ const postInlineData3 = {
   img: { src: "src/assets/img/content-img-25.png", alt: "", type: "default" }
 };
 
-const postInlineData4 = {
-  title: "Give back to your community",
+const postModuleData5 = {
+  title: { text: "Give back to your community", size: "lg"},
   text: [
     "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
   ],
@@ -128,8 +131,8 @@ const postInlineData4 = {
   reverse: true
 };
 
-const postInlineData5 = {
-  title: "Join the team",
+const postModuleData6 = {
+  title: { text: "Join the team", size: "md"},
   text: [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."
   ],
@@ -137,7 +140,7 @@ const postInlineData5 = {
   buttons: [{ text: "View open positions", url: "#!" }]
 };
 
-const postSectionData = {
+const postModuleData = {
   carousel: {
     slides: [
       { src: "src/assets/img/slide01.jpg", alt: "slide alt1" },
@@ -146,7 +149,7 @@ const postSectionData = {
       { src: "src/assets/img/slide05.jpg", alt: "slide alt4" }
     ]
   },
-  title: "Finding the heart in humanity",
+  title: { text: "Finding the heart in humanity", size: "md"},
   text: [
     "Each year, we care for nearly 19,000 animals and we are finding homes or other placement for at least 95% of the homeless pets that enter our shelter. Through our dedication to maintaining an open door policy for all animals and our commitment to lifesaving and second chances, the Brandywine Valley SPCA is working tirelessly to cultivate a no-kill community."
   ],

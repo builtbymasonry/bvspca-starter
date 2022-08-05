@@ -22,7 +22,11 @@
     </div>
   </section>
 
-  <PostSection v-bind="postSectionData" />
+  <section class="py-14 lg:py-28">
+    <div class="mx-auto max-w-7xl px-4">
+      <PostModule v-bind="postModuleData" />
+    </div>
+  </section>
 
   <section class="bg-purple py-14 text-white lg:py-28">
     <div class="mx-auto max-w-7xl px-4">
@@ -38,7 +42,7 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
-      <PostInline class="flex-col-reverse gap-12" v-bind="postInlineData" />
+      <PostModule class="text-xs" v-bind="postModuleData2" />
       <div class="mx-auto max-w-2xl pt-14 text-center text-xs lg:pt-24">
         <h2 class="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">
           What should I do if an animal bites me?
@@ -70,7 +74,7 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-4xl px-4">
-      <PostInline v-bind="postInlineData2" />
+      <PostModule class="text-sm" v-bind="postModuleData3" />
     </div>
   </section>
 
@@ -81,9 +85,8 @@
 import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
 import ContactCard from "@/components/ContactCard.vue";
-import PostSection from "@/components/PostSection.vue";
 import List from "@/components/List.vue";
-import PostInline from "@/components/PostInline.vue";
+import PostModule from "@/components/PostModule.vue";
 import PostCard from "@/components/PostCard.vue";
 import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
@@ -135,10 +138,9 @@ const contactCards = [
   }
 ];
 
-const postSectionData = {
+const postModuleData = {
   img: { src: "src/assets/img/content-img-14.jpg", alt: "" },
-  subtitle:
-    "No animal deserves to suffer from cruelty and the Brandywine Valley SPCA’s Animal Protective Services Department works tirelessly to prevent abuse and protect companion animals.",
+  title: { text: "No animal deserves to suffer from cruelty and the Brandywine Valley SPCA’s Animal Protective Services Department works tirelessly to prevent abuse and protect companion animals." },
   textGrid: [
     {
       title: "Benefit one",
@@ -156,7 +158,9 @@ const postSectionData = {
       title: "Benefit four",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia."
     }
-  ]
+  ],
+  layoutAlt: true,
+  stretchColumns: true
 };
 
 const listData = {
@@ -184,21 +188,17 @@ const listData2 = {
   ]
 };
 
-const postInlineData = {
+const postModuleData2 = {
   img: { src: "src/assets/img/content-img-15.jpg", alt: "" },
-  title: "Dangerous dogs",
-  text: [
-    "Dangerous dogs are governed by state law. By law, a dog may be declared dangerous dog if it has attacked, inflicted severe injury to, or killed a human being or a domestic animal without provocation. A dog may also be considered dangerous if it was involved in committing a crime. For a dog to be declared dangerous in Pennsylvania, a police officer must file a complaint with a magisterial district justice charging the owner or keeper with harboring a dangerous dog. Brandywine Valley SPCA’s Animal Protective Services Division does not have police powers and cannot file charges of harboring a dangerous dog. Police must file charges against the owner of the dog and the case must go before a judge in order for any dog to be declared dangerous. The judge will make the final disposition on the animal."
-  ],
+  title: { text: "Dangerous dogs", size: "md"},
+  text: ["Dangerous dogs are governed by state law. By law, a dog may be declared dangerous dog if it has attacked, inflicted severe injury to, or killed a human being or a domestic animal without provocation. A dog may also be considered dangerous if it was involved in committing a crime. For a dog to be declared dangerous in Pennsylvania, a police officer must file a complaint with a magisterial district justice charging the owner or keeper with harboring a dangerous dog. Brandywine Valley SPCA’s Animal Protective Services Division does not have police powers and cannot file charges of harboring a dangerous dog. Police must file charges against the owner of the dog and the case must go before a judge in order for any dog to be declared dangerous. The judge will make the final disposition on the animal."],
   reverse: true
 };
 
-const postInlineData2 = {
+const postModuleData3 = {
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
-  title: "Give back to your community",
-  text: [
-    "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
-  ],
+  title: { text: "Give back to your community", size: "md"},
+  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   buttons: [{ text: "Donate", url: "#!" }],
   reverse: true
 };

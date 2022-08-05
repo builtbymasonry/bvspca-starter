@@ -48,7 +48,7 @@
       class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32"
     >
       <div class="mx-auto max-w-4xl px-4">
-        <PostInline v-bind="postInlineData" />
+        <PostModule class="text-sm font-bold" v-bind="postModuleData" />
       </div>
     </section>
 
@@ -61,8 +61,8 @@ import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
 import Card from "@/components/Card.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/sections/PostCardsSection.vue";
-import PostInline from "@/components/PostInline.vue";
+import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostModule from "@/components/PostModule.vue";
 import InfoCard from "@/components/InfoCard.vue";
 
 const heroInnerData = {
@@ -104,25 +104,15 @@ const cards = [
   }
 ];
 
-const postInlineData = {
-  title: "Give back to your community",
-  text: [
-    "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
-  ],
+const postModuleData = {
+  title: { text: "Give back to your community", size: "md" },
+  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
-  reverse: true,
   buttons: [
-    {
-      variant: "secondary",
-      text: "Donate",
-      url: "#!"
-    },
-    {
-      variant: "outlineSecondary",
-      text: "Sponsor",
-      url: "#!"
-    }
-  ]
+    { variant: "secondary", text: "Donate", url: "#!" },
+    { variant: "outlineSecondary", text: "Sponsor", url: "#!" }
+  ],
+  reverse: true
 };
 
 const postCardsSectionData = {

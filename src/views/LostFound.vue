@@ -2,7 +2,11 @@
   <div>
     <HeroInner v-bind="heroInnerData" />
 
-    <PostSection class="bg-gray-dark" v-bind="postSectionData" />
+    <section class="py-14 lg:py-28 bg-gray-dark">
+      <div class="mx-auto max-w-7xl px-4">
+        <PostModule v-bind="postModuleData" />
+      </div>
+    </section>
 
     <section class="py-14 lg:py-28">
       <div class="mx-auto grid max-w-7xl grid-cols-1 px-4 lg:grid-cols-2">
@@ -92,7 +96,7 @@
       class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32"
     >
       <div class="mx-auto max-w-4xl px-4">
-        <PostInline v-bind="postInlineData" />
+        <PostModule class="text-xs font-bold" v-bind="postModuleData2" />
       </div>
     </section>
 
@@ -103,9 +107,8 @@
 <script setup>
 import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
-import PostSection from "@/components/PostSection.vue";
 import FormLostFound from "@/components/FormLostFound.vue";
-import PostInline from "@/components/PostInline.vue";
+import PostModule from "@/components/PostModule.vue";
 import InfoCard from "@/components/InfoCard.vue";
 import PostCard from "@/components/PostCard.vue";
 import PostCardsSection from "@/components/sections/PostCardsSection.vue";
@@ -116,12 +119,10 @@ const heroInnerData = {
   img: { src: "src/assets/img/hero-image-06.jpg", alt: "Lost & found pets" }
 };
 
-const postSectionData = {
+const postModuleData = {
   img: { src: "src/assets/img/content-img-12.jpg", alt: "" },
-  title: "Lost your pet? Found a pet?",
-  text: [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."
-  ],
+  title: { text: "Lost your pet? Found a pet?", size: "md" },
+  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."],
   textGrid: [
     {
       title: "Tip one",
@@ -144,7 +145,9 @@ const postSectionData = {
     { text: "Check Facebook page DE ", url: "#!" },
     { variant: "outline", text: "Check Facebook page PA ", url: "#!" }
   ],
-  reverse: true
+  reverse: true,
+  layoutAlt: true,
+  stretchColumns: true
 };
 
 const infoCardData = {
@@ -154,20 +157,18 @@ const infoCardData = {
   buttons: [{ text: "Learn more about our impact", url: "#!" }]
 };
 
-const postInlineData = {
-  title: "Give back to your community",
-  text: [
-    "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
-  ],
+const postModuleData2 = {
+  title: { text: "Give back to your community", size: "md"},
+  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
-  reverse: true,
   buttons: [
     {
       variant: "secondary",
       text: "Get involved",
       url: "#!"
     }
-  ]
+  ],
+  reverse: true
 };
 
 const postCardsSectionData = {

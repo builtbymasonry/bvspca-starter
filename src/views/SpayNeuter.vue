@@ -2,7 +2,11 @@
   <div>
     <HeroInner v-bind="heroInnerData" />
 
-    <PostSection class="bg-gray-dark" v-bind="postSectionData" />
+    <section class="py-14 lg:py-28 bg-gray-dark">
+      <div class="mx-auto max-w-7xl px-4">
+        <PostModule v-bind="postModuleData" />
+      </div>
+    </section>
 
     <section class="py-14 lg:py-28">
       <div class="mx-auto max-w-5xl px-4">
@@ -58,7 +62,7 @@
 
     <section class="py-14 lg:py-28">
       <div class="mx-auto max-w-5xl px-4">
-        <PostInline v-bind="postInlineData" />
+        <PostModule v-bind="postModuleData2" />
       </div>
     </section>
 
@@ -69,13 +73,12 @@
 <script setup>
 import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
-import PostSection from "@/components/PostSection.vue";
 import TableServices from "@/components/TableServices.vue";
 import TextBox from "@/components/TextBox.vue";
 import TextBanner from "@/components/TextBanner.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/sections/PostCardsSection.vue";
-import PostInline from "@/components/PostInline.vue";
+import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostModule from "@/components/PostModule.vue";
 import InfoCard from "@/components/InfoCard.vue";
 
 const heroInnerData = {
@@ -84,10 +87,9 @@ const heroInnerData = {
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."
 };
 
-const postSectionData = {
+const postModuleData = {
   img: { src: "src/assets/img/content-img-11.jpg", alt: "" },
-  subtitle:
-    "Spaying/Neutering your pet helps fight pet overpopulation, reducing the number of homeless animals and decreasing euthanasia numbers.",
+  title: { text: "Spaying/Neutering your pet helps fight pet overpopulation, reducing the number of homeless animals and decreasing euthanasia numbers."},
   textGrid: [
     {
       title: "Benefit one",
@@ -105,7 +107,17 @@ const postSectionData = {
       title: "Benefit four",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia."
     }
-  ]
+  ],
+  layoutAlt: true,
+  stretchColumns: true
+};
+
+const postModuleData2 = {
+  img: { src: "src/assets/img/content-img-08.jpg", alt: "" },
+  title: { text: "Pay it forward, your free time has so much value", size: "md"},
+  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. "],
+  buttons: [{ text: "Get involved", url: "#!" }],
+  reverse: true
 };
 
 const tableExamsData = {
@@ -240,16 +252,6 @@ const textBannerData = {
       url: "#!"
     }
   ]
-};
-
-const postInlineData = {
-  img: { src: "src/assets/img/content-img-08.jpg", alt: "" },
-  title: "Pay it forward, your free time has so much value",
-  text: [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. "
-  ],
-  buttons: [{ text: "Get involved", url: "#!" }],
-  reverse: true
 };
 
 const infoCardData = {

@@ -3,7 +3,7 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-6xl px-4">
-      <PostInline v-bind="postInlineData" />
+      <PostModule class="text-sm" v-bind="postModuleData" />
     </div>
   </section>
 
@@ -49,32 +49,9 @@
 
   <TextBanner class="bg-gray-dark" v-bind="textBannerData" />
 
-  <section class="py-20 lg:py-28">
-    <div class="mx-auto max-w-5xl items-center px-4 lg:flex">
-      <div
-        class="mx-auto mb-12 grid max-w-md flex-shrink-0 grid-cols-2 gap-6 sm:gap-8 lg:mr-20 lg:mb-0 lg:w-[43%] lg:max-w-full xl:mr-28"
-      >
-        <div
-          class="flex items-center justify-center overflow-hidden rounded-sm bg-white shadow sm:rounded-lg"
-          v-for="item in imgGrid"
-          :key="item"
-        >
-          <img v-bind="item.img" />
-        </div>
-      </div>
-      <div
-        class="mx-auto max-w-2xl text-center text-xs sm:text-sm lg:max-w-none lg:text-left"
-      >
-        <h3 class="mb-2 text-2xl font-bold sm:text-3xl md:text-5xl">
-          Support our lifesaving work and look good doing it
-        </h3>
-        <p class="mb-10 lg:mr-24">
-          Get your paws on our original and limited edition merchandise. Your
-          purchases go towards the care of the 16,000+ animals we take in each
-          year.
-        </p>
-        <Button variant="primary" text="Shop now" />
-      </div>
+  <section class="py-14 lg:py-28">
+    <div class="mx-auto max-w-5xl px-4">
+      <PostModule class="text-sm" v-bind="postModuleData2" />
     </div>
   </section>
 </template>
@@ -82,7 +59,7 @@
 <script setup>
 import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
-import PostInline from "@/components/PostInline.vue";
+import PostModule from "@/components/PostModule.vue";
 import List from "@/components/List.vue";
 import CardPosition from "@/components/CardPosition.vue";
 import TextBanner from "@/components/TextBanner.vue";
@@ -93,8 +70,8 @@ const heroInnerData = {
   img: { src: "src/assets/img/hero-image-15.jpg", alt: "" }
 };
 
-const postInlineData = {
-  title: "Our company culture",
+const postModuleData = {
+  title: { text: "Our company culture", size: "md"},
   text: [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   ],
@@ -108,6 +85,28 @@ const postInlineData = {
     ]
   },
   reverse: true
+};
+
+const postModuleData2 = {
+  title: { text: "Support our lifesaving work and look good doing it", size: "lg"},
+  text: ["Get your paws on our original and limited edition merchandise. Your purchases go towards the care of the 16,000+ animals we take in each year. "],
+  imgGrid: [
+    {
+      img: { src: "src/assets/img/merch-img-01.jpg", alt: "" }
+    },
+    {
+      img: { src: "src/assets/img/merch-img-02.jpg", alt: "" }
+    },
+    {
+      img: { src: "src/assets/img/merch-img-03.jpg", alt: "" }
+    },
+    {
+      img: { src: "src/assets/img/merch-img-04.jpg", alt: "" }
+    }
+  ],
+  buttons: [
+    { text: "Shop now", url: "#!" },
+  ]
 };
 
 const itemsListData = [
