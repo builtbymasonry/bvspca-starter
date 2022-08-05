@@ -3,7 +3,8 @@
     <div class="flex">
       <Switch
         v-model="enabled"
-        class="bg-gray relative mr-[10px] inline-flex h-[20px] shrink-0 basis-[20px] rounded-[4px] focus:outline-none focus-visible:ring-1 focus:ring-1 focus:ring-orange"
+        class="focus:ring-orange relative mr-[10px] inline-flex h-[20px] shrink-0 basis-[20px] rounded-[4px] focus:outline-none focus:ring-1 focus-visible:ring-1"
+        :class="variant && variant"
       >
         <span
           :class="enabled ? 'visible' : 'hidden'"
@@ -25,6 +26,9 @@ const enabled = ref(false);
 const props = defineProps({
   label: String,
   id: String,
-  value: String
+  variant: {
+    type: String,
+    default: "bg-gray"
+  }
 });
 </script>

@@ -1,25 +1,31 @@
 <template>
-  <div class="h-[360px] sm:h-[480px] md:h-[83%] md:mb-[20px]">
-    <Swiper
-      :thumbs="{ swiper: thumbsSwiper }"
-      :pagination="{ clickable: true }"
-      :modules="modules"
-      class="mainSlider h-full"
-    >
-      <SwiperSlide v-for="(slide, i) in slides" :key="i">
-        <video
-          v-if="slide.video"
-          width="500"
-          class="absolute inset-0 h-full w-full object-cover"
-          height="240"
-          controls
-          :poster="slide.video.poster && slide.video.poster"
-        >
-          <source :src="slide.video.src" type="video/mp4" />
-        </video>
-        <img v-else v-bind="slide.img" class="absolute inset-0 h-full w-full object-cover" />
-      </SwiperSlide>
-    </Swiper>
+  <div class="relative w-full pt-[100%] md:mb-[20px]">
+    <div class="absolute inset-0">
+      <Swiper
+        :thumbs="{ swiper: thumbsSwiper }"
+        :pagination="{ clickable: true }"
+        :modules="modules"
+        class="mainSlider h-full w-full"
+      >
+        <SwiperSlide v-for="(slide, i) in slides" :key="i">
+          <video
+            v-if="slide.video"
+            width="500"
+            class="absolute inset-0 h-full w-full object-cover"
+            height="240"
+            controls
+            :poster="slide.video.poster && slide.video.poster"
+          >
+            <source :src="slide.video.src" type="video/mp4" />
+          </video>
+          <img
+            v-else
+            v-bind="slide.img"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+        </SwiperSlide>
+      </Swiper>
+    </div>
   </div>
   <Swiper
     @swiper="setThumbsSwiper"
@@ -28,13 +34,15 @@
     :freeMode="true"
     :watchSlidesProgress="true"
     :modules="modules"
-    class="hidden md:block !m-0 h-[17%]"
+    class="!m-0 hidden md:block"
   >
     <SwiperSlide v-for="(slide, i) in slides" :key="i">
-      <div class="relative block w-full h-full group">
+      <div
+        class="group relative block h-full w-full cursor-pointer overflow-hidden"
+      >
         <img
           v-bind="slide.img"
-          class="absolute inset-0 h-full w-full object-cover"
+          class="relative inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div
           v-show="slide.video"

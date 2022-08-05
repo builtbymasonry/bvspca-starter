@@ -65,7 +65,7 @@ import HeroInner from "@/components/HeroInner.vue";
 import PostInline from "@/components/PostInline.vue";
 import PostSection from "@/components/PostSection.vue";
 import InfoCard from "@/components/InfoCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
   title: "Impact",

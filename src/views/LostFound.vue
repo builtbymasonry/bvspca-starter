@@ -108,7 +108,7 @@ import FormLostFound from "@/components/FormLostFound.vue";
 import PostInline from "@/components/PostInline.vue";
 import InfoCard from "@/components/InfoCard.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
   title: "Lost & found pets",
@@ -119,7 +119,9 @@ const heroInnerData = {
 const postSectionData = {
   img: { src: "src/assets/img/content-img-12.jpg", alt: "" },
   title: "Lost your pet? Found a pet?",
-  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."],
+  text: [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."
+  ],
   textGrid: [
     {
       title: "Tip one",
@@ -139,7 +141,7 @@ const postSectionData = {
     }
   ],
   buttons: [
-    {text: "Check Facebook page DE ", url: "#!" },
+    { text: "Check Facebook page DE ", url: "#!" },
     { variant: "outline", text: "Check Facebook page PA ", url: "#!" }
   ],
   reverse: true
@@ -149,14 +151,14 @@ const infoCardData = {
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
   img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
-  buttons: [
-    {text: "Learn more about our impact", url: "#!" }
-  ]
+  buttons: [{ text: "Learn more about our impact", url: "#!" }]
 };
 
 const postInlineData = {
   title: "Give back to your community",
-  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
+  text: [
+    "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
+  ],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
   buttons: [
@@ -193,8 +195,6 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more", url: "#!" }
     }
   ],
-  buttons: [
-    {text: "View all news, events & resources", url: "#!" }
-  ]
+  buttons: [{ text: "View all news, events & resources", url: "#!" }]
 };
 </script>
