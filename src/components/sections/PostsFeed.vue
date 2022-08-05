@@ -158,8 +158,13 @@
             Reset filters
           </button>
         </aside>
-        <div class="grid gap-8 pt-14 sm:grid-cols-2 xl:grid-cols-3">
-          <PostCard v-for="post in posts" :key="post.title" v-bind="post" />
+        <div>
+          <div class="grid gap-8 pt-14 sm:grid-cols-2 xl:grid-cols-3">
+            <PostCard v-for="post in posts" :key="post.title" v-bind="post" />
+          </div>
+          <div class="mt-12 text-center md:mt-16">
+            <Button text="Load more" />
+          </div>
         </div>
       </div>
     </div>
@@ -176,6 +181,7 @@ import {
 import BaseIcon from "@/components/BaseIcon.vue";
 import Checkbox from "../Checkbox.vue";
 import PostCard from "../PostCard.vue";
+import Button from "../Button.vue";
 
 const windowWidth = ref(window.innerWidth);
 const isFilterOpen = ref(windowWidth.value <= 767 ? false : true);
