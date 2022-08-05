@@ -13,7 +13,7 @@
       >
         <span class="grow pr-6">{{ item.button }}</span>
         <span
-          class="relative mt-[3px] h-4 w-4 shrink-0 md:mt-0 md:h-[22px] md:w-[22px]"
+          class="relative mt-[3px] h-4 w-4 shrink-0 md:h-[22px] md:w-[22px]"
         >
           <span
             :class="open ? 'rotate-90' : ''"

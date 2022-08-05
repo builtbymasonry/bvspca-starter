@@ -12,9 +12,9 @@
           You can make a difference by getting involved today
         </h2>
 
-        <div class="-mx-4 flex flex-wrap justify-center gap-y-10 sm:gap-y-8">
+        <div class="flex flex-wrap justify-center gap-y-10 md:-mx-0 md:gap-y-8">
           <div
-            class="w-full px-12 sm:w-1/2 md:px-4 lg:w-1/4"
+            class="w-full px-6 sm:w-1/2 md:px-4 lg:w-1/4"
             v-for="card in cards"
             :key="card.title"
           >
@@ -29,7 +29,7 @@
     </section>
 
     <PostCardsSection
-      class="bg-skew bg-purple pt-12 lg:pt-20 pb-5 lg:pb-5 text-white"
+      class="bg-skew bg-purple pt-12 pb-5 text-white lg:pt-20 lg:pb-5"
       v-bind="postCardsPetsData"
     />
 
@@ -63,9 +63,9 @@
           For your pet
         </h2>
 
-        <div class="-mx-4 flex flex-wrap justify-center gap-y-10 sm:gap-y-8">
+        <div class="flex flex-wrap justify-center gap-y-10 md:-mx-0 md:gap-y-8">
           <div
-            class="w-full px-12 sm:w-1/2 md:px-4 lg:w-1/3"
+            class="w-full px-6 sm:w-1/2 md:px-4 lg:w-1/3"
             v-for="card in cardsForPet"
             :key="card.title"
           >
@@ -102,7 +102,7 @@
         </h2>
 
         <div
-          class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:gap-16 text-center"
+          class="grid grid-cols-1 gap-14 text-center sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:gap-16"
         >
           <PostCard
             v-for="card in cardsDonations"
@@ -149,7 +149,7 @@ import Stats from "@/components/Stats.vue";
 
 import Card from "@/components/Card.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 import PostModule from "@/components/PostModule.vue";
 
@@ -169,8 +169,10 @@ const heroData = {
 
 const postModuleData = {
   img: { src: "src/assets/img/content-img-02.jpg", alt: "", type: "cover" },
-  title: { text: "Need help?", size: "lg"},
-  text: ["Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"],
+  title: { text: "Need help?", size: "lg" },
+  text: [
+    "Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"
+  ],
   textGrid: [
     {
       title: "Lost & found pets",
@@ -199,8 +201,10 @@ const postModuleData = {
 };
 
 const postModuleData2 = {
-  title: { text: "A second chance at nine lives", size: "md"},
-  text: ["Whiskers got his leg caught in a fox trap after getting loose from his home. He lost a lot of skin, suffered nerve damage,   ahd a quickly spreading infection. His family brought him to our New Castle Animal Health Center. They couldn’t afford the entirety od his care and were condisdering euthanasia since the infection would soon be life-threatening. Thanks to our pet retention grant from Petco Love, we were able to bridge what his owners couldn’t afford and saved Whiskers by amputating the badly damaged leg. Whiskers now lives a life of three-legged luxury. We’re grateful for Petco Love’s support, which results from all of you who donate at checkout at the Petco stores."],
+  title: { text: "A second chance at nine lives", size: "md" },
+  text: [
+    "Whiskers got his leg caught in a fox trap after getting loose from his home. He lost a lot of skin, suffered nerve damage,   ahd a quickly spreading infection. His family brought him to our New Castle Animal Health Center. They couldn’t afford the entirety od his care and were condisdering euthanasia since the infection would soon be life-threatening. Thanks to our pet retention grant from Petco Love, we were able to bridge what his owners couldn’t afford and saved Whiskers by amputating the badly damaged leg. Whiskers now lives a life of three-legged luxury. We’re grateful for Petco Love’s support, which results from all of you who donate at checkout at the Petco stores."
+  ],
   carousel: {
     slides: [
       { src: "src/assets/img/slide01.jpg", alt: "kitty" },
@@ -211,8 +215,13 @@ const postModuleData2 = {
 };
 
 const postModuleData3 = {
-  title: { text: "Support our lifesaving work and look good doing it", size: "lg"},
-  text: ["Get your paws on our original and limited edition merchandise. Your purchases go towards the care of the 16,000+ animals we take in each year. "],
+  title: {
+    text: "Support our lifesaving work and look good doing it",
+    size: "lg"
+  },
+  text: [
+    "Get your paws on our original and limited edition merchandise. Your purchases go towards the care of the 16,000+ animals we take in each year. "
+  ],
   imgGrid: [
     {
       img: { src: "src/assets/img/merch-img-01.jpg", alt: "" }
@@ -227,9 +236,7 @@ const postModuleData3 = {
       img: { src: "src/assets/img/merch-img-04.jpg", alt: "" }
     }
   ],
-  buttons: [
-    { text: "Shop now", url: "#!" },
-  ]
+  buttons: [{ text: "Shop now", url: "#!" }]
 };
 
 const postCardsPetsData = {
@@ -367,9 +374,7 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more", url: "#!" }
     }
   ],
-  buttons: [
-    { text: "View all news, events & resources", url: "#!" }
-  ]
+  buttons: [{ text: "View all news, events & resources", url: "#!" }]
 };
 
 const marqueeSlides = [

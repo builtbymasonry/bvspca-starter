@@ -15,32 +15,36 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-3xl px-4">
-      <h2 class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl">
+      <h2
+        class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
+      >
         Critter Camp FAQ
       </h2>
       <Accordion :items="faq" />
     </div>
   </section>
 
-  <section class="py-14 lg:py-28 bg-purple text-white">
+  <section class="bg-purple py-14 text-white lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
       <PostModule class="text-xs font-bold" v-bind="postModuleData3" />
     </div>
   </section>
 
-  <section class="pb-14 lg:pb-28 bg-purple text-white">
+  <section class="bg-purple pb-14 text-white lg:pb-28">
     <div class="mx-auto max-w-7xl px-4">
-      <h2 class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl">
+      <h2
+        class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
+      >
         Party packages
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 items-start gap-7">
-        <PackageCard v-bind="packagePennsylvaniaData"/>
-        <PackageCard v-bind="packageDelawareData"/>
+      <div class="grid grid-cols-1 items-start gap-7 sm:grid-cols-2">
+        <PackageCard v-bind="packagePennsylvaniaData" />
+        <PackageCard v-bind="packageDelawareData" />
       </div>
     </div>
   </section>
 
-  <section class="py-14 lg:py-28 bg-gray-dark">
+  <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-4xl px-4">
       <PostModule class="text-xs" v-bind="postModuleData4" />
       <PostModule class="mt-24 text-xs" v-bind="postModuleData5" />
@@ -48,13 +52,29 @@
   </section>
 
   <section class="py-14 lg:py-28">
-    <div class="mx-auto max-w-5xl px-4 flex flex-col lg:flex-row-reverse gap-5 items-center gap-y-10 text-center lg:text-left">
-      <div class="relative mx-auto max-w-sm md:max-w-md lg:max-w-full w-full lg:w-2/3">
-        <img class="w-full" src="src/assets/img/content-img-21.jpg" alt="image description" />
+    <div
+      class="mx-auto flex max-w-5xl flex-col items-center gap-5 gap-y-10 px-4 text-center lg:flex-row-reverse lg:text-left"
+    >
+      <div
+        class="relative mx-auto w-full max-w-sm md:max-w-md lg:w-2/3 lg:max-w-full"
+      >
+        <img
+          class="w-full"
+          src="src/assets/img/content-img-21.jpg"
+          alt="image description"
+        />
       </div>
-      <div class="py-2 pr-5 lg:flex lg:flex-col lg:items-start lg:justify-center lg:w-1/3 text-xs">
-        <h2 class="mb-3 text-2xl md:text-3xl xl:text-4xl font-bold">Check out upcoming events</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. </p>
+      <div
+        class="py-2 pr-5 text-xs lg:flex lg:w-1/3 lg:flex-col lg:items-start lg:justify-center"
+      >
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl xl:text-4xl">
+          Check out upcoming events
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in
+          dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu.
+          Suspendisse potenti. Pellentesque eu orci nisi.
+        </p>
         <Button class="mt-10" text="View event calendar" url="#!" />
       </div>
     </div>
@@ -69,7 +89,7 @@ import HeroInner from "@/components/HeroInner.vue";
 import PostModule from "@/components/PostModule.vue";
 import Accordion from "@/components/Accordion.vue";
 import PackageCard from "@/components/PackageCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
   title: "For Kids",
@@ -96,7 +116,9 @@ const postModuleData2 = {
   img: { src: "src/assets/img/content-img-18.jpg", alt: "" },
   title: { text: "Critter Camp", size: "md"},
   textList: [
-    { text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a new Valentine’s Day Weekend (Feb. 12th & 13th) for kids ages 7 through 9. This is one of a number of themed weekend sessions in addition to our summer dates offered across all BVSPCA campuses that welcome kids ages 7-9 and 10-12. Camps will feature a variety of guest speakers (virtual and in person), new animal friends, and activities galore." },
+    {
+      text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a new Valentine’s Day Weekend (Feb. 12th & 13th) for kids ages 7 through 9. This is one of a number of themed weekend sessions in addition to our summer dates offered across all BVSPCA campuses that welcome kids ages 7-9 and 10-12. Camps will feature a variety of guest speakers (virtual and in person), new animal friends, and activities galore."
+    },
     { text: "At camp, young animal lovers will:" }
   ],
   list: [
@@ -202,9 +224,7 @@ const packagePennsylvaniaData = {
     "Downloadable party invitations",
     "You may bring cake, food, beverages and additional decorations – a refrigerator is available for your use"
   ],
-  buttons: [
-    { text: "Schedule party - West Chester", url: "#!" }
-  ]
+  buttons: [{ text: "Schedule party - West Chester", url: "#!" }]
 };
 
 const packageDelawareData = {
@@ -252,8 +272,6 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more", url: "#!" }
     }
   ],
-  buttons: [
-    { text: "View all news, events & resources", url: "#!" }
-  ]
+  buttons: [{ text: "View all news, events & resources", url: "#!" }]
 };
 </script>

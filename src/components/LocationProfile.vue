@@ -158,4 +158,8 @@ const props = defineProps({
   right: 7px !important;
   display: none !important;
 }
+
+.location-profile .gm-style .gm-style-iw-tc {
+  filter: none !important;
+}
 </style>

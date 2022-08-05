@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto max-w-screen-2xl">
+  <section class="mx-auto max-w-screen-2xl">
     <div class="lg:flex">
       <div class="grow-1 w-full px-6 pt-6 lg:py-16 lg:pr-10">
         <h1
@@ -160,7 +160,9 @@
               </div>
             </li>
           </ul>
-          <Pagination class="justify-center mb-16 lg:mb-0 lg:ml-[47px] lg:justify-start" />
+          <Pagination
+            class="mb-16 justify-center lg:mb-0 lg:ml-[47px] lg:justify-start"
+          />
         </div>
       </div>
       <div
@@ -307,7 +309,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script setup>
 import { onMounted, ref, watch } from "vue";
@@ -442,5 +444,8 @@ const props = defineProps({
   font-size: 18px !important;
   line-height: 1;
   padding-bottom: 8px;
+}
+.locations .gm-style .gm-style-iw-tc {
+  filter: none !important;
 }
 </style>

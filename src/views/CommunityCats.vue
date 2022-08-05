@@ -93,7 +93,7 @@
       </div>
     </section>
 
-    <PostCardsSection v-bind="postCardsSectionData"/>
+    <PostCardsSection v-bind="postCardsSectionData" />
   </div>
 </template>
 
@@ -105,7 +105,7 @@ import TableServices from "@/components/TableServices.vue";
 import TextBox from "@/components/TextBox.vue";
 import PostModule from "@/components/PostModule.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
   img: { src: "src/assets/img/hero-image-04.jpg", alt: "" },
@@ -254,8 +254,6 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more", url: "#!" }
     }
   ],
-  buttons: [
-    { text: "View all news, events & resources", url: "#!" },
-  ]
-}
+  buttons: [{ text: "View all news, events & resources", url: "#!" }]
+};
 </script>

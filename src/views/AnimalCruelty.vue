@@ -88,7 +88,7 @@ import ContactCard from "@/components/ContactCard.vue";
 import List from "@/components/List.vue";
 import PostModule from "@/components/PostModule.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
   title: `Reporting \nanimal cruelty`,
@@ -228,8 +228,6 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more", url: "#!" }
     }
   ],
-  buttons: [
-    { text: "View all news, events & resources", url: "#!" }
-  ]
+  buttons: [{ text: "View all news, events & resources", url: "#!" }]
 };
 </script>

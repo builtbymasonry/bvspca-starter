@@ -1,5 +1,5 @@
 <template>
-  <div class="border-b-2 border-gray-light pb-6">
+  <div class="border-gray-light border-b-2 pb-6">
     <div class="relative md:flex">
       <div class="xsm:w-[211px] relative mr-7 w-[174px] shrink-0 grow-0">
         <input
@@ -11,9 +11,9 @@
           <BaseIcon name="search" class="h-4 w-4" />
         </button>
       </div>
-      <div
+      <button
+        type="button"
         @click="toggleFilter"
-        @keyup.enter="toggleFilter"
         tabindex="0"
         class="focus:ring-orange absolute right-0 top-[7px] inline-flex cursor-pointer select-none items-center outline-none focus:ring-2 md:hidden"
       >
@@ -32,7 +32,7 @@
             d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
           />
         </svg>
-      </div>
+      </button>
       <div
         v-show="isFilterOpen"
         class="xsm:flex xsm:space-y-0 xsm:max-w-none mx-auto mt-12 block max-w-[174px] flex-1 justify-between space-y-10 md:mt-0"
@@ -168,7 +168,7 @@ import {
   ListboxOptions,
   ListboxOption
 } from "@headlessui/vue";
-import BaseIcon from "./BaseIcon.vue";
+import BaseIcon from "@/components/BaseIcon.vue";
 
 const windowWidth = ref(window.innerWidth);
 const isFilterOpen = ref(windowWidth.value <= 767 ? false : true);

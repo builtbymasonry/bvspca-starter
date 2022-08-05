@@ -202,7 +202,7 @@ import HeroInner from "@/components/HeroInner.vue";
 import PostModule from "@/components/PostModule.vue";
 import InfoCard from "@/components/InfoCard.vue";
 import ContactPersonCard from "@/components/ContactPersonCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
   title: "About us",
