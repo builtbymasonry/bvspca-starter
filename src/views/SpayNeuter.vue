@@ -77,7 +77,7 @@ import TableServices from "@/components/TableServices.vue";
 import TextBox from "@/components/TextBox.vue";
 import TextBanner from "@/components/TextBanner.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 import PostModule from "@/components/PostModule.vue";
 import InfoCard from "@/components/InfoCard.vue";
 
