@@ -3,7 +3,7 @@
     class="grid grid-cols-1 gap-10 sm:gap-14 xl:gap-20 text-center lg:text-left"
     :class="[
       layoutAlt ? 'lg:grid-cols-2/5' : 'lg:grid-cols-2',
-      layoutAlt && reverse ? 'lg:grid-cols-5/2' : 'lg:grid-cols-2',
+      layoutAlt && reverse ? 'lg:grid-cols-5/2' : '',
       stretchColumns ? '' : 'items-center'
     ]"
   >
@@ -16,7 +16,7 @@
         class="w-full"
         :class="[
           img.type === 'default' ? '' : 'rounded-sm md:rounded-md shadow',
-          img.type === 'cover' && 'lg:absolute lg:h-full lg:object-cover'
+          stretchColumns && 'lg:absolute lg:h-full lg:object-cover'
         ]"
         v-bind="img"
       />
@@ -107,7 +107,7 @@
 
       <div
         v-if="buttons"
-        class="mt-7 -m-5 flex flex-wrap flex-row items-center sm:items-start justify-center lg:justify-start"
+        class="mt-7 -m-5 lg:-mr-20 flex flex-wrap flex-row items-center sm:items-start justify-center lg:justify-start"
       >
         <Button class="m-5" v-for="button in buttons" :key="button.text" v-bind="button" />
       </div>

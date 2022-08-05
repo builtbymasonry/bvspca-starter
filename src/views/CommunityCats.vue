@@ -2,7 +2,11 @@
   <div>
     <HeroInner v-bind="heroInnerData" />
 
-    <PostSection v-bind="postSectionData" class="bg-gray-dark" />
+    <section class="py-14 lg:py-28 bg-gray-dark">
+      <div class="mx-auto max-w-7xl px-4">
+        <PostModule v-bind="postModuleData" />
+      </div>
+    </section>
 
     <section class="py-14 lg:py-28">
       <div class="mx-auto max-w-5xl px-4">
@@ -85,7 +89,7 @@
           v-bind="textBoxData"
           class="-mt-56 mb-14 sm:-mt-80 lg:-mt-96 lg:mb-24"
         />
-        <PostInline v-bind="postInlineData" />
+        <PostModule class="text-xs" v-bind="postModuleData2" />
       </div>
     </section>
 
@@ -96,11 +100,10 @@
 <script setup>
 import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
-import PostSection from "@/components/PostSection.vue";
 import MapRentals from "@/components/MapRentals.vue";
 import TableServices from "@/components/TableServices.vue";
 import TextBox from "@/components/TextBox.vue";
-import PostInline from "@/components/PostInline.vue";
+import PostModule from "@/components/PostModule.vue";
 import PostCard from "@/components/PostCard.vue";
 import PostCardsSection from "@/components/PostCardsSection.vue";
 
@@ -110,9 +113,9 @@ const heroInnerData = {
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."
 };
 
-const postSectionData = {
+const postModuleData = {
   img: { src: "src/assets/img/content-img-09.jpg", alt: "" },
-  title: "Outdoor cats need love too",
+  title: { text: "Outdoor cats need love too", size: "md"},
   text: ["Our services increase the health and wellness of community cats while proactively reducing the number of animals being born without homes in our community. TNVR has been shown to be the most humane, most efficient, and least costly method of stabilizing community cat populations."],
   textGrid: [
     {
@@ -136,7 +139,9 @@ const postSectionData = {
     { text: "Schedule an appointment" },
     { variant: "outline", text: "Learn more about our impact" }
   ],
-  reverse: true
+  reverse: true,
+  layoutAlt: true,
+  stretchColumns: true
 };
 
 const tableData = {
@@ -217,9 +222,9 @@ const textBoxData = {
   button: { type: "buttonLink", text: "Spay & neuter services", url: "#!" }
 };
 
-const postInlineData = {
+const postModuleData2 = {
   img: { src: "src/assets/img/content-img-10.jpg", alt: "" },
-  title: "Help keep our Community Cats program alive",
+  title: { text: "Help keep our Community Cats program alive", size: "md" },
   text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   buttons: [{ variant: "secondary", text: "Donate", url: "#!" }]
 };

@@ -51,7 +51,7 @@
     class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32"
   >
     <div class="mx-auto max-w-4xl px-4">
-      <PostInline v-bind="postInlineData" />
+      <PostModule class="text-sm font-bold" v-bind="postModuleData" />
     </div>
   </section>
 
@@ -63,7 +63,7 @@ import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
 import PostCard from "@/components/PostCard.vue";
 import CardPetProfile from "@/components/CardPetProfile.vue";
-import PostInline from "@/components/PostInline.vue";
+import PostModule from "@/components/PostModule.vue";
 import InfoCard from "@/components/InfoCard.vue";
 import PostCardsSection from "@/components/PostCardsSection.vue";
 import FilterBar from "@/components/FilterBar.vue";
@@ -193,8 +193,8 @@ const infoCardData = {
   buttons: [{ text: "Learn more about our impact", url: "#!" }]
 };
 
-const postInlineData = {
-  title: "Give back to your community",
+const postModuleData = {
+  title: { text: "Give back to your community", size: "md"},
   text: [
     "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
   ],

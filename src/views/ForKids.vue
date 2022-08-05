@@ -3,11 +3,15 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
-      <PostInline v-bind="postInlineData" />
+      <PostModule class="text-xs" v-bind="postModuleData" />
     </div>
   </section>
 
-  <PostSection class="bg-gray-dark" v-bind="postSectionData" />
+  <section class="py-14 lg:py-28 bg-gray-dark">
+    <div class="mx-auto max-w-7xl px-4">
+      <PostModule class="text-xs" v-bind="postModuleData2" />
+    </div>
+  </section>
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-3xl px-4">
@@ -20,7 +24,7 @@
 
   <section class="py-14 lg:py-28 bg-purple text-white">
     <div class="mx-auto max-w-5xl px-4">
-      <PostInline v-bind="postInlineData2" />
+      <PostModule class="text-xs font-bold" v-bind="postModuleData3" />
     </div>
   </section>
 
@@ -38,8 +42,8 @@
 
   <section class="py-14 lg:py-28 bg-gray-dark">
     <div class="mx-auto max-w-4xl px-4">
-      <PostInline v-bind="postInlineData3" />
-      <PostInline class="mt-24" v-bind="postInlineData4" />
+      <PostModule class="text-xs" v-bind="postModuleData4" />
+      <PostModule class="mt-24 text-xs" v-bind="postModuleData5" />
     </div>
   </section>
 
@@ -62,8 +66,7 @@
 <script setup>
 import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
-import PostInline from "@/components/PostInline.vue";
-import PostSection from "@/components/PostSection.vue";
+import PostModule from "@/components/PostModule.vue";
 import Accordion from "@/components/Accordion.vue";
 import PackageCard from "@/components/PackageCard.vue";
 import PostCardsSection from "@/components/PostCardsSection.vue";
@@ -74,8 +77,8 @@ const heroInnerData = {
   img: { src: "src/assets/img/hero-image-13.jpg", alt: "Volunteer" }
 };
 
-const postInlineData = {
-  title: "Junior volunteers",
+const postModuleData = {
+  title: { text: "Junior volunteers", size: "md"},
   text: ["Is your child interested in volunteering? If you are between 8-12 years of age, you can join our junior volunteer program! After you and your chaperon or guardian (18 years+) have both submitted volunteer applications and have attended a volunteer orientation you are welcome to volunteer within our organization. Junior volunteers can tag along as you help out, and participate in several activities such as puppy socialization, kitten socialization, grooming, reading to companions, etc. all under your supervision."],
   buttons: [{ text: "Apply to be a junior volunteer", url: "#!" }],
   carousel: {
@@ -89,40 +92,9 @@ const postInlineData = {
   reverse: true
 };
 
-const postInlineData2 = {
-  title: "Birthday parties",
-  text: [ "The BVSPCA is dedicated to promoting the welfare and humane treatment of animals, so why not start early? Birthday celebrations at the BVSPCA teach children how to be compassionate to our four-legged friends. It’s sure to be a howling good time!",
-    "Parties can be scheduled on Saturdays & Sundays between the hours of 11am and 5pm. Please provide a few additional dates in the event that your preferred date is not available. We require a $50.00 non-refundable deposit to secure your date and time. Minimum age requirement is 7 years old." ],
-  carousel: {
-    slides: [
-      { src: "src/assets/img/slide05.jpg", alt: "slide alt1" },
-      { src: "src/assets/img/slide02.jpg", alt: "slide alt2" },
-      { src: "src/assets/img/slide01.jpg", alt: "slide alt3" },
-      { src: "src/assets/img/slide02.jpg", alt: "slide alt4" }
-    ]
-  },
-  reverse: true
-};
-
-const postInlineData3 = {
-  img: { src: "src/assets/img/content-img-19.jpg", alt: "" },
-  subtitle: "Request friends and family to send items off our wish list instead of buying gifts",
-  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
-  share: true,
-  buttons: [ {text: "View our wishlist", url: "#!" }],
-  reverse: true
-};
-
-const postInlineData4 = {
-  img: { src: "src/assets/img/content-img-20.jpg", alt: "" },
-  subtitle: "Other ways to honor your special day with charitable causes",
-  text: [ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi." ],
-  buttons: [ {text: "Get involved", url: "#!" }],
-};
-
-const postSectionData = {
+const postModuleData2 = {
   img: { src: "src/assets/img/content-img-18.jpg", alt: "" },
-  title: "Critter Camp",
+  title: { text: "Critter Camp", size: "md"},
   textList: [
     { text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a new Valentine’s Day Weekend (Feb. 12th & 13th) for kids ages 7 through 9. This is one of a number of themed weekend sessions in addition to our summer dates offered across all BVSPCA campuses that welcome kids ages 7-9 and 10-12. Camps will feature a variety of guest speakers (virtual and in person), new animal friends, and activities galore." },
     { text: "At camp, young animal lovers will:" }
@@ -137,9 +109,40 @@ const postSectionData = {
     "Practice their reading skills by reading to our companions",
     "Each camp session runs from 9am to 3pm with an aftercare option available during summer programs only. The weekly cost covers all activities, arts & crafts materials, snacks, and camp t-shirt."
   ],
-  buttons: [
-    { text: "Register today", url: "#!" },
-  ]
+  buttons: [{ text: "Register today", url: "#!" }],
+  layoutAlt: true,
+  stretchColumns: true
+};
+
+const postModuleData3 = {
+  title: { text: "Birthday parties", size: "md"},
+  text: [ "The BVSPCA is dedicated to promoting the welfare and humane treatment of animals, so why not start early? Birthday celebrations at the BVSPCA teach children how to be compassionate to our four-legged friends. It’s sure to be a howling good time!",
+    "Parties can be scheduled on Saturdays & Sundays between the hours of 11am and 5pm. Please provide a few additional dates in the event that your preferred date is not available. We require a $50.00 non-refundable deposit to secure your date and time. Minimum age requirement is 7 years old." ],
+  carousel: {
+    slides: [
+      { src: "src/assets/img/slide05.jpg", alt: "slide alt1" },
+      { src: "src/assets/img/slide02.jpg", alt: "slide alt2" },
+      { src: "src/assets/img/slide01.jpg", alt: "slide alt3" },
+      { src: "src/assets/img/slide02.jpg", alt: "slide alt4" }
+    ]
+  },
+  reverse: true
+};
+
+const postModuleData4 = {
+  img: { src: "src/assets/img/content-img-19.jpg", alt: "" },
+  title: { text: "Request friends and family to send items off our wish list instead of buying gifts" },
+  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
+  share: true,
+  buttons: [ {text: "View our wishlist", url: "#!" }],
+  reverse: true
+};
+
+const postModuleData5 = {
+  img: { src: "src/assets/img/content-img-20.jpg", alt: "" },
+  title: { text: "Other ways to honor your special day with charitable causes" },
+  text: [ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi." ],
+  buttons: [ {text: "Get involved", url: "#!" }],
 };
 
 const faq = [

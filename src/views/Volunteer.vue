@@ -3,7 +3,7 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
-      <PostInline v-bind="postInlineData" />
+      <PostModule class="text-xs" v-bind="postModuleData" />
     </div>
   </section>
 
@@ -81,7 +81,7 @@
     class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32"
   >
     <div class="mx-auto max-w-4xl px-4">
-      <PostInline v-bind="postInlineData2" />
+      <PostModule class="text-sm font-bold" v-bind="postModuleData2" />
     </div>
   </section>
 
@@ -92,7 +92,7 @@
 import Button from "@/components/Button.vue";
 import Select from "@/components/Select.vue";
 import HeroInner from "@/components/HeroInner.vue";
-import PostInline from "@/components/PostInline.vue";
+import PostModule from "@/components/PostModule.vue";
 import PostCardInline from "@/components/PostCardInline.vue";
 import TextBanner from "@/components/TextBanner.vue";
 import PostCard from "@/components/PostCard.vue";
@@ -131,15 +131,15 @@ const categories = [
   }
 ];
 
-const postInlineData = {
+const postModuleData = {
   img: { src: "src/assets/img/content-img-16.jpg", alt: "" },
-  title: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities",
+  title: { text: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities", size: "md" },
   text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Pellentesque finibus lorem dignissim bibendum pretium. Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis euismod."],
   buttons: [{ text: "Learn more about us", url: "#!" }]
 };
 
-const postInlineData2 = {
-  title: "Give back to your community",
+const postModuleData2 = {
+  title: { text: "Give back to your community", size: "md"},
   text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,

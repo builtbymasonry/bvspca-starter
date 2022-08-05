@@ -1,7 +1,11 @@
 <template>
   <HeroInner v-bind="heroInnerData" />
 
-  <PostSection v-bind="postSectionData" class="bg-gray-dark" />
+  <section class="py-14 lg:py-28 bg-gray-dark">
+    <div class="mx-auto max-w-7xl px-4">
+      <PostModule v-bind="postModuleData" />
+    </div>
+  </section>
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-7xl px-4">
@@ -75,7 +79,7 @@
 
 <script setup>
 import HeroInner from "@/components/HeroInner.vue";
-import PostSection from "@/components/PostSection.vue";
+import PostModule from "@/components/PostModule.vue";
 import TableStatistics from "@/components/TableStatistics.vue";
 import InfoCard from "@/components/InfoCard.vue";
 
@@ -85,7 +89,7 @@ const heroInnerData = {
   img: { src: "src/assets/img/hero-image-17.jpg", alt: "" }
 };
 
-const postSectionData = {
+const postModuleData = {
   carousel: {
     slides: [
       { src: "src/assets/img/slide08.jpg", alt: "slide alt1" },
@@ -94,7 +98,7 @@ const postSectionData = {
       { src: "src/assets/img/slide04.jpg", alt: "slide alt4" }
     ]
   },
-  title: "Lorem ipsum dolor sit amet",
+  title: { text: "Lorem ipsum dolor sit amet", size: "md"},
   text: [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Pellentesque finibus lorem dignissim bibendum pretium. Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis euismod. Etiam pharetra dui sit amet tempus scelerisque. Vivamus et dolor tellus. Donec vulputate, justo vitae lobortis tempus, metu.",
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. "

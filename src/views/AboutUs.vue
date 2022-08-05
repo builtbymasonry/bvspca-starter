@@ -3,13 +3,13 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
-      <PostInline v-bind="postInlineData" />
+      <PostModule class="text-xs" v-bind="postModuleData" />
     </div>
   </section>
 
   <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-6xl px-4">
-      <PostInline v-bind="postInlineData2" />
+      <PostModule class="text-sm" v-bind="postModuleData2" />
     </div>
   </section>
 
@@ -72,7 +72,7 @@
     class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32"
   >
     <div class="mx-auto max-w-4xl px-4">
-      <PostInline v-bind="postInlineData3" />
+      <PostModule class="text-sm font-bold" v-bind="postModuleData3" />
     </div>
   </section>
 
@@ -190,7 +190,7 @@
 
   <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-4xl px-4">
-      <PostInline v-bind="postInlineData4" />
+      <PostModule class="text-xs" v-bind="postModuleData4" />
     </div>
   </section>
 
@@ -199,7 +199,7 @@
 
 <script setup>
 import HeroInner from "@/components/HeroInner.vue";
-import PostInline from "@/components/PostInline.vue";
+import PostModule from "@/components/PostModule.vue";
 import InfoCard from "@/components/InfoCard.vue";
 import ContactPersonCard from "@/components/ContactPersonCard.vue";
 import PostCardsSection from "@/components/PostCardsSection.vue";
@@ -210,8 +210,8 @@ const heroInnerData = {
   img: { src: "src/assets/img/hero-image-14.jpg", alt: "About Us" }
 };
 
-const postInlineData = {
-  title: "Our mission & vision",
+const postModuleData = {
+  title: { text: "Our mission & vision", size: "lg"},
   text: [
     "Founded in 1929, the Brandywine Valley SPCA exists to end animal suffering and to involve the entire community in the welfare and well-being of animals. Our mission is to put the “human” back in humane animal treatment and advocate on their behalf. Our vision is to be the recognized leader in animal welfare that empowers communities to treat life with respect and dignity."
   ],
@@ -224,8 +224,8 @@ const postInlineData = {
   }
 };
 
-const postInlineData2 = {
-  title: "How we do it",
+const postModuleData2 = {
+  title: { text: "How we do it", size: "md"},
   text: [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Pellentesque finibus lorem dignissim bibendum pretium. Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis euismod. Etiam pharetra dui sit amet tempus scelerisque. Vivamus et dolor tellus. Donec vulputate, justo vitae lobortis tempus, metu."
   ],
@@ -241,8 +241,8 @@ const postInlineData2 = {
   reverse: true
 };
 
-const postInlineData3 = {
-  title: "Give back to your community",
+const postModuleData3 = {
+  title: { text: "Give back to your community", size: "lg"},
   text: [
     "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
   ],
@@ -254,8 +254,8 @@ const postInlineData3 = {
   ]
 };
 
-const postInlineData4 = {
-  title: "Join the team",
+const postModuleData4 = {
+  title: { text: "Join the team", size: "md" },
   text: [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. "
   ],

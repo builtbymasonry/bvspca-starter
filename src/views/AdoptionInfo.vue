@@ -92,12 +92,10 @@
 
 <script setup>
 import HeroInner from "@/components/HeroInner.vue"
-import PostSection from "@/components/PostSection.vue"
 import PostModule from "@/components/PostModule.vue"
 import List from "@/components/List.vue"
 import MapLocations from "@/components/MapLocations.vue"
 import Accordion from "@/components/Accordion.vue"
-import PostInline from "@/components/PostInline.vue"
 import InfoCard from "@/components/InfoCard.vue"
 import PostCardsSection from "@/components/PostCardsSection.vue"
 

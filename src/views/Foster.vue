@@ -1,7 +1,11 @@
 <template>
   <HeroInner v-bind="heroInnerData" class="bg-gray-dark" />
 
-  <PostSection v-bind="postSectionData" />
+  <section class="py-14 lg:py-28">
+    <div class="mx-auto max-w-7xl px-4">
+      <PostModule v-bind="postModuleData" />
+    </div>
+  </section>
 
   <section class="bg-skew bg-purple pt-12 pb-5 text-white lg:pt-20">
     <div class="mx-auto max-w-7xl px-4">
@@ -117,7 +121,7 @@
     class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32"
   >
     <div class="mx-auto max-w-4xl px-4">
-      <PostInline v-bind="postInlineData" />
+      <PostModule class="text-sm font-bold" v-bind="postModuleData2" />
     </div>
   </section>
 
@@ -127,13 +131,12 @@
 <script setup>
 import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
-import PostSection from "@/components/PostSection.vue";
 import PostCard from "@/components/PostCard.vue";
 import PostCardsSection from "@/components/PostCardsSection.vue";
 import FormFosterCare from "@/components/FormFosterCare.vue";
 import Accordion from "@/components/Accordion.vue";
 import InfoCard from "@/components/InfoCard.vue";
-import PostInline from "@/components/PostInline.vue";
+import PostModule from "@/components/PostModule.vue";
 
 const heroInnerData = {
   title: "Foster",
@@ -141,10 +144,9 @@ const heroInnerData = {
   img: { src: "src/assets/img/hero-image-12.jpg", alt: "Volunteer" }
 };
 
-const postSectionData = {
+const postModuleData = {
   img: { src: "src/assets/img/content-img-17.jpg", alt: "" },
-  subtitle:
-    "Fostering is an amazing way to help a shelter animal without committing to adopting.",
+  title: { text: "Fostering is an amazing way to help a shelter animal without committing to adopting."},
   textGrid: [
     {
       title: "Benefit one",
@@ -163,7 +165,9 @@ const postSectionData = {
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia."
     }
   ],
-  buttons: [{ text: "Apply now", url: "#!" }]
+  buttons: [{ text: "Apply now", url: "#!" }],
+  layoutAlt: true,
+  stretchColumns: true
 };
 
 const featuredPets = [
@@ -245,8 +249,8 @@ const infoCardData = {
   ]
 };
 
-const postInlineData = {
-  title: "Give back to your community",
+const postModuleData2 = {
+  title: { text: "Give back to your community", size: "md"},
   text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,

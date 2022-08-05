@@ -2,7 +2,11 @@
   <div>
     <HeroInner class="bg-gray-dark" v-bind="heroInnerData" />
 
-    <PostSection v-bind="postSectionData" />
+    <section class="py-14 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4">
+        <PostModule v-bind="postModuleData" />
+      </div>
+    </section>
 
     <section class="bg-purple py-14 lg:py-28">
       <div class="mx-auto max-w-6xl px-4">
@@ -54,14 +58,14 @@
           class="-mt-56 mb-14 sm:-mt-80 lg:-mt-96 lg:mb-24"
           v-bind="textBoxData"
         />
-        <PostInline v-bind="postInlineData" />
+        <PostModule class="text-xs font-bold" v-bind="postModuleData2" />
       </div>
     </section>
 
     <section class="py-14 lg:py-28">
       <div class="mx-auto max-w-5xl px-4">
-        <PostInline class="mb-14 lg:mb-28" v-bind="postInlineData2" />
-        <PostInline v-bind="postInlineData3" />
+        <PostModule class="mb-14 lg:mb-28 text-xs" v-bind="postModuleData3" />
+        <PostModule class="text-xs" v-bind="postModuleData4" />
       </div>
     </section>
 
@@ -76,12 +80,11 @@
 import Button from "@/components/Button.vue";
 import ButtonLink from "@/components/ButtonLink.vue";
 import HeroInner from "@/components/HeroInner.vue";
-import PostSection from "@/components/PostSection.vue";
 import TablePackages from "@/components/TablePackages.vue";
 import TableServices from "@/components/TableServices.vue";
 import TextBox from "@/components/TextBox.vue";
 import TextBanner from "@/components/TextBanner.vue";
-import PostInline from "@/components/PostInline.vue";
+import PostModule from "@/components/PostModule.vue";
 import PostCard from "@/components/PostCard.vue";
 import PostCardsSection from "@/components/PostCardsSection.vue";
 
@@ -91,9 +94,9 @@ const heroInnerData = {
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."
 };
 
-const postSectionData = {
+const postModuleData = {
   img: { src: "src/assets/img/content-img-05.jpg", alt: "" },
-  title: "Affordable healthcare with an impact",
+  title: { text: "Affordable healthcare with an impact", size: "md"},
   text: ["In addition, by bringing their pets to our Brandywine vet hospitals for care, clients support the plight of homeless pets, as any proceeds from the BVSPCA’s clinics benefit the mission and programs at the Brandywine Valley SPCA."],
   textGrid: [
     {
@@ -117,7 +120,31 @@ const postSectionData = {
     { text: "Schedule an appointment", url: "#!" },
     { variant: "outline", text: "Learn more about our impact", url: "#!" }
   ],
+  reverse: true,
+  layoutAlt: true,
+  stretchColumns: true
+};
+
+const postModuleData2 = {
+  img: { src: "src/assets/img/content-img-06.jpg", alt: "" },
+  title: { text: "Your pet is in good hands", size: "md" },
+  text: ["Get to know our experienced veterinary team. They’re ready to help your pet with routine check-ups, preventative care, and medical issues and so much more."],
+  buttons: [{ variant: "secondary", text: "Clinic staff", url: "#!" }]
+};
+
+const postModuleData3 = {
+  img: { src: "src/assets/img/content-img-07.jpg", alt: "" },
+  title: { text: "Help us keep pet wellness affordable", size: "md"},
+  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
+  buttons: [{ text: "Donate", url: "#!" }],
   reverse: true
+};
+
+const postModuleData4 = {
+  img: { src: "src/assets/img/content-img-08.jpg", alt: "" },
+  title: { text: "Pay it forward, your free time has so much value", size: "md"},
+  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
+  buttons: [{ text: "Get involved", url: "#!" }]
 };
 
 const tableExamsData = {
@@ -250,28 +277,6 @@ const textBannerData = {
       text: "Wellness clinic locations"
     }
   ]
-};
-
-const postInlineData = {
-  img: { src: "src/assets/img/content-img-06.jpg", alt: "" },
-  title: "Your pet is in good hands",
-  text: ["Get to know our experienced veterinary team. They’re ready to help your pet with routine check-ups, preventative care, and medical issues and so much more."],
-  buttons: [{ variant: "secondary", text: "Clinic staff", url: "#!" }]
-};
-
-const postInlineData2 = {
-  img: { src: "src/assets/img/content-img-07.jpg", alt: "" },
-  title: "Help us keep pet wellness affordable",
-  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
-  buttons: [{ text: "Donate", url: "#!" }],
-  reverse: true
-};
-
-const postInlineData3 = {
-  img: { src: "src/assets/img/content-img-08.jpg", alt: "" },
-  title: "Pay it forward, your free time has so much value",
-  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
-  buttons: [{ text: "Get involved", url: "#!" }]
 };
 
 const dogPackages = {
