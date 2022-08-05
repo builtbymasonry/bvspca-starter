@@ -65,7 +65,7 @@ import PostCard from "@/components/PostCard.vue";
 import CardPetProfile from "@/components/CardPetProfile.vue";
 import PostInline from "@/components/PostInline.vue";
 import InfoCard from "@/components/InfoCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 import FilterBar from "@/components/FilterBar.vue";
 import Pagination from "@/components/Pagination.vue";
 

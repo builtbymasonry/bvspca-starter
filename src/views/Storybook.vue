@@ -1,8 +1,7 @@
 <template>
   <div>
-    <section>
-      <Locations :locations="locationsData" />
-    </section>
+    <PostsFeed v-bind="feedData" />
+    <!-- <LocationsSection :locations="locationsData" />
     <section>
       <h2 class="mb-3 text-center text-xl font-bold">LocationProfile</h2>
       <LocationProfile :location="locationProfile" />
@@ -17,12 +16,32 @@
         <MapLocations :locations="locations" />
       </div>
     </section>
-    <section class="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-2 text-center md:text-left">
-      <div class="ml-auto mt-7 md:mt-0 w-full md:max-w-xl px-4 xl:px-0 py-14 order-2 md:order-1">
-        <h2 class="mb-10 text-2xl md:text-3xl xl:text-5xl font-bold">Chewie fka Monkey</h2>
-        <p>Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well with kids. Chewie has got basic commands like sit, stay, down, out, and enough down pat. He's done well in dog playgroups at the shelter and would enjoy dogs he meets, but he does best as the only dog in the family. Come meet this big hunk of love and make him your newest family member. Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well with kids. Chewie has got basic commands like sit, stay, down, out, and enough down pat. He's done well in dog playgroups at the shelter and would enjoy dogs he meets, but he does best as the only dog in the family. Come meet this big hunk of love and make him your newest family member.</p>
+    <section
+      class="mx-auto grid max-w-[1440px] grid-cols-1 text-center md:grid-cols-2 md:text-left"
+    >
+      <div
+        class="order-2 ml-auto mt-7 w-full px-4 py-14 md:order-1 md:mt-0 md:max-w-xl xl:px-0"
+      >
+        <h2 class="mb-10 text-2xl font-bold md:text-3xl xl:text-5xl">
+          Chewie fka Monkey
+        </h2>
+        <p>
+          Chewie is a big sweetheart who loves taking over your side of the bed.
+          He also loves attention and affection from his people and gets along
+          well with kids. Chewie has got basic commands like sit, stay, down,
+          out, and enough down pat. He's done well in dog playgroups at the
+          shelter and would enjoy dogs he meets, but he does best as the only
+          dog in the family. Come meet this big hunk of love and make him your
+          newest family member. Chewie is a big sweetheart who loves taking over
+          your side of the bed. He also loves attention and affection from his
+          people and gets along well with kids. Chewie has got basic commands
+          like sit, stay, down, out, and enough down pat. He's done well in dog
+          playgroups at the shelter and would enjoy dogs he meets, but he does
+          best as the only dog in the family. Come meet this big hunk of love
+          and make him your newest family member.
+        </p>
       </div>
-      <div class="md:flex flex-col justify-between order-1 md:order-2">
+      <div class="order-1 flex-col justify-between md:order-2 md:flex">
         <SliderThumbs :slides="profileSlides" />
       </div>
     </section>
@@ -74,7 +93,7 @@
       </div>
     </div>
 
-    <div class="py-12 lg:py-28 bg-gray-dark">
+    <div class="bg-gray-dark py-12 lg:py-28">
       <div class="mx-auto max-w-7xl px-4">
         <PostModule v-bind="postModuleData2" />
       </div>
@@ -93,14 +112,14 @@
       </div>
     </section>
 
-    <section class="py-14 lg:py-28 bg-gray-dark">
+    <section class="bg-gray-dark py-14 lg:py-28">
       <div class="mx-auto max-w-4xl px-4">
         <PostModule class="text-xs" v-bind="postModuleData4" />
         <PostModule class="mt-24 text-xs" v-bind="postModuleData5" />
       </div>
     </section>
 
-    <section class="bg-purple text-white py-14 lg:py-28">
+    <section class="bg-purple py-14 text-white lg:py-28">
       <div class="mx-auto max-w-4xl px-4">
         <PostModule v-bind="postModuleData6" />
       </div>
@@ -110,7 +129,7 @@
       <div class="mx-auto max-w-4xl px-4">
         <PostModule v-bind="postModuleData7" />
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 <script setup>
@@ -125,7 +144,98 @@ import MapLocations from "@/components/MapLocations.vue";
 import MarqueeSponsors from "@/components/MarqueeSponsors.vue";
 import PostModule from "@/components/PostModule.vue";
 import LocationProfile from "@/components/LocationProfile.vue";
-import Locations from "@/components/Locations.vue";
+import LocationsSection from "@/components/Locations.vue";
+import PostsFeed from "@/components/sections/PostsFeed.vue";
+
+const feedData = {
+  title: "News, events & resources",
+  posts: [
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      title: "$5 off our 5K Color Run",
+      text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      title: "Walk-4-Paws",
+      text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      title: "Critter Camp",
+      text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      title: "$5 off our 5K Color Run",
+      text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      title: "Walk-4-Paws",
+      text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      title: "Critter Camp",
+      text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      title: "$5 off our 5K Color Run",
+      text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      title: "Walk-4-Paws",
+      text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      title: "Critter Camp",
+      text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      title: "$5 off our 5K Color Run",
+      text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      title: "Walk-4-Paws",
+      text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
+      buttonLink: { text: "Read more", url: "#!" }
+    },
+    {
+      url: "#!",
+      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      title: "Critter Camp",
+      text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
+      buttonLink: { text: "Read more", url: "#!" }
+    }
+  ]
+};
 
 const locationsData = [
   {
@@ -432,7 +542,7 @@ const profileSlides = [
 ];
 
 const postModuleVideo = {
-  title: { text: "Our mission & vision", size: "md"},
+  title: { text: "Our mission & vision", size: "md" },
   text: [
     "Founded in 1929, the Brandywine Valley SPCA exists to end animal suffering and to involve the entire community in the welfare and well-being of animals. Our mission is to put the “human” back in humane animal treatment and advocate on their behalf. Our vision is to be the recognized leader in animal welfare that empowers communities to treat life with respect and dignity."
   ],
@@ -1029,7 +1139,9 @@ const map = {
 const postModuleData1 = {
   img: { src: "src/assets/img/content-img-02.jpg", alt: "" },
   title: { text: "Need help?", size: "lg" },
-  text: ["Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"],
+  text: [
+    "Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"
+  ],
   textGrid: [
     {
       title: "Lost & found pets",
@@ -1050,7 +1162,9 @@ const postModuleData1 = {
 const postModuleData2 = {
   img: { src: "src/assets/img/content-img-02.jpg", alt: "", type: "cover" },
   title: { text: "Need help?", size: "lg" },
-  text: ["Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"],
+  text: [
+    "Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"
+  ],
   textGrid: [
     {
       title: "Lost & found pets",
@@ -1082,12 +1196,12 @@ const postModuleData2 = {
 };
 
 const postModuleData3 = {
-  title: {text: "A second chance at nine lives", size: "md"},
+  title: { text: "A second chance at nine lives", size: "md" },
   text: [
     "Whiskers got his leg caught in a fox trap after getting loose from his home. He lost a lot of skin, suffered nerve damage, ahd a quickly spreading infection. His family brought him.",
     "Thanks to our pet retention grant from Petco Love, we were able to bridge what his owners couldn’t afford and saved Whiskers by amputating the badly damaged leg. Whiskers now lives a life of three-legged luxury. We’re grateful for Petco Love’s support, which results from all of you who donate at checkout at the Petco stores."
   ],
-  buttons: [ {text: "Get involved", url: "#!" }],
+  buttons: [{ text: "Get involved", url: "#!" }],
   carousel: {
     slides: [
       { src: "src/assets/img/slide01.jpg", alt: "kitty" },
@@ -1099,32 +1213,34 @@ const postModuleData3 = {
 
 const postModuleData4 = {
   img: { src: "src/assets/img/content-img-19.jpg", alt: "" },
-  title: { text: "Request friends and family to send items off our wish list instead of buying gifts"},
-  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
+  title: {
+    text: "Request friends and family to send items off our wish list instead of buying gifts"
+  },
+  text: [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."
+  ],
   share: true,
-  buttons: [ {text: "View our wishlist", url: "#!" }],
+  buttons: [{ text: "View our wishlist", url: "#!" }],
   reverse: true
 };
 
 const postModuleData5 = {
   img: { src: "src/assets/img/content-img-20.jpg", alt: "" },
-  title: { text: "Other ways to honor your special day with charitable causes"},
-  list: [
-    "Lorem ipsum dolor sit amet,",
-    "consectetur adipiscing elit."
-  ],
-  customList: {
-    data: [
-      "Lorem ipsum dolor sit amet,",
-      "consectetur adipiscing elit."
-    ]
+  title: {
+    text: "Other ways to honor your special day with charitable causes"
   },
-  buttons: [ {text: "Get involved", url: "#!" }],
+  list: ["Lorem ipsum dolor sit amet,", "consectetur adipiscing elit."],
+  customList: {
+    data: ["Lorem ipsum dolor sit amet,", "consectetur adipiscing elit."]
+  },
+  buttons: [{ text: "Get involved", url: "#!" }]
 };
 
 const postModuleData6 = {
-  title: { text: "Give back to your community", size: "md"},
-  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
+  title: { text: "Give back to your community", size: "md" },
+  text: [
+    "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
+  ],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   buttons: [
     { variant: "secondary", text: "Donate", url: "#!" },
@@ -1134,7 +1250,7 @@ const postModuleData6 = {
 };
 
 const postModuleData7 = {
-  title: { text: "Impacting lifesaving across the country", size: "md"},
+  title: { text: "Impacting lifesaving across the country", size: "md" },
   text: [
     "The past five years have seen substantial change in our area. We transformed the faltering then Chester County SPCA into the f irst open admission no-kill shelter in Pennsylvania. We then provided the leadership needed for the state of Delaware to become the f irst and only no-kill state in the country. Our next step is to share what we’ve learned and help other shelters achieve the same success."
   ],

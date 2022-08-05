@@ -1,63 +1,5 @@
 <template>
-  <section
-    class="mx-auto grid max-w-[1440px] grid-cols-1 text-center md:grid-cols-2 md:text-left"
-  >
-    <div
-      class="order-2 ml-auto mt-7 w-full px-4 py-14 md:order-1 md:mt-0 md:max-w-xl xl:px-0"
-    >
-      <div class="hidden md:block">
-        <ButtonLink
-          class="mb-8 lg:mb-12"
-          text="Back to all dogs"
-          url="#!"
-          reverse
-        />
-        <h2 class="mb-8 text-2xl font-bold md:text-3xl xl:text-5xl">
-          Chewie fka Monkey
-        </h2>
-      </div>
-      <dl class="mb-10 space-y-2 md:mb-12 lg:space-y-3">
-        <div
-          v-for="row in profile.list"
-          :key="row.title"
-          class="flex text-left text-xs lg:text-base xl:text-lg"
-        >
-          <dt
-            class="mr-5 w-[125px] flex-shrink-0 pr-2 font-bold md:mr-2 lg:w-1/3"
-          >
-            {{ row.title }}
-          </dt>
-          <dd>{{ row.value }}</dd>
-        </div>
-      </dl>
-      <h3 class="mb-8 text-lg font-bold">Ready to complete your family?</h3>
-      <div
-        v-if="profile.buttons"
-        class="flex flex-wrap justify-center space-x-5 md:justify-start lg:space-x-10"
-      >
-        <Button
-          v-for="button in profile.buttons"
-          :key="button.text"
-          v-bind="button"
-        />
-      </div>
-    </div>
-    <div class="order-1 flex-col justify-between md:order-2 md:flex">
-      <div class="px-4 py-10 md:hidden">
-        <ButtonLink
-          class="mb-8 lg:mb-12"
-          text="Back to all dogs"
-          url="#!"
-          reverse
-        />
-        <h2 class="text-2xl font-bold md:text-3xl xl:text-5xl">
-          Chewie fka Monkey
-        </h2>
-      </div>
-      <SliderThumbs :slides="profile.slides" />
-    </div>
-  </section>
-
+  <PetProfileSection :data="profileData" />
   <section class="bg-gray-dark py-14 lg:py-28">
     <div
       class="relative mx-auto max-w-5xl px-4 text-center text-xs md:px-36 md:text-left md:text-sm lg:pr-60"
@@ -81,7 +23,11 @@
           >Share:</span
         >
         <Socials
-          :socials="socialList"
+          :socials="[
+            { url: '#', icon: 'facebook' },
+            { url: '#', icon: 'twitter' },
+            { url: '#', icon: 'share' }
+          ]"
           class="space-x-4 md:flex-col md:space-x-0 md:space-y-6"
         />
       </div>
@@ -96,12 +42,12 @@
         <h3
           class="mb-8 text-center text-xl font-bold sm:mb-4 md:text-2xl lg:text-left lg:text-4xl"
         >
-          {{ requirementsData.title }}
+          {{ data.requirements.title }}
         </h3>
         <div class="mx-auto max-w-md px-5 lg:max-w-none lg:px-0">
           <ul class="list-disc space-y-5 sm:list-none">
             <li
-              v-for="item in requirementsData.list"
+              v-for="item in data.requirements.list"
               :key="item.text"
               class="relative sm:pl-14"
             >
@@ -120,9 +66,9 @@
         <h3
           class="mb-8 text-center text-2xl font-bold sm:mb-4 lg:text-left lg:text-4xl"
         >
-          {{ whatsIncludedData.title }}
+          {{ data.included.title }}
         </h3>
-        <List class="text-sm font-bold" v-bind="whatsIncludedData.list" />
+        <List class="text-sm font-bold" v-bind="data.included.list" />
       </div>
     </div>
   </section>
@@ -133,32 +79,35 @@
 </template>
 
 <script setup>
+import PetProfileSection from "@/components/sections/PetProfile.vue";
 import Button from "@/components/Button.vue";
 import ButtonLink from "@/components/ButtonLink.vue";
-import SliderThumbs from "@/components/SliderThumbs.vue";
 import Socials from "@/components/Socials.vue";
 import List from "@/components/List.vue";
 import TextBanner from "@/components/TextBanner.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
-const profile = {
-  list: [
-    { title: "Animal ID:", value: "46433923" },
-    { title: "Species:", value: "Dog" },
-    { title: "Breed:", value: "Mixed Breed, Large/Mix" },
-    { title: "Age:", value: "5 years 21 days" },
-    { title: "Gender:", value: "Male" },
-    { title: "Size:", value: "Large" },
-    { title: "Color:", value: "Black/Tan" },
-    { title: "Spayed/Neutered:", value: "Yes" },
-    { title: "Declawed:", value: "No" },
-    { title: "Housetrained:", value: "Unknown" },
-    { title: "Location:", value: "WC Main Dog Kennel" }
-  ],
-  buttons: [
-    { text: "Contact us", url: "#!" },
-    { variant: "outline", text: "Location info", url: "#!" }
-  ],
+const profileData = {
+  info: {
+    name: "Chewie fka Monkey",
+    details: [
+      { title: "Animal ID:", value: "46433923" },
+      { title: "Species:", value: "Dog" },
+      { title: "Breed:", value: "Mixed Breed, Large/Mix" },
+      { title: "Age:", value: "5 years 21 days" },
+      { title: "Gender:", value: "Male" },
+      { title: "Size:", value: "Large" },
+      { title: "Color:", value: "Black/Tan" },
+      { title: "Spayed/Neutered:", value: "Yes" },
+      { title: "Declawed:", value: "No" },
+      { title: "Housetrained:", value: "Unknown" },
+      { title: "Location:", value: "WC Main Dog Kennel" }
+    ],
+    buttons: {
+      contact: { url: "#!11" },
+      location: { url: "#!" }
+    }
+  },
   slides: [
     {
       img: { src: "src/assets/img/profile-slide01.jpg", alt: "" }
@@ -189,53 +138,48 @@ const profile = {
   ]
 };
 
-const socialList = [
-  { url: "#", icon: "facebook" },
-  { url: "#", icon: "twitter" },
-  { url: "#", icon: "share" }
-];
-
-const requirementsData = {
-  title: "Adoption Requirements",
-  list: [
-    {
-      text: "We ask that all adult residents meet the cat to ensure he or she is a match for the entire family.",
-      img: { src: "src/assets/img/icon-contact-form.svg", alt: "" }
-    },
-    {
-      text: "Meet with an adoption counselor and fill out our adoption application in person. Please plan to spend 60-90 minutes to complete the adoption process, including visitation and paperwork.",
-      img: { src: "src/assets/img/icon-puzzle.svg", alt: "" }
-    },
-    {
-      text: "You must be at least 18 years of age.",
-      img: { src: "src/assets/img/icon-age-limit.svg", alt: "" }
-    },
-    {
-      text: "You must show a picture ID with a current address. If this isn't available, we will accept a picture ID with a current utility bill.",
-      img: { src: "src/assets/img/icon-driving-license.svg", alt: "" }
-    },
-    {
-      text: "You must live within 100 miles of Austin. Adopters of cats who are not yet spayed or neutered must live within Travis or Williamson County, and must put down a refundable $100 deposit in order to take the cat home prior to the surgery.",
-      img: { src: "src/assets/img/icon-mobility.svg", alt: "" }
-    }
-  ]
-};
-
-const whatsIncludedData = {
-  title: "What’s Included?",
-  list: {
-    data: [
-      "Spaying/neutering",
-      "Current vaccinations",
-      "Deworming",
-      "Heartworm test (for dogs)",
-      "Flea/tick treatment(s)",
-      "Microchipping",
-      "A free “starter” bag of Science Diet dry food",
-      "Access to our 24-hour emergency line for post-adoption health or behavior concerns",
-      "Free access to our behavior team for follow-up behavioral training and counseling",
-      "A free follow-up exam at our clinic or a VCA hospital within 2 weeks of adoption, plus $250 in post-adoption services as needed"
+const data = {
+  requirements: {
+    title: "Adoption Requirements",
+    list: [
+      {
+        text: "We ask that all adult residents meet the cat to ensure he or she is a match for the entire family.",
+        img: { src: "src/assets/img/icon-contact-form.svg", alt: "" }
+      },
+      {
+        text: "Meet with an adoption counselor and fill out our adoption application in person. Please plan to spend 60-90 minutes to complete the adoption process, including visitation and paperwork.",
+        img: { src: "src/assets/img/icon-puzzle.svg", alt: "" }
+      },
+      {
+        text: "You must be at least 18 years of age.",
+        img: { src: "src/assets/img/icon-age-limit.svg", alt: "" }
+      },
+      {
+        text: "You must show a picture ID with a current address. If this isn't available, we will accept a picture ID with a current utility bill.",
+        img: { src: "src/assets/img/icon-driving-license.svg", alt: "" }
+      },
+      {
+        text: "You must live within 100 miles of Austin. Adopters of cats who are not yet spayed or neutered must live within Travis or Williamson County, and must put down a refundable $100 deposit in order to take the cat home prior to the surgery.",
+        img: { src: "src/assets/img/icon-mobility.svg", alt: "" }
+      }
     ]
+  },
+  included: {
+    title: "What’s Included?",
+    list: {
+      data: [
+        "Spaying/neutering",
+        "Current vaccinations",
+        "Deworming",
+        "Heartworm test (for dogs)",
+        "Flea/tick treatment(s)",
+        "Microchipping",
+        "A free “starter” bag of Science Diet dry food",
+        "Access to our 24-hour emergency line for post-adoption health or behavior concerns",
+        "Free access to our behavior team for follow-up behavioral training and counseling",
+        "A free follow-up exam at our clinic or a VCA hospital within 2 weeks of adoption, plus $250 in post-adoption services as needed"
+      ]
+    }
   }
 };
 

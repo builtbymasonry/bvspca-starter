@@ -89,7 +89,7 @@
       </div>
     </section>
 
-    <PostCardsSection v-bind="postCardsSectionData"/>
+    <PostCardsSection v-bind="postCardsSectionData" />
   </div>
 </template>
 
@@ -102,7 +102,7 @@ import TableServices from "@/components/TableServices.vue";
 import TextBox from "@/components/TextBox.vue";
 import PostInline from "@/components/PostInline.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
   img: { src: "src/assets/img/hero-image-04.jpg", alt: "" },
@@ -113,7 +113,9 @@ const heroInnerData = {
 const postSectionData = {
   img: { src: "src/assets/img/content-img-09.jpg", alt: "" },
   title: "Outdoor cats need love too",
-  text: ["Our services increase the health and wellness of community cats while proactively reducing the number of animals being born without homes in our community. TNVR has been shown to be the most humane, most efficient, and least costly method of stabilizing community cat populations."],
+  text: [
+    "Our services increase the health and wellness of community cats while proactively reducing the number of animals being born without homes in our community. TNVR has been shown to be the most humane, most efficient, and least costly method of stabilizing community cat populations."
+  ],
   textGrid: [
     {
       title: "Feature one",
@@ -220,7 +222,9 @@ const textBoxData = {
 const postInlineData = {
   img: { src: "src/assets/img/content-img-10.jpg", alt: "" },
   title: "Help keep our Community Cats program alive",
-  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
+  text: [
+    "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
+  ],
   buttons: [{ variant: "secondary", text: "Donate", url: "#!" }]
 };
 
@@ -249,8 +253,6 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more", url: "#!" }
     }
   ],
-  buttons: [
-    { text: "View all news, events & resources", url: "#!" },
-  ]
-}
+  buttons: [{ text: "View all news, events & resources", url: "#!" }]
+};
 </script>

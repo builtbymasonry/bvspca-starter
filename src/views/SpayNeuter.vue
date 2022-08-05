@@ -74,7 +74,7 @@ import TableServices from "@/components/TableServices.vue";
 import TextBox from "@/components/TextBox.vue";
 import TextBanner from "@/components/TextBanner.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 import PostInline from "@/components/PostInline.vue";
 import InfoCard from "@/components/InfoCard.vue";
 
@@ -245,7 +245,9 @@ const textBannerData = {
 const postInlineData = {
   img: { src: "src/assets/img/content-img-08.jpg", alt: "" },
   title: "Pay it forward, your free time has so much value",
-  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. "],
+  text: [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. "
+  ],
   buttons: [{ text: "Get involved", url: "#!" }],
   reverse: true
 };
@@ -254,9 +256,7 @@ const infoCardData = {
   img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
-  buttons: [
-    { text: "Learn more about our impact", url: "#!" }
-  ]
+  buttons: [{ text: "Learn more about our impact", url: "#!" }]
 };
 
 const postCardsSectionData = {
@@ -284,8 +284,6 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more", url: "#!" }
     }
   ],
-  buttons: [
-    { text: "View all news, events & resources", url: "#!" }
-  ]
+  buttons: [{ text: "View all news, events & resources", url: "#!" }]
 };
 </script>

@@ -65,10 +65,7 @@
       </div>
     </section>
 
-    <PostCardsSection
-      class="bg-gray-dark"
-      v-bind="postCardsSectionData"
-    />
+    <PostCardsSection class="bg-gray-dark" v-bind="postCardsSectionData" />
   </div>
 </template>
 
@@ -83,7 +80,7 @@ import TextBox from "@/components/TextBox.vue";
 import TextBanner from "@/components/TextBanner.vue";
 import PostInline from "@/components/PostInline.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
   img: { src: "src/assets/img/hero-image-03.jpg", alt: "" },
@@ -94,7 +91,9 @@ const heroInnerData = {
 const postSectionData = {
   img: { src: "src/assets/img/content-img-05.jpg", alt: "" },
   title: "Affordable healthcare with an impact",
-  text: ["In addition, by bringing their pets to our Brandywine vet hospitals for care, clients support the plight of homeless pets, as any proceeds from the BVSPCA’s clinics benefit the mission and programs at the Brandywine Valley SPCA."],
+  text: [
+    "In addition, by bringing their pets to our Brandywine vet hospitals for care, clients support the plight of homeless pets, as any proceeds from the BVSPCA’s clinics benefit the mission and programs at the Brandywine Valley SPCA."
+  ],
   textGrid: [
     {
       title: "Feature one",
@@ -255,14 +254,18 @@ const textBannerData = {
 const postInlineData = {
   img: { src: "src/assets/img/content-img-06.jpg", alt: "" },
   title: "Your pet is in good hands",
-  text: ["Get to know our experienced veterinary team. They’re ready to help your pet with routine check-ups, preventative care, and medical issues and so much more."],
+  text: [
+    "Get to know our experienced veterinary team. They’re ready to help your pet with routine check-ups, preventative care, and medical issues and so much more."
+  ],
   buttons: [{ variant: "secondary", text: "Clinic staff", url: "#!" }]
 };
 
 const postInlineData2 = {
   img: { src: "src/assets/img/content-img-07.jpg", alt: "" },
   title: "Help us keep pet wellness affordable",
-  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
+  text: [
+    "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
+  ],
   buttons: [{ text: "Donate", url: "#!" }],
   reverse: true
 };
@@ -270,7 +273,9 @@ const postInlineData2 = {
 const postInlineData3 = {
   img: { src: "src/assets/img/content-img-08.jpg", alt: "" },
   title: "Pay it forward, your free time has so much value",
-  text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
+  text: [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."
+  ],
   buttons: [{ text: "Get involved", url: "#!" }]
 };
 
@@ -584,8 +589,6 @@ const postCardsSectionData = {
       buttonLink: { text: "Read more", url: "#!" }
     }
   ],
-  buttons: [
-    { text: "View all news, events & resources", url: "#!" },
-  ]
-}
+  buttons: [{ text: "View all news, events & resources", url: "#!" }]
+};
 </script>

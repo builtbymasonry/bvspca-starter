@@ -128,7 +128,7 @@ import MapLocations from "@/components/MapLocations.vue";
 import Accordion from "@/components/Accordion.vue";
 import PostInline from "@/components/PostInline.vue";
 import InfoCard from "@/components/InfoCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
   title: "Adoption info",

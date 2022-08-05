@@ -57,7 +57,7 @@
 import Button from "@/components/Button.vue";
 import HeroInner from "@/components/HeroInner.vue";
 import PostCard from "@/components/PostCard.vue";
-import PostCardsSection from "@/components/PostCardsSection.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 import ContactCard from "@/components/ContactCard.vue";
 import PostInline from "@/components/PostInline.vue";
 import InfoCard from "@/components/InfoCard.vue";
@@ -197,14 +197,14 @@ const infoCardData = {
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
   img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
-  buttons: [
-    { text: "Learn more about our impact", url: "#!" }
-  ]
+  buttons: [{ text: "Learn more about our impact", url: "#!" }]
 };
 
 const postInlineData = {
   title: "Help keep programs like this alive",
-  text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
+  text: [
+    "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
+  ],
   img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
   reverse: true,
   buttons: [
