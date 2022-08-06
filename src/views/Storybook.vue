@@ -1,7 +1,7 @@
 <template>
   <div>
     <PostsFeed v-bind="feedData" />
-    <!-- <LocationsSection :locations="locationsData" />
+    <LocationsSection :locations="locationsData" />
     <section>
       <h2 class="mb-3 text-center text-xl font-bold">LocationProfile</h2>
       <LocationProfile :location="locationProfile" />
@@ -129,7 +129,7 @@
       <div class="mx-auto max-w-4xl px-4">
         <PostModule v-bind="postModuleData7" />
       </div>
-    </section> -->
+    </section>
   </div>
 </template>
 <script setup>
