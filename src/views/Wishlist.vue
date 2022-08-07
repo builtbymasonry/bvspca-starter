@@ -100,7 +100,7 @@
       <div class="relative mx-auto w-full max-w-sm md:max-w-md lg:w-2/3 lg:max-w-full">
         <img
           class="w-full"
-          src="src/assets/img/content-img-21.jpg"
+          src="src/assets/img/content-img-21.png"
           alt="image description"
         />
       </div>

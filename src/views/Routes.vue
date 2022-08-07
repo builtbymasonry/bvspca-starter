@@ -38,6 +38,8 @@ const routes = [
   "/adoption-info",
   "/donate",
   "/sponsor",
-  "/wishlist"
+  "/wishlist",
+  "/locations",
+  "/location-profile"
 ];
 </script>

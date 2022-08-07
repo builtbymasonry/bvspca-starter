@@ -60,7 +60,7 @@
       >
         <img
           class="w-full"
-          src="src/assets/img/content-img-21.jpg"
+          src="src/assets/img/content-img-21.png"
           alt="image description"
         />
       </div>

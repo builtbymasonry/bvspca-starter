@@ -22,6 +22,8 @@ import AdoptionInfo from './views/AdoptionInfo.vue'
 import Donate from './views/Donate.vue'
 import Sponsor from './views/Sponsor.vue'
 import Wishlist from './views/Wishlist.vue'
+import Locations from './views/Locations.vue'
+import LocationProfileView from './views/LocationProfileView.vue'
 import DonateModal from './views/DonateModal.vue'
 import VolunteerModal from './views/VolunteerModal.vue'
 import AppointmentModal from './views/AppointmentModal.vue'
@@ -58,6 +60,8 @@ export const routes = [
   { path: '/donate', component: Donate, meta: { title: 'Donate' } },
   { path: '/sponsor', component: Sponsor, meta: { title: 'Sponsor' } },
   { path: '/wishlist', component: Wishlist, meta: { title: 'Wishlist' } },
+  { path: '/locations', component: Locations, meta: { title: 'Locations' } },
+  { path: '/location-profile', component: LocationProfileView, meta: { title: 'Location Profile' } },
   { path: '/donate-modal', component: DonateModal, meta: { title: 'Donate modal' } },
   { path: '/volunteer-modal', component: VolunteerModal, meta: { title: 'Volunteer modal' } },
   { path: '/appointment-modal', component: AppointmentModal, meta: { title: 'Appointment modal' } },

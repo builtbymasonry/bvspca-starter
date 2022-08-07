@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto max-w-screen-2xl">
     <div class="lg:flex">
-      <div class="py-8 pr-6 pl-6 lg:w-1/2 lg:py-16 lg:pr-12">
+      <div class="py-8 pr-6 pl-6 lg:w-1/2 lg:py-20 lg:pr-10 2xl:pl-36">
         <div
           class="flex flex-col items-center lg:flex-col-reverse lg:items-start"
         >
@@ -20,7 +20,7 @@
           class="mx-auto max-w-xl text-sm leading-[1.85] text-black lg:max-w-none"
         >
           <address
-            class="text-red border-gray-dark mb-7 flex flex-col items-center border-b-2 pb-7 font-bold not-italic sm:mb-2 sm:border-none sm:pb-0 lg:flex-row"
+            class="text-red border-gray-dark mb-7 flex flex-col items-center border-b-2 pb-7 font-bold not-italic sm:mb-4 sm:border-none sm:pb-0 lg:flex-row"
             v-html="renderAddress(location.address)"
           ></address>
           <ul v-if="location.phone" class="mb-6 font-bold sm:mb-7">

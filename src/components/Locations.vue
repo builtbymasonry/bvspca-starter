@@ -1,7 +1,7 @@
 <template>
   <section class="mx-auto max-w-screen-2xl">
     <div class="lg:flex">
-      <div class="grow-1 w-full px-6 pt-6 lg:py-16 lg:pr-10">
+      <div class="grow-1 w-full px-6 pt-6 lg:py-16 lg:pr-10 2xl:pl-40">
         <h1
           class="mb-7 text-center text-2xl font-bold text-black lg:text-left xl:mb-8 xl:text-6xl"
         >
@@ -43,7 +43,10 @@
             Map
           </button>
         </div>
-        <div v-show="(mobileMode && activeScreen === 'list') || !mobileMode">
+        <div
+          v-show="(mobileMode && activeScreen === 'list') || !mobileMode"
+          class="2xl:-ml-12"
+        >
           <ul
             class="border-gray-dark mx-auto mb-12 max-w-md border-t-2 pt-7 text-sm leading-[1.85] text-black sm:max-w-2xl sm:pt-9 lg:max-w-none lg:border-none lg:pt-0"
           >
