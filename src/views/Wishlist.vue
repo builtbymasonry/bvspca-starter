@@ -1,22 +1,24 @@
 <template>
   <HeroInner v-bind="heroInnerData" />
 
-  <section class="py-14 lg:py-28 bg-gray-dark">
+  <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-7xl px-4">
       <PostModule class="text-xs" v-bind="postModuleData" />
     </div>
   </section>
 
-  <section class="lg:-mt-36 py-14 lg:py-28 bg-gray-dark">
+  <section class="bg-gray-dark py-14 lg:-mt-36 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
-      <h2 class="mb-10 text-2xl md:text-3xl xl:text-5xl text-center font-bold">Amazon wishlists</h2>
+      <h2 class="mb-10 text-center text-2xl font-bold md:text-3xl xl:text-5xl">
+        Amazon wishlists
+      </h2>
       <div class="-my-5 flex flex-wrap justify-center">
         <div
-          class="w-full sm:w-1/2 lg:w-1/3 max-w-xs sm:max-w-full py-5 sm:p-5"
+          class="w-full max-w-xs py-5 sm:w-1/2 sm:max-w-full sm:p-5 lg:w-1/3"
           v-for="card in wishlist"
           :key="card.title"
         >
-          <CardWishlist v-bind="card"/>
+          <CardWishlist v-bind="card" />
         </div>
       </div>
     </div>
@@ -41,70 +43,78 @@
       </picture>
     </div>
 
-    <div class="mx-auto mb-0 md:-mb-36 max-w-5xl px-4 relative z-3">
-      <div class="px-8 sm:px-12 lg:px-32 py-12 sm:py-16 lg:py-20 bg-white rounded-sm lg:rounded-lg">
-        <h2 class="mb-8 sm:mb-11 text-2xl md:text-3xl xl:text-5xl text-center font-bold">What we need</h2>
-        <div class="mb-10 sm:mb-14 grid grid-cols-1 md:grid-cols-2 gap-10 text-sm leading-5">
+    <div class="z-3 relative mx-auto mb-0 max-w-5xl px-4 md:-mb-36">
+      <div
+        class="rounded-sm bg-white px-8 py-12 sm:px-12 sm:py-16 lg:rounded-lg lg:px-32 lg:py-20"
+      >
+        <h2
+          class="mb-8 text-center text-2xl font-bold sm:mb-11 md:text-3xl xl:text-5xl"
+        >
+          What we need
+        </h2>
+        <div
+          class="mb-10 grid grid-cols-1 gap-10 text-sm leading-5 sm:mb-14 md:grid-cols-2"
+        >
           <div>
             <h3 class="mb-4 text-xl font-bold">For the pups</h3>
-            <ul class="list-disc space-y-1 pl-5 marker:text-xs text-left">
-              <li
-                v-for="item in forPupsList"
-                :key="item"
-                class="pl-2"
-              >
-                {{item}}
+            <ul class="list-disc space-y-1 pl-5 text-left marker:text-xs">
+              <li v-for="item in forPupsList" :key="item" class="pl-2">
+                {{ item }}
               </li>
             </ul>
           </div>
           <div>
             <h3 class="mb-4 text-xl font-bold">For our fosters</h3>
-            <ul class="mb-10 md:mb-14 list-disc space-y-1 pl-5 marker:text-xs text-left">
-              <li
-                v-for="item in forFostersList"
-                :key="item"
-                class="pl-2"
-              >
-                {{item}}
+            <ul
+              class="mb-10 list-disc space-y-1 pl-5 text-left marker:text-xs md:mb-14"
+            >
+              <li v-for="item in forFostersList" :key="item" class="pl-2">
+                {{ item }}
               </li>
             </ul>
             <h3 class="mb-4 text-xl font-bold">For the kittens</h3>
-            <ul class="list-disc space-y-1 pl-5 marker:text-xs text-left">
-              <li
-                v-for="item in forKittensList"
-                :key="item"
-                class="pl-2"
-              >
-                {{item}}
+            <ul class="list-disc space-y-1 pl-5 text-left marker:text-xs">
+              <li v-for="item in forKittensList" :key="item" class="pl-2">
+                {{ item }}
               </li>
             </ul>
           </div>
         </div>
 
         <div class="text-center">
-          <h3 class="mb-6 sm:mb-9 text-lg sm:text-xl md:text-2xl font-bold">Download the printable list</h3>
-          <Button text="Download list" url="#" />
+          <h3 class="mb-6 text-lg font-bold sm:mb-9 sm:text-xl md:text-2xl">
+            Download the printable list
+          </h3>
+          <Button text="Download list" url="#" download />
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32">
+  <section
+    class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32"
+  >
     <div class="mx-auto max-w-4xl px-4">
       <PostModule class="text-sm font-bold" v-bind="PostModuleData2" />
     </div>
   </section>
 
   <section class="py-14 lg:py-28">
-    <div class="mx-auto flex max-w-5xl flex-col items-center gap-5 gap-y-10 px-4 text-center lg:flex-row-reverse lg:text-left">
-      <div class="relative mx-auto w-full max-w-sm md:max-w-md lg:w-2/3 lg:max-w-full">
+    <div
+      class="mx-auto flex max-w-5xl flex-col items-center gap-5 gap-y-10 px-4 text-center lg:flex-row-reverse lg:text-left"
+    >
+      <div
+        class="relative mx-auto w-full max-w-sm md:max-w-md lg:w-2/3 lg:max-w-full"
+      >
         <img
           class="w-full"
           src="src/assets/img/content-img-21.png"
           alt="image description"
         />
       </div>
-      <div class="py-2 pr-5 text-xs lg:flex lg:w-1/3 lg:flex-col lg:items-start lg:justify-center">
+      <div
+        class="py-2 pr-5 text-xs lg:flex lg:w-1/3 lg:flex-col lg:items-start lg:justify-center"
+      >
         <h2 class="mb-3 text-2xl font-bold md:text-3xl xl:text-4xl">
           Check out upcoming events
         </h2>
@@ -122,11 +132,11 @@
 </template>
 
 <script setup>
-import Button from "@/components/Button.vue"
-import HeroInner from "@/components/HeroInner.vue"
-import PostModule from "@/components/PostModule.vue"
-import CardWishlist from "@/components/CardWishlist.vue"
-import PostCardsSection from "@/components/sections/PostCardsSection.vue"
+import Button from "@/components/Button.vue";
+import HeroInner from "@/components/HeroInner.vue";
+import PostModule from "@/components/PostModule.vue";
+import CardWishlist from "@/components/CardWishlist.vue";
+import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
   title: "Wishlist",
@@ -228,35 +238,35 @@ const wishlist = [
 
 const forPupsList = [
   "Heavy duty dog toys",
-	"Food puzzles",
-	"No-pull harnesses: Freedom Harness, Balance Harness, EZ Walk (M/L/XL)",
-	"Martingale collars: ¾ inch or 1 inch (M/L)",
-	"Training clickers with wrist strap",
-	"Travel pet carriers (S/M/L)",
-	"Wet dog food",
-	"Kongs (all sizes)",
-	"E-collars",
-	"Frisbees",
-	"Carabeeners",
-	"Peanut butter (smooth, nothing with xylitol)",
-	"Towels and blankets (Washed, gently used items are great, but no knitted or crocheted items, down comforters, used dog beds or pillows please)"
+  "Food puzzles",
+  "No-pull harnesses: Freedom Harness, Balance Harness, EZ Walk (M/L/XL)",
+  "Martingale collars: ¾ inch or 1 inch (M/L)",
+  "Training clickers with wrist strap",
+  "Travel pet carriers (S/M/L)",
+  "Wet dog food",
+  "Kongs (all sizes)",
+  "E-collars",
+  "Frisbees",
+  "Carabeeners",
+  "Peanut butter (smooth, nothing with xylitol)",
+  "Towels and blankets (Washed, gently used items are great, but no knitted or crocheted items, down comforters, used dog beds or pillows please)"
 ];
 
 const forFostersList = [
   "KMR powder",
-	"Pet nursing bottles",
-	"Dry and wet kitten food (no color added)",
-	"Heating pads (Snuggle Safes)",
-	"X-Pens",
-	"Pureed baby food (chicken and gravy only)"
+  "Pet nursing bottles",
+  "Dry and wet kitten food (no color added)",
+  "Heating pads (Snuggle Safes)",
+  "X-Pens",
+  "Pureed baby food (chicken and gravy only)"
 ];
 
 const forKittensList = [
   "Cat scratchers from stretchandscratch.com",
-	"Cat toys",
-	"Food puzzles",
-	"Laser pointers",
-	"Cat litter (clumping and unscented) and standard size litter boxes",
-	"Small throw blankets"
+  "Cat toys",
+  "Food puzzles",
+  "Laser pointers",
+  "Cat litter (clumping and unscented) and standard size litter boxes",
+  "Small throw blankets"
 ];
 </script>

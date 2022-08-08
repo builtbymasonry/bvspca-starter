@@ -3,8 +3,8 @@
     <PostsFeed v-bind="feedData" />
     <LocationsSection :locations="locationsData" />
     <section>
-      <h2 class="mb-3 text-center text-xl font-bold">LocationProfile</h2>
-      <LocationProfile :location="locationProfile" />
+      <h2 class="mb-3 text-center text-xl font-bold">LocationDetails</h2>
+      <LocationDetails :location="locationProfile" />
     </section>
     <section class="bg-gray-dark py-8">
       <h2 class="mb-3 text-center text-xl font-bold">MarqueeSponsors</h2>
@@ -143,7 +143,7 @@ import SliderThumbs from "@/components/SliderThumbs.vue";
 import MapLocations from "@/components/MapLocations.vue";
 import MarqueeSponsors from "@/components/MarqueeSponsors.vue";
 import PostModule from "@/components/PostModule.vue";
-import LocationProfile from "@/components/LocationProfile.vue";
+import LocationDetails from "@/components/LocationDetails.vue";
 import LocationsSection from "@/components/Locations.vue";
 import PostsFeed from "@/components/sections/PostsFeed.vue";
 

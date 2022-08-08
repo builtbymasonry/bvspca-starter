@@ -1,7 +1,7 @@
 <template>
-  <LocationProfile :location="locationProfile" />
+  <LocationDetails :location="locationProfile" />
 
-  <section class="py-14 lg:py-28 bg-gray-dark">
+  <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-7xl px-4">
       <h2 class="mb-8 text-center text-2xl font-bold md:text-3xl xl:text-4xl">
         Services offered at this location
@@ -15,8 +15,8 @@
 </template>
 
 <script setup>
-import LocationProfile from "@/components/LocationProfile.vue"
-import List from "@/components/List.vue"
+import LocationDetails from "@/components/LocationDetails.vue";
+import List from "@/components/List.vue";
 
 const locationProfile = {
   img: { src: "src/assets/img/location-photo-01.jpg", alt: "Dover" },
