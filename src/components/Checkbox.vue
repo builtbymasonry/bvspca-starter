@@ -1,6 +1,6 @@
 <template>
   <SwitchGroup>
-    <div class="flex">
+    <div class="flex items-center">
       <Switch
         v-model="enabled"
         class="focus:ring-orange relative mr-[10px] inline-flex h-[20px] shrink-0 basis-[20px] rounded-[4px] focus:outline-none focus:ring-1 focus-visible:ring-1"

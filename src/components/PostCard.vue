@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-xs">
     <a
       :href="url"
       class="mb-8 block overflow-hidden rounded-sm shadow md:rounded-lg"
@@ -9,8 +9,16 @@
         v-bind="img"
       />
     </a>
-    <h3 class="mb-2 text-2xl font-bold">{{ title }}</h3>
-    <p class="mb-8 text-sm">{{ text }}</p>
+    <h3
+      v-if="title"
+      class="mb-2 text-xl font-bold"
+      :class="[
+        title.size === 'md' && 'sm:text-2xl'
+      ]"
+    >
+      {{ title.text }}
+    </h3>
+    <p class="mb-8">{{ text }}</p>
     <div v-if="share" class="mb-9 flex">
       <span class="mr-6 text-lg font-bold md:text-xl">Share:</span>
       <Socials :socials="socialList" class="space-x-4" />
@@ -32,7 +40,7 @@ const props = defineProps({
     default: ""
   },
   img: Object,
-  title: String,
+  title: Object,
   text: String,
   share: {
     type: Boolean,

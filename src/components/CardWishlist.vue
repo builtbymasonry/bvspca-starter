@@ -1,15 +1,7 @@
 <template>
   <div class="overflow-hidden rounded-sm lg:rounded-lg shadow bg-white">
-    <div class="w-full h-44">
-      <GoogleMap
-        :api-key="GOOGLE_API_KEY"
-        style="height: 100%; width: 100%"
-        :zoom="zoomIndex || 9"
-        :center="location"
-        disableDefaultUi
-      >
-        <Marker :options="{ position: location, icon: pin }"></Marker>
-      </GoogleMap>
+    <div class="w-full relative h-44">
+      <img v-bind="img" class="absolute w-full h-full object-cover" />
     </div>
 
     <div class="p-8 pb-12 text-sm text-center">
@@ -21,20 +13,12 @@
 </template>
 
 <script setup>
-import { GoogleMap, Marker } from "vue3-google-map"
-import pin from "@/assets/img/pin-heart.svg"
 import Button from "@/components/Button.vue"
 
-const GOOGLE_API_KEY = "AIzaSyBIKsc31TXAvusDAeRpJ8_p6TnMOsU324s";
-
 const props = defineProps({
+  img: Object,
   title: String,
   address: String,
-  button: Object,
-  location: {
-    type: Object,
-    required: true
-  },
-  zoomIndex: Number
+  button: Object
 });
 </script>
