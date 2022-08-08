@@ -198,7 +198,7 @@ const postCardsSectionData = {
     {
       url: "#!",
       img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
-      title: "Chewie fka Monkey",
+      title: { text: "Chewie fka Monkey", size: "md"},
       text: "Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well …",
       share: true,
       buttonLink: { text: "Learn more", url: "#!" }
@@ -206,7 +206,7 @@ const postCardsSectionData = {
     {
       url: "#!",
       img: { src: "src/assets/img/img-pet-02.jpg" },
-      title: "Slim aka Spunk",
+      title: { text: "Slim aka Spunk", size: "md"},
       text: "Slim (aka Spunk) is a big fellow with an equally big heart! This wonderful guy is bonded with Magic, on whom he relies for comfort and love. As a bonded …",
       share: true,
       buttonLink: { text: "Learn more", url: "#!" }
@@ -214,7 +214,7 @@ const postCardsSectionData = {
     {
       url: "#!",
       img: { src: "src/assets/img/img-pet-03.jpg" },
-      title: "Boo Boo",
+      title: { text: "Boo Boo", size: "md"},
       text: "Boo Boo loves tennis balls! He likes to play with them, walk with them, and swim in our doggie pools with them. If you have a stash of tennis balls, Boo Boo …",
       share: true,
       buttonLink: { text: "Learn more", url: "#!" }

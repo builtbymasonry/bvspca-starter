@@ -40,6 +40,7 @@ const routes = [
   "/sponsor",
   "/wishlist",
   "/locations",
-  "/location-profile"
+  "/location-profile",
+  "/news-events"
 ];
 </script>
