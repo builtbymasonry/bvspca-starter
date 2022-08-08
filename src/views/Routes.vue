@@ -37,6 +37,9 @@ const routes = [
   "/pet-profile",
   "/adoption-info",
   "/donate",
-  "/sponsor"
+  "/sponsor",
+  "/wishlist",
+  "/locations",
+  "/location-profile"
 ];
 </script>
