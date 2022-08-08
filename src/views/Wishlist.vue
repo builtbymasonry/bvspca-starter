@@ -195,34 +195,34 @@ const postCardsSectionData = {
 
 const wishlist = [
   {
+    img: { src: "src/assets/img/location-01.jpg", alt: "" },
     title: "West Chester",
     address: "1212 Phoenixville Pike \nWest Chester, PA 19380",
-    button: { text: "Amazon wishlist", url: "#!" },
-    location: { lat: 40.040676754457294, lng: -75.63727380147851 }
+    button: { text: "Amazon wishlist", url: "#!", target: "_blank" }
   },
   {
+    img: { src: "src/assets/img/location-01.jpg", alt: "" },
     title: "New Castle",
     address: "1212 Phoenixville Pike \nWest Chester, PA 19380",
-    button: { text: "Amazon wishlist", url: "#!" },
-    location: { lat: 40.040676754457294, lng: -75.63727380147851 }
+    button: { text: "Amazon wishlist", url: "#!", target: "_blank" }
   },
   {
+    img: { src: "src/assets/img/location-01.jpg", alt: "" },
     title: "Dover",
     address: "1212 Phoenixville Pike \nWest Chester, PA 19380",
-    button: { text: "Amazon wishlist", url: "#!" },
-    location: { lat: 40.040676754457294, lng: -75.63727380147851 }
+    button: { text: "Amazon wishlist", url: "#!", target: "_blank" }
   },
   {
+    img: { src: "src/assets/img/location-01.jpg", alt: "" },
     title: "Georgetown",
     address: "1212 Phoenixville Pike \nWest Chester, PA 19380",
-    button: { text: "Amazon wishlist", url: "#!" },
-    location: { lat: 40.040676754457294, lng: -75.63727380147851 }
+    button: { text: "Amazon wishlist", url: "#!", target: "_blank" }
   },
   {
+    img: { src: "src/assets/img/location-01.jpg", alt: "" },
     title: "ARC",
     address: "1212 Phoenixville Pike West Chester, PA 19380",
-    button: { text: "Amazon wishlist", url: "#!" },
-    location: { lat: 40.040676754457294, lng: -75.63727380147851 }
+    button: { text: "Amazon wishlist", url: "#!", target: "_blank" }
   }
 ];
 
