@@ -7,10 +7,11 @@
   >
     {{ text }}
     <BaseIcon
-      name="arrowRight"
+      :name="icon"
       :class="[
+        iconStyle,
         reverse ? 'mr-3 rotate-180' : 'ml-3 mt-0.5',
-        'text-orange inline-flex h-3 w-3'
+        'text-orange inline-flex h-3 w-3',
       ]"
     />
   </a>
@@ -35,6 +36,11 @@ const props = defineProps({
   reverse: {
     type: Boolean,
     default: false
-  }
+  },
+  icon: {
+    type: String,
+    default: "arrowRight"
+  },
+  iconStyle: String
 });
 </script>
