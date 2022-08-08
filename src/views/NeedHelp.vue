@@ -168,21 +168,21 @@ const postCardsSectionData = {
     {
       url: "#!",
       img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
-      title: "$5 off our 5K Color Run",
+      title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
       img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
-      title: "Walk-4-Paws",
+      title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
       img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
-      title: "Critter Camp",
+      title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }
     }

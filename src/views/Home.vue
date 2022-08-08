@@ -245,7 +245,7 @@ const postCardsPetsData = {
     {
       url: "#!",
       img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
-      title: "Chewie fka Monkey",
+      title: { text: "Chewie fka Monkey", size: "md"},
       text: "Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well …",
       share: true,
       buttonLink: { text: "Learn more", url: "#!" }
@@ -253,7 +253,7 @@ const postCardsPetsData = {
     {
       url: "#!",
       img: { src: "src/assets/img/img-pet-02.jpg" },
-      title: "Slim aka Spunk",
+      title: { text: "Slim aka Spunk", size: "md"},
       text: "Slim (aka Spunk) is a big fellow with an equally big heart! This wonderful guy is bonded with Magic, on whom he relies for comfort and love. As a bonded …",
       share: true,
       buttonLink: { text: "Learn more", url: "#!" }
@@ -261,7 +261,7 @@ const postCardsPetsData = {
     {
       url: "#!",
       img: { src: "src/assets/img/img-pet-03.jpg" },
-      title: "Boo Boo",
+      title: { text: "Boo Boo", size: "md"},
       text: "Boo Boo loves tennis balls! He likes to play with them, walk with them, and swim in our doggie pools with them. If you have a stash of tennis balls, Boo Boo …",
       share: true,
       buttonLink: { text: "Learn more", url: "#!" }
@@ -329,21 +329,21 @@ const cardsDonations = [
   {
     url: "#!",
     img: { src: "src/assets/img/img-pet-04.jpg", alt: "" },
-    title: "Save a Life",
+    title: { text: "Save a Life"},
     text: "Every dollar you donate will go to the programs and services that help save the lives of thousands of homeless animals each year.",
     button: { variant: "secondary", text: "Save a life", url: "#!" }
   },
   {
     url: "#!",
     img: { src: "src/assets/img/img-pet-05.jpg", alt: "" },
-    title: "Circle of Life",
+    title: { text: "Circle of Life"},
     text: "Your generous monthly donation helps provide shelter, food, and medical care to thousands of animals who enter our shelters each year.",
     button: { variant: "secondary", text: "Become a member", url: "#!" }
   },
   {
     url: "#!",
     img: { src: "src/assets/img/img-pet-06.jpg", alt: "" },
-    title: "1929 Society",
+    title: { text: "1929 Society"},
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non.",
     button: { variant: "secondary", text: "Join the society", url: "#!" }
   }
@@ -355,21 +355,21 @@ const postCardsSectionData = {
     {
       url: "#!",
       img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
-      title: "$5 off our 5K Color Run",
+      title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
       img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
-      title: "Walk-4-Paws",
+      title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
       img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
-      title: "Critter Camp",
+      title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }
     }
