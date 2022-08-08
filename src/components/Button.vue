@@ -1,7 +1,9 @@
 <template>
-  <a
-    :target="target"
-    :href="url"
+  <component
+    :is="as"
+    :target="as === 'a' ? target : null"
+    :href="as === 'a' ? url : null"
+    :type="as === 'button' ? type : null"
     :class="[
       classDefault,
       classSize(),
@@ -15,13 +17,21 @@
       :name="icon"
       class="ml-3 mt-0.5 inline-flex h-3 w-3 md:mt-0"
     />
-  </a>
+  </component>
 </template>
 
 <script setup>
 import BaseIcon from "./BaseIcon.vue";
 
 const props = defineProps({
+  as: {
+    type: String,
+    default: "a"
+  },
+  type: {
+    type: String,
+    default: null
+  },
   target: {
     type: String,
     default: "_self"

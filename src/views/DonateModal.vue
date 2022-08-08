@@ -80,11 +80,13 @@
             </div>
             <div class="text-center">
               <Button
+                as="button"
+                type="button"
                 text="Next"
                 variant="primary"
                 icon="arrowRight"
                 class="min-w-[105px]"
-                @click="formPage++"
+                @click.prevent="formPage++"
               />
             </div>
           </div>
@@ -118,7 +120,13 @@
               <Checkbox label="I’m not a robot (that I know of)" />
             </div>
             <div class="text-center">
-              <Button text="Submit" variant="primary" class="min-w-[105px]" />
+              <Button
+                text="Submit"
+                as="button"
+                type="button"
+                variant="primary"
+                class="min-w-[105px]"
+              />
             </div>
           </div>
         </form>
@@ -302,7 +310,12 @@
                     />
                   </div>
                   <div>
-                    <Button text="Submit" variant="primary" />
+                    <Button
+                      text="Submit"
+                      as="button"
+                      type="button"
+                      variant="primary"
+                    />
                   </div>
                 </div>
               </div>

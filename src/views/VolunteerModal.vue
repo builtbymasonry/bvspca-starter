@@ -151,6 +151,8 @@
             <Select inputLabel="Select Location" :options="locations" />
             <div class="mt-14 text-center">
               <Button
+                as="button"
+                type="button"
                 text="Next"
                 icon="arrowRight"
                 variant="primary"
@@ -201,6 +203,8 @@
             <Checkbox class="items-center" label="I Agree*" />
             <div class="mt-10 text-center">
               <Button
+                as="button"
+                type="button"
                 text="Next"
                 icon="arrowRight"
                 variant="primary"
@@ -234,6 +238,8 @@
             </div>
             <div class="text-center">
               <Button
+                as="button"
+                type="button"
                 text="Next"
                 variant="primary"
                 icon="arrowRight"
@@ -271,7 +277,12 @@
               <Input label="Emergency contact phone*" id="emgph-mob" />
             </div>
             <div class="text-center">
-              <Button text="Submit" variant="primary" />
+              <Button
+                text="Submit"
+                as="button"
+                type="button"
+                variant="primary"
+              />
             </div>
           </div>
         </div>

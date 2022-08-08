@@ -83,7 +83,7 @@
           <div
             v-for="(location, i) in locations"
             :key="location.name"
-            class="mx-auto lg:max-w-4xl"
+            class="mx-auto lg:max-w-5xl"
           >
             <div
               class="-m-3 flex flex-wrap text-sm leading-normal"
@@ -93,7 +93,11 @@
                 v-if="location.address"
                 class="shrink grow basis-full p-3 text-center md:basis-1/2 md:text-left lg:basis-0"
               >
-                <h4 class="text-sm font-bold text-black md:text-xl">Address</h4>
+                <h4
+                  class="mb-2 text-sm font-bold leading-normal text-black md:text-xl"
+                >
+                  Address
+                </h4>
                 <address
                   v-html="renderAddress(location.address)"
                   class="flex flex-col not-italic"
@@ -103,21 +107,81 @@
                 v-if="location.phone"
                 class="shrink grow basis-full p-3 text-center md:basis-1/2 md:text-left lg:basis-0"
               >
-                <h4 class="text-sm font-bold text-black md:text-xl">Phone</h4>
+                <h4
+                  class="mb-2 text-sm font-bold leading-normal text-black md:text-xl"
+                >
+                  Phone
+                </h4>
                 <ul>
                   <li
                     v-for="phone in location.phone"
                     :key="phone.number"
-                    v-html="renderPhone(phone)"
+                    v-html="
+                      `<span class='font-bold flex justify-center md:justify-start flex-wrap'>${
+                        phone.title ? phone.title + ':&nbsp;' : ''
+                      }<a class='text-red hover:text-red-light' href='tel:${
+                        phone.number
+                      }'>${phone.number}</a></span>`
+                    "
                     class="mb-2 last:mb-0"
                   ></li>
                 </ul>
               </div>
               <div
+                v-if="location.contact"
+                class="shrink grow basis-full p-3 text-center md:basis-1/2 md:text-left lg:basis-0"
+              >
+                <h4
+                  class="mb-2 text-sm font-bold leading-normal text-black md:text-xl"
+                >
+                  Contact
+                </h4>
+                <ul class="font-bold">
+                  <li
+                    v-for="contact in location.contact"
+                    :key="contact.value"
+                    v-html="
+                      `${
+                        contact.title ? `${contact.title}:&nbsp;` : ''
+                      }<a class='text-red hover:text-red-light' href='${
+                        contact.type
+                      }:${contact.value}'>${contact.value}</a>`
+                    "
+                    class="mb-2 last:mb-0"
+                  ></li>
+                </ul>
+              </div>
+              <div
+                v-for="item in location?.hours"
+                :key="item.title"
+                class="shrink grow basis-full p-3 text-center md:basis-1/2 md:text-left lg:basis-0"
+              >
+                <h4
+                  class="mb-2 text-sm font-bold leading-normal text-black md:text-xl"
+                >
+                  {{ item.title ? item.title : "&nbsp;" }}
+                </h4>
+                <p
+                  v-if="item.text"
+                  v-html="item.text"
+                  class="whitespace-pre-line"
+                ></p>
+                <a
+                  v-if="item.link"
+                  :href="item.link.url"
+                  class="text-red hover:text-red-light font-bold"
+                  >{{ item.link.text }}</a
+                >
+              </div>
+              <div
                 v-if="location.email"
                 class="shrink grow basis-full p-3 text-center md:basis-1/2 md:text-left lg:basis-0"
               >
-                <h4 class="text-sm font-bold text-black md:text-xl">Email</h4>
+                <h4
+                  class="mb-2 text-sm font-bold leading-normal text-black md:text-xl"
+                >
+                  Email
+                </h4>
                 <ul>
                   <li
                     v-for="email in location.email"
@@ -193,13 +257,6 @@ const panToCurrentLocation = () => {
 
 const renderAddress = (address) =>
   address.map((str) => `<span>${str}</span>`).join("");
-
-const renderPhone = (phone) =>
-  `<span class="font-bold flex justify-center md:justify-start flex-wrap">${
-    phone.title ? phone.title + ":&nbsp;" : ""
-  }<a class="text-red hover:text-red-light" href="tel:${phone.number}">${
-    phone.number
-  }</a></span>`;
 
 const computePosition = computed(() => {
   return {
