@@ -26,6 +26,7 @@ import Locations from './views/Locations.vue'
 import LocationProfile from './views/LocationProfile.vue'
 import NewsEvents from './views/NewsEvents.vue'
 import Post from './views/Post.vue'
+import Contact from './views/Contact.vue'
 import DonateModal from './views/DonateModal.vue'
 import VolunteerModal from './views/VolunteerModal.vue'
 import AppointmentModal from './views/AppointmentModal.vue'
@@ -39,6 +40,7 @@ import NotFound from './views/NotFound.vue'
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
   { path: '/', component: Home, meta: { title: 'Home' } },
+  { path: '/contact', component: Contact, meta: { title: 'Contact' } },
   { path: '/for-your-pet', component: ForYourPet, meta: { title: 'For Your Pet' } },
   { path: '/community-cats', component: CommunityCats, meta: { title: 'Community Cats' } },
   { path: '/wellness-clinic', component: WellnessClinic, meta: { title: 'Wellness clinic' } },
