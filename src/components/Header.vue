@@ -14,7 +14,7 @@
             <PopoverButton
               :class="[
                 open ? 'text-orange' : 'text-white',
-                'inline-flex items-center text-sm font-bold transition-colors focus:outline-none'
+                'inline-flex items-center text-sm font-bold transition-colors focus:outline-none hover:text-orange'
               ]"
             >
               <span>{{ item.label }}</span>
@@ -47,7 +47,7 @@
                         v-for="dropItem in item.drop"
                         :key="dropItem.label"
                         :href="dropItem.url"
-                        class="hover:text-orange flex items-start whitespace-nowrap text-sm font-bold"
+                        class="hover:text-orange flex items-start whitespace-nowrap text-sm font-bold transition-colors"
                       >
                         {{ dropItem.label }}
                       </a>
@@ -60,7 +60,7 @@
           <a
             v-else
             :href="item.url"
-            class="hover:text-orange inline-flex items-center text-sm font-bold text-white"
+            class="hover:text-orange inline-flex items-center text-sm font-bold text-white transition-colors"
             >{{ item.label }}</a
           >
         </div>
@@ -125,7 +125,7 @@
               <PopoverButton
                 :class="[
                   open ? 'text-red' : 'text-dark',
-                  'hover:text-red group inline-flex items-center text-lg font-bold focus:outline-none'
+                  'hover:text-red group inline-flex items-center text-lg font-bold focus:outline-none transition-colors'
                 ]"
               >
                 <span>{{ item.label }}</span>
@@ -160,7 +160,7 @@
                           v-for="dropItem in item.drop"
                           :key="dropItem.name"
                           :href="dropItem.url"
-                          class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold"
+                          class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold transition-colors"
                         >
                           {{ dropItem.label }}
                         </a>
@@ -211,7 +211,7 @@
                         v-for="item in button.drop"
                         :key="item.label"
                         :href="item.url"
-                        class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold"
+                        class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold transition-colors"
                       >
                         {{ item.label }}
                       </a>
@@ -260,7 +260,7 @@
                         v-for="item in button.drop"
                         :key="item.label"
                         :href="item.url"
-                        class="hover:text-red flex items-start justify-end whitespace-nowrap text-sm font-bold"
+                        class="hover:text-red flex items-start justify-end whitespace-nowrap text-sm font-bold transition-colors"
                       >
                         {{ item.label }}
                       </a>
@@ -314,7 +314,7 @@
                   <li v-for="subItem in item.drop" :key="subItem.label">
                     <a
                       :href="subItem.url"
-                      class="hover:text-orange flex items-center py-3 px-4 md:px-7"
+                      class="hover:text-orange flex items-center py-3 px-4 md:px-7 transition-colors"
                       >{{ subItem.label }}</a
                     >
                   </li>

@@ -125,7 +125,7 @@
                         ></span>
                         <a
                           :href="`tel:${phone.number}`"
-                          class="text-red hover:text-red-light"
+                          class="text-red hover:text-red-light transition-colors"
                           >{{ phone.number }}</a
                         >
                       </li>
@@ -145,7 +145,7 @@
                           <a
                             v-if="item.link"
                             :href="item.link.url"
-                            class="text-red hover:text-red-light font-bold"
+                            class="text-red hover:text-red-light font-bold transition-colors"
                             >{{ item.link.text }}</a
                           >
                         </div>
@@ -281,7 +281,7 @@
                   ></span>
                   <a
                     :href="`tel:${phone.number}`"
-                    class="text-red hover:text-red-light"
+                    class="text-red hover:text-red-light transition-colors"
                     >{{ phone.number }}</a
                   >
                 </li>
@@ -301,7 +301,7 @@
                     <a
                       v-if="item.link"
                       :href="item.link.url"
-                      class="text-red hover:text-red-light font-bold"
+                      class="text-red hover:text-red-light font-bold transition-colors"
                       >{{ item.link.text }}</a
                     >
                   </div>

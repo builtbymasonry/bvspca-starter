@@ -18,7 +18,7 @@
       <ul v-if="links" class="leading-tight">
         <li v-for="(item, i) in links" :key="i" class="mb-2 last:mb-0">
           <a
-            class="text-red hover:text-red-dark inline-flex items-center font-bold"
+            class="text-red hover:text-red-dark inline-flex items-center font-bold transition-colors"
             :href="`${item.type ? item.type + ':' : ''}${item.url}`"
           >
             <BaseIcon

@@ -47,7 +47,7 @@
             ></address>
             <p v-if="location.tel">
               <a
-                class="text-red hover:text-red-light font-bold"
+                class="text-red hover:text-red-light font-bold transition-colors"
                 :href="'tel:' + location.tel"
                 >{{ location.tel }}</a
               >

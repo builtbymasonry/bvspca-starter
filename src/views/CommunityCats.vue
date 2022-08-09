@@ -31,7 +31,7 @@
                 <dt class="text-right">Georgetown</dt>
                 <dd class="text-left">
                   <a
-                    class="text-red hover:text-red-dark"
+                    class="text-red hover:text-red-dark transition-colors"
                     href="tel:(302) 856-6361"
                     >(302) 856-6361</a
                   >
@@ -41,7 +41,7 @@
                 <dt class="text-right">Malvern</dt>
                 <dd class="text-left">
                   <a
-                    class="text-red hover:text-red-dark"
+                    class="text-red hover:text-red-dark transition-colors"
                     href="tel:(610) 482-4289"
                     >(610) 482-4289</a
                   >
@@ -51,7 +51,7 @@
                 <dt class="text-right">New Castle</dt>
                 <dd class="text-left">
                   <a
-                    class="text-red hover:text-red-dark"
+                    class="text-red hover:text-red-dark transition-colors"
                     href="tel:(302) 516-1005"
                     >(302) 516-1005</a
                   >

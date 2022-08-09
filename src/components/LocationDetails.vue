@@ -120,7 +120,7 @@ const renderAddress = (address) =>
   address.map((str) => `<span>${str}</span>`).join("");
 
 const renderPhone = (phone) => {
-  return `<span class='flex-basis-0 shrink-0 w-[120px] sm:w-auto pr-2 sm:pr-0'>${phone.title}:&nbsp;</span><a class="text-red hover:text-red-light" href="tel:${phone.number}">${phone.number}</a>`;
+  return `<span class='flex-basis-0 shrink-0 w-[120px] sm:w-auto pr-2 sm:pr-0'>${phone.title}:&nbsp;</span><a class="text-red hover:text-red-light transition-colors" href="tel:${phone.number}">${phone.number}</a>`;
 };
 
 const props = defineProps({

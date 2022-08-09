@@ -30,7 +30,7 @@
 import Button from "@/components/Button.vue";
 
 const classLinkDefault =
-  "text-red hover:text-red-dark leading-tight font-bold break-all";
+  "text-red hover:text-red-dark leading-tight font-bold break-all transition-colors";
 
 const props = defineProps({
   title: String,

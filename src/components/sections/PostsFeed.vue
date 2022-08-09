@@ -78,7 +78,7 @@
             </ul>
             <button
               type="reset"
-              class="text-red hover:text-red-light inline-flex text-sm font-bold leading-normal md:hidden"
+              class="text-red hover:text-red-light inline-flex text-sm font-bold leading-normal md:hidden transition-colors"
             >
               <BaseIcon name="reset" class="w-4 h-4 mr-[9px] text-red" />
               Reset filters
@@ -103,7 +103,7 @@
           </ul>
           <button
             type="reset"
-            class="text-red hover:text-red-light inline-flex text-sm font-bold leading-normal"
+            class="text-red hover:text-red-light inline-flex text-sm font-bold leading-normal transition-colors"
           >
             <BaseIcon name="reset" class="w-4 h-4 mr-[9px] text-red" />
             Reset filters

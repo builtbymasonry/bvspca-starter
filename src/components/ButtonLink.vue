@@ -2,7 +2,7 @@
   <a
     :target="target"
     :href="url"
-    class="hover:text-orange group inline-flex items-center whitespace-nowrap text-lg font-bold leading-normal transition-all"
+    class="hover:text-orange group inline-flex items-center whitespace-nowrap text-lg font-bold leading-normal transition-colors"
     :class="reverse ? 'flex-row-reverse' : ''"
   >
     {{ text }}

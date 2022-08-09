@@ -17,7 +17,7 @@
           </h3>
           <p class="mb-6">
             Please look at the list of
-            <a class="text-red hover:text-red-dark font-bold" href="#0"
+            <a class="text-red hover:text-red-dark font-bold transition-colors" href="#0"
               >recently found pets</a
             >
             and you can also do a walk-through of our shelter to determine if
@@ -27,7 +27,7 @@
           </p>
           <p class="mb-12">
             All Lost/Found Reports will also be posted to our Lost/Found
-            <a class="text-red hover:text-red-dark font-bold" href="#0"
+            <a class="text-red hover:text-red-dark font-bold transition-colors" href="#0"
               >Facebook Page</a
             >, an online community we have set up to help reunite pets and
             owners.
@@ -55,7 +55,7 @@
             <li class="pl-2">
               Also, we strongly urge all pet owners to permanently identify
               their pet with a microchip. This can be done for at our
-              <a class="text-red hover:text-red-dark font-bold" href="#0"
+              <a class="text-red hover:text-red-dark font-bold transition-colors" href="#0"
                 >clinics</a
               >. While collars can fall off and tags can go missing, a microchip
               is permanent and ensures that your contact information remains

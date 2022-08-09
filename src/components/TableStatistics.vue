@@ -54,7 +54,7 @@
             :aria-hidden="!link.value"
             :class="
               link.value
-                ? 'text-red hover:text-red-light'
+                ? 'text-red hover:text-red-light transition-colors'
                 : 'pointer-events-none text-black'
             "
             >{{ link.label }}</a

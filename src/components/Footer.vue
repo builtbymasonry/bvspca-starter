@@ -32,6 +32,7 @@
               text-lg
               font-bold
               hover:text-orange
+              transition-colors
             "
           >
             {{ item.name }}
@@ -53,7 +54,7 @@
 
   <div class="py-7 sm:py-3 bg-purple-dark text-xxs font-bold text-center text-white">
     <div class="px-4 2xl:px-20">
-      <p>All rights reserved. © 2022 Brandywine Valley SPCA.<br class="sm:hidden"> <a class="underline hover:text-orange" href="#">Terms of Use</a> & <a class="underline hover:text-orange" href="#">Privacy Policy</a></p>
+      <p>All rights reserved. © 2022 Brandywine Valley SPCA.<br class="sm:hidden"> <a class="underline hover:text-orange transition-colors" href="#">Terms of Use</a> & <a class="underline hover:text-orange transition-colors" href="#">Privacy Policy</a></p>
     </div>
   </div>
 </template>

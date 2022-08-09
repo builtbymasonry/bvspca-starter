@@ -83,7 +83,7 @@
             :key="logo.src"
             v-bind="logo"
           >
-            <a :href="logo.url" target="_blank">
+            <a class="hover:scale-[105%] transition-transform" :href="logo.url" target="_blank">
               <img :src="logo.src" :alt="logo.alt" />
             </a>
           </div>
@@ -105,7 +105,7 @@
             :key="logo.src"
             v-bind="logo"
           >
-            <a :href="logo.url" target="_blank">
+            <a class="hover:scale-[105%] transition-transform" :href="logo.url" target="_blank">
               <img :src="logo.src" :alt="logo.alt" />
             </a>
           </div>
@@ -127,7 +127,7 @@
             :key="logo.src"
             v-bind="logo"
           >
-            <a :href="logo.url" target="_blank">
+            <a class="hover:scale-[105%] transition-transform" :href="logo.url" target="_blank">
               <img :src="logo.src" :alt="logo.alt" />
             </a>
           </div>
