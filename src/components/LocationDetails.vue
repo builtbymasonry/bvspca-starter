@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto max-w-screen-2xl">
     <div class="lg:flex">
-      <div class="py-8 pr-6 pl-6 lg:w-1/2 lg:py-20 lg:pr-10 2xl:pl-36">
+      <div class="py-8 pr-6 pl-6 lg:w-1/2 lg:py-20 lg:pr-10 2xl:pl-20">
         <div
           class="flex flex-col items-center lg:flex-col-reverse lg:items-start"
         >

@@ -42,11 +42,11 @@
       >
         <img
           v-bind="slide.img"
-          class="relative inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          class="relative inset-0 h-full w-full object-cover transition-transform group-hover:scale-105"
         />
         <div
           v-show="slide.video"
-          class="absolute top-1/2 left-1/2 -mx-5 -my-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/70 transition-colors duration-300 group-hover:bg-white/90"
+          class="absolute top-1/2 left-1/2 -mx-5 -my-5 flex h-10 w-10 items-center justify-center rounded-full bg-white/70 transition-colors group-hover:bg-white/90"
         >
           <BaseIcon
             name="angleRight"

@@ -7,7 +7,7 @@
         Services offered at this location
       </h2>
       <List
-        class="mx-auto max-w-3xl text-xs font-bold sm:text-sm md:columns-2 md:gap-5"
+        class="mx-auto max-w-3xl text-xs sm:text-sm md:columns-2 md:gap-5"
         v-bind="listData"
       />
     </div>

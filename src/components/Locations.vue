@@ -1,7 +1,7 @@
 <template>
   <section class="mx-auto max-w-screen-2xl">
     <div class="lg:flex">
-      <div class="grow-1 w-full px-6 pt-6 lg:py-16 lg:pr-10 2xl:pl-40">
+      <div class="grow-1 w-full px-6 pt-6 lg:py-16 lg:pr-10 2xl:pl-20">
         <h1
           class="mb-7 text-center text-2xl font-bold text-black lg:text-left xl:mb-8 xl:text-6xl"
         >

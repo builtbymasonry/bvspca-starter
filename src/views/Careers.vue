@@ -10,9 +10,9 @@
   <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-5xl px-4">
       <div
-        class="mx-auto flex max-w-md flex-col justify-center gap-10 text-center text-xs sm:max-w-none sm:flex-row sm:gap-5 lg:gap-20"
+        class="mx-auto flex max-w-xs flex-col justify-center gap-10 text-center text-xs sm:max-w-none sm:flex-row sm:gap-5 lg:gap-20"
       >
-        <div v-for="item in itemsListData" :key="item.title" class="sm:w-1/3">
+        <div v-for="item in itemsListData" :key="item.title" class="px-5 sm:px-0 sm:w-1/3">
           <img class="mx-auto mb-6" v-bind="item.img" />
           <h3 class="mb-2 text-xl font-bold lg:text-2xl">{{ item.title }}</h3>
           <p>{{ item.text }}</p>
@@ -35,7 +35,7 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-7xl px-4">
-      <h2 class="mb-14 text-center text-2xl font-bold md:text-3xl xl:text-5xl">
+      <h2 class="mb-8 sm:mb-14 text-center text-2xl font-bold md:text-3xl xl:text-5xl">
         Available positions
       </h2>
 

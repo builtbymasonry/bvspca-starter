@@ -36,11 +36,11 @@
         class="group relative cursor-pointer overflow-hidden rounded-sm shadow md:rounded-md"
       >
         <img
-          class="w-full transition-transform duration-300 group-hover:scale-105"
+          class="w-full transition-transform group-hover:scale-105"
           v-bind="video.thumb"
         />
         <div
-          class="absolute top-1/2 left-1/2 -mx-10 -my-10 flex h-20 w-20 items-center justify-center rounded-full bg-white/70 transition-colors duration-300 group-hover:bg-white/90"
+          class="absolute top-1/2 left-1/2 -mx-10 -my-10 flex h-20 w-20 items-center justify-center rounded-full bg-white/70 transition-colors group-hover:bg-white/90"
         >
           <BaseIcon
             name="angleRight"

@@ -416,7 +416,7 @@ const staff = [
     img: { src: "src/assets/img/person-03.jpg", alt: "" },
     name: "Julie Landy",
     position: "Chief Financial Officer",
-    links: [{ url: "alamb@bvspca.org", type: "mailto" }]
+    links: [{ url: "jlandy@bvspca.org", type: "mailto" }]
   },
   {
     img: { src: "src/assets/img/person-04.jpg", alt: "" },
@@ -424,7 +424,7 @@ const staff = [
     position: "Chief Marketing Officer",
     links: [
       { url: "(302) 516-1013", type: "tel" },
-      { url: "alamb@bvspca.org", type: "mailto" }
+      { url: "ltorelli@bvspca.org", type: "mailto" }
     ]
   },
   {

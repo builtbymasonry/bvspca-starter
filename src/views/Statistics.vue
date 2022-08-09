@@ -3,7 +3,7 @@
 
   <section class="py-14 lg:py-28 bg-gray-dark">
     <div class="mx-auto max-w-7xl px-4">
-      <PostModule v-bind="postModuleData" />
+      <PostModule class="text-sm" v-bind="postModuleData" />
     </div>
   </section>
 

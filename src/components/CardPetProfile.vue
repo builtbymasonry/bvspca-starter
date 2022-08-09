@@ -5,7 +5,7 @@
       class="mb-5 block overflow-hidden rounded-sm shadow sm:mb-8 md:rounded-lg"
     >
       <img
-        class="w-full transition-all duration-300 hover:scale-[102%]"
+        class="w-full transition-all hover:scale-[102%]"
         v-bind="img"
       />
     </a>

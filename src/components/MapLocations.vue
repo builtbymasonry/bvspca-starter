@@ -93,7 +93,7 @@
                 v-if="location.address"
                 class="shrink grow basis-full p-3 text-center md:basis-1/2 md:text-left lg:basis-0"
               >
-                <h4 class="text-sm font-bold text-black md:text-xl">Address</h4>
+                <h4 class="mb-1 text-sm font-bold text-black md:text-xl">Address</h4>
                 <address
                   v-html="renderAddress(location.address)"
                   class="flex flex-col not-italic"
@@ -103,7 +103,7 @@
                 v-if="location.phone"
                 class="shrink grow basis-full p-3 text-center md:basis-1/2 md:text-left lg:basis-0"
               >
-                <h4 class="text-sm font-bold text-black md:text-xl">Phone</h4>
+                <h4 class="mb-1 text-sm font-bold text-black md:text-xl">Phone</h4>
                 <ul>
                   <li
                     v-for="phone in location.phone"
@@ -117,7 +117,7 @@
                 v-if="location.email"
                 class="shrink grow basis-full p-3 text-center md:basis-1/2 md:text-left lg:basis-0"
               >
-                <h4 class="text-sm font-bold text-black md:text-xl">Email</h4>
+                <h4 class="mb-1 text-sm font-bold text-black md:text-xl">Email</h4>
                 <ul>
                   <li
                     v-for="email in location.email"
