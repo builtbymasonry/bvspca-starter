@@ -111,7 +111,7 @@
                     v-html="
                       `<span class='font-bold flex justify-center md:justify-start flex-wrap'>${
                         phone.title ? phone.title + ':&nbsp;' : ''
-                      }<a class='text-red hover:text-red-light' href='tel:${
+                      }<a class='text-red hover:text-red-light transition-colors' href='tel:${
                         phone.number
                       }'>${phone.number}</a></span>`
                     "
@@ -135,7 +135,7 @@
                     v-html="
                       `${
                         contact.title ? `${contact.title}:&nbsp;` : ''
-                      }<a class='text-red hover:text-red-light' href='${
+                      }<a class='text-red hover:text-red-light transition-colors' href='${
                         contact.type
                       }:${contact.value}'>${contact.value}</a>`
                     "
@@ -161,7 +161,7 @@
                 <a
                   v-if="item.link"
                   :href="item.link.url"
-                  class="text-red hover:text-red-light font-bold"
+                  class="text-red hover:text-red-light font-bold transition-colors"
                   >{{ item.link.text }}</a
                 >
               </div>
