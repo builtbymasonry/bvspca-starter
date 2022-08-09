@@ -65,7 +65,7 @@
         />
       </div>
       <div
-        class="py-2 pr-5 text-xs lg:flex lg:w-1/3 lg:flex-col lg:items-start lg:justify-center"
+        class="py-2 lg:pr-5 text-xs lg:flex lg:w-1/3 lg:flex-col lg:items-start lg:justify-center"
       >
         <h2 class="mb-3 text-2xl font-bold md:text-3xl xl:text-4xl">
           Check out upcoming events

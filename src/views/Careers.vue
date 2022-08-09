@@ -35,7 +35,7 @@
 
   <section class="py-14 lg:py-28">
     <div class="mx-auto max-w-7xl px-4">
-      <h2 class="mb-8 sm:mb-14 text-center text-2xl font-bold md:text-3xl xl:text-5xl">
+      <h2 class="mb-8 md:mb-14 text-center text-2xl font-bold md:text-3xl xl:text-5xl">
         Available positions
       </h2>
 
