@@ -642,7 +642,10 @@ const quarterlyData = {
         }
       ]
     }
-  ]
+  ],
+  select: {
+    label: "Select Month"
+  }
 };
 
 const monthlyData = {
@@ -860,7 +863,10 @@ const monthlyData = {
         }
       ]
     }
-  ]
+  ],
+  select: {
+    label: "Select Month"
+  }
 };
 
 const faq = [

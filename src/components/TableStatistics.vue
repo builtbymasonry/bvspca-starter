@@ -19,7 +19,7 @@
         <div class="xsm:max-w-sm mx-auto mb-10 max-w-[224px]">
           <Select
             :options="[
-              ...[{ label: 'Select Month', value: '' }],
+              ...[{ label: data.select.label, value: '' }],
               ...row.content.filter((item) => item.value)
             ]"
             variant="outline"

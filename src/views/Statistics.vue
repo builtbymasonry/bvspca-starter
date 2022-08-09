@@ -178,7 +178,10 @@ const monthlyStatistics = [
           { label: "Dec", value: null }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   },
   {
     title: "2021",
@@ -251,7 +254,10 @@ const monthlyStatistics = [
           { label: "Dec", value: "#12" }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   },
   {
     title: "2020",
@@ -307,7 +313,10 @@ const monthlyStatistics = [
           { label: "Dec", value: "#12" }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   },
   {
     title: "2019",
@@ -363,7 +372,10 @@ const monthlyStatistics = [
           { label: "Dec", value: "#12" }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   },
   {
     title: "2018",
@@ -419,7 +431,10 @@ const monthlyStatistics = [
           { label: "Dec", value: "#12" }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   },
   {
     title: "2017",
@@ -475,7 +490,10 @@ const monthlyStatistics = [
           { label: "Dec", value: "#12" }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   }
 ];
 
@@ -519,7 +537,10 @@ const quarterlyStatistics = [
           { label: "Oct-Dec", value: null }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   },
   {
     title: "2021",
@@ -560,7 +581,10 @@ const quarterlyStatistics = [
           { label: "Oct-Dec", value: "#4" }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   },
   {
     title: "2020",
@@ -592,7 +616,10 @@ const quarterlyStatistics = [
           { label: "Oct-Dec", value: "#4" }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   },
   {
     title: "2019",
@@ -624,7 +651,10 @@ const quarterlyStatistics = [
           { label: "Oct-Dec", value: "#4" }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   },
   {
     title: "2018",
@@ -656,7 +686,10 @@ const quarterlyStatistics = [
           { label: "Oct-Dec", value: "#4" }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   },
   {
     title: "2017",
@@ -688,7 +721,10 @@ const quarterlyStatistics = [
           { label: "Oct-Dec", value: "#4" }
         ]
       }
-    ]
+    ],
+    select: {
+      label: "Select Month"
+    }
   }
 ];
 
@@ -703,7 +739,10 @@ const annualStatistics = {
         { label: "2017", value: "#4" }
       ]
     }
-  ]
+  ],
+  select: {
+    label: "Select Year"
+  }
 };
 
 const infoCardData = {
