@@ -5,13 +5,17 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      'xsm': '480px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1440px',
+    },
     extend: {
       fontFamily: {
         sans: ['"century-gothic"', ...defaultTheme.fontFamily.sans],
-      },
-      screens: {
-        'xsm': '480px',
-        '2xl': '1440px',
       },
       maxWidth: {
         '7xl': '74rem'
