@@ -13,6 +13,7 @@
         name="search"
         class="text-red w-4 md:w-6 h-4 md:h-6"
       />
+      <span class="sr-only">Search</span>
     </button>
   </div>
 </template>

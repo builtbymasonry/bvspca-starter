@@ -17,6 +17,7 @@
           />
           <button class="text-red absolute top-1/2 right-3 -mt-2">
             <BaseIcon name="search" class="h-4 w-4" />
+            <span class="sr-only">Search</span>
           </button>
         </div>
         <div

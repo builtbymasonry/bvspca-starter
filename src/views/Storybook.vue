@@ -1166,7 +1166,7 @@ const postModuleData1 = {
 };
 
 const postModuleData2 = {
-  img: { src: "src/assets/img/content-img-02.jpg", alt: "", type: "cover" },
+  img: { src: "src/assets/img/content-img-02.jpg", alt: "" },
   title: { text: "Need help?", size: "lg" },
   text: [
     "Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"
