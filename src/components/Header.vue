@@ -182,12 +182,12 @@
             class="relative z-10"
             v-slot="{ open }"
           >
-            <PopoverButton class="focus:outline-none">
+            <PopoverButton class="mr-9 focus:outline-none">
               <Button
-                class="mr-9"
                 :class="[open ? 'bg-purple hover:bg-purple' : '']"
-                variant="primary"
                 :text="button.label"
+                as="div"
+                variant="primary"
               />
             </PopoverButton>
 
@@ -237,6 +237,7 @@
                 ]"
                 variant="outline"
                 :text="button.label"
+                as="div"
               />
             </PopoverButton>
 
@@ -283,7 +284,7 @@
       <div>
         <PopoverPanel
           focus
-          class="absolute inset-x-0 top-[48px] md:top-[90px] lg:top-[100px] origin-top-right transform transition xl:hidden"
+          class="absolute inset-x-0 top-[48px] origin-top-right transform transition md:top-[90px] lg:top-[100px] xl:hidden"
         >
           <!-- mobile menu nav -->
           <div class="bg-purple">
@@ -328,7 +329,7 @@
                 @keyup="handleNavKeyUp"
                 tabindex="0"
                 :id="'SearchBar'"
-                class="hover:text-orange border-purple flex cursor-pointer select-none items-center justify-between border-b-[1px] py-3 px-4 md:px-7 transition-colors"
+                class="hover:text-orange border-purple flex cursor-pointer select-none items-center justify-between border-b-[1px] py-3 px-4 transition-colors md:px-7"
               >
                 <span>Search</span>
                 <BaseIcon name="search" class="text-orange h-3 w-3" />

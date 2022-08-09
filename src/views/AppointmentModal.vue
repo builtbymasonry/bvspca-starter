@@ -197,7 +197,7 @@
                 <div class="mb-12">
                   <Checkbox label="I’m not a robot (that I know of)" />
                 </div>
-                <Button text="Submit" />
+                <Button text="Submit" as="button" type="button" />
               </div>
             </div>
           </div>
@@ -216,6 +216,8 @@
             <Select inputLabel="Select Location" :options="locations" />
             <div class="mt-10 text-center">
               <Button
+                as="button"
+                type="button"
                 text="Next"
                 icon="arrowRight"
                 variant="primary"
@@ -294,7 +296,13 @@
                   />
                 </div>
                 <div class="text-center">
-                  <Button text="Next" icon="arrowRight" @click="formPage++" />
+                  <Button
+                    as="button"
+                    type="button"
+                    text="Next"
+                    icon="arrowRight"
+                    @click="formPage++"
+                  />
                 </div>
               </div>
             </div>
@@ -405,7 +413,7 @@
                   <Checkbox label="I’m not a robot (that I know of)" />
                 </div>
                 <div class="text-center">
-                  <Button text="Submit" />
+                  <Button text="Submit" as="button" type="button" />
                 </div>
               </div>
             </div>
