@@ -42,6 +42,7 @@ const routes = [
   "/locations",
   "/location-profile",
   "/news-events",
-  "/post"
+  "/post",
+  "/contact"
 ];
 </script>
