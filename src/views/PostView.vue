@@ -51,7 +51,7 @@ const post = {
     </ul>
     <div class="my-8 sm:my-12">
       <img
-        class="w-full rounded-sm lg:rounded-lg"
+        class="w-full rounded-sm lg:rounded-lg shadow"
         src="src/assets/img/content-img-33.jpg"
         alt="image description"
       />
