@@ -1,25 +1,14 @@
 <script setup>
-import { ref } from "vue";
-import Header from "./components/ExampleHeader.vue";
-
-let counter = ref(0);
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 </script>
 
 <template>
   <Header />
-  <div>
-    <header class="bg-white shadow" v-if="$route.meta.title">
-      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <h1
-          @click="counter = 0"
-          class="text-3xl font-bold leading-tight text-gray-900"
-        >
-          {{ $route.meta.title }}
-        </h1>
-      </div>
-    </header>
+  <div class="overflow-x-hidden">
     <main>
       <router-view />
     </main>
   </div>
+  <Footer />
 </template>
