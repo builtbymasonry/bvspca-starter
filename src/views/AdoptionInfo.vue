@@ -91,15 +91,15 @@
       <picture>
         <source
           media="(max-width: 767px)"
-          srcset="src/assets/img/bg-image-01-sm.jpg"
+          srcset="/img/bg-image-01-sm.jpg"
         />
         <source
           media="(min-width: 768px)"
-          srcset="src/assets/img/bg-image-01.jpg"
+          srcset="/img/bg-image-01.jpg"
         />
         <img
           class="absolute top-0 left-0 h-full w-full object-cover"
-          src="src/assets/img/bg-image-01.jpg"
+          src="/img/bg-image-01.jpg"
           alt="background"
         />
       </picture>
@@ -131,7 +131,7 @@ import PostCardsSection from "@/components/sections/PostCardsSection.vue"
 const heroInnerData = {
   title: "Adoption info",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
-  img: { src: "src/assets/img/hero-image-19.jpg", alt: "" }
+  img: { src: "/img/hero-image-19.jpg", alt: "" }
 };
 
 const postModuleData = {
@@ -151,10 +151,10 @@ const postModuleData = {
   ],
   carousel: {
     slides: [
-      { src: "src/assets/img/slide09.jpg", alt: "slide alt1" },
-      { src: "src/assets/img/slide03.jpg", alt: "slide alt2" },
-      { src: "src/assets/img/slide04.jpg", alt: "slide alt3" },
-      { src: "src/assets/img/slide06.jpg", alt: "slide alt4" }
+      { src: "/img/slide09.jpg", alt: "slide alt1" },
+      { src: "/img/slide03.jpg", alt: "slide alt2" },
+      { src: "/img/slide04.jpg", alt: "slide alt3" },
+      { src: "/img/slide06.jpg", alt: "slide alt4" }
     ]
   },
   reverse: true
@@ -170,7 +170,7 @@ const postModuleData2 = {
     ],
     bulletClass: "text-red"
   },
-  img: { src: "src/assets/img/content-img-26.jpg", alt: "" },
+  img: { src: "/img/content-img-26.jpg", alt: "" },
   buttons: [{ text: "Adopt today", url: "#!" }]
 };
 
@@ -179,7 +179,7 @@ const PostModuleData3 = {
   text: [
     "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
   ],
-  img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
+  img: { src: "/img/content-img-04.jpg", alt: "" },
   buttons: [
     { variant: "secondary", text: "Donate", url: "#!" },
     { variant: "outlineSecondary", text: "Sponsor", url: "#!" }
@@ -397,7 +397,7 @@ const faq = [
 const infoCardData = {
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
-  img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
+  img: { src: "/img/content-img-01.jpg", alt: "" },
   buttons: [{ text: "Learn more about our impact", url: "#!" }]
 };
 
@@ -406,21 +406,21 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }

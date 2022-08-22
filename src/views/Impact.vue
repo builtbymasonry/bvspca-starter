@@ -18,15 +18,15 @@
       <picture>
         <source
           media="(max-width: 767px)"
-          srcset="src/assets/img/bg-image-01-sm.jpg"
+          srcset="/img/bg-image-01-sm.jpg"
         />
         <source
           media="(min-width: 768px)"
-          srcset="src/assets/img/bg-image-01.jpg"
+          srcset="/img/bg-image-01.jpg"
         />
         <img
           class="absolute top-0 left-0 h-full w-full object-cover"
-          src="src/assets/img/bg-image-01.jpg"
+          src="/img/bg-image-01.jpg"
           alt="background"
         />
       </picture>
@@ -73,7 +73,7 @@ import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 const heroInnerData = {
   title: "Impact",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
-  img: { src: "src/assets/img/hero-image-16.jpg", alt: "" }
+  img: { src: "/img/hero-image-16.jpg", alt: "" }
 };
 
 const postModuleData2 = {
@@ -83,10 +83,10 @@ const postModuleData2 = {
   ],
   carousel: {
     slides: [
-      { src: "src/assets/img/slide01.jpg", alt: "slide alt1" },
-      { src: "src/assets/img/slide02.jpg", alt: "slide alt2" },
-      { src: "src/assets/img/slide01.jpg", alt: "slide alt3" },
-      { src: "src/assets/img/slide05.jpg", alt: "slide alt4" }
+      { src: "/img/slide01.jpg", alt: "slide alt1" },
+      { src: "/img/slide02.jpg", alt: "slide alt2" },
+      { src: "/img/slide01.jpg", alt: "slide alt3" },
+      { src: "/img/slide05.jpg", alt: "slide alt4" }
     ]
   },
   reverse: true
@@ -97,7 +97,7 @@ const postModuleData3 = {
   text: [
     "The past five years have seen substantial change in our area. We transformed the faltering then Chester County SPCA into the f irst open admission no-kill shelter in Pennsylvania. We then provided the leadership needed for the state of Delaware to become the f irst and only no-kill state in the country. Our next step is to share what we’ve learned and help other shelters achieve the same success."
   ],
-  img: { src: "src/assets/img/content-img-23.png", alt: "", type: "default" },
+  img: { src: "/img/content-img-23.png", alt: "", type: "default" },
   reverse: true
 };
 
@@ -115,7 +115,7 @@ const postModuleData4 = {
     "Double the cat housing capacity Outdoor catio for adoptable cats",
     "Large community room for humane education and  service groups"
   ],
-  img: { src: "src/assets/img/content-img-25.png", alt: "", type: "default" }
+  img: { src: "/img/content-img-25.png", alt: "", type: "default" }
 };
 
 const postModuleData5 = {
@@ -123,7 +123,7 @@ const postModuleData5 = {
   text: [
     "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
   ],
-  img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
+  img: { src: "/img/content-img-04.jpg", alt: "" },
   buttons: [
     { text: "Donate", url: "#!" },
     { variant: "outline", text: "Sponsor", url: "#!" }
@@ -136,17 +136,17 @@ const postModuleData6 = {
   text: [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."
   ],
-  img: { src: "src/assets/img/content-img-22.jpg", alt: "" },
+  img: { src: "/img/content-img-22.jpg", alt: "" },
   buttons: [{ text: "View open positions", url: "#!" }]
 };
 
 const postModuleData = {
   carousel: {
     slides: [
-      { src: "src/assets/img/slide01.jpg", alt: "slide alt1" },
-      { src: "src/assets/img/slide02.jpg", alt: "slide alt2" },
-      { src: "src/assets/img/slide01.jpg", alt: "slide alt3" },
-      { src: "src/assets/img/slide05.jpg", alt: "slide alt4" }
+      { src: "/img/slide01.jpg", alt: "slide alt1" },
+      { src: "/img/slide02.jpg", alt: "slide alt2" },
+      { src: "/img/slide01.jpg", alt: "slide alt3" },
+      { src: "/img/slide05.jpg", alt: "slide alt4" }
     ]
   },
   title: { text: "Finding the heart in humanity", size: "md"},
@@ -168,7 +168,7 @@ const postModuleData = {
 const infoCardData = {
   title: "Surpassing our goals",
   text: "When we released our goals in last year’s annual report, we were concerned that we wouldn’t reach them because of the pandemic, but while striving to do the right thing for the animals and their owners, a pattern emerged. Despite all that was going on in the world, we continued to succeed.  We attribute this anomaly to our hard work and perseverance.  By the end of the year, we exceeded our adoption goal by 2%, our spay/neuter goal by 16%, and our veterinary service goal by 17%.  We are humbled and grateful because we know we could not do what we did without a strong community at our backs. ",
-  img: { src: "src/assets/img/content-img-24.jpg", alt: "" }
+  img: { src: "/img/content-img-24.jpg", alt: "" }
 };
 
 const postCardsSectionData = {
@@ -176,21 +176,21 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }

@@ -3,15 +3,15 @@
     <HeroInner v-bind="heroInnerData" />
 
     <section class="py-14 lg:py-28 bg-gray-dark">
-      <div class="mx-auto max-w-7xl px-4">
+      <div class="px-4 mx-auto max-w-7xl">
         <PostModule v-bind="postModuleData" />
       </div>
     </section>
 
     <section class="py-14 lg:py-28">
-      <div class="mx-auto max-w-5xl px-4">
+      <div class="max-w-5xl px-4 mx-auto">
         <h2
-          class="mb-8 text-center text-2xl font-bold sm:text-3xl md:mb-12 lg:text-5xl"
+          class="mb-8 text-2xl font-bold text-center sm:text-3xl md:mb-12 lg:text-5xl"
         >
           Spay & neuter services
         </h2>
@@ -20,16 +20,16 @@
           <TableServices :data="tableVaccinesData" />
           <TableServices :data="tablePreventionData" />
         </div>
-        <div class="mt-16 flex justify-center">
+        <div class="flex justify-center mt-16">
           <Button variant="primary" text="Schedule an appointment" url="#!" />
         </div>
       </div>
     </section>
 
     <section
-      class="bg-skew bg-purple mt-36 pt-20 pb-4 text-white sm:mt-40 sm:pb-0 lg:mt-28"
+      class="pt-20 pb-4 text-white bg-skew bg-purple mt-36 sm:mt-40 sm:pb-0 lg:mt-28"
     >
-      <div class="mx-auto max-w-5xl px-4">
+      <div class="max-w-5xl px-4 mx-auto">
         <TextBox
           class="mb-16 -mt-52 sm:-mt-56 md:mb-20 lg:mb-24"
           v-bind="textBoxData"
@@ -39,19 +39,19 @@
     </section>
 
     <section class="relative pt-40 pb-28 sm:pt-60 md:mb-32 md:pb-0">
-      <div class="absolute top-0 left-0 h-full w-full">
+      <div class="absolute top-0 left-0 w-full h-full">
         <picture>
           <source
             media="(max-width: 767px)"
-            srcset="src/assets/img/bg-image-01-sm.jpg"
+            srcset="/img/bg-image-01-sm.jpg"
           />
           <source
             media="(min-width: 768px)"
-            srcset="src/assets/img/bg-image-01.jpg"
+            srcset="/img/bg-image-01.jpg"
           />
           <img
-            class="absolute top-0 left-0 h-full w-full object-cover"
-            src="src/assets/img/bg-image-01.jpg"
+            class="absolute top-0 left-0 object-cover w-full h-full"
+            src="/img/bg-image-01.jpg"
             alt="background"
           />
         </picture>
@@ -61,7 +61,7 @@
     </section>
 
     <section class="py-14 lg:py-28">
-      <div class="mx-auto max-w-5xl px-4">
+      <div class="max-w-5xl px-4 mx-auto">
         <PostModule v-bind="postModuleData2" />
       </div>
     </section>
@@ -82,13 +82,13 @@ import PostModule from "@/components/PostModule.vue";
 import InfoCard from "@/components/InfoCard.vue";
 
 const heroInnerData = {
-  img: { src: "src/assets/img/hero-image-05.jpg", alt: "" },
+  img: { src: "/img/hero-image-05.jpg", alt: "" },
   title: "Spay & neuter",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."
 };
 
 const postModuleData = {
-  img: { src: "src/assets/img/content-img-11.jpg", alt: "" },
+  img: { src: "/img/content-img-11.jpg", alt: "" },
   title: { text: "Spaying/Neutering your pet helps fight pet overpopulation, reducing the number of homeless animals and decreasing euthanasia numbers."},
   textGrid: [
     {
@@ -113,7 +113,7 @@ const postModuleData = {
 };
 
 const postModuleData2 = {
-  img: { src: "src/assets/img/content-img-08.jpg", alt: "" },
+  img: { src: "/img/content-img-08.jpg", alt: "" },
   title: { text: "Pay it forward, your free time has so much value", size: "md"},
   text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. "],
   buttons: [{ text: "Get involved", url: "#!" }],
@@ -255,7 +255,7 @@ const textBannerData = {
 };
 
 const infoCardData = {
-  img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
+  img: { src: "/img/content-img-01.jpg", alt: "" },
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
   buttons: [{ text: "Learn more about our impact", url: "#!" }]
@@ -266,21 +266,21 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }

@@ -110,29 +110,29 @@ const profileData = {
   },
   slides: [
     {
-      img: { src: "src/assets/img/profile-slide01.jpg", alt: "" }
+      img: { src: "/img/profile-slide01.jpg", alt: "" }
     },
     {
-      img: { src: "src/assets/img/profile-slide02.jpg", alt: "" }
+      img: { src: "/img/profile-slide02.jpg", alt: "" }
     },
     {
-      img: { src: "src/assets/img/profile-slide01.jpg", alt: "" },
+      img: { src: "/img/profile-slide01.jpg", alt: "" },
       video: {
-        src: "src/assets/video/profile-slide-video.mp4",
-        poster: "src/assets/img/profile-slide01.jpg"
+        src: "/video/profile-slide-video.mp4",
+        poster: "/img/profile-slide01.jpg"
       }
     },
     {
-      img: { src: "src/assets/img/profile-slide01.jpg", alt: "" }
+      img: { src: "/img/profile-slide01.jpg", alt: "" }
     },
     {
-      img: { src: "src/assets/img/profile-slide02.jpg", alt: "" }
+      img: { src: "/img/profile-slide02.jpg", alt: "" }
     },
     {
-      img: { src: "src/assets/img/profile-slide01.jpg", alt: "" },
+      img: { src: "/img/profile-slide01.jpg", alt: "" },
       video: {
-        src: "src/assets/video/profile-slide-video.mp4",
-        poster: "src/assets/img/profile-slide01.jpg"
+        src: "/video/profile-slide-video.mp4",
+        poster: "/img/profile-slide01.jpg"
       }
     }
   ]
@@ -144,23 +144,23 @@ const data = {
     list: [
       {
         text: "We ask that all adult residents meet the cat to ensure he or she is a match for the entire family.",
-        img: { src: "src/assets/img/icon-contact-form.svg", alt: "" }
+        img: { src: "/img/icon-contact-form.svg", alt: "" }
       },
       {
         text: "Meet with an adoption counselor and fill out our adoption application in person. Please plan to spend 60-90 minutes to complete the adoption process, including visitation and paperwork.",
-        img: { src: "src/assets/img/icon-puzzle.svg", alt: "" }
+        img: { src: "/img/icon-puzzle.svg", alt: "" }
       },
       {
         text: "You must be at least 18 years of age.",
-        img: { src: "src/assets/img/icon-age-limit.svg", alt: "" }
+        img: { src: "/img/icon-age-limit.svg", alt: "" }
       },
       {
         text: "You must show a picture ID with a current address. If this isn't available, we will accept a picture ID with a current utility bill.",
-        img: { src: "src/assets/img/icon-driving-license.svg", alt: "" }
+        img: { src: "/img/icon-driving-license.svg", alt: "" }
       },
       {
         text: "You must live within 100 miles of Austin. Adopters of cats who are not yet spayed or neutered must live within Travis or Williamson County, and must put down a refundable $100 deposit in order to take the cat home prior to the surgery.",
-        img: { src: "src/assets/img/icon-mobility.svg", alt: "" }
+        img: { src: "/img/icon-mobility.svg", alt: "" }
       }
     ]
   },
@@ -197,7 +197,7 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
+      img: { src: "/img/img-pet-01.jpg", alt: "Chewie fka Monkey" },
       title: { text: "Chewie fka Monkey", size: "md"},
       text: "Chewie is a big sweetheart who loves taking over your side of the bed. He also loves attention and affection from his people and gets along well …",
       share: true,
@@ -205,7 +205,7 @@ const postCardsSectionData = {
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-02.jpg" },
+      img: { src: "/img/img-pet-02.jpg" },
       title: { text: "Slim aka Spunk", size: "md"},
       text: "Slim (aka Spunk) is a big fellow with an equally big heart! This wonderful guy is bonded with Magic, on whom he relies for comfort and love. As a bonded …",
       share: true,
@@ -213,7 +213,7 @@ const postCardsSectionData = {
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-03.jpg" },
+      img: { src: "/img/img-pet-03.jpg" },
       title: { text: "Boo Boo", size: "md"},
       text: "Boo Boo loves tennis balls! He likes to play with them, walk with them, and swim in our doggie pools with them. If you have a stash of tennis balls, Boo Boo …",
       share: true,

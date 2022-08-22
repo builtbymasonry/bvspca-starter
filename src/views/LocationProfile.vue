@@ -19,7 +19,7 @@ import LocationDetails from "@/components/LocationDetails.vue";
 import List from "@/components/List.vue";
 
 const locationProfile = {
-  img: { src: "src/assets/img/location-photo-01.jpg", alt: "Dover" },
+  img: { src: "/img/location-photo-01.jpg", alt: "Dover" },
   name: "Dover",
   address: ["1757 Horsepond Rd.", "Dover, DE 19901"],
   phone: [

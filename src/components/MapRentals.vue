@@ -61,7 +61,7 @@
 <script setup>
 import { GoogleMap, Marker } from "vue3-google-map";
 
-import pin from "@/assets/img/pin-cat.svg";
+import pin from "/img/pin-cat.svg";
 
 const GOOGLE_API_KEY = "AIzaSyBIKsc31TXAvusDAeRpJ8_p6TnMOsU324s";
 

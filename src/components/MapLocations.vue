@@ -201,7 +201,7 @@ import { useWindowSize } from "vue-window-size";
 import Button from "./Button.vue";
 import BaseIcon from "./BaseIcon.vue";
 
-import pin from "@/assets/img/pin-heart.svg";
+import pin from "/img/pin-heart.svg";
 
 const GOOGLE_API_KEY = "AIzaSyBIKsc31TXAvusDAeRpJ8_p6TnMOsU324s";
 const DEFAULT_MAP_ZOOM = 12;

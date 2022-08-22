@@ -152,84 +152,84 @@ const feedData = {
   posts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }
@@ -313,7 +313,7 @@ const locationsData = [
 ];
 
 const locationProfile = {
-  img: { src: "src/assets/img/location-photo-01.jpg", alt: "Dover" },
+  img: { src: "/img/location-photo-01.jpg", alt: "Dover" },
   name: "Dover",
   address: ["1757 Horsepond Rd.", "Dover, DE 19901"],
   phone: [
@@ -342,75 +342,75 @@ const locationProfile = {
 
 const sponsorSlides = [
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo01.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo01.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo02.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo03.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo04.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo05.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo05.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo06.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo06.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo07.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo07.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo07.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo07.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo01.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo01.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo02.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo03.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo04.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo02.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo03.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo04.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo02.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo03.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo04.png", alt: "" },
     url: "#!"
   }
 ];
@@ -514,29 +514,29 @@ const locations = [
 
 const profileSlides = [
   {
-    img: { src: "src/assets/img/profile-slide01.jpg", alt: "" }
+    img: { src: "/img/profile-slide01.jpg", alt: "" }
   },
   {
-    img: { src: "src/assets/img/profile-slide02.jpg", alt: "" }
+    img: { src: "/img/profile-slide02.jpg", alt: "" }
   },
   {
-    img: { src: "src/assets/img/profile-slide01.jpg", alt: "" },
+    img: { src: "/img/profile-slide01.jpg", alt: "" },
     video: {
-      src: "src/assets/video/profile-slide-video.mp4",
-      poster: "src/assets/img/profile-slide01.jpg"
+      src: "/video/profile-slide-video.mp4",
+      poster: "/img/profile-slide01.jpg"
     }
   },
   {
-    img: { src: "src/assets/img/profile-slide01.jpg", alt: "" }
+    img: { src: "/img/profile-slide01.jpg", alt: "" }
   },
   {
-    img: { src: "src/assets/img/profile-slide02.jpg", alt: "" }
+    img: { src: "/img/profile-slide02.jpg", alt: "" }
   },
   {
-    img: { src: "src/assets/img/profile-slide01.jpg", alt: "" },
+    img: { src: "/img/profile-slide01.jpg", alt: "" },
     video: {
-      src: "src/assets/video/profile-slide-video.mp4",
-      poster: "src/assets/img/profile-slide01.jpg"
+      src: "/video/profile-slide-video.mp4",
+      poster: "/img/profile-slide01.jpg"
     }
   }
 ];
@@ -549,7 +549,7 @@ const postModuleVideo = {
   video: {
     src: "https://www.youtube.com/embed/BHACKCNDMW8",
     thumb: {
-      src: "src/assets/img/content-img-99.jpg",
+      src: "/img/content-img-99.jpg",
       alt: ""
     }
   }
@@ -1143,7 +1143,7 @@ const map = {
 };
 
 const postModuleData1 = {
-  img: { src: "src/assets/img/content-img-02.jpg", alt: "" },
+  img: { src: "/img/content-img-02.jpg", alt: "" },
   title: { text: "Need help?", size: "lg" },
   text: [
     "Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"
@@ -1166,7 +1166,7 @@ const postModuleData1 = {
 };
 
 const postModuleData2 = {
-  img: { src: "src/assets/img/content-img-02.jpg", alt: "" },
+  img: { src: "/img/content-img-02.jpg", alt: "" },
   title: { text: "Need help?", size: "lg" },
   text: [
     "Supporting our community by providing the resources needed to improve the lives and well-being of animals is what we do"
@@ -1210,15 +1210,15 @@ const postModuleData3 = {
   buttons: [{ text: "Get involved", url: "#!" }],
   carousel: {
     slides: [
-      { src: "src/assets/img/slide01.jpg", alt: "kitty" },
-      { src: "src/assets/img/slide02.jpg", alt: "" }
+      { src: "/img/slide01.jpg", alt: "kitty" },
+      { src: "/img/slide02.jpg", alt: "" }
     ]
   },
   reverse: true
 };
 
 const postModuleData4 = {
-  img: { src: "src/assets/img/content-img-19.jpg", alt: "" },
+  img: { src: "/img/content-img-19.jpg", alt: "" },
   title: {
     text: "Request friends and family to send items off our wish list instead of buying gifts"
   },
@@ -1231,7 +1231,7 @@ const postModuleData4 = {
 };
 
 const postModuleData5 = {
-  img: { src: "src/assets/img/content-img-20.jpg", alt: "" },
+  img: { src: "/img/content-img-20.jpg", alt: "" },
   title: {
     text: "Other ways to honor your special day with charitable causes"
   },
@@ -1247,7 +1247,7 @@ const postModuleData6 = {
   text: [
     "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
   ],
-  img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
+  img: { src: "/img/content-img-04.jpg", alt: "" },
   buttons: [
     { variant: "secondary", text: "Donate", url: "#!" },
     { variant: "outlineSecondary", text: "Sponsor", url: "#!" }
@@ -1260,7 +1260,7 @@ const postModuleData7 = {
   text: [
     "The past five years have seen substantial change in our area. We transformed the faltering then Chester County SPCA into the f irst open admission no-kill shelter in Pennsylvania. We then provided the leadership needed for the state of Delaware to become the f irst and only no-kill state in the country. Our next step is to share what we’ve learned and help other shelters achieve the same success."
   ],
-  img: { src: "src/assets/img/content-img-23.png", alt: "", type: "default" },
+  img: { src: "/img/content-img-23.png", alt: "", type: "default" },
   reverse: true
 };
 </script>

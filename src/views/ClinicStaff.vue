@@ -33,7 +33,7 @@ import PostCardInline from "@/components/PostCardInline.vue";
 const staff = [
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-01.jpg",
+      src: "/img/post-card-inline-img-01.jpg",
       alt: "Dr. Sheri Wood"
     },
     title: "Dr. Sheri Wood",
@@ -42,7 +42,7 @@ const staff = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-02.jpg",
+      src: "/img/post-card-inline-img-02.jpg",
       alt: "Dr. Sarah Landon"
     },
     title: "Dr. Sarah Landon",
@@ -51,7 +51,7 @@ const staff = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-03.jpg",
+      src: "/img/post-card-inline-img-03.jpg",
       alt: "Dr. Julianne Grady"
     },
     title: "Dr. Julianne Grady",
@@ -60,7 +60,7 @@ const staff = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-04.jpg",
+      src: "/img/post-card-inline-img-04.jpg",
       alt: "Dr. Sherritta Ridgely"
     },
     title: "Dr. Sherritta Ridgely",
@@ -69,7 +69,7 @@ const staff = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-05.jpg",
+      src: "/img/post-card-inline-img-05.jpg",
       alt: "Dr. Gina Graziano"
     },
     title: "Dr. Gina Graziano",
@@ -78,7 +78,7 @@ const staff = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-06.jpg",
+      src: "/img/post-card-inline-img-06.jpg",
       alt: "Dr. Casey Wanros"
     },
     title: "Dr. Casey Wanros",

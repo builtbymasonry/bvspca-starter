@@ -92,7 +92,7 @@ import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
   title: `Reporting \nanimal cruelty`,
-  img: { src: "src/assets/img/hero-image-08.jpg", alt: "Lost & found pets" }
+  img: { src: "/img/hero-image-08.jpg", alt: "Lost & found pets" }
 };
 
 const contactCards = [
@@ -139,7 +139,7 @@ const contactCards = [
 ];
 
 const postModuleData = {
-  img: { src: "src/assets/img/content-img-14.jpg", alt: "" },
+  img: { src: "/img/content-img-14.jpg", alt: "" },
   title: { text: "No animal deserves to suffer from cruelty and the Brandywine Valley SPCA’s Animal Protective Services Department works tirelessly to prevent abuse and protect companion animals." },
   textGrid: [
     {
@@ -189,14 +189,14 @@ const listData2 = {
 };
 
 const postModuleData2 = {
-  img: { src: "src/assets/img/content-img-15.jpg", alt: "" },
+  img: { src: "/img/content-img-15.jpg", alt: "" },
   title: { text: "Dangerous dogs", size: "md"},
   text: ["Dangerous dogs are governed by state law. By law, a dog may be declared dangerous dog if it has attacked, inflicted severe injury to, or killed a human being or a domestic animal without provocation. A dog may also be considered dangerous if it was involved in committing a crime. For a dog to be declared dangerous in Pennsylvania, a police officer must file a complaint with a magisterial district justice charging the owner or keeper with harboring a dangerous dog. Brandywine Valley SPCA’s Animal Protective Services Division does not have police powers and cannot file charges of harboring a dangerous dog. Police must file charges against the owner of the dog and the case must go before a judge in order for any dog to be declared dangerous. The judge will make the final disposition on the animal."],
   reverse: true
 };
 
 const postModuleData3 = {
-  img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
+  img: { src: "/img/content-img-04.jpg", alt: "" },
   title: { text: "Give back to your community", size: "md"},
   text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   buttons: [{ text: "Donate", url: "#!" }],
@@ -208,21 +208,21 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }

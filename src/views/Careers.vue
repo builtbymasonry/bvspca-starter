@@ -67,7 +67,7 @@ import TextBanner from "@/components/TextBanner.vue";
 const heroInnerData = {
   title: "Careers",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
-  img: { src: "src/assets/img/hero-image-15.jpg", alt: "" }
+  img: { src: "/img/hero-image-15.jpg", alt: "" }
 };
 
 const postModuleData = {
@@ -78,10 +78,10 @@ const postModuleData = {
   buttons: [{ text: "Learn more about us", url: "#!" }],
   carousel: {
     slides: [
-      { src: "src/assets/img/slide07.jpg", alt: "slide alt1" },
-      { src: "src/assets/img/slide06.jpg", alt: "slide alt2" },
-      { src: "src/assets/img/slide03.jpg", alt: "slide alt3" },
-      { src: "src/assets/img/slide04.jpg", alt: "slide alt4" }
+      { src: "/img/slide07.jpg", alt: "slide alt1" },
+      { src: "/img/slide06.jpg", alt: "slide alt2" },
+      { src: "/img/slide03.jpg", alt: "slide alt3" },
+      { src: "/img/slide04.jpg", alt: "slide alt4" }
     ]
   },
   reverse: true
@@ -92,16 +92,16 @@ const postModuleData2 = {
   text: ["Get your paws on our original and limited edition merchandise. Your purchases go towards the care of the 16,000+ animals we take in each year. "],
   imgGrid: [
     {
-      img: { src: "src/assets/img/merch-img-01.jpg", alt: "" }
+      img: { src: "/img/merch-img-01.jpg", alt: "" }
     },
     {
-      img: { src: "src/assets/img/merch-img-02.jpg", alt: "" }
+      img: { src: "/img/merch-img-02.jpg", alt: "" }
     },
     {
-      img: { src: "src/assets/img/merch-img-03.jpg", alt: "" }
+      img: { src: "/img/merch-img-03.jpg", alt: "" }
     },
     {
-      img: { src: "src/assets/img/merch-img-04.jpg", alt: "" }
+      img: { src: "/img/merch-img-04.jpg", alt: "" }
     }
   ],
   buttons: [
@@ -113,17 +113,17 @@ const itemsListData = [
   {
     title: "Core value 1",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    img: { src: "src/assets/img/icon-rocket.svg", alt: "" }
+    img: { src: "/img/icon-rocket.svg", alt: "" }
   },
   {
     title: "Core value 2",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    img: { src: "src/assets/img/icon-badge.svg", alt: "" }
+    img: { src: "/img/icon-badge.svg", alt: "" }
   },
   {
     title: "Core value 3",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    img: { src: "src/assets/img/icon-star.svg", alt: "" }
+    img: { src: "/img/icon-star.svg", alt: "" }
   }
 ];
 
@@ -184,9 +184,9 @@ const textBannerData = {
 };
 
 const imgGrid = [
-  { img: { src: "src/assets/img/merch-img-01.jpg", alt: "" } },
-  { img: { src: "src/assets/img/merch-img-02.jpg", alt: "" } },
-  { img: { src: "src/assets/img/merch-img-03.jpg", alt: "" } },
-  { img: { src: "src/assets/img/merch-img-04.jpg", alt: "" } }
+  { img: { src: "/img/merch-img-01.jpg", alt: "" } },
+  { img: { src: "/img/merch-img-02.jpg", alt: "" } },
+  { img: { src: "/img/merch-img-03.jpg", alt: "" } },
+  { img: { src: "/img/merch-img-04.jpg", alt: "" } }
 ];
 </script>

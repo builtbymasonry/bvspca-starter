@@ -108,13 +108,13 @@ import PostCard from "@/components/PostCard.vue";
 import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
-  img: { src: "src/assets/img/hero-image-04.jpg", alt: "" },
+  img: { src: "/img/hero-image-04.jpg", alt: "" },
   title: "Community cats",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."
 };
 
 const postModuleData = {
-  img: { src: "src/assets/img/content-img-09.jpg", alt: "" },
+  img: { src: "/img/content-img-09.jpg", alt: "" },
   title: { text: "Outdoor cats need love too", size: "md"},
   text: ["Our services increase the health and wellness of community cats while proactively reducing the number of animals being born without homes in our community. TNVR has been shown to be the most humane, most efficient, and least costly method of stabilizing community cat populations."],
   textGrid: [
@@ -223,7 +223,7 @@ const textBoxData = {
 };
 
 const postModuleData2 = {
-  img: { src: "src/assets/img/content-img-10.jpg", alt: "" },
+  img: { src: "/img/content-img-10.jpg", alt: "" },
   title: { text: "Help keep our Community Cats program alive", size: "md" },
   text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   buttons: [{ variant: "secondary", text: "Donate", url: "#!" }]
@@ -234,21 +234,21 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }

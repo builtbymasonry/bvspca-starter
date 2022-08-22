@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-[1140px]">
       <!-- mobile version -->
       <div class="block md:hidden">
-        <form class="mx-auto max-w-md">
+        <form class="max-w-md mx-auto">
           <div v-if="formPage === 1">
             <div class="mb-4 text-sm text-black">
               <h4 class="mb-2 text-lg font-bold">
@@ -11,7 +11,7 @@
               </h4>
               <p>Select donation amount and frequency</p>
             </div>
-            <div class="-mx-3 mb-7 flex">
+            <div class="flex -mx-3 mb-7">
               <div class="w-2/5 px-3">
                 <Select
                   variant="outline"
@@ -97,7 +97,7 @@
             <div class="mb-2">
               <Input label="Address*" id="address-mob" />
             </div>
-            <div class="-mx-2 mb-2 flex">
+            <div class="flex mb-2 -mx-2">
               <div class="w-3/5 px-2">
                 <Select :options="countries" size="xs" inputLabel="Country*" />
               </div>
@@ -108,7 +108,7 @@
             <div class="mb-2">
               <Input label="City*" id="city-mob" />
             </div>
-            <div class="-mx-2 mb-2 flex">
+            <div class="flex mb-2 -mx-2">
               <div class="w-2/3 px-2">
                 <Input label="Zip Code*" id="zip-mob" />
               </div>
@@ -134,16 +134,16 @@
 
       <!-- desktop version -->
       <div class="hidden md:block">
-        <div class="-mx-4 mb-11 flex flex-col lg:-mx-7 lg:flex-row">
+        <div class="flex flex-col -mx-4 mb-11 lg:-mx-7 lg:flex-row">
           <div class="px-4 lg:w-1/2 lg:px-7">
             <div
-              class="mx-auto mb-5 max-w-md overflow-hidden rounded-lg shadow lg:mb-0 lg:max-w-full"
+              class="max-w-md mx-auto mb-5 overflow-hidden rounded-lg shadow lg:mb-0 lg:max-w-full"
             >
               <img :src="img" alt="puppy" class="w-full" />
             </div>
           </div>
           <div class="px-4 lg:w-1/2 lg:px-7">
-            <h4 class="text-1xl mb-3 font-bold text-black">
+            <h4 class="mb-3 font-bold text-black text-1xl">
               Great or small, all donations are appreciated
             </h4>
             <div class="pr-5 text-sm">
@@ -163,9 +163,9 @@
           </div>
         </div>
         <form>
-          <div class="-mx-4 flex lg:-mx-7">
+          <div class="flex -mx-4 lg:-mx-7">
             <div class="w-1/2 px-4 lg:px-7">
-              <h4 class="text-1xl mb-2 font-bold text-black">
+              <h4 class="mb-2 font-bold text-black text-1xl">
                 Step 1 - Select from these suggested amounts
               </h4>
               <p class="mb-8 text-sm">
@@ -173,13 +173,13 @@
               </p>
             </div>
             <div class="w-1/2 px-4 lg:px-7">
-              <h4 class="text-1xl mb-2 font-bold text-black">
+              <h4 class="mb-2 font-bold text-black text-1xl">
                 Step 2 - Enter your information
               </h4>
               <p class="mb-5 text-sm">Required fields are indicated with a *</p>
             </div>
           </div>
-          <div class="-mx-4 flex lg:-mx-7">
+          <div class="flex -mx-4 lg:-mx-7">
             <div class="w-1/2 px-4 lg:px-7">
               <RadioGroup v-model="selectedAmount" name="selectedAmount">
                 <RadioGroupLabel class="sr-only"
@@ -212,7 +212,7 @@
                       <div>
                         <RadioGroupLabel
                           as="span"
-                          class="text-1xl font-bold leading-none"
+                          class="font-bold leading-none text-1xl"
                         >
                           ${{ amount.value }}
                         </RadioGroupLabel>
@@ -231,7 +231,7 @@
                   <h5 class="mb-1 text-lg font-bold tracking-wider">
                     Donation Summary
                   </h5>
-                  <div class="-mx-3 mb-6 flex">
+                  <div class="flex mb-6 -mx-3">
                     <div class="w-1/2 px-3">
                       <div>
                         <Input
@@ -253,7 +253,7 @@
                   <h5 class="mb-1 text-lg font-bold tracking-wider">
                     Contact Info
                   </h5>
-                  <div class="-mx-3 mb-2 flex">
+                  <div class="flex mb-2 -mx-3">
                     <div class="w-1/2 px-3">
                       <div>
                         <Input label="First Name*" id="first-name" />
@@ -279,7 +279,7 @@
                   <div>
                     <Input label="Address*" id="address" />
                   </div>
-                  <div class="-mx-3 mb-2 flex">
+                  <div class="flex mb-2 -mx-3">
                     <div class="w-1/2 px-3">
                       <Select :options="countries" inputLabel="Country*" />
                     </div>
@@ -288,7 +288,7 @@
                     </div>
                   </div>
 
-                  <div class="-mx-3 mb-2 flex">
+                  <div class="flex mb-2 -mx-3">
                     <div class="w-1/2 px-3">
                       <div>
                         <Input label="City*" id="city" />
@@ -336,7 +336,7 @@ import Select from "@/components/Select.vue";
 import BaseIcon from "@/components/BaseIcon.vue";
 import Button from "@/components/Button.vue";
 
-import img from "@/assets/img/donate-img01.jpg";
+import img from "/img/donate-img01.jpg";
 import {
   RadioGroup,
   RadioGroupLabel,

@@ -320,8 +320,8 @@ import { onMounted, ref, watch } from "vue";
 import { GoogleMap, Marker, InfoWindow } from "vue3-google-map";
 import { useWindowSize } from "vue-window-size";
 
-import pin from "@/assets/img/pin-empty.svg";
-import pinHeart from "@/assets/img/pin-heart.svg";
+import pin from "/img/pin-empty.svg";
+import pinHeart from "/img/pin-heart.svg";
 
 import Button from "./Button.vue";
 import ButtonLink from "./ButtonLink.vue";

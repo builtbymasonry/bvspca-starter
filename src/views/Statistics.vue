@@ -55,15 +55,15 @@
       <picture>
         <source
           media="(max-width: 767px)"
-          srcset="src/assets/img/bg-image-01-sm.jpg"
+          srcset="/img/bg-image-01-sm.jpg"
         />
         <source
           media="(min-width: 768px)"
-          srcset="src/assets/img/bg-image-01.jpg"
+          srcset="/img/bg-image-01.jpg"
         />
         <img
           class="absolute top-0 left-0 h-full w-full object-cover"
-          src="src/assets/img/bg-image-01.jpg"
+          src="/img/bg-image-01.jpg"
           alt="background"
         />
       </picture>
@@ -86,16 +86,16 @@ import InfoCard from "@/components/InfoCard.vue";
 const heroInnerData = {
   title: "Statistics",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
-  img: { src: "src/assets/img/hero-image-17.jpg", alt: "" }
+  img: { src: "/img/hero-image-17.jpg", alt: "" }
 };
 
 const postModuleData = {
   carousel: {
     slides: [
-      { src: "src/assets/img/slide08.jpg", alt: "slide alt1" },
-      { src: "src/assets/img/slide07.jpg", alt: "slide alt2" },
-      { src: "src/assets/img/slide06.jpg", alt: "slide alt3" },
-      { src: "src/assets/img/slide04.jpg", alt: "slide alt4" }
+      { src: "/img/slide08.jpg", alt: "slide alt1" },
+      { src: "/img/slide07.jpg", alt: "slide alt2" },
+      { src: "/img/slide06.jpg", alt: "slide alt3" },
+      { src: "/img/slide04.jpg", alt: "slide alt4" }
     ]
   },
   title: { text: "Lorem ipsum dolor sit amet", size: "md"},
@@ -748,7 +748,7 @@ const annualStatistics = {
 const infoCardData = {
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
-  img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
+  img: { src: "/img/content-img-01.jpg", alt: "" },
   buttons: [{ text: "Learn more about our impact", url: "#!" }]
 };
 </script>

@@ -2,35 +2,35 @@
   <HeroInner v-bind="heroInnerData" class="bg-gray-dark" />
 
   <section class="py-14 lg:py-28">
-    <div class="mx-auto max-w-5xl px-4">
+    <div class="max-w-5xl px-4 mx-auto">
       <PostModule class="text-xs" v-bind="postModuleData" />
     </div>
   </section>
 
   <section class="bg-gray-dark py-14 lg:py-28">
-    <div class="mx-auto max-w-6xl px-4">
+    <div class="max-w-6xl px-4 mx-auto">
       <PostModule class="text-sm" v-bind="postModuleData2" />
     </div>
   </section>
 
   <section class="py-14 lg:py-28">
-    <div class="mx-auto max-w-6xl px-4">
+    <div class="max-w-6xl px-4 mx-auto">
       <h2
-        class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
+        class="mb-10 text-2xl font-bold text-center md:mb-16 md:text-3xl xl:text-5xl"
       >
         Our history
       </h2>
 
       <div
-        class="mx-auto max-w-xs space-y-16 md:max-w-xl md:space-y-0 lg:max-w-3xl"
+        class="max-w-xs mx-auto space-y-16 md:max-w-xl md:space-y-0 lg:max-w-3xl"
       >
         <div
           v-for="item in gridHistory"
           :key="item.title"
-          class="lines relative w-full odd:justify-start even:justify-end md:flex"
+          class="relative w-full lines odd:justify-start even:justify-end md:flex"
         >
           <div
-            class="z-2 relative flex h-56 w-full flex-col items-center justify-center whitespace-pre-wrap rounded-lg bg-white p-5 text-center shadow md:w-1/2 lg:w-2/5"
+            class="relative flex flex-col items-center justify-center w-full h-56 p-5 text-center whitespace-pre-wrap bg-white rounded-lg shadow z-2 md:w-1/2 lg:w-2/5"
           >
             <img class="mx-auto mb-2" v-bind="item.img" />
             <h3 class="text-lg font-bold">{{ item.title }}</h3>
@@ -47,19 +47,19 @@
   </section>
 
   <section class="relative pt-20 pb-40 sm:pt-32 sm:pb-56 md:pb-28">
-    <div class="absolute top-0 left-0 h-full w-full">
+    <div class="absolute top-0 left-0 w-full h-full">
       <picture>
         <source
           media="(max-width: 767px)"
-          srcset="src/assets/img/bg-image-01-sm.jpg"
+          srcset="/img/bg-image-01-sm.jpg"
         />
         <source
           media="(min-width: 768px)"
-          srcset="src/assets/img/bg-image-01.jpg"
+          srcset="/img/bg-image-01.jpg"
         />
         <img
-          class="absolute top-0 left-0 h-full w-full object-cover"
-          src="src/assets/img/bg-image-01.jpg"
+          class="absolute top-0 left-0 object-cover w-full h-full"
+          src="/img/bg-image-01.jpg"
           alt="background"
         />
       </picture>
@@ -69,9 +69,9 @@
   </section>
 
   <section
-    class="bg-skew bg-skew-reverse bg-purple pt-8 pb-20 text-white md:py-24 lg:py-32"
+    class="pt-8 pb-20 text-white bg-skew bg-skew-reverse bg-purple md:py-24 lg:py-32"
   >
-    <div class="mx-auto max-w-4xl px-4">
+    <div class="max-w-4xl px-4 mx-auto">
       <PostModule class="text-sm font-bold" v-bind="postModuleData3" />
     </div>
   </section>
@@ -79,12 +79,12 @@
   <section class="bg-gray-dark py-14 lg:py-28">
     <div class="mx-auto max-w-7xl px-14 sm:px-4">
       <h2
-        class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
+        class="mb-10 text-2xl font-bold text-center md:mb-16 md:text-3xl xl:text-5xl"
       >
         Get to know us
       </h2>
       <h3
-        class="border-gray-light text-gray-light mb-10 border-b-2 pb-3 text-center text-lg font-bold sm:text-left"
+        class="pb-3 mb-10 text-lg font-bold text-center border-b-2 border-gray-light text-gray-light sm:text-left"
       >
         Leadership
       </h3>
@@ -100,9 +100,9 @@
   </section>
 
   <section class="py-14 lg:py-28">
-    <div class="mx-auto max-w-4xl px-4">
-      <div class="mx-auto mb-12 max-w-xl text-center text-xs">
-        <h2 class="mb-4 text-center text-2xl font-bold md:text-3xl xl:text-5xl">
+    <div class="max-w-4xl px-4 mx-auto">
+      <div class="max-w-xl mx-auto mb-12 text-xs text-center">
+        <h2 class="mb-4 text-2xl font-bold text-center md:text-3xl xl:text-5xl">
           Board of Directors
         </h2>
         <p>
@@ -115,17 +115,17 @@
       </div>
 
       <div
-        class="grid grid-cols-1 gap-14 text-center sm:grid-cols-2 sm:text-left lg:gap-24 lg:px-7"
+        class="grid grid-cols-1 text-center gap-14 sm:grid-cols-2 sm:text-left lg:gap-24 lg:px-7"
       >
         <div class="space-y-4">
           <h3
-            class="border-gray-dark text-gray-light mb-8 border-b-2 pb-3 text-lg font-bold"
+            class="pb-3 mb-8 text-lg font-bold border-b-2 border-gray-dark text-gray-light"
           >
             Executive Committee
           </h3>
           <div v-for="item in executiveCommitteeData" :key="item.name">
             <h4 class="mb-0.5 text-lg font-bold md:text-xl">{{ item.name }}</h4>
-            <p class="text-gray-light text-xs font-bold md:text-sm">
+            <p class="text-xs font-bold text-gray-light md:text-sm">
               {{ item.role }}
             </p>
           </div>
@@ -133,22 +133,22 @@
 
         <div class="space-y-4">
           <h3
-            class="border-gray-dark text-gray-light mb-8 border-b-2 pb-3 text-center text-lg font-bold sm:text-left"
+            class="pb-3 mb-8 text-lg font-bold text-center border-b-2 border-gray-dark text-gray-light sm:text-left"
           >
             Board Members
           </h3>
           <div v-for="item in executiveCommitteeData" :key="item.name">
             <h4 class="mb-0.5 text-lg font-bold md:text-xl">{{ item.name }}</h4>
-            <p class="text-gray-light text-xs font-bold md:text-sm">
+            <p class="text-xs font-bold text-gray-light md:text-sm">
               {{ item.role }}
             </p>
           </div>
         </div>
       </div>
 
-      <div class="mx-auto mt-16 max-w-5xl text-center text-xs lg:mt-28">
+      <div class="max-w-5xl mx-auto mt-16 text-xs text-center lg:mt-28">
         <h2
-          class="mb-10 text-center text-2xl font-bold md:mb-16 md:text-3xl xl:text-5xl"
+          class="mb-10 text-2xl font-bold text-center md:mb-16 md:text-3xl xl:text-5xl"
         >
           Advisory Board Members
         </h2>
@@ -159,13 +159,13 @@
       >
         <div class="space-y-4">
           <h3
-            class="border-gray-dark text-gray-light mb-8 border-b-2 pb-3 text-center text-lg font-bold sm:text-left"
+            class="pb-3 mb-8 text-lg font-bold text-center border-b-2 border-gray-dark text-gray-light sm:text-left"
           >
             Executive Committee
           </h3>
           <div v-for="item in executiveCommitteeData" :key="item.name">
             <h4 class="mb-0.5 text-lg font-bold md:text-xl">{{ item.name }}</h4>
-            <p class="text-gray-light text-xs font-bold md:text-sm">
+            <p class="text-xs font-bold text-gray-light md:text-sm">
               {{ item.role }}
             </p>
           </div>
@@ -173,13 +173,13 @@
 
         <div class="space-y-4">
           <h3
-            class="border-gray-dark text-gray-light mb-8 border-b-2 pb-3 text-center text-lg font-bold sm:text-left"
+            class="pb-3 mb-8 text-lg font-bold text-center border-b-2 border-gray-dark text-gray-light sm:text-left"
           >
             Advisory Members
           </h3>
           <div v-for="item in executiveCommitteeData" :key="item.name">
             <h4 class="mb-0.5 text-lg font-bold md:text-xl">{{ item.name }}</h4>
-            <p class="text-gray-light text-xs font-bold md:text-sm">
+            <p class="text-xs font-bold text-gray-light md:text-sm">
               {{ item.role }}
             </p>
           </div>
@@ -189,7 +189,7 @@
   </section>
 
   <section class="bg-gray-dark py-14 lg:py-28">
-    <div class="mx-auto max-w-4xl px-4">
+    <div class="max-w-4xl px-4 mx-auto">
       <PostModule class="text-xs" v-bind="postModuleData4" />
     </div>
   </section>
@@ -207,7 +207,7 @@ import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 const heroInnerData = {
   title: "About us",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
-  img: { src: "src/assets/img/hero-image-14.jpg", alt: "About Us" }
+  img: { src: "/img/hero-image-14.jpg", alt: "About Us" }
 };
 
 const postModuleData = {
@@ -218,7 +218,7 @@ const postModuleData = {
   video: {
     src: "https://www.youtube.com/embed/BHACKCNDMW8",
     thumb: {
-      src: "src/assets/img/content-img-99.jpg",
+      src: "/img/content-img-99.jpg",
       alt: ""
     }
   }
@@ -232,10 +232,10 @@ const postModuleData2 = {
   buttons: [{ text: "Support our cause", url: "#!" }],
   carousel: {
     slides: [
-      { src: "src/assets/img/slide06.jpg", alt: "slide alt1" },
-      { src: "src/assets/img/slide04.jpg", alt: "slide alt2" },
-      { src: "src/assets/img/slide03.jpg", alt: "slide alt3" },
-      { src: "src/assets/img/slide04.jpg", alt: "slide alt4" }
+      { src: "/img/slide06.jpg", alt: "slide alt1" },
+      { src: "/img/slide04.jpg", alt: "slide alt2" },
+      { src: "/img/slide03.jpg", alt: "slide alt3" },
+      { src: "/img/slide04.jpg", alt: "slide alt4" }
     ]
   },
   reverse: true
@@ -246,7 +246,7 @@ const postModuleData3 = {
   text: [
     "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
   ],
-  img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
+  img: { src: "/img/content-img-04.jpg", alt: "" },
   reverse: true,
   buttons: [
     { variant: "secondary", text: "Donate", url: "#!" },
@@ -259,127 +259,127 @@ const postModuleData4 = {
   text: [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. "
   ],
-  img: { src: "src/assets/img/content-img-22.jpg", alt: "" },
+  img: { src: "/img/content-img-22.jpg", alt: "" },
   buttons: [{ text: "View open positions", url: "#!" }]
 };
 
 const gridHistory = [
   {
     title: `The Chester County SPCA \nwas founded`,
-    img: { src: "src/assets/img/history/label-history-01.png", alt: "" }
+    img: { src: "/img/history/label-history-01.png", alt: "" }
   },
   {
     title: `Non-Profit status was \nofficially established`,
-    img: { src: "src/assets/img/history/label-history-02.png", alt: "" },
+    img: { src: "/img/history/label-history-02.png", alt: "" },
     imgDecor: {
-      src: "src/assets/img/history/pet-dog-01.svg",
+      src: "/img/history/pet-dog-01.svg",
       alt: "",
       assets: "left-[8.3%] -mt-[34px]"
     }
   },
   {
     title: `The first CCSPCA Horse \nShow took place`,
-    img: { src: "src/assets/img/history/label-history-03.png", alt: "" },
+    img: { src: "/img/history/label-history-03.png", alt: "" },
     imgDecor: {
-      src: "src/assets/img/history/pet-cat-01.svg",
+      src: "/img/history/pet-cat-01.svg",
       alt: "",
       assets: "left-[75%] lg:left-[51.5%] -mt-[33px]"
     }
   },
   {
     title: `The CCSPCA’s first \nWalk for Paws`,
-    img: { src: "src/assets/img/history/label-history-04.png", alt: "" },
+    img: { src: "/img/history/label-history-04.png", alt: "" },
     imgDecor: {
-      src: "src/assets/img/history/pet-dog-02.svg",
+      src: "/img/history/pet-dog-02.svg",
       alt: "",
       assets: "left-[20%] lg:left-[42%] -mt-[52px]"
     }
   },
   {
     title: `The CCSPCA’s Forget-Me-\nNot Gala premiers`,
-    img: { src: "src/assets/img/history/label-history-05.png", alt: "" }
+    img: { src: "/img/history/label-history-05.png", alt: "" }
   },
   {
     title: "Began renovations to the Pennsylvania shelter",
-    img: { src: "src/assets/img/history/label-history-06.png", alt: "" },
+    img: { src: "/img/history/label-history-06.png", alt: "" },
     imgDecor: {
-      src: "src/assets/img/history/pet-cat-02.svg",
+      src: "/img/history/pet-cat-02.svg",
       alt: "",
       assets: "left-[25.7%] -mt-[58px]"
     }
   },
   {
     title: "Completed Pennsylvania shelter renovations",
-    img: { src: "src/assets/img/history/label-history-07.png", alt: "" },
+    img: { src: "/img/history/label-history-07.png", alt: "" },
     imgDecor: {
-      src: "src/assets/img/history/pet-dog-03.svg",
+      src: "/img/history/pet-dog-03.svg",
       alt: "",
       assets: "left-[50%] lg:left-[40%] -mt-[79px]"
     }
   },
   {
     title: "Opened the Muhly Spay/Neuter Clinic",
-    img: { src: "src/assets/img/history/label-history-08.png", alt: "" }
+    img: { src: "/img/history/label-history-08.png", alt: "" }
   },
   {
     title:
       "Announced CCSPCA as Pennsylvania’s first open admission, no-kill facility",
-    img: { src: "src/assets/img/history/label-history-09.png", alt: "" },
+    img: { src: "/img/history/label-history-09.png", alt: "" },
     imgDecor: {
-      src: "src/assets/img/history/pet-cat-03.svg",
+      src: "/img/history/pet-cat-03.svg",
       alt: "",
       assets: "left-[73.8%] -mt-[28px]"
     }
   },
   {
     title: "Began servicing as Animal Control for Delaware State",
-    img: { src: "src/assets/img/history/label-history-10.png", alt: "" }
+    img: { src: "/img/history/label-history-10.png", alt: "" }
   },
   {
     title: "Opened shelter and clinic Delaware campus",
-    img: { src: "src/assets/img/history/label-history-11.png", alt: "" }
+    img: { src: "/img/history/label-history-11.png", alt: "" }
   },
   {
     title: "Opened new Pennsylvania clinic building",
-    img: { src: "src/assets/img/history/label-history-12.png", alt: "" },
+    img: { src: "/img/history/label-history-12.png", alt: "" },
     imgDecor: {
-      src: "src/assets/img/history/pet-dog-04.svg",
+      src: "/img/history/pet-dog-04.svg",
       alt: "",
       assets: "left-[18.6%] -mt-[37px]"
     }
   },
   {
     title: `Re-branded as \nBrandywine Valley SPCA`,
-    img: { src: "src/assets/img/history/label-history-13.png", alt: "" },
+    img: { src: "/img/history/label-history-13.png", alt: "" },
     imgDecor: {
-      src: "src/assets/img/history/pet-dog-05.svg",
+      src: "/img/history/pet-dog-05.svg",
       alt: "",
       assets: "left-[61.5%] -mt-[61px]"
     }
   },
   {
     title: "Took over operations at the Georgetown, DE shelter",
-    img: { src: "src/assets/img/history/label-history-14.png", alt: "" }
+    img: { src: "/img/history/label-history-14.png", alt: "" }
   },
   {
     title:
       "Purchased the Animal Rescue Center in Georgetown and a shelter in Dover, DE",
-    img: { src: "src/assets/img/history/label-history-15.png", alt: "" },
+    img: { src: "/img/history/label-history-15.png", alt: "" },
     imgDecor: {
-      src: "src/assets/img/history/pet-dog-06.svg",
+      src: "/img/history/pet-dog-06.svg",
       alt: "",
       assets: "left-[70%] lg:left-[47%] -mt-[32px]"
     }
   },
   {
     title: `Renovation of the \nGeorgetown campus`,
-    img: { src: "src/assets/img/history/label-history-16.png", alt: "" }
+    img: { src: "/img/history/label-history-16.png", alt: "" }
   },
   {
     title: `Opened the Dover \nCampus`,
-    img: { src: "src/assets/img/history/label-history-17.png", alt: "" },
+    img: { src: "/img/history/label-history-17.png", alt: "" },
     imgDecor: {
-      src: "src/assets/img/history/pet-dog-07.svg",
+      src: "/img/history/pet-dog-07.svg",
       alt: "",
       assets: "left-[77%] -mt-[46px]"
     }
@@ -389,13 +389,13 @@ const gridHistory = [
 const infoCardData = {
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
-  img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
+  img: { src: "/img/content-img-01.jpg", alt: "" },
   buttons: [{ text: "Learn more about our impact", url: "#!" }]
 };
 
 const staff = [
   {
-    img: { src: "src/assets/img/person-01.jpg", alt: "" },
+    img: { src: "/img/person-01.jpg", alt: "" },
     name: "Adam Lamb",
     position: "Chief Executive Officer",
     links: [
@@ -404,7 +404,7 @@ const staff = [
     ]
   },
   {
-    img: { src: "src/assets/img/person-02.jpg", alt: "" },
+    img: { src: "/img/person-02.jpg", alt: "" },
     name: "Tanner Polce",
     position: "Chief Advancement Officer",
     links: [
@@ -413,13 +413,13 @@ const staff = [
     ]
   },
   {
-    img: { src: "src/assets/img/person-03.jpg", alt: "" },
+    img: { src: "/img/person-03.jpg", alt: "" },
     name: "Julie Landy",
     position: "Chief Financial Officer",
     links: [{ url: "jlandy@bvspca.org", type: "mailto" }]
   },
   {
-    img: { src: "src/assets/img/person-04.jpg", alt: "" },
+    img: { src: "/img/person-04.jpg", alt: "" },
     name: "Linda Torelli",
     position: "Chief Marketing Officer",
     links: [
@@ -428,7 +428,7 @@ const staff = [
     ]
   },
   {
-    img: { src: "src/assets/img/person-05.jpg", alt: "" },
+    img: { src: "/img/person-05.jpg", alt: "" },
     name: "Walter Fenstermacher",
     position: "Director of Clinic Operations",
     links: [
@@ -437,7 +437,7 @@ const staff = [
     ]
   },
   {
-    img: { src: "src/assets/img/person-06.jpg", alt: "" },
+    img: { src: "/img/person-06.jpg", alt: "" },
     name: "Rachel Golub",
     position: "Director of Operations",
     links: [
@@ -446,7 +446,7 @@ const staff = [
     ]
   },
   {
-    img: { src: "src/assets/img/person-07.jpg", alt: "" },
+    img: { src: "/img/person-07.jpg", alt: "" },
     name: "AJ Haman",
     position: "Sr. Operations Manager -PA",
     links: [
@@ -455,7 +455,7 @@ const staff = [
     ]
   },
   {
-    img: { src: "src/assets/img/person-08.jpg", alt: "" },
+    img: { src: "/img/person-08.jpg", alt: "" },
     name: "Lauren Cook",
     position: "Sr. Operations Manager - DE",
     links: [
@@ -464,7 +464,7 @@ const staff = [
     ]
   },
   {
-    img: { src: "src/assets/img/person-09.jpg", alt: "" },
+    img: { src: "/img/person-09.jpg", alt: "" },
     name: "Eli Martinez",
     position: "Sr/ Director of Development - PA",
     links: [
@@ -473,7 +473,7 @@ const staff = [
     ]
   },
   {
-    img: { src: "src/assets/img/person-10.jpg", alt: "" },
+    img: { src: "/img/person-10.jpg", alt: "" },
     name: "Sarah Smith",
     position: "Director of Annual Giving and Events",
     links: [
@@ -482,7 +482,7 @@ const staff = [
     ]
   },
   {
-    img: { src: "src/assets/img/person-11.jpg", alt: "" },
+    img: { src: "/img/person-11.jpg", alt: "" },
     name: "Shelby Polce",
     position: "Director of Community Engagement ",
     links: [
@@ -491,7 +491,7 @@ const staff = [
     ]
   },
   {
-    img: { src: "src/assets/img/person-12.jpg", alt: "" },
+    img: { src: "/img/person-12.jpg", alt: "" },
     name: "Crystal Cullin",
     position: "Director of Clinic Services",
     links: [{ url: "ccullin@bvspca.org", type: "mailto" }]
@@ -514,21 +514,21 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }

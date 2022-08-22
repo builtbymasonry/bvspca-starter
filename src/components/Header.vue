@@ -2,9 +2,9 @@
   <Popover v-slot="{ open }" class="relative z-10 bg-white shadow">
     <!-- upper header bar -->
     <div
-      class="min-h-3 bg-purple hidden items-center px-3 py-2 text-white md:px-6 xl:flex"
+      class="items-center hidden px-3 py-2 text-white min-h-3 bg-purple md:px-6 xl:flex"
     >
-      <PopoverGroup as="div" class="mr-12 hidden space-x-12 xl:flex">
+      <PopoverGroup as="div" class="hidden mr-12 space-x-12 xl:flex">
         <div v-for="item in upperNav" :key="item.label">
           <Popover
             v-if="item.drop"
@@ -28,26 +28,26 @@
             </PopoverButton>
 
             <transition
-              enter-active-class="transition ease-out duration-200"
-              enter-from-class="opacity-0 translate-y-1"
-              enter-to-class="opacity-100 translate-y-0"
-              leave-active-class="transition ease-in duration-150"
-              leave-from-class="opacity-100 translate-y-0"
-              leave-to-class="opacity-0 translate-y-1"
+              enter-active-class="transition duration-200 ease-out"
+              enter-from-class="translate-y-1 opacity-0"
+              enter-to-class="translate-y-0 opacity-100"
+              leave-active-class="transition duration-150 ease-in"
+              leave-from-class="translate-y-0 opacity-100"
+              leave-to-class="translate-y-1 opacity-0"
             >
               <div>
                 <PopoverPanel
-                  class="absolute top-full z-10 -ml-4 max-w-md transform px-2 sm:px-0 lg:-left-9 lg:ml-0"
+                  class="absolute z-10 max-w-md px-2 -ml-4 transform top-full sm:px-0 lg:-left-9 lg:ml-0"
                 >
                   <div class="overflow-hidden rounded-lg rounded-t-none shadow">
                     <div
-                      class="bg-purple relative z-10 grid gap-6 px-9 py-9 pt-6"
+                      class="relative z-10 grid gap-6 pt-6 bg-purple px-9 py-9"
                     >
                       <a
                         v-for="dropItem in item.drop"
                         :key="dropItem.label"
                         :href="dropItem.url"
-                        class="hover:text-orange flex items-start whitespace-nowrap text-sm font-bold transition-colors"
+                        class="flex items-start text-sm font-bold transition-colors hover:text-orange whitespace-nowrap"
                       >
                         {{ dropItem.label }}
                       </a>
@@ -60,7 +60,7 @@
           <a
             v-else
             :href="item.url"
-            class="hover:text-orange inline-flex items-center text-sm font-bold text-white transition-colors"
+            class="inline-flex items-center text-sm font-bold text-white transition-colors hover:text-orange"
             >{{ item.label }}</a
           >
         </div>
@@ -77,7 +77,7 @@
     <!-- main header bar -->
     <div class="px-3 md:px-6">
       <div
-        class="flex items-center justify-between space-x-4 py-1 md:justify-end md:py-5 xl:space-x-14"
+        class="flex items-center justify-between py-1 space-x-4 md:justify-end md:py-5 xl:space-x-14"
       >
         <!-- header logo -->
         <div
@@ -87,7 +87,7 @@
             <span class="sr-only">Brandywine Valley SPCA</span>
             <img
               class="w-auto"
-              src="@/assets/img/logo.svg"
+              src="/img/logo.svg"
               alt="Brandywine Valley SPCA"
             />
           </a>
@@ -99,18 +99,18 @@
         <!-- /header button mobile -->
 
         <!-- main menu burger -->
-        <div class="-mr-1 inline-flex xl:hidden">
+        <div class="inline-flex -mr-1 xl:hidden">
           <PopoverButton
             class="inline-flex items-center justify-center text-black"
           >
             <span class="sr-only">Open menu</span>
             <MenuIcon
-              class="h-10 w-10"
+              class="w-10 h-10"
               :class="open ? 'hidden' : ''"
               aria-hidden="true"
             />
             <XIcon
-              class="h-10 w-10"
+              class="w-10 h-10"
               :class="open ? '' : 'hidden'"
               aria-hidden="true"
             />
@@ -139,12 +139,12 @@
               </PopoverButton>
 
               <transition
-                enter-active-class="transition ease-out duration-200"
-                enter-from-class="opacity-0 translate-y-1"
-                enter-to-class="opacity-100 translate-y-0"
-                leave-active-class="transition ease-in duration-150"
-                leave-from-class="opacity-100 translate-y-0"
-                leave-to-class="opacity-0 translate-y-1"
+                enter-active-class="transition duration-200 ease-out"
+                enter-from-class="translate-y-1 opacity-0"
+                enter-to-class="translate-y-0 opacity-100"
+                leave-active-class="transition duration-150 ease-in"
+                leave-from-class="translate-y-0 opacity-100"
+                leave-to-class="translate-y-1 opacity-0"
               >
                 <div>
                   <PopoverPanel
@@ -154,13 +154,13 @@
                       class="overflow-hidden rounded-lg rounded-t-none shadow"
                     >
                       <div
-                        class="relative z-10 grid gap-6 bg-white px-9 pt-5 pb-9"
+                        class="relative z-10 grid gap-6 pt-5 bg-white px-9 pb-9"
                       >
                         <a
                           v-for="dropItem in item.drop"
                           :key="dropItem.name"
                           :href="dropItem.url"
-                          class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold transition-colors"
+                          class="flex items-start text-sm font-bold transition-colors hover:text-red whitespace-nowrap"
                         >
                           {{ dropItem.label }}
                         </a>
@@ -175,7 +175,7 @@
         <!-- /main menu -->
 
         <!-- header buttons -->
-        <PopoverGroup as="div" class="hidden items-center xl:flex">
+        <PopoverGroup as="div" class="items-center hidden xl:flex">
           <Popover
             v-for="button in navAdopt"
             :key="button.label"
@@ -192,12 +192,12 @@
             </PopoverButton>
 
             <transition
-              enter-active-class="transition ease-out duration-200"
-              enter-from-class="opacity-0 translate-y-1"
-              enter-to-class="opacity-100 translate-y-0"
-              leave-active-class="transition ease-in duration-150"
-              leave-from-class="opacity-100 translate-y-0"
-              leave-to-class="opacity-0 translate-y-1"
+              enter-active-class="transition duration-200 ease-out"
+              enter-from-class="translate-y-1 opacity-0"
+              enter-to-class="translate-y-0 opacity-100"
+              leave-active-class="transition duration-150 ease-in"
+              leave-from-class="translate-y-0 opacity-100"
+              leave-to-class="translate-y-1 opacity-0"
             >
               <div>
                 <PopoverPanel
@@ -205,13 +205,13 @@
                 >
                   <div class="overflow-hidden rounded-lg rounded-t-none shadow">
                     <div
-                      class="relative z-10 grid gap-6 bg-white px-9 pt-0 pb-9"
+                      class="relative z-10 grid gap-6 pt-0 bg-white px-9 pb-9"
                     >
                       <a
                         v-for="item in button.drop"
                         :key="item.label"
                         :href="item.url"
-                        class="hover:text-red flex items-start whitespace-nowrap text-sm font-bold transition-colors"
+                        class="flex items-start text-sm font-bold transition-colors hover:text-red whitespace-nowrap"
                       >
                         {{ item.label }}
                       </a>
@@ -242,12 +242,12 @@
             </PopoverButton>
 
             <transition
-              enter-active-class="transition ease-out duration-200"
-              enter-from-class="opacity-0 translate-y-1"
-              enter-to-class="opacity-100 translate-y-0"
-              leave-active-class="transition ease-in duration-150"
-              leave-from-class="opacity-100 translate-y-0"
-              leave-to-class="opacity-0 translate-y-1"
+              enter-active-class="transition duration-200 ease-out"
+              enter-from-class="translate-y-1 opacity-0"
+              enter-to-class="translate-y-0 opacity-100"
+              leave-active-class="transition duration-150 ease-in"
+              leave-from-class="translate-y-0 opacity-100"
+              leave-to-class="translate-y-1 opacity-0"
             >
               <div>
                 <PopoverPanel
@@ -255,13 +255,13 @@
                 >
                   <div class="overflow-hidden rounded-lg rounded-t-none shadow">
                     <div
-                      class="relative z-10 grid gap-6 bg-white px-9 pt-0 pb-9"
+                      class="relative z-10 grid gap-6 pt-0 bg-white px-9 pb-9"
                     >
                       <a
                         v-for="item in button.drop"
                         :key="item.label"
                         :href="item.url"
-                        class="hover:text-red flex items-start justify-end whitespace-nowrap text-sm font-bold transition-colors"
+                        class="flex items-start justify-end text-sm font-bold transition-colors hover:text-red whitespace-nowrap"
                       >
                         {{ item.label }}
                       </a>
@@ -305,17 +305,17 @@
                   <BaseIcon
                     v-if="item.drop"
                     name="arrowRight"
-                    class="text-orange ml-auto inline-flex h-3 w-3"
+                    class="inline-flex w-3 h-3 ml-auto text-orange"
                   />
                 </a>
                 <ul
                   v-show="activeMobileDrop === generateId(item.label)"
-                  class="divide-purple-dark divide-y text-lg font-bold text-white"
+                  class="text-lg font-bold text-white divide-y divide-purple-dark"
                 >
                   <li v-for="subItem in item.drop" :key="subItem.label">
                     <a
                       :href="subItem.url"
-                      class="hover:text-orange flex items-center py-3 px-4 md:px-7 transition-colors"
+                      class="flex items-center px-4 py-3 transition-colors hover:text-orange md:px-7"
                       >{{ subItem.label }}</a
                     >
                   </li>
@@ -332,20 +332,20 @@
                 class="hover:text-orange border-purple flex cursor-pointer select-none items-center justify-between border-b-[1px] py-3 px-4 transition-colors md:px-7"
               >
                 <span>Search</span>
-                <BaseIcon name="search" class="text-orange h-3 w-3" />
+                <BaseIcon name="search" class="w-3 h-3 text-orange" />
               </a>
               <div
-                class="px-7 pt-5 pb-14"
+                class="pt-5 px-7 pb-14"
                 v-show="activeMobileDrop === 'SearchBar'"
               >
-                <h4 class="mb-3 text-center text-lg font-bold text-white">
+                <h4 class="mb-3 text-lg font-bold text-center text-white">
                   Search
                 </h4>
                 <div
                   class="relative mx-auto flex w-full max-w-[450px] items-center justify-center rounded-full border-2 border-white"
                 >
                   <input
-                    class="placeholder:text-gray-light w-full border-none bg-transparent px-5 py-3 text-sm font-normal text-white focus:ring-transparent"
+                    class="w-full px-5 py-3 text-sm font-normal text-white bg-transparent border-none placeholder:text-gray-light focus:ring-transparent"
                     type="text"
                     autocomplete="off"
                     spellcheck="false"
@@ -354,10 +354,10 @@
                   />
                   <button
                     aria-label="search"
-                    class="text-orange mr-4"
+                    class="mr-4 text-orange"
                     type="submit"
                   >
-                    <BaseIcon name="search" class="text-orange h-5 w-5" />
+                    <BaseIcon name="search" class="w-5 h-5 text-orange" />
                   </button>
                 </div>
               </div>
@@ -366,7 +366,7 @@
 
             <div
               v-show="activeMobileDrop !== null"
-              class="bg-purple-medium py-2 text-center"
+              class="py-2 text-center bg-purple-medium"
             >
               <ButtonLink
                 class="text-white"
@@ -378,7 +378,7 @@
 
             <Socials
               :socials="socialList"
-              class="flex justify-center space-x-8 px-3 py-8"
+              class="flex justify-center px-3 py-8 space-x-8"
               iconSize="w-[25px] h-[25px]"
               iconShadow
             />

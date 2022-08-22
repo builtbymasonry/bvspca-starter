@@ -38,15 +38,15 @@
       <picture>
         <source
           media="(max-width: 767px)"
-          srcset="src/assets/img/bg-image-01-sm.jpg"
+          srcset="/img/bg-image-01-sm.jpg"
         />
         <source
           media="(min-width: 768px)"
-          srcset="src/assets/img/bg-image-01.jpg"
+          srcset="/img/bg-image-01.jpg"
         />
         <img
           class="absolute top-0 left-0 h-full w-full object-cover"
-          src="src/assets/img/bg-image-01.jpg"
+          src="/img/bg-image-01.jpg"
           alt="background"
         />
       </picture>
@@ -150,7 +150,7 @@ import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 const heroInnerData = {
   title: "Sponsor",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
-  img: { src: "src/assets/img/hero-image-21.jpg", alt: "" }
+  img: { src: "/img/hero-image-21.jpg", alt: "" }
 };
 
 const postModuleData = {
@@ -164,10 +164,10 @@ const postModuleData = {
   ],
   carousel: {
     slides: [
-      { src: "src/assets/img/slide10.jpg", alt: "" },
-      { src: "src/assets/img/slide09.jpg", alt: "" },
-      { src: "src/assets/img/slide08.jpg", alt: "" },
-      { src: "src/assets/img/slide07.jpg", alt: "" }
+      { src: "/img/slide10.jpg", alt: "" },
+      { src: "/img/slide09.jpg", alt: "" },
+      { src: "/img/slide08.jpg", alt: "" },
+      { src: "/img/slide07.jpg", alt: "" }
     ]
   },
   reverse: true
@@ -178,21 +178,21 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }
@@ -203,7 +203,7 @@ const postCardsSectionData = {
 
 const sposnorshipLevelsData = [
   {
-    img: { src: "src/assets/img/pet-dog-01.svg", alt: "" },
+    img: { src: "/img/pet-dog-01.svg", alt: "" },
     title: "Bronze",
     subtitle: "$5,000",
     customList: {
@@ -217,7 +217,7 @@ const sposnorshipLevelsData = [
     button: { text: "Become a bronze sponsor", url: "#!" }
   },
   {
-    img: { src: "src/assets/img/pet-dog-02.svg", alt: "" },
+    img: { src: "/img/pet-dog-02.svg", alt: "" },
     title: "Silver",
     subtitle: "$10,000",
     customList: {
@@ -232,7 +232,7 @@ const sposnorshipLevelsData = [
     button: { text: "Become a silver sponsor", url: "#!" }
   },
   {
-    img: { src: "src/assets/img/pet-dog-03.svg", alt: "" },
+    img: { src: "/img/pet-dog-03.svg", alt: "" },
     title: "Gold",
     subtitle: "$20,000",
     customList: {
@@ -250,7 +250,7 @@ const sposnorshipLevelsData = [
 ];
 
 const infoCardData = {
-  img: { src: "src/assets/img/content-img-32.jpg", alt: "" },
+  img: { src: "/img/content-img-32.jpg", alt: "" },
   title: "Our brand reaches more than 175,000 contacts",
   text: "Social media and email marketing, plus 6,000 new users visit the BVSPCA website daily. Each week, we are featured in at least 15 media outlets, and we regularly receive coverage on our local Fox, ABC, and NBC affiliates.",
   buttons: [
@@ -261,99 +261,99 @@ const infoCardData = {
 
 const sponsorSlides = [
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo01.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo01.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo02.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo03.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo04.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo05.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo05.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo06.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo06.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo07.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo07.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo07.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo07.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo01.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo01.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo02.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo03.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo04.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo02.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo03.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo04.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo02.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo03.png", alt: "" },
     url: "#!"
   },
   {
-    img: { src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
+    img: { src: "/img/sponsors/sponsor-logo04.png", alt: "" },
     url: "#!"
   }
 ];
 
 const goldSponsorsLogos = [
-  { url: "#", src: "src/assets/img/sponsors/sponsor-logo01.png", alt: "" },
-  { url: "#", src: "src/assets/img/sponsors/sponsor-logo02.png", alt: "" },
-  { url: "#", src: "src/assets/img/sponsors/sponsor-logo04.png", alt: "" },
-  { url: "#", src: "src/assets/img/sponsors/sponsor-logo05.png", alt: "" },
-  { url: "#", src: "src/assets/img/sponsors/sponsor-logo07.png", alt: "" },
+  { url: "#", src: "/img/sponsors/sponsor-logo01.png", alt: "" },
+  { url: "#", src: "/img/sponsors/sponsor-logo02.png", alt: "" },
+  { url: "#", src: "/img/sponsors/sponsor-logo04.png", alt: "" },
+  { url: "#", src: "/img/sponsors/sponsor-logo05.png", alt: "" },
+  { url: "#", src: "/img/sponsors/sponsor-logo07.png", alt: "" },
   {
     url: "#",
-    src: "src/assets/img/sponsors/sponsor-della-torre-team.png",
+    src: "/img/sponsors/sponsor-della-torre-team.png",
     alt: ""
   },
-  { url: "#", src: "src/assets/img/sponsors/sponsor-dc-medical.png", alt: "" },
+  { url: "#", src: "/img/sponsors/sponsor-dc-medical.png", alt: "" },
   {
     url: "#",
-    src: "src/assets/img/sponsors/sponsor-diamond-chiropractic.png",
+    src: "/img/sponsors/sponsor-diamond-chiropractic.png",
     alt: ""
   },
-  { url: "#", src: "src/assets/img/sponsors/sponsor-logo03.png", alt: "" },
-  { url: "#", src: "src/assets/img/sponsors/sponsor-logo06.png", alt: "" },
-  { url: "#", src: "src/assets/img/sponsors/sponsor-terra.png", alt: "" },
-  { url: "#", src: "src/assets/img/sponsors/sponsor-united.png", alt: "" }
+  { url: "#", src: "/img/sponsors/sponsor-logo03.png", alt: "" },
+  { url: "#", src: "/img/sponsors/sponsor-logo06.png", alt: "" },
+  { url: "#", src: "/img/sponsors/sponsor-terra.png", alt: "" },
+  { url: "#", src: "/img/sponsors/sponsor-united.png", alt: "" }
 ];
 </script>

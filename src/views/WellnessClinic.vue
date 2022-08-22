@@ -86,13 +86,13 @@ import PostCard from "@/components/PostCard.vue";
 import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 
 const heroInnerData = {
-  img: { src: "src/assets/img/hero-image-03.jpg", alt: "" },
+  img: { src: "/img/hero-image-03.jpg", alt: "" },
   title: "Wellness clinic",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl."
 };
 
 const postModuleData = {
-  img: { src: "src/assets/img/content-img-05.jpg", alt: "" },
+  img: { src: "/img/content-img-05.jpg", alt: "" },
   title: { text: "Affordable healthcare with an impact", size: "md"},
   text: ["In addition, by bringing their pets to our Brandywine vet hospitals for care, clients support the plight of homeless pets, as any proceeds from the BVSPCA’s clinics benefit the mission and programs at the Brandywine Valley SPCA."],
   textGrid: [
@@ -123,14 +123,14 @@ const postModuleData = {
 };
 
 const postModuleData2 = {
-  img: { src: "src/assets/img/content-img-06.jpg", alt: "" },
+  img: { src: "/img/content-img-06.jpg", alt: "" },
   title: { text: "Your pet is in good hands", size: "md" },
   text: ["Get to know our experienced veterinary team. They’re ready to help your pet with routine check-ups, preventative care, and medical issues and so much more."],
   buttons: [{ variant: "secondary", text: "Clinic staff", url: "#!" }]
 };
 
 const postModuleData3 = {
-  img: { src: "src/assets/img/content-img-07.jpg", alt: "" },
+  img: { src: "/img/content-img-07.jpg", alt: "" },
   title: { text: "Help us keep pet wellness affordable", size: "md"},
   text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
   buttons: [{ text: "Donate", url: "#!" }],
@@ -138,7 +138,7 @@ const postModuleData3 = {
 };
 
 const postModuleData4 = {
-  img: { src: "src/assets/img/content-img-08.jpg", alt: "" },
+  img: { src: "/img/content-img-08.jpg", alt: "" },
   title: { text: "Pay it forward, your free time has so much value", size: "md"},
   text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
   buttons: [{ text: "Get involved", url: "#!" }]
@@ -566,21 +566,21 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }

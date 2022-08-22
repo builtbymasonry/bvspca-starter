@@ -60,7 +60,7 @@
       >
         <img
           class="w-full"
-          src="src/assets/img/content-img-21.png"
+          src="/img/content-img-21.png"
           alt="image description"
         />
       </div>
@@ -94,7 +94,7 @@ import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 const heroInnerData = {
   title: "For Kids",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
-  img: { src: "src/assets/img/hero-image-13.jpg", alt: "Volunteer" }
+  img: { src: "/img/hero-image-13.jpg", alt: "Volunteer" }
 };
 
 const postModuleData = {
@@ -103,17 +103,17 @@ const postModuleData = {
   buttons: [{ text: "Apply to be a junior volunteer", url: "#!" }],
   carousel: {
     slides: [
-      { src: "src/assets/img/slide03.jpg", alt: "slide alt1" },
-      { src: "src/assets/img/slide04.jpg", alt: "slide alt2" },
-      { src: "src/assets/img/slide03.jpg", alt: "slide alt3" },
-      { src: "src/assets/img/slide04.jpg", alt: "slide alt4" }
+      { src: "/img/slide03.jpg", alt: "slide alt1" },
+      { src: "/img/slide04.jpg", alt: "slide alt2" },
+      { src: "/img/slide03.jpg", alt: "slide alt3" },
+      { src: "/img/slide04.jpg", alt: "slide alt4" }
     ]
   },
   reverse: true
 };
 
 const postModuleData2 = {
-  img: { src: "src/assets/img/content-img-18.jpg", alt: "" },
+  img: { src: "/img/content-img-18.jpg", alt: "" },
   title: { text: "Critter Camp", size: "md"},
   textList: [
     {
@@ -142,17 +142,17 @@ const postModuleData3 = {
     "Parties can be scheduled on Saturdays & Sundays between the hours of 11am and 5pm. Please provide a few additional dates in the event that your preferred date is not available. We require a $50.00 non-refundable deposit to secure your date and time. Minimum age requirement is 7 years old." ],
   carousel: {
     slides: [
-      { src: "src/assets/img/slide05.jpg", alt: "slide alt1" },
-      { src: "src/assets/img/slide02.jpg", alt: "slide alt2" },
-      { src: "src/assets/img/slide01.jpg", alt: "slide alt3" },
-      { src: "src/assets/img/slide02.jpg", alt: "slide alt4" }
+      { src: "/img/slide05.jpg", alt: "slide alt1" },
+      { src: "/img/slide02.jpg", alt: "slide alt2" },
+      { src: "/img/slide01.jpg", alt: "slide alt3" },
+      { src: "/img/slide02.jpg", alt: "slide alt4" }
     ]
   },
   reverse: true
 };
 
 const postModuleData4 = {
-  img: { src: "src/assets/img/content-img-19.jpg", alt: "" },
+  img: { src: "/img/content-img-19.jpg", alt: "" },
   title: { text: "Request friends and family to send items off our wish list instead of buying gifts" },
   text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi."],
   share: true,
@@ -161,7 +161,7 @@ const postModuleData4 = {
 };
 
 const postModuleData5 = {
-  img: { src: "src/assets/img/content-img-20.jpg", alt: "" },
+  img: { src: "/img/content-img-20.jpg", alt: "" },
   title: { text: "Other ways to honor your special day with charitable causes" },
   text: [ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi." ],
   buttons: [ {text: "Get involved", url: "#!" }],
@@ -252,21 +252,21 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }

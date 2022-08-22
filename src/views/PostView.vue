@@ -52,7 +52,7 @@ const post = {
     <div class="my-8 sm:my-12">
       <img
         class="w-full rounded-sm lg:rounded-lg shadow"
-        src="src/assets/img/content-img-33.jpg"
+        src="/img/content-img-33.jpg"
         alt="image description"
       />
     </div>
@@ -96,7 +96,7 @@ const post = {
       lobortis tempus, metu.
     </p>`,
   author: {
-    img: { src: "src/assets/img/img-author-01.jpg", alt: "Linda Torelli" },
+    img: { src: "/img/img-author-01.jpg", alt: "Linda Torelli" },
     name: "Linda Torelli",
     position: "Chief Marketing Officer"
   }

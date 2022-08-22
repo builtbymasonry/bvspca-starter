@@ -60,15 +60,15 @@
       <picture>
         <source
           media="(max-width: 767px)"
-          srcset="src/assets/img/bg-image-01-sm.jpg"
+          srcset="/img/bg-image-01-sm.jpg"
         />
         <source
           media="(min-width: 768px)"
-          srcset="src/assets/img/bg-image-01.jpg"
+          srcset="/img/bg-image-01.jpg"
         />
         <img
           class="absolute top-0 left-0 h-full w-full object-cover"
-          src="src/assets/img/bg-image-01.jpg"
+          src="/img/bg-image-01.jpg"
           alt="background"
         />
       </picture>
@@ -103,7 +103,7 @@ import InfoCard from "@/components/InfoCard.vue";
 const heroInnerData = {
   title: "Volunteer",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
-  img: { src: "src/assets/img/hero-image-11.jpg", alt: "Volunteer" }
+  img: { src: "/img/hero-image-11.jpg", alt: "Volunteer" }
 };
 
 const categories = [
@@ -132,7 +132,7 @@ const categories = [
 ];
 
 const postModuleData = {
-  img: { src: "src/assets/img/content-img-16.jpg", alt: "" },
+  img: { src: "/img/content-img-16.jpg", alt: "" },
   title: { text: "The Brandywine Valley SPCA has a wide variety of volunteer opportunities", size: "md" },
   text: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl. Donec at libero eget odio lacinia aliquam non eu arcu. Suspendisse potenti. Pellentesque eu orci nisi. Pellentesque finibus lorem dignissim bibendum pretium. Maecenas efficitur varius feugiat. Vestibulum eu mi ac diam mollis euismod."],
   buttons: [{ text: "Learn more about us", url: "#!" }]
@@ -141,7 +141,7 @@ const postModuleData = {
 const postModuleData2 = {
   title: { text: "Give back to your community", size: "md"},
   text: ["Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."],
-  img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
+  img: { src: "/img/content-img-04.jpg", alt: "" },
   reverse: true,
   buttons: [{ variant: "secondary", text: "Donate", url: "#!" }]
 };
@@ -149,7 +149,7 @@ const postModuleData2 = {
 const volunteerData = [
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-07.jpg",
+      src: "/img/post-card-inline-img-07.jpg",
       alt: "Dog & cat volunteer"
     },
     title: "Dog & cat volunteer",
@@ -159,7 +159,7 @@ const volunteerData = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-08.jpg",
+      src: "/img/post-card-inline-img-08.jpg",
       alt: "Junior volunteer"
     },
     title: "Junior volunteer",
@@ -169,7 +169,7 @@ const volunteerData = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-09.jpg",
+      src: "/img/post-card-inline-img-09.jpg",
       alt: "Event ambassador"
     },
     title: "Event ambassador",
@@ -179,7 +179,7 @@ const volunteerData = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-10.jpg",
+      src: "/img/post-card-inline-img-10.jpg",
       alt: "Adoption Counselors"
     },
     title: "Adoption Counselors",
@@ -189,7 +189,7 @@ const volunteerData = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-11.jpg",
+      src: "/img/post-card-inline-img-11.jpg",
       alt: "Kids programs"
     },
     title: "Kids programs",
@@ -199,7 +199,7 @@ const volunteerData = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-12.jpg",
+      src: "/img/post-card-inline-img-12.jpg",
       alt: "Administration"
     },
     title: "Administration",
@@ -209,7 +209,7 @@ const volunteerData = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-13.jpg",
+      src: "/img/post-card-inline-img-13.jpg",
       alt: "Wellness clinic"
     },
     title: "Wellness clinic",
@@ -219,7 +219,7 @@ const volunteerData = [
   },
   {
     img: {
-      src: "src/assets/img/post-card-inline-img-14.jpg",
+      src: "/img/post-card-inline-img-14.jpg",
       alt: "Photography"
     },
     title: "Photography",
@@ -247,7 +247,7 @@ const textBannerData2 = {
 const postCardBoxes = [
   {
     url: "#!",
-    img: { src: "src/assets/img/postcardbox-img-01.jpg", alt: "" },
+    img: { src: "/img/postcardbox-img-01.jpg", alt: "" },
     title: "Kong stuffing parties",
     text: [
       "Looking for a fun activity for kids to help out at the shelter? Schedule a Kong Stuffing Party and help us feed our dogs in an enriching way! The kongs (a hard hollow rubber toy) are stuffed with a mixture of kibble and peanut butter, and then frozen for a delicious treat for our four-legged friends. Email Hailey Marcus at hmarcus@bvspca.org, to schedule your kong stuffing party!",
@@ -257,7 +257,7 @@ const postCardBoxes = [
   },
   {
     url: "#!",
-    img: { src: "src/assets/img/postcardbox-img-02.jpg", alt: "" },
+    img: { src: "/img/postcardbox-img-02.jpg", alt: "" },
     title: "Baking",
     text: [
       "Want a group activity that helps the shelter dogs? Consider baking homemade dog treats for our canine residents. The BVSPCA has several approved recipes that are easy to make. Drop off the homemade treats during shelter hours."
@@ -266,7 +266,7 @@ const postCardBoxes = [
   },
   {
     url: "#!",
-    img: { src: "src/assets/img/postcardbox-img-03.jpg", alt: "" },
+    img: { src: "/img/postcardbox-img-03.jpg", alt: "" },
     title: "Homemade toys",
     text: [
       "Would you like to help our feline friends stay entertained? Create fun and easy cat toys to provide entertainment and enrichment for the cats and kittens while they are in our care. Click below for DIY cat toy instructions."
@@ -280,21 +280,21 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run", size: "md"},
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws", size: "md"},
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp", size: "md"},
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }
@@ -306,7 +306,7 @@ const postCardsSectionData = {
 const infoCardData = {
   title: "We place over 16,000 animals a year",
   text: "We were the first open-admission no-kill shelter in Pennsylvania, and we have led Delaware to becoming the first no-kill state in the United States.",
-  img: { src: "src/assets/img/content-img-01.jpg", alt: "" },
+  img: { src: "/img/content-img-01.jpg", alt: "" },
   buttons: [{ text: "Learn more about our impact", url: "#!" }]
 };
 </script>

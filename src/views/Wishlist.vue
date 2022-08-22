@@ -29,15 +29,15 @@
       <picture>
         <source
           media="(max-width: 767px)"
-          srcset="src/assets/img/bg-image-01-sm.jpg"
+          srcset="/img/bg-image-01-sm.jpg"
         />
         <source
           media="(min-width: 768px)"
-          srcset="src/assets/img/bg-image-01.jpg"
+          srcset="/img/bg-image-01.jpg"
         />
         <img
           class="absolute top-0 left-0 h-full w-full object-cover"
-          src="src/assets/img/bg-image-01.jpg"
+          src="/img/bg-image-01.jpg"
           alt="background"
         />
       </picture>
@@ -108,7 +108,7 @@
       >
         <img
           class="w-full"
-          src="src/assets/img/content-img-21.png"
+          src="/img/content-img-21.png"
           alt="image description"
         />
       </div>
@@ -141,7 +141,7 @@ import PostCardsSection from "@/components/sections/PostCardsSection.vue";
 const heroInnerData = {
   title: "Wishlist",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dapibus nisl.",
-  img: { src: "src/assets/img/hero-image-22.jpg", alt: "" }
+  img: { src: "/img/hero-image-22.jpg", alt: "" }
 };
 
 const postModuleData = {
@@ -152,10 +152,10 @@ const postModuleData = {
   ],
   carousel: {
     slides: [
-      { src: "src/assets/img/slide11.jpg", alt: "" },
-      { src: "src/assets/img/slide09.jpg", alt: "" },
-      { src: "src/assets/img/slide08.jpg", alt: "" },
-      { src: "src/assets/img/slide07.jpg", alt: "" }
+      { src: "/img/slide11.jpg", alt: "" },
+      { src: "/img/slide09.jpg", alt: "" },
+      { src: "/img/slide08.jpg", alt: "" },
+      { src: "/img/slide07.jpg", alt: "" }
     ]
   },
   buttons: [{ text: "Purchase through AmazonSmile", url: "#!" }],
@@ -167,7 +167,7 @@ const PostModuleData2 = {
   text: [
     "Open the door to endless possibilities. Together, we will create positive change within our community, help control the homeless animal population, and improve the lives of pets and their families."
   ],
-  img: { src: "src/assets/img/content-img-04.jpg", alt: "" },
+  img: { src: "/img/content-img-04.jpg", alt: "" },
   buttons: [
     { variant: "secondary", text: "Donate", url: "#!" },
     { variant: "outlineSecondary", text: "Sponsor", url: "#!" }
@@ -180,21 +180,21 @@ const postCardsSectionData = {
   blogPosts: [
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-07.jpg", alt: "" },
+      img: { src: "/img/img-pet-07.jpg", alt: "" },
       title: { text: "$5 off our 5K Color Run", size: "md" },
       text: "We're so excited to be offering a number of new activities to this year's line-up of fun, including a Color Run for you and your furry running partner. Register today!",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/img-pet-08.jpg", alt: "" },
+      img: { src: "/img/img-pet-08.jpg", alt: "" },
       title: { text: "Walk-4-Paws", size: "md" },
       text: "We’re bringing back the most popular activities PLUS we’ve changed our 5K to a Color Run, expanded Yoga with Puppies, added live music, and added more fun things.",
       buttonLink: { text: "Read more", url: "#!" }
     },
     {
       url: "#!",
-      img: { src: "src/assets/img/content-img-03.jpg", alt: "" },
+      img: { src: "/img/content-img-03.jpg", alt: "" },
       title: { text: "Critter Camp", size: "md" },
       text: "Kids ages 7 to 12 will have a howling good time at our Critter Camp day camp. Our next session is a Spring-themed Weekend: April 9 – April 10 for kids ages 10 through 12. ",
       buttonLink: { text: "Read more", url: "#!" }
@@ -205,31 +205,31 @@ const postCardsSectionData = {
 
 const wishlist = [
   {
-    img: { src: "src/assets/img/location-01.jpg", alt: "" },
+    img: { src: "/img/location-01.jpg", alt: "" },
     title: "West Chester",
     address: "1212 Phoenixville Pike \nWest Chester, PA 19380",
     button: { text: "Amazon wishlist", url: "#!", target: "_blank" }
   },
   {
-    img: { src: "src/assets/img/location-01.jpg", alt: "" },
+    img: { src: "/img/location-01.jpg", alt: "" },
     title: "New Castle",
     address: "1212 Phoenixville Pike \nWest Chester, PA 19380",
     button: { text: "Amazon wishlist", url: "#!", target: "_blank" }
   },
   {
-    img: { src: "src/assets/img/location-01.jpg", alt: "" },
+    img: { src: "/img/location-01.jpg", alt: "" },
     title: "Dover",
     address: "1212 Phoenixville Pike \nWest Chester, PA 19380",
     button: { text: "Amazon wishlist", url: "#!", target: "_blank" }
   },
   {
-    img: { src: "src/assets/img/location-01.jpg", alt: "" },
+    img: { src: "/img/location-01.jpg", alt: "" },
     title: "Georgetown",
     address: "1212 Phoenixville Pike \nWest Chester, PA 19380",
     button: { text: "Amazon wishlist", url: "#!", target: "_blank" }
   },
   {
-    img: { src: "src/assets/img/location-01.jpg", alt: "" },
+    img: { src: "/img/location-01.jpg", alt: "" },
     title: "ARC",
     address: "1212 Phoenixville Pike West Chester, PA 19380",
     button: { text: "Amazon wishlist", url: "#!", target: "_blank" }

@@ -97,7 +97,7 @@ import { computed, ref, watch } from "vue";
 import { GoogleMap, Marker, InfoWindow } from "vue3-google-map";
 
 import Button from "./Button.vue";
-import pin from "@/assets/img/pin-heart.svg";
+import pin from "/img/pin-heart.svg";
 
 const GOOGLE_API_KEY = "AIzaSyBIKsc31TXAvusDAeRpJ8_p6TnMOsU324s";
 const DEFAULT_MAP_ZOOM = 14;
