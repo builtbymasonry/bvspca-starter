@@ -452,45 +452,45 @@ const upperNav = [
     drop: [
       {
         label: "Dover",
-        url: "#!"
+        url: "/location-profile"
       },
       {
         label: "New Castle",
-        url: "#!"
+        url: "/location-profile"
       },
       {
         label: "Georgetown",
-        url: "#!"
+        url: "/location-profile"
       },
       {
         label: "West Chester",
-        url: "#!"
+        url: "/location-profile"
       },
       {
         label: "Malvern",
-        url: "#!"
+        url: "/location-profile"
       },
       {
         label: "Plymouth Meeting",
-        url: "#!"
+        url: "/location-profile"
       },
       {
         label: "Animal Rescue Center",
-        url: "#!"
+        url: "/location-profile"
       },
       {
         label: "Eastern Shore Pet Resort",
-        url: "#!"
+        url: "/location-profile"
       }
     ]
   },
   {
     label: "News & Events",
-    url: "#!"
+    url: "/news-events"
   },
   {
     label: "Contact",
-    url: "#!"
+    url: "/contact"
   }
 ];
 
@@ -500,19 +500,19 @@ const lowerNav = [
     drop: [
       {
         label: "Wellness clinic",
-        url: "#!"
+        url: "/wellness-clinic"
       },
       {
         label: "Clinic staff",
-        url: "#!"
+        url: "/clinic-staff"
       },
       {
         label: "Spay & neuter",
-        url: "#!"
+        url: "/spay-neuter"
       },
       {
         label: "Community cats",
-        url: "#!"
+        url: "/community-cats"
       },
       {
         label: "Daycare & boarding",
@@ -533,15 +533,15 @@ const lowerNav = [
     drop: [
       {
         label: "Lost/Found pets",
-        url: "#!"
+        url: "/lost-found"
       },
       {
         label: "Reporting cruelty",
-        url: "#!"
+        url: "/animal-cruelty"
       },
       {
         label: "Rehoming consultation",
-        url: "#!"
+        url: "/rehoming"
       },
       {
         label: "Pet food assistance",
@@ -553,7 +553,7 @@ const lowerNav = [
       },
       {
         label: "Behavior resources",
-        url: "#!"
+        url: "/behavior-resources"
       }
     ]
   },
@@ -562,15 +562,15 @@ const lowerNav = [
     drop: [
       {
         label: "Volunteer",
-        url: "#!"
+        url: "/volunteer"
       },
       {
         label: "Foster",
-        url: "#!"
+        url: "/foster"
       },
       {
         label: "For kids",
-        url: "#!"
+        url: "/for-kids"
       },
       {
         label: "Community service",
@@ -587,7 +587,7 @@ const lowerNav = [
     drop: [
       {
         label: "Our impact",
-        url: "#!"
+        url: "/impact"
       },
       {
         label: "Second chance program",
@@ -603,7 +603,7 @@ const lowerNav = [
       },
       {
         label: "Statistics",
-        url: "#!"
+        url: "/statistics"
       }
     ]
   }
@@ -615,19 +615,19 @@ const navAdopt = [
     drop: [
       {
         label: "Adopt a dog",
-        url: "#!"
+        url: "/pet-list"
       },
       {
         label: "Adopt a cat",
-        url: "#!"
+        url: "/pet-list"
       },
       {
         label: "Small animals",
-        url: "#!"
+        url: "/pet-list"
       },
       {
         label: "Adoption info",
-        url: "#!"
+        url: "/adoption-info"
       }
     ]
   }
@@ -639,7 +639,7 @@ const navDonate = [
     drop: [
       {
         label: "Monthly gift",
-        url: "#!"
+        url: "/donate"
       },
       {
         label: "Honor a life",
