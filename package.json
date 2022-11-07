@@ -7,7 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@vuepic/vue-datepicker": "^3.3.0",
+    "@vuepic/vue-datepicker": "^3.5.3",
     "swiper": "^8.2.5",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16",
